@@ -148,9 +148,11 @@ export function createModulePage<T extends { id: number; confidenceScore?: numbe
     const filters = typeof config.filters === 'function' ? config.filters(t) : config.filters;
     const translations = config.translations(t);
 
-    // Resolve mobile menu items via hook (stable: config never changes between renders)
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const mobileMenuItems = config.useMobileMenuItems ? config.useMobileMenuItems() : undefined;
+    // Resolve mobile menu items via hook - ALWAYS call hook to maintain consistent hook order
+    // Use a no-op hook when useMobileMenuItems is not provided
+    const useNoMobileMenuItems = () => undefined;
+    const useMobileMenuItemsHook = config.useMobileMenuItems ?? useNoMobileMenuItems;
+    const mobileMenuItems = useMobileMenuItemsHook();
 
     // Track module visit in recents and tabs
     useEffect(() => {
