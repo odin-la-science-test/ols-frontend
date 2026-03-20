@@ -12,6 +12,12 @@ import type { TFunction } from 'i18next';
 // ═══════════════════════════════════════════════════════════════════════════
 
 /**
+ * No-op hook that returns undefined when no mobile menu items are provided.
+ * This ensures consistent hook call order across all module pages.
+ */
+const useNoMobileMenuItems = () => undefined;
+
+/**
  * Translations for a module page
  */
 export interface ModuleTranslations {
@@ -149,8 +155,7 @@ export function createModulePage<T extends { id: number; confidenceScore?: numbe
     const translations = config.translations(t);
 
     // Resolve mobile menu items via hook - ALWAYS call hook to maintain consistent hook order
-    // Use a no-op hook when useMobileMenuItems is not provided
-    const useNoMobileMenuItems = () => undefined;
+    // Use the no-op hook when useMobileMenuItems is not provided
     const useMobileMenuItemsHook = config.useMobileMenuItems ?? useNoMobileMenuItems;
     const mobileMenuItems = useMobileMenuItemsHook();
 
