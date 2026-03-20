@@ -17,7 +17,10 @@ import type { Fungus, FungusSearchParams } from './types';
 // MYCOLOGY PAGE - Main module page
 // ═══════════════════════════════════════════════════════════════════════════
 
-export const MycologyPage = createModulePage<Fungus, FungusSearchParams>({
+// No-op hook to maintain consistent hook call order with other modules
+const useNoPanel = () => undefined;
+
+const MycologyPageBase = createModulePage<Fungus, FungusSearchParams>({
   translations: (t) => ({
     title: t('mycology.title'),
     searchPlaceholder: t('common.searchPlaceholder'),
@@ -42,3 +45,11 @@ export const MycologyPage = createModulePage<Fungus, FungusSearchParams>({
   DetailComponent: FungusDetail,
   detailItemKey: 'fungus',
 });
+
+/** Mycology page with consistent hook call order */
+export function MycologyPage() {
+  // Call no-op hook to maintain consistent hook count with bacteriology
+  useNoPanel();
+
+  return <MycologyPageBase />;
+}
