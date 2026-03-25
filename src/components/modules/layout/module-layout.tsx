@@ -55,7 +55,7 @@ export function ModuleLayout({ children, className }: ModuleLayoutProps) {
   const Background = platform?.Background ?? DotsBackground;
 
   // System pages (no platform) use foreground-based neutral accent
-  const SYSTEM_ACCENT = 'hsl(var(--foreground))';
+  const SYSTEM_ACCENT = 'var(--color-foreground)';
   const effectiveAccent = platform?.accent ?? SYSTEM_ACCENT;
   const style = platform
     ? {

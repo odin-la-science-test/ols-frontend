@@ -100,7 +100,7 @@ export function BottomPanel({ className }: BottomPanelProps) {
                       ? 'text-foreground border-b-2'
                       : 'text-muted-foreground hover:text-foreground pb-[2px]',
                   )}
-                  style={isActive ? { borderBottomColor: 'hsl(var(--primary))' } : undefined}
+                  style={isActive ? { borderBottomColor: 'var(--color-primary)' } : undefined}
                 >
                   <TabIcon className="h-3.5 w-3.5" />
                   {t(labelKey)}
@@ -125,7 +125,7 @@ export function BottomPanel({ className }: BottomPanelProps) {
                           ? 'text-foreground border-b-2'
                           : 'text-muted-foreground hover:text-foreground pb-[2px]',
                       )}
-                      style={isActive ? { borderBottomColor: tab.accentColor ?? 'hsl(var(--primary))' } : undefined}
+                      style={isActive ? { borderBottomColor: tab.accentColor ?? 'var(--color-primary)' } : undefined}
                     >
                       {getIconComponent(tab.icon, 'h-3.5 w-3.5')}
                       {t(tab.labelKey)}

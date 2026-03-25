@@ -78,7 +78,7 @@ export function SortableTab({
             'absolute bottom-0 left-1 right-1 h-[1.5px] rounded-full transition-all',
             isActive ? 'opacity-100' : 'opacity-0',
           )}
-          style={isActive ? { backgroundColor: panel.accentColor ?? 'hsl(var(--primary))' } : undefined}
+          style={isActive ? { backgroundColor: panel.accentColor ?? 'var(--color-primary)' } : undefined}
         />
       )}
     </div>

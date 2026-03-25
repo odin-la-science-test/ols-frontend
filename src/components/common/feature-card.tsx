@@ -57,10 +57,10 @@ export function FeatureCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay, ease: [0.25, 0.1, 0.25, 1] }}
       className={cn("relative h-full", className)}
-      style={hover3D ? { 
+      style={hover3D ? ({ 
         transformStyle: 'preserve-3d',
         perspective: '1000px',
-      } : undefined}
+      } as any) : undefined}
       onMouseEnter={needsHoverTracking ? () => !isLocked && setIsHovered(true) : undefined}
       onMouseLeave={needsHoverTracking ? () => setIsHovered(false) : undefined}
     >
@@ -83,7 +83,7 @@ export function FeatureCard({
             background: accentColor,
             borderColor: 'transparent',
           }),
-        }}
+        } as any}
       >
         {/* Content */}
         <div className={cn(
@@ -95,13 +95,13 @@ export function FeatureCard({
             <>
               <div
                 className="shrink-0 transition-colors duration-300"
-                style={{
-                  color: isLocked
-                    ? 'hsl(var(--muted-foreground))'
-                    : showColoredBg
-                      ? 'white'
-                      : accentColor,
-                }}
+                  style={{
+                    color: isLocked
+                      ? 'var(--color-muted-foreground)'
+                      : showColoredBg
+                        ? 'white'
+                        : accentColor,
+                  }}
               >
                 <div className="w-5 h-5 flex items-center justify-center">
                   {icon}
@@ -162,11 +162,11 @@ export function FeatureCard({
               transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               style={{ 
                 color: isLocked 
-                  ? 'hsl(var(--muted-foreground))' 
+                  ? 'var(--color-muted-foreground)' 
                   : showColoredBg 
                     ? 'white' 
                     : accentColor,
-              }}
+              } as any}
             >
               <div className="w-6 h-6 flex items-center justify-center">
                 {icon}

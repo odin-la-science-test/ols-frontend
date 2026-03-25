@@ -141,7 +141,7 @@ function DirectionalEdgeTarget({ side }: { side: 'left' | 'right' }) {
       <div className={cn(
         'absolute top-2 bottom-2 w-[3px] rounded-full transition-all duration-150',
         side === 'left' ? 'left-0' : 'right-0',
-        isOver ? 'opacity-100 bg-primary shadow-[0_0_8px_hsl(var(--primary)/0.5)]' : 'opacity-0',
+        isOver ? 'opacity-100 bg-primary shadow-[0_0_8px_color-mix(in_srgb,var(--color-primary)_50%,transparent)]' : 'opacity-0',
       )} />
     </div>
   );
@@ -222,12 +222,10 @@ function EdgeHalfTarget({
           {label}
         </span>
       </div>
-      {isOver && (
         <div className={cn(
-          'absolute top-2 bottom-2 w-[3px] rounded-full bg-primary shadow-[0_0_8px_hsl(var(--primary)/0.5)]',
+          'absolute top-2 bottom-2 w-[3px] rounded-full bg-primary shadow-[0_0_8px_color-mix(in_srgb,var(--color-primary)_50%,transparent)]',
           side === 'left' ? 'left-0' : 'right-0',
         )} />
-      )}
     </div>
   );
 }

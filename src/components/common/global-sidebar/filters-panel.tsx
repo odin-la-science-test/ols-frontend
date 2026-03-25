@@ -74,7 +74,7 @@ export function FiltersPanel() {
                   'border-r last:border-r-0 border-border/30',
                   isActive ? 'bg-muted/30' : 'bg-muted/10 hover:bg-muted/20'
                 )}
-                style={isActive ? { borderBottom: `2px solid ${reg?.accentColor || 'hsl(var(--foreground) / 0.4)'}` } : { borderBottom: '2px solid transparent' }}
+                style={isActive ? { borderBottom: `2px solid ${reg?.accentColor || 'color-mix(in srgb, var(--color-foreground) 40%, transparent)'}` } : { borderBottom: '2px solid transparent' }}
               >
                 <span className={cn(
                   'flex-1 min-w-0 text-[10px] font-medium uppercase tracking-wider truncate',

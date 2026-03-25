@@ -114,7 +114,7 @@ export function HistoryPanel() {
                 className={cn(
                   'flex items-center gap-2 w-full px-2 py-1.5 rounded-md text-left text-xs transition-colors duration-200',
                   'hover:bg-muted/50',
-                  isActive && 'border-l-2 border-[var(--module-accent,hsl(var(--primary)))] bg-muted/30',
+                  isActive && 'border-l-2 border-[var(--module-accent,var(--color-primary))] bg-muted/30',
                   isUndone && 'opacity-40',
                   !isActive && !isUndone && 'border-l-2 border-transparent',
                 )}

@@ -94,7 +94,7 @@ export function BottomPanelContent({ className }: BottomPanelContentProps) {
                   ? 'text-foreground border-b-2'
                   : 'text-muted-foreground hover:text-foreground pb-[2px]',
               )}
-              style={isActive ? { borderBottomColor: 'hsl(var(--primary))' } : undefined}
+              style={isActive ? { borderBottomColor: 'var(--color-primary)' } : undefined}
             >
               <TabIcon className="h-3.5 w-3.5" />
               {t(labelKey)}
