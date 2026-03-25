@@ -21,7 +21,7 @@ const TooltipContent = forwardRef<
         // Base styles
         "z-50 overflow-hidden rounded-md px-3 py-1.5 text-xs font-medium",
         // Colors following DA - card background with subtle border
-        "bg-card text-card-foreground border border-border/50",
+        "bg-card text-card-foreground border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]",
         // Subtle glow effect with primary color
         "shadow-lg shadow-primary/5",
         // Animations

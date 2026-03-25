@@ -92,7 +92,7 @@ export function NotificationBell({ collapsed }: NotificationBellProps) {
             onClick={handleToggle}
             className={cn(
               'relative flex items-center gap-2 w-full px-2 py-1.5 rounded-lg',
-              'text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50',
+              'text-sm text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
               'transition-colors',
               collapsed && 'justify-center px-2'
             )}
@@ -136,7 +136,7 @@ export function NotificationBell({ collapsed }: NotificationBellProps) {
               className="max-h-[420px] overflow-hidden bg-popover border border-border rounded-xl shadow-xl"
             >
               {/* Header */}
-              <div className="flex items-center justify-between px-4 py-3 border-b border-border/50">
+              <div className="flex items-center justify-between px-4 py-3 border-b border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]">
                 <h4 className="text-sm font-semibold text-foreground">
                   {t('notifications.title')}
                 </h4>
@@ -173,8 +173,8 @@ export function NotificationBell({ collapsed }: NotificationBellProps) {
                         }}
                         className={cn(
                           'flex items-start gap-3 w-full px-4 py-3 text-left transition-colors',
-                          'hover:bg-muted/50 border-b border-border/20 last:border-b-0',
-                          !notif.read && 'bg-muted/20'
+                          'hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] border-b border-[color-mix(in_srgb,var(--color-border)_20%,transparent)] last:border-b-0',
+                          !notif.read && 'bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]'
                         )}
                       >
                         <Icon className={cn('h-4 w-4 mt-0.5 flex-shrink-0', iconColor)} />
@@ -209,7 +209,7 @@ export function NotificationBell({ collapsed }: NotificationBellProps) {
               </div>
 
               {/* Footer */}
-              <div className="px-4 py-2.5 border-t border-border/50">
+              <div className="px-4 py-2.5 border-t border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]">
                 <button
                   onClick={() => {
                     navigate('/lab/notifications');

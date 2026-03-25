@@ -81,7 +81,7 @@ body.ols-overlay-dragging [data-panel-resize-handle-id] {
 
 /* ─── Light Mode ─── */
 /* Using @custom-variant dark/light so we can nest this efficiently or use CSS nesting */
-@variant light {
+:root.light {
   --color-background: hsl(240 5% 96%);
   --color-foreground: hsl(240 10% 4%);
   
@@ -686,6 +686,14 @@ body.ols-overlay-dragging [data-panel-resize-handle-id] {
   --color-accent: hsl(160 84% 39%);
   --color-ring: hsl(160 84% 39%);
   --color-chart-1: hsl(160 84% 39%);
+}
+
+/* Lab accent for light mode — slightly softer/brighter for better contrast */
+:root.light[data-accent="lab"] {
+  --color-primary: hsl(160 80% 45%);
+  --color-accent: hsl(160 80% 45%);
+  --color-ring: hsl(160 80% 45%);
+  --color-chart-1: hsl(160 80% 45%);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

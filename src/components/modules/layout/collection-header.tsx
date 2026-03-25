@@ -30,7 +30,7 @@ export function IdentificationBanner({ identificationResults, onClear }: Identif
   return (
     <div className={`flex items-center justify-between gap-3 rounded-lg px-4 py-3 border backdrop-blur-sm transition-all ${
       identificationResults.length === 0
-        ? 'border-muted-foreground/20 bg-muted/50 text-muted-foreground'
+        ? 'border-muted-foreground/20 bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] text-muted-foreground'
         : 'border-emerald-200 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-900 dark:text-emerald-400'
     }`}>
       <span className="text-sm font-medium">
@@ -38,7 +38,7 @@ export function IdentificationBanner({ identificationResults, onClear }: Identif
           ? t('modules.noMatchFound')
           : t('modules.identificationResults', { count: identificationResults.length })}
       </span>
-      <Button size="sm" variant="ghost" onClick={onClear} className="h-7 px-2 text-xs hover:bg-background/50">
+      <Button size="sm" variant="ghost" onClick={onClear} className="h-7 px-2 text-xs hover:bg-[color-mix(in_srgb,var(--color-background)_50%,transparent)]">
         <X className="h-3 w-3 mr-1" />
         {t('modules.showAll')}
       </Button>
@@ -80,7 +80,7 @@ export function SelectionModeBar({ selection, onOpenComparison }: SelectionModeB
   if (!selection.isSelectionMode) return null;
 
   return (
-    <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 rounded-lg border border-primary/30 bg-primary/5 px-3 sm:px-4 py-3 backdrop-blur-sm transition-all">
+    <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 rounded-lg border border-[color-mix(in_srgb,var(--color-primary)_30%,transparent)] bg-[color-mix(in_srgb,var(--color-primary)_5%,transparent)] px-3 sm:px-4 py-3 backdrop-blur-sm transition-all">
       <div className="flex items-center gap-2 sm:gap-3 min-w-0">
         <GitCompareArrows className="h-4 w-4 text-primary shrink-0" />
         <div className="min-w-0">

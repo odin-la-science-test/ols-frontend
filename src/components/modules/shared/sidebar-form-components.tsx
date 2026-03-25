@@ -76,7 +76,7 @@ interface SidebarFormActionsProps {
 export function SidebarFormActions({ children, className }: SidebarFormActionsProps) {
   const d = useDensity();
   return (
-    <div className={cn('border-t border-border/50 bg-muted/20 shrink-0', d.detailPadding, className)}>
+    <div className={cn('border-t border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)] shrink-0', d.detailPadding, className)}>
       <div className="flex items-center justify-end gap-2">
         {children}
       </div>

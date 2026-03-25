@@ -67,8 +67,8 @@ function NotificationItem({ notification, onMarkRead, onDelete, onNavigate }: No
       className={cn(
         'group flex items-start gap-3 p-3 rounded-lg border transition-all cursor-pointer',
         notification.read
-          ? 'bg-card/50 border-border/30 hover:bg-muted/30'
-          : 'bg-card border-border/60 hover:bg-muted/40 shadow-sm'
+          ? 'bg-[color-mix(in_srgb,var(--color-card)_50%,transparent)] border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]'
+          : 'bg-card border-[color-mix(in_srgb,var(--color-border)_60%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] shadow-sm'
       )}
       onMouseEnter={() => setShowActions(true)}
       onMouseLeave={() => setShowActions(false)}
@@ -79,7 +79,7 @@ function NotificationItem({ notification, onMarkRead, onDelete, onNavigate }: No
     >
       {/* Icon */}
       <div className={cn(
-        'mt-0.5 p-2 rounded-lg bg-muted/50',
+        'mt-0.5 p-2 rounded-lg bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
         !notification.read && 'bg-muted'
       )}>
         <Icon className={cn('h-4 w-4', iconColor)} />
@@ -156,7 +156,7 @@ function NotificationItem({ notification, onMarkRead, onDelete, onNavigate }: No
                     e.stopPropagation();
                     onDelete(notification.id);
                   }}
-                  className="p-1.5 rounded-md hover:bg-destructive/10 transition-colors text-muted-foreground hover:text-destructive"
+                  className="p-1.5 rounded-md hover:bg-[color-mix(in_srgb,var(--color-destructive)_10%,transparent)] transition-colors text-muted-foreground hover:text-destructive"
                 >
                   <Trash2 className="h-3.5 w-3.5" />
                 </button>

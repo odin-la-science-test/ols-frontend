@@ -124,7 +124,7 @@ function DirectionalEdgeTarget({ side }: { side: 'left' | 'right' }) {
     >
       <div className={cn(
         'absolute inset-y-0 left-0 right-0 transition-all duration-200 rounded-sm',
-        isOver ? 'bg-primary/15 border border-primary/40' : 'bg-muted/30 border border-transparent',
+        isOver ? 'bg-[color-mix(in_srgb,var(--color-primary)_15%,transparent)] border border-[color-mix(in_srgb,var(--color-primary)_40%,transparent)]' : 'bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] border border-transparent',
       )} />
       <div className={cn(
         'absolute inset-0 flex flex-col items-center justify-center gap-2 transition-all duration-200',
@@ -209,7 +209,7 @@ function EdgeHalfTarget({
       <div className={cn(
         'absolute inset-0 transition-all duration-200',
         isSingle ? 'rounded-sm' : isTop ? 'rounded-t-sm' : 'rounded-b-sm',
-        isOver ? 'bg-primary/15 border border-primary/40' : 'bg-muted/30 border border-transparent',
+        isOver ? 'bg-[color-mix(in_srgb,var(--color-primary)_15%,transparent)] border border-[color-mix(in_srgb,var(--color-primary)_40%,transparent)]' : 'bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] border border-transparent',
       )} />
       <div className={cn(
         'relative flex flex-col items-center justify-center gap-1 transition-all duration-200',

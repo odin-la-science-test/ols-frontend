@@ -61,7 +61,7 @@ export function TicketForm({ onSaved, onCancel, moduleKey }: TicketFormProps) {
           <Input
             {...register('subject')}
             placeholder={t('support.subjectPlaceholder')}
-            className="bg-card border-border/40"
+            className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]"
             autoFocus
           />
         </SidebarFormField>
@@ -95,7 +95,7 @@ export function TicketForm({ onSaved, onCancel, moduleKey }: TicketFormProps) {
             {...register('description')}
             placeholder={t('support.descriptionPlaceholder')}
             rows={8}
-            className="border-border/40 bg-card"
+            className="border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card"
           />
         </SidebarFormField>
       </SidebarFormBody>

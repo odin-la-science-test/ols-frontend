@@ -151,7 +151,7 @@ export function LoginPage() {
                 {t('auth.noAccount')}{' '}
                 <Link
                   to="/register"
-                  className="relative text-primary font-medium transition-all duration-200 hover:text-primary/90 after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary/60 after:transition-all after:duration-300 hover:after:w-full"
+                  className="relative text-primary font-medium transition-all duration-200 hover:text-[color-mix(in_srgb,var(--color-primary)_90%,transparent)] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-[color-mix(in_srgb,var(--color-primary)_60%,transparent)] after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {t('auth.signUp')}
                 </Link>

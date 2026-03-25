@@ -39,11 +39,11 @@ export function BetaBanner() {
         transition={{ duration: 0.3 }}
         className="overflow-hidden"
       >
-        <div className="bg-amber-500/10 border-b border-amber-500/20 px-4 py-2.5">
+        <div className="bg-[color-mix(in_srgb,var(--color-warning)_10%,transparent)] border-b border-[color-mix(in_srgb,var(--color-warning)_20%,transparent)] px-4 py-2.5">
           <div className="flex items-start gap-3 max-w-5xl mx-auto">
-            <FlaskConical className="h-4 w-4 text-amber-500 shrink-0 mt-0.5" />
+            <FlaskConical className="h-4 w-4 text-warning shrink-0 mt-0.5" />
             <div className="flex-1 min-w-0">
-              <p className="text-xs font-medium text-amber-500">
+              <p className="text-xs font-medium text-warning">
                 {t('beta.bannerTitle')}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5">
@@ -54,7 +54,7 @@ export function BetaBanner() {
               variant="ghost"
               size="sm"
               onClick={handleDismiss}
-              className="shrink-0 text-xs text-amber-500 hover:text-amber-400 hover:bg-amber-500/10 h-7 px-2"
+              className="shrink-0 text-xs text-warning hover:text-[color-mix(in_srgb,var(--color-warning)_80%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-warning)_10%,transparent)] h-7 px-2"
             >
               {t('beta.bannerDismiss')}
             </Button>

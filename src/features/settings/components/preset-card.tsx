@@ -22,7 +22,7 @@ export function PresetCard({ preset, active, onClick }: PresetCardProps) {
         'relative flex flex-col rounded-lg border overflow-hidden transition-all duration-150 group',
         active
           ? 'border-[var(--module-accent)]/50 ring-1 ring-[var(--module-accent)]/30'
-          : 'border-border/30 hover:border-border/50'
+          : 'border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] hover:border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]'
       )}
     >
       {/* Color preview mini-window */}

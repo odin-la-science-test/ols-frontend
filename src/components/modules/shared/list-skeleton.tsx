@@ -40,7 +40,7 @@ export function ListSkeleton({
   return (
     <div className={containerClass}>
       {Array.from({ length: count }).map((_, i) => (
-        <div key={i} className={cn(itemHeight, 'rounded-lg bg-muted/30 animate-pulse')} />
+        <div key={i} className={cn(itemHeight, 'rounded-lg bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] animate-pulse')} />
       ))}
     </div>
   );

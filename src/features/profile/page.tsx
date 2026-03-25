@@ -194,7 +194,7 @@ export function ProfilePage() {
               <Input
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
-                className="bg-card border-border/40 h-9"
+                className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] h-9"
               />
             </div>
             <div className="space-y-1.5">
@@ -202,7 +202,7 @@ export function ProfilePage() {
               <Input
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
-                className="bg-card border-border/40 h-9"
+                className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] h-9"
               />
             </div>
           </div>
@@ -215,7 +215,7 @@ export function ProfilePage() {
             <Input
               value={email}
               disabled
-              className="bg-muted/30 border-border/30 h-9 text-muted-foreground cursor-not-allowed"
+              className="bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] h-9 text-muted-foreground cursor-not-allowed"
             />
             <p className="text-[10px] text-muted-foreground/60">{t('profile.emailHint')}</p>
           </div>
@@ -228,7 +228,7 @@ export function ProfilePage() {
             <Input
               value={getRoleLabel()}
               disabled
-              className="bg-muted/30 border-border/30 h-9 text-muted-foreground cursor-not-allowed"
+              className="bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] h-9 text-muted-foreground cursor-not-allowed"
             />
           </div>
 
@@ -275,7 +275,7 @@ export function ProfilePage() {
                   type={showCurrentPw ? 'text' : 'password'}
                   value={currentPassword}
                   onChange={(e) => setCurrentPassword(e.target.value)}
-                  className="bg-card border-border/40 h-9 pr-9"
+                  className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] h-9 pr-9"
                 />
                 <button
                   type="button"
@@ -295,7 +295,7 @@ export function ProfilePage() {
                     type={showNewPw ? 'text' : 'password'}
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
-                    className="bg-card border-border/40 h-9 pr-9"
+                    className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] h-9 pr-9"
                   />
                   <button
                     type="button"
@@ -312,7 +312,7 @@ export function ProfilePage() {
                   type="password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="bg-card border-border/40 h-9"
+                  className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] h-9"
                 />
               </div>
             </div>

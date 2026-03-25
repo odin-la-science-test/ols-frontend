@@ -100,7 +100,7 @@ export function SidebarHeader({
   return (
     <div
       className={cn(
-        'flex items-center px-2.5 border-b border-border/30 justify-between shrink-0 relative',
+        'flex items-center px-2.5 border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] justify-between shrink-0 relative',
         density === 'compact' ? 'h-7' : 'h-9',
       )}
     >
@@ -127,8 +127,8 @@ export function SidebarHeader({
                   onClick={openAddMenu}
                   className={cn(
                     'p-0.5 rounded transition-colors',
-                    'text-muted-foreground/70 hover:text-foreground hover:bg-muted/40',
-                    addMenuOpen && 'bg-muted/40 text-foreground',
+                    'text-muted-foreground/70 hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)]',
+                    addMenuOpen && 'bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] text-foreground',
                   )}
                 >
                   <Plus className="h-3 w-3" />
@@ -146,7 +146,7 @@ export function SidebarHeader({
                   <button
                     key={p.id}
                     onMouseDown={(e) => { e.stopPropagation(); addToZone(p.id); setAddMenuOpen(false); }}
-                    className="w-full flex items-center gap-2 px-3 py-1.5 text-xs hover:bg-muted/50 text-foreground transition-colors whitespace-nowrap"
+                    className="w-full flex items-center gap-2 px-3 py-1.5 text-xs hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] text-foreground transition-colors whitespace-nowrap"
                   >
                     {p.label}
                   </button>
@@ -164,7 +164,7 @@ export function SidebarHeader({
                 onClick={flipSide}
                 className={cn(
                   'p-0.5 rounded transition-colors',
-                  'text-muted-foreground/70 hover:text-foreground hover:bg-muted/40',
+                  'text-muted-foreground/70 hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)]',
                 )}
               >
                 <ArrowLeftRight className="h-3 w-3" />
@@ -186,7 +186,7 @@ export function SidebarHeader({
                 onClick={toggleMode}
                 className={cn(
                   'p-0.5 rounded transition-colors',
-                  'text-muted-foreground/70 hover:text-foreground hover:bg-muted/40',
+                  'text-muted-foreground/70 hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)]',
                 )}
               >
                 {currentMode === 'dock' && <Layers className="h-3 w-3" />}
@@ -212,7 +212,7 @@ export function SidebarHeader({
                 onClick={toggleViewMode}
                 className={cn(
                   'p-0.5 rounded transition-colors',
-                  'text-muted-foreground/70 hover:text-foreground hover:bg-muted/40',
+                  'text-muted-foreground/70 hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)]',
                 )}
               >
                 {viewMode === 'tabs'
@@ -236,7 +236,7 @@ export function SidebarHeader({
               onClick={closeZone}
               className={cn(
                 'p-0.5 rounded',
-                'text-muted-foreground/70 hover:text-foreground hover:bg-muted/40',
+                'text-muted-foreground/70 hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)]',
                 'transition-colors',
               )}
             >

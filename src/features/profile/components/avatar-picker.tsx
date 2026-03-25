@@ -38,7 +38,7 @@ export function AvatarPicker({ currentAvatarId, onSelect, onClose, isLoading }: 
   };
 
   return (
-    <div className="rounded-xl border border-border/40 bg-card/95 backdrop-blur-xl p-4 shadow-2xl space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
+    <div className="rounded-xl border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-card)_95%,transparent)] backdrop-blur-xl p-4 shadow-2xl space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
       <div className="flex items-center justify-between">
         <h3 className="text-sm font-semibold">{t('profile.pickAvatar')}</h3>
         <button onClick={onClose} className="text-muted-foreground hover:text-foreground transition-colors">
@@ -56,9 +56,9 @@ export function AvatarPicker({ currentAvatarId, onSelect, onClose, isLoading }: 
               onClick={() => setSelected(avatar.id)}
               className={cn(
                 'relative rounded-lg p-1 transition-all duration-150',
-                'hover:bg-muted/50 hover:scale-105',
+                'hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] hover:scale-105',
                 selected === avatar.id
-                  ? 'ring-2 ring-primary bg-primary/10'
+                  ? 'ring-2 ring-primary bg-[color-mix(in_srgb,var(--color-primary)_10%,transparent)]'
                   : 'ring-1 ring-border/30'
               )}
             >
@@ -86,9 +86,9 @@ export function AvatarPicker({ currentAvatarId, onSelect, onClose, isLoading }: 
               onClick={() => setSelected(avatar.id)}
               className={cn(
                 'relative rounded-lg p-1 transition-all duration-150',
-                'hover:bg-muted/50 hover:scale-105',
+                'hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] hover:scale-105',
                 selected === avatar.id
-                  ? 'ring-2 ring-primary bg-primary/10'
+                  ? 'ring-2 ring-primary bg-[color-mix(in_srgb,var(--color-primary)_10%,transparent)]'
                   : 'ring-1 ring-border/30'
               )}
             >

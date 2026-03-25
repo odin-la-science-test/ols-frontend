@@ -82,7 +82,7 @@ function AdminMessageInput({ ticketId }: { ticketId: number }) {
         onKeyDown={handleKeyDown}
         placeholder={t('adminSupport.responsePlaceholder')}
         rows={2}
-        className="flex-1 border-border/40 bg-card resize-none"
+        className="flex-1 border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card resize-none"
       />
       <Button
         size="sm"
@@ -140,7 +140,7 @@ function AdminTicketDetailContent({ ticket }: { ticket: SupportTicket }) {
 
   return (
     <div className="space-y-4">
-      <div className="rounded-lg border border-border/40 bg-card p-3 space-y-2">
+      <div className="rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card p-3 space-y-2">
         <div className="flex items-center gap-2">
           <User className="w-3.5 h-3.5 text-muted-foreground" />
           <span className="text-sm font-medium">{ticket.ownerName}</span>
@@ -167,20 +167,20 @@ function AdminTicketDetailContent({ ticket }: { ticket: SupportTicket }) {
         <label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
           {t('support.description')}
         </label>
-        <div className="rounded-lg border border-border/40 bg-card p-3">
+        <div className="rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card p-3">
           <p className="text-sm whitespace-pre-wrap">{ticket.description}</p>
         </div>
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <div className="rounded-lg border border-border/40 bg-card p-3">
+        <div className="rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card p-3">
           <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-1">
             <Clock className="w-3 h-3" />
             {t('support.createdAt')}
           </div>
           <p className="text-sm font-medium">{formatDate(ticket.createdAt)}</p>
         </div>
-        <div className="rounded-lg border border-border/40 bg-card p-3">
+        <div className="rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card p-3">
           <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-1">
             <Clock className="w-3 h-3" />
             {t('support.updatedAt')}
@@ -246,7 +246,7 @@ function AdminTicketDetailContent({ ticket }: { ticket: SupportTicket }) {
                   'rounded-lg border p-3 space-y-1',
                   msg.admin
                     ? 'border-[var(--module-accent)]/20 bg-[var(--module-accent)]/5'
-                    : 'border-border/40 bg-card'
+                    : 'border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card'
                 )}
               >
                 <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -267,7 +267,7 @@ function AdminTicketDetailContent({ ticket }: { ticket: SupportTicket }) {
             <div ref={messagesEndRef} />
           </div>
         ) : (
-          <div className="flex items-center gap-2 rounded-lg border border-border/40 bg-muted/20 p-3">
+          <div className="flex items-center gap-2 rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)] p-3">
             <AlertCircle className="w-4 h-4 text-muted-foreground" strokeWidth={1.5} />
             <p className="text-xs text-muted-foreground">{t('support.noMessages')}</p>
           </div>

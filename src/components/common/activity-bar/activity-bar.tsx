@@ -105,19 +105,19 @@ export function ActivityBar({ className }: ActivityBarProps) {
     <div
       className={cn(
         'hidden lg:flex flex-shrink-0 z-30',
-        'bg-card/80',
+        'bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)]',
         'overflow-hidden',
         // ── Vertical layout (left/right) ──
         !isHorizontal && cn(
           'flex-col items-center',
           'overflow-y-auto overflow-x-hidden',
-          position === 'right' ? 'border-l border-border/50' : 'border-r border-border/50',
+          position === 'right' ? 'border-l border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]' : 'border-r border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]',
           density === 'compact' ? 'w-9 py-1 gap-0.5' : 'w-11 py-2',
         ),
         // ── Horizontal layout (top/bottom) ──
         isHorizontal && cn(
           'flex-row items-center',
-          position === 'bottom' ? 'border-t border-border/50' : 'border-b border-border/50',
+          position === 'bottom' ? 'border-t border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]' : 'border-b border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]',
           'overflow-x-auto overflow-y-hidden',
           density === 'compact' ? 'h-9 px-1 gap-0.5' : 'h-11 px-2',
         ),
@@ -190,8 +190,8 @@ export function ActivityBar({ className }: ActivityBarProps) {
       <div className={cn(
         'flex-shrink-0 flex items-center',
         isHorizontal
-          ? cn('flex-row border-l border-border/30 ml-auto', density === 'compact' ? 'pl-1 gap-0.5' : 'pl-2 gap-1')
-          : cn('flex-col border-t border-border/30 mt-auto', density === 'compact' ? 'pt-1 gap-0.5' : 'pt-2 gap-1'),
+          ? cn('flex-row border-l border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] ml-auto', density === 'compact' ? 'pl-1 gap-0.5' : 'pl-2 gap-1')
+          : cn('flex-col border-t border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] mt-auto', density === 'compact' ? 'pt-1 gap-0.5' : 'pt-2 gap-1'),
       )}>
         <ActivityBarUserAvatar barPosition={position} />
         {settingsItem && <SettingsQuickMenu barPosition={position} />}

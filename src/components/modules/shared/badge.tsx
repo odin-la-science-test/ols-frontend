@@ -15,7 +15,7 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default: 'bg-slate-100 text-slate-900 ring-slate-300 dark:bg-slate-800 dark:text-slate-100 dark:ring-slate-700 font-semibold',
-        secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80 ring-secondary/30',
+        secondary: 'bg-secondary text-secondary-foreground hover:bg-[color-mix(in_srgb,var(--color-secondary)_80%,transparent)] ring-secondary/30',
         success: 'bg-green-100 text-green-900 ring-green-300 dark:bg-green-500/25 dark:text-green-100 dark:ring-green-500/40 font-semibold',
         warning: 'bg-yellow-100 text-yellow-900 ring-yellow-300 dark:bg-yellow-500/25 dark:text-yellow-100 dark:ring-yellow-500/40 font-semibold',
         destructive: 'bg-red-100 text-red-900 ring-red-300 dark:bg-red-500/25 dark:text-red-100 dark:ring-red-500/40 font-semibold',

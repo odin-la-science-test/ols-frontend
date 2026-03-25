@@ -49,7 +49,7 @@ function WidgetEditOverlay({
 
   return (
     <div className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-3 py-1.5 pointer-events-none">
-      <div className="widget-drag-handle pointer-events-auto flex items-center gap-1.5 px-1.5 py-0.5 rounded-md cursor-grab active:cursor-grabbing text-muted-foreground/70 hover:text-foreground bg-muted/40 backdrop-blur-sm transition-colors">
+      <div className="widget-drag-handle pointer-events-auto flex items-center gap-1.5 px-1.5 py-0.5 rounded-md cursor-grab active:cursor-grabbing text-muted-foreground/70 hover:text-foreground bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] backdrop-blur-sm transition-colors">
         <GripVertical className="w-3 h-3" />
         <span className="text-[10px] font-medium">{t(titleKey)}</span>
       </div>
@@ -60,8 +60,8 @@ function WidgetEditOverlay({
             className={cn(
               'p-1 rounded-md backdrop-blur-sm transition-colors',
               settingsOpen
-                ? 'bg-primary/15 text-primary'
-                : 'bg-muted/40 text-muted-foreground/70 hover:text-foreground'
+                ? 'bg-[color-mix(in_srgb,var(--color-primary)_15%,transparent)] text-primary'
+                : 'bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] text-muted-foreground/70 hover:text-foreground'
             )}
           >
             <Settings className="w-3 h-3" />
@@ -69,7 +69,7 @@ function WidgetEditOverlay({
         )}
         <button
           onClick={() => setWidgetVisible(id, false)}
-          className="p-1 rounded-md bg-muted/40 backdrop-blur-sm text-muted-foreground/70 hover:text-destructive hover:bg-destructive/10 transition-colors"
+          className="p-1 rounded-md bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] backdrop-blur-sm text-muted-foreground/70 hover:text-destructive hover:bg-[color-mix(in_srgb,var(--color-destructive)_10%,transparent)] transition-colors"
         >
           <X className="w-3 h-3" />
         </button>
@@ -97,12 +97,12 @@ function HiddenWidgetsPanel({ widgetMap }: { widgetMap: Map<string, ModuleWidget
           return (
             <div
               key={widget.id}
-              className="relative rounded-xl border-2 border-dashed border-border/50 bg-muted/20 backdrop-blur-sm p-4 flex items-center justify-between gap-3"
+              className="relative rounded-xl border-2 border-dashed border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)] backdrop-blur-sm p-4 flex items-center justify-between gap-3"
             >
               <span className="text-xs text-muted-foreground">{t(def.titleKey)}</span>
               <button
                 onClick={() => setWidgetVisible(widget.id, true)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[color-mix(in_srgb,var(--color-primary)_10%,transparent)] text-primary hover:bg-[color-mix(in_srgb,var(--color-primary)_20%,transparent)] transition-colors"
               >
                 <Eye className="w-3.5 h-3.5" />
                 {t('dashboard.showWidget')}
@@ -273,7 +273,7 @@ export function HomePage() {
               !editMode && visibleWidgets.length === 0 && (
                 <div className="flex flex-col items-center justify-center py-16 text-muted-foreground/50">
                   <p className="text-sm">{t('dashboard.noWidgets')}</p>
-                  <button onClick={handleToggleEdit} className="mt-2 text-xs text-primary hover:text-primary/80 transition-colors">
+                  <button onClick={handleToggleEdit} className="mt-2 text-xs text-primary hover:text-[color-mix(in_srgb,var(--color-primary)_80%,transparent)] transition-colors">
                     {t('dashboard.customize')}
                   </button>
                 </div>
@@ -314,7 +314,7 @@ export function HomePage() {
                 variant="ghost"
                 size="sm"
                 onClick={resetToDefaults}
-                className="text-muted-foreground hover:text-destructive hover:bg-destructive/10 backdrop-blur-sm"
+                className="text-muted-foreground hover:text-destructive hover:bg-[color-mix(in_srgb,var(--color-destructive)_10%,transparent)] backdrop-blur-sm"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 {t('dashboard.reset')}

@@ -107,7 +107,7 @@ export function ShareDetailPanel({ item }: ShareDetailPanelProps) {
             {t('quickshare.shareLink')}
           </label>
           <div className="flex items-center gap-2">
-            <code className="flex-1 text-xs bg-muted/60 rounded px-2 py-1.5 truncate font-mono">
+            <code className="flex-1 text-xs bg-[color-mix(in_srgb,var(--color-muted)_60%,transparent)] rounded px-2 py-1.5 truncate font-mono">
               {shareLink}
             </code>
             <Button variant="outline" size="sm" onClick={copyLink} className="shrink-0">
@@ -118,7 +118,7 @@ export function ShareDetailPanel({ item }: ShareDetailPanelProps) {
 
         {/* Stats */}
         <div className="grid grid-cols-2 gap-3">
-          <div className="rounded-lg border border-border/40 bg-card p-3">
+          <div className="rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card p-3">
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-1">
               {isText ? <Eye className="w-3 h-3" /> : <Download className="w-3 h-3" />}
               {isText ? t('quickshare.views') : t('quickshare.downloads')}
@@ -130,7 +130,7 @@ export function ShareDetailPanel({ item }: ShareDetailPanelProps) {
               )}
             </p>
           </div>
-          <div className="rounded-lg border border-border/40 bg-card p-3">
+          <div className="rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card p-3">
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-1">
               <Clock className="w-3 h-3" />
               {t('quickshare.expiresLabel')}
@@ -147,7 +147,7 @@ export function ShareDetailPanel({ item }: ShareDetailPanelProps) {
 
         {/* Direct recipient */}
         {item.recipientEmail && (
-          <div className="flex items-center gap-2 px-3 py-2 rounded-lg border border-border/40 bg-card">
+          <div className="flex items-center gap-2 px-3 py-2 rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card">
             <UserCheck className="w-4 h-4 text-[var(--module-accent)] shrink-0" />
             <div className="flex-1 min-w-0">
               <p className="text-xs text-muted-foreground">{t('quickshare.sharedTo')}</p>
@@ -168,7 +168,7 @@ export function ShareDetailPanel({ item }: ShareDetailPanelProps) {
                 {t('quickshare.copyText')}
               </Button>
             </div>
-            <div className="rounded-lg border border-border/40 bg-muted p-3 max-h-64 overflow-y-auto">
+            <div className="rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-muted p-3 max-h-64 overflow-y-auto">
               <pre className="text-sm whitespace-pre-wrap break-words font-mono">{item.textContent}</pre>
             </div>
           </div>
@@ -181,7 +181,7 @@ export function ShareDetailPanel({ item }: ShareDetailPanelProps) {
               {item.files.map((file) => (
                 <div
                   key={file.id}
-                  className="rounded-lg border border-border/40 bg-card p-3 flex items-center gap-3"
+                  className="rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card p-3 flex items-center gap-3"
                 >
                   <File className="w-4 h-4 text-blue-500 shrink-0" strokeWidth={1.5} />
                   <div className="flex-1 min-w-0">

@@ -19,8 +19,8 @@ export function MenuItem({ children, onClick, isActive, disabled, className, acc
         'transition-colors duration-75',
         disabled
           ? 'opacity-40 cursor-not-allowed'
-          : 'hover:bg-muted/40 cursor-pointer',
-        isActive && 'bg-muted/30',
+          : 'hover:bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] cursor-pointer',
+        isActive && 'bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]',
         className
       )}
       style={isActive && accentColor ? { borderLeft: `2px solid ${accentColor}` } : undefined}
@@ -33,7 +33,7 @@ export function MenuItem({ children, onClick, isActive, disabled, className, acc
 // ─── Separator ───────────────────────────────────────────────────────────
 
 export function MenuSeparator() {
-  return <div className="h-px bg-border/30 my-1 mx-2" />;
+  return <div className="h-px bg-[color-mix(in_srgb,var(--color-border)_30%,transparent)] my-1 mx-2" />;
 }
 
 // ─── SubMenu for MenuBar dropdowns ───────────────────────────────────────
@@ -58,7 +58,7 @@ export function MenuSubMenu({ icon, label, children }: MenuSubMenuProps) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setOpen(false)}
     >
-      <button className="w-full flex items-center gap-2 px-3 py-1.5 text-xs text-left transition-colors duration-75 hover:bg-muted/40 cursor-pointer">
+      <button className="w-full flex items-center gap-2 px-3 py-1.5 text-xs text-left transition-colors duration-75 hover:bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] cursor-pointer">
         {icon}
         <span className="flex-1 truncate">{label}</span>
         <ChevronRight className="h-3 w-3 text-muted-foreground shrink-0" />
@@ -72,7 +72,7 @@ export function MenuSubMenu({ icon, label, children }: MenuSubMenuProps) {
             transition={{ duration: 0.1 }}
             className={cn(
               'absolute top-0 min-w-[200px] py-1 rounded-lg',
-              'bg-popover border border-border/50 shadow-xl backdrop-blur-xl z-[60]',
+              'bg-popover border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] shadow-xl backdrop-blur-xl z-[60]',
               openLeft ? 'right-full mr-1' : 'left-full ml-1',
             )}
           >

@@ -35,7 +35,7 @@ export function StatsBar({ stats, className }: StatsBarProps) {
         <Fragment key={stat.label}>
           <StatCard stat={stat} index={index} />
           {index < stats.length - 1 && (
-            <div className="hidden md:block h-8 w-px bg-border/50" />
+            <div className="hidden md:block h-8 w-px bg-[color-mix(in_srgb,var(--color-border)_50%,transparent)]" />
           )}
         </Fragment>
       ))}
@@ -97,7 +97,7 @@ function StatCard({ stat, index }: StatCardProps) {
       className="flex items-center gap-3"
     >
       {Icon && (
-        <div className="p-2 rounded-lg bg-primary/10">
+        <div className="p-2 rounded-lg bg-[color-mix(in_srgb,var(--color-primary)_10%,transparent)]">
           <Icon className="h-4 w-4 text-primary" />
         </div>
       )}

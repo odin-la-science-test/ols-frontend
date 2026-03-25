@@ -87,9 +87,9 @@ function TicketCard({ ticket, index, isSelected, onSelect }: TicketCardProps) {
       onClick={onSelect}
       className={cn(
         'group flex flex-col p-4 rounded-lg cursor-pointer',
-        'border border-border/40 bg-card',
-        'hover:bg-card hover:border-border/60 transition-all duration-200',
-        isSelected && 'ring-1 ring-[var(--module-accent)] border-border/60'
+        'border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card',
+        'hover:bg-card hover:border-[color-mix(in_srgb,var(--color-border)_60%,transparent)] transition-all duration-200',
+        isSelected && 'ring-1 ring-[var(--module-accent)] border-[color-mix(in_srgb,var(--color-border)_60%,transparent)]'
       )}
     >
       {/* Header row */}
@@ -108,7 +108,7 @@ function TicketCard({ ticket, index, isSelected, onSelect }: TicketCardProps) {
                 <button
                   onClick={handleDelete}
                   disabled={deleteMutation.isPending}
-                  className="p-1 rounded-md hover:bg-destructive/10 transition-colors opacity-0 group-hover:opacity-100"
+                  className="p-1 rounded-md hover:bg-[color-mix(in_srgb,var(--color-destructive)_10%,transparent)] transition-colors opacity-0 group-hover:opacity-100"
                 >
                   <Trash2 className="w-3.5 h-3.5 text-muted-foreground hover:text-destructive" />
                 </button>

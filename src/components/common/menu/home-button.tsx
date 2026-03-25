@@ -22,7 +22,7 @@ export function HomeButton({ isCompact, onClose }: HomeButtonProps) {
           onClick={() => { navigate('/'); onClose(); }}
           className={cn(
             'flex items-center justify-center rounded-sm transition-colors',
-            'hover:bg-muted/40',
+            'hover:bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)]',
             isCompact ? 'h-5 w-5' : 'h-6 w-6'
           )}
         >

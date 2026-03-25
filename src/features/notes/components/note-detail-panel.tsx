@@ -134,7 +134,7 @@ export function NoteDetailPanel({ note, onClose, onEdit }: NoteDetailPanelProps)
           <DetailSection title={t('notes.content')}>
             <div
               className={cn(
-                'rounded-lg border border-border/40 bg-card p-4',
+                'rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card p-4',
                 'text-sm whitespace-pre-wrap leading-relaxed'
               )}
             >

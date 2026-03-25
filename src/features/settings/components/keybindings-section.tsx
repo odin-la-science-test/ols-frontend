@@ -34,7 +34,7 @@ export function KeybindingsSection() {
       <div className="space-y-4">
         {/* Conflicts warning */}
         {conflicts.length > 0 && (
-          <div className="flex items-start gap-3 p-3 rounded-lg border border-warning/40 bg-warning/5">
+          <div className="flex items-start gap-3 p-3 rounded-lg border border-[color-mix(in_srgb,var(--color-warning)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-warning)_5%,transparent)]">
             <AlertTriangle className="w-4 h-4 text-warning shrink-0 mt-0.5" />
             <div className="text-xs">
               <p className="font-medium text-warning">{t('settingsPage.keybindingsConflict')}</p>
@@ -92,7 +92,7 @@ export function KeybindingsSection() {
               resetAllKeybindings();
               toast({ title: t('settingsPage.keybindingsReset') });
             }}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors border border-border/40"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]"
           >
             <RotateCcw className="w-3 h-3" />
             {t('settingsPage.keybindingsResetAll')}

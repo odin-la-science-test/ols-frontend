@@ -9,7 +9,7 @@ export function ItemTooltip({ label, position = 'left' }: { label: string; posit
       className={cn(
         'absolute px-2 py-1 rounded-md',
         'bg-popover text-popover-foreground text-xs font-medium',
-        'border border-border/50 shadow-lg',
+        'border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] shadow-lg',
         'opacity-0 group-hover:opacity-100 pointer-events-none',
         'transition-opacity duration-150 whitespace-nowrap z-50',
         position === 'top'

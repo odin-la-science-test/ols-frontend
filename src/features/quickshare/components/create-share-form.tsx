@@ -168,7 +168,7 @@ export function CreateShareForm({ onCreated, onCancel, moduleKey }: CreateShareF
         name="mode"
         control={control}
         render={({ field }) => (
-          <div className="flex gap-1 p-1 rounded-lg bg-muted/50 border border-border/40">
+          <div className="flex gap-1 p-1 rounded-lg bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]">
             <button
               type="button"
               onClick={() => field.onChange('text')}
@@ -203,7 +203,7 @@ export function CreateShareForm({ onCreated, onCancel, moduleKey }: CreateShareF
       <Input
         {...register('title')}
         placeholder={t('quickshare.titlePlaceholder')}
-        className="bg-card border-border/40"
+        className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]"
       />
 
       {/* Content area */}
@@ -212,7 +212,7 @@ export function CreateShareForm({ onCreated, onCancel, moduleKey }: CreateShareF
           {...register('textContent')}
           placeholder={t('quickshare.textPlaceholder')}
           rows={6}
-          className="border-border/40 bg-card font-mono"
+          className="border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card font-mono"
         />
       ) : (
         <UploadZone
@@ -263,7 +263,7 @@ export function CreateShareForm({ onCreated, onCancel, moduleKey }: CreateShareF
                 placeholder="∞"
                 value={field.value}
                 onChange={(e) => field.onChange(e.target.value.replace(/[^0-9]/g, ''))}
-                className="bg-card border-border/40 h-8 text-xs"
+                className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] h-8 text-xs"
               />
             )}
           />
@@ -279,7 +279,7 @@ export function CreateShareForm({ onCreated, onCancel, moduleKey }: CreateShareF
             <SidebarFormField label={t('quickshare.recipientLabel')}>
             <div className="relative">
               {field.value ? (
-                <div className="flex items-center gap-2 px-3 py-2 rounded-lg border border-border/40 bg-card text-sm">
+                <div className="flex items-center gap-2 px-3 py-2 rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card text-sm">
                   <Users className="w-4 h-4 text-[var(--module-accent)]" />
                   <span className="flex-1 truncate">{field.value}</span>
                   <button
@@ -310,7 +310,7 @@ export function CreateShareForm({ onCreated, onCancel, moduleKey }: CreateShareF
                           setShowContactPicker(false);
                         }
                       }}
-                      className="bg-card border-border/40 pl-9"
+                      className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] pl-9"
                     />
                   </div>
 
@@ -339,7 +339,7 @@ export function CreateShareForm({ onCreated, onCancel, moduleKey }: CreateShareF
                               setContactSearch('');
                               setShowContactPicker(false);
                             }}
-                            className="flex items-center gap-2 w-full px-3 py-2 text-left text-sm hover:bg-muted/50 transition-colors border-b border-border/20 last:border-b-0"
+                            className="flex items-center gap-2 w-full px-3 py-2 text-left text-sm hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors border-b border-[color-mix(in_srgb,var(--color-border)_20%,transparent)] last:border-b-0"
                           >
                             <div className="h-7 w-7 rounded-full bg-muted flex items-center justify-center text-xs font-medium text-muted-foreground">
                               {(user.firstName?.[0] || user.lastName?.[0] || '?').toUpperCase()}

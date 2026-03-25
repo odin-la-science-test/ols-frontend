@@ -24,7 +24,7 @@ export function DashboardWidgetWrapper({
   return (
     <div
       className={cn(
-        '@container h-full w-full rounded-xl overflow-hidden border border-border/30 bg-card/50 backdrop-blur-sm',
+        '@container h-full w-full rounded-xl overflow-hidden border border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] bg-[color-mix(in_srgb,var(--color-card)_50%,transparent)] backdrop-blur-sm',
         className,
       )}
     >

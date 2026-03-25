@@ -24,7 +24,7 @@ export function CommandItem({ icon, children, shortcut, onSelect, keywords }: Co
       keywords={keywords}
       className={cn(
         'flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer',
-        'text-sm text-foreground/90',
+        'text-sm text-[color-mix(in_srgb,var(--color-foreground)_90%,transparent)]',
         'data-[selected=true]:bg-muted data-[selected=true]:text-foreground',
         'transition-colors duration-150'
       )}
@@ -32,7 +32,7 @@ export function CommandItem({ icon, children, shortcut, onSelect, keywords }: Co
       {icon && <span className="text-muted-foreground">{icon}</span>}
       <span className="flex-1">{children}</span>
       {shortcut && (
-        <kbd className="hidden sm:inline-flex items-center gap-1 px-1.5 py-0.5 text-[10px] text-muted-foreground bg-muted/50 rounded">
+        <kbd className="hidden sm:inline-flex items-center gap-1 px-1.5 py-0.5 text-[10px] text-muted-foreground bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] rounded">
           {shortcut}
         </kbd>
       )}

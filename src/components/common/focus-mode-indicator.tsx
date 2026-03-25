@@ -64,9 +64,9 @@ export function FocusModeIndicator() {
           className={cn(
             'fixed bottom-4 left-4 z-[60]',
             'flex items-center gap-2 px-3 py-2 rounded-lg',
-            'bg-card/80 backdrop-blur-lg border border-border/40',
+            'bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)] backdrop-blur-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]',
             'text-xs text-muted-foreground',
-            'hover:text-foreground hover:border-border/60 hover:bg-card/90',
+            'hover:text-foreground hover:border-[color-mix(in_srgb,var(--color-border)_60%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-card)_90%,transparent)]',
             'transition-colors duration-200',
             'cursor-pointer select-none',
             'shadow-lg'
@@ -74,7 +74,7 @@ export function FocusModeIndicator() {
         >
           <Minimize2 className="w-3.5 h-3.5" strokeWidth={1.5} />
           <span>{t('focusMode.exitHint')}</span>
-          <kbd className="ml-1 px-1.5 py-0.5 text-[10px] bg-muted/50 rounded font-mono">
+          <kbd className="ml-1 px-1.5 py-0.5 text-[10px] bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] rounded font-mono">
             Ctrl+Shift+F
           </kbd>
         </motion.button>

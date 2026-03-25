@@ -135,7 +135,7 @@ export function ContactEditor({ contact, onSaved, onCancel, moduleKey }: Contact
             <Input
               {...register('firstName')}
               placeholder={t('contacts.firstNamePlaceholder')}
-              className="bg-card border-border/40"
+              className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]"
               autoFocus
             />
           </SidebarFormField>
@@ -143,7 +143,7 @@ export function ContactEditor({ contact, onSaved, onCancel, moduleKey }: Contact
             <Input
               {...register('lastName')}
               placeholder={t('contacts.lastNamePlaceholder')}
-              className="bg-card border-border/40"
+              className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]"
             />
           </SidebarFormField>
         </div>
@@ -154,7 +154,7 @@ export function ContactEditor({ contact, onSaved, onCancel, moduleKey }: Contact
             {...register('email')}
             type="email"
             placeholder={t('contacts.emailPlaceholder')}
-            className="bg-card border-border/40"
+            className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]"
           />
         </SidebarFormField>
 
@@ -164,7 +164,7 @@ export function ContactEditor({ contact, onSaved, onCancel, moduleKey }: Contact
             {...register('phone')}
             type="tel"
             placeholder={t('contacts.phonePlaceholder')}
-            className="bg-card border-border/40"
+            className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]"
           />
         </SidebarFormField>
 
@@ -174,14 +174,14 @@ export function ContactEditor({ contact, onSaved, onCancel, moduleKey }: Contact
             <Input
               {...register('organization')}
               placeholder={t('contacts.organizationPlaceholder')}
-              className="bg-card border-border/40"
+              className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]"
             />
           </SidebarFormField>
           <SidebarFormField label={t('contacts.jobTitle')}>
             <Input
               {...register('jobTitle')}
               placeholder={t('contacts.jobTitlePlaceholder')}
-              className="bg-card border-border/40"
+              className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]"
             />
           </SidebarFormField>
         </div>
@@ -192,7 +192,7 @@ export function ContactEditor({ contact, onSaved, onCancel, moduleKey }: Contact
             {...register('notes')}
             placeholder={t('contacts.notesPlaceholder')}
             rows={4}
-            className="border-border/40 bg-card"
+            className="border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card"
           />
         </SidebarFormField>
       </SidebarFormBody>

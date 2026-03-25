@@ -99,14 +99,14 @@ export function ProfilesSection() {
           <div className="flex items-center gap-1.5">
             <button
               onClick={() => setShowImportProfile(true)}
-              className="flex items-center gap-1.5 px-2 py-1 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+              className="flex items-center gap-1.5 px-2 py-1 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
             >
               <Upload className="w-3 h-3" />
               {t('profiles.import')}
             </button>
             <button
               onClick={() => setShowCreateProfile(true)}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium bg-foreground/10 hover:bg-foreground/15 text-foreground transition-colors"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium bg-[color-mix(in_srgb,var(--color-foreground)_10%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-foreground)_15%,transparent)] text-foreground transition-colors"
             >
               <Plus className="w-3 h-3" />
               {t('profiles.create')}
@@ -116,12 +116,12 @@ export function ProfilesSection() {
 
         {/* Create profile form */}
         {showCreateProfile && (
-          <div className="p-4 rounded-lg border border-border/40 bg-card/50 space-y-3">
+          <div className="p-4 rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-card)_50%,transparent)] space-y-3">
             <div className="flex items-center justify-between">
               <p className="text-sm font-medium">{t('profiles.createTitle')}</p>
               <button
                 onClick={() => setShowCreateProfile(false)}
-                className="p-1 rounded hover:bg-muted/50 transition-colors"
+                className="p-1 rounded hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
               >
                 <X className="w-3.5 h-3.5 text-muted-foreground" />
               </button>
@@ -134,7 +134,7 @@ export function ProfilesSection() {
               value={newProfileName}
               onChange={(e) => setNewProfileName(e.target.value)}
               placeholder={t('profiles.namePlaceholder')}
-              className="w-full px-3 py-2 text-sm rounded-md border border-border/40 bg-background/50 placeholder:text-muted-foreground/60 focus:outline-none focus:border-foreground/30 focus:ring-1 focus:ring-foreground/10 transition-all"
+              className="w-full px-3 py-2 text-sm rounded-md border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-background)_50%,transparent)] placeholder:text-muted-foreground/60 focus:outline-none focus:border-[color-mix(in_srgb,var(--color-foreground)_30%,transparent)] focus:ring-1 focus:ring-foreground/10 transition-all"
               autoFocus
             />
 
@@ -144,7 +144,7 @@ export function ProfilesSection() {
               value={newProfileDesc}
               onChange={(e) => setNewProfileDesc(e.target.value)}
               placeholder={t('profiles.descriptionPlaceholder')}
-              className="w-full px-3 py-2 text-sm rounded-md border border-border/40 bg-background/50 placeholder:text-muted-foreground/60 focus:outline-none focus:border-foreground/30 focus:ring-1 focus:ring-foreground/10 transition-all"
+              className="w-full px-3 py-2 text-sm rounded-md border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-background)_50%,transparent)] placeholder:text-muted-foreground/60 focus:outline-none focus:border-[color-mix(in_srgb,var(--color-foreground)_30%,transparent)] focus:ring-1 focus:ring-foreground/10 transition-all"
             />
 
             {/* Icon picker */}
@@ -159,7 +159,7 @@ export function ProfilesSection() {
                       'p-2 rounded-lg border transition-all',
                       newProfileIcon === iconId
                         ? 'border-[var(--module-accent)]/50 bg-[var(--module-accent-subtle)] ring-1 ring-[var(--module-accent)]/20'
-                        : 'border-border/30 hover:border-border/50 hover:bg-muted/30'
+                        : 'border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] hover:border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]'
                     )}
                   >
                     {getIconComponent(iconId, 'h-4 w-4')}
@@ -172,7 +172,7 @@ export function ProfilesSection() {
             <div className="flex items-center justify-end gap-2 pt-1">
               <button
                 onClick={() => setShowCreateProfile(false)}
-                className="px-3 py-1.5 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                className="px-3 py-1.5 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
               >
                 {t('profiles.cancel')}
               </button>
@@ -182,7 +182,7 @@ export function ProfilesSection() {
                 className={cn(
                   'px-3 py-1.5 rounded-md text-xs font-medium transition-colors',
                   newProfileName.trim()
-                    ? 'bg-foreground/10 hover:bg-foreground/15 text-foreground'
+                    ? 'bg-[color-mix(in_srgb,var(--color-foreground)_10%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-foreground)_15%,transparent)] text-foreground'
                     : 'opacity-40 cursor-not-allowed bg-muted text-muted-foreground'
                 )}
               >
@@ -194,12 +194,12 @@ export function ProfilesSection() {
 
         {/* Import profile form */}
         {showImportProfile && (
-          <div className="p-4 rounded-lg border border-border/40 bg-card/50 space-y-3">
+          <div className="p-4 rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-card)_50%,transparent)] space-y-3">
             <div className="flex items-center justify-between">
               <p className="text-sm font-medium">{t('profiles.importTitle')}</p>
               <button
                 onClick={() => { setShowImportProfile(false); setImportJson(''); }}
-                className="p-1 rounded hover:bg-muted/50 transition-colors"
+                className="p-1 rounded hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
               >
                 <X className="w-3.5 h-3.5 text-muted-foreground" />
               </button>
@@ -211,12 +211,12 @@ export function ProfilesSection() {
               placeholder={t('profiles.importPlaceholder')}
               rows={5}
               spellCheck={false}
-              className="text-xs font-mono border-border/40 bg-background/50 resize-none"
+              className="text-xs font-mono border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-background)_50%,transparent)] resize-none"
             />
             <div className="flex items-center justify-end gap-2">
               <button
                 onClick={() => { setShowImportProfile(false); setImportJson(''); }}
-                className="px-3 py-1.5 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                className="px-3 py-1.5 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
               >
                 {t('profiles.cancel')}
               </button>
@@ -226,7 +226,7 @@ export function ProfilesSection() {
                 className={cn(
                   'px-3 py-1.5 rounded-md text-xs font-medium transition-colors',
                   importJson.trim()
-                    ? 'bg-foreground/10 hover:bg-foreground/15 text-foreground'
+                    ? 'bg-[color-mix(in_srgb,var(--color-foreground)_10%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-foreground)_15%,transparent)] text-foreground'
                     : 'opacity-40 cursor-not-allowed bg-muted text-muted-foreground'
                 )}
               >
@@ -261,7 +261,7 @@ export function ProfilesSection() {
                 resetProfiles();
                 toast({ title: t('profiles.resetDone') });
               }}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors border border-border/40"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]"
             >
               <RotateCcw className="w-3 h-3" />
               {t('profiles.resetAll')}

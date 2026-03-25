@@ -178,7 +178,7 @@ export function CommandPalette() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
-            className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm"
+            className="fixed inset-0 z-50 bg-[color-mix(in_srgb,var(--color-background)_80%,transparent)] backdrop-blur-sm"
             onClick={close}
           />
 
@@ -192,8 +192,8 @@ export function CommandPalette() {
           >
             <Command
               className={cn(
-                'rounded-xl border border-border/50',
-                'bg-card/80 backdrop-blur-xl shadow-2xl',
+                'rounded-xl border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]',
+                'bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)] backdrop-blur-xl shadow-2xl',
                 'overflow-hidden flex flex-col max-h-[80vh]'
               )}
               loop
@@ -207,7 +207,7 @@ export function CommandPalette() {
               }}
             >
               {/* Search Input */}
-              <div className="flex items-center gap-3 px-4 border-b border-border/50">
+              <div className="flex items-center gap-3 px-4 border-b border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]">
                 {isSearching ? (
                   <Loader2 className="h-4 w-4 text-muted-foreground shrink-0 animate-spin" />
                 ) : (
@@ -239,7 +239,7 @@ export function CommandPalette() {
                 )}
                 <button
                   onClick={close}
-                  className="p-1 rounded hover:bg-muted/50 transition-colors"
+                  className="p-1 rounded hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
                 >
                   <X className="h-4 w-4 text-muted-foreground" />
                 </button>
@@ -341,18 +341,18 @@ export function CommandPalette() {
               </Command.List>
 
               {/* Footer with keyboard hints */}
-              <div className="flex items-center justify-between px-4 py-2 border-t border-border/30 text-[10px] text-muted-foreground/50">
+              <div className="flex items-center justify-between px-4 py-2 border-t border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] text-[10px] text-muted-foreground/50">
                 <div className="flex items-center gap-3">
                   <span className="flex items-center gap-1">
-                    <kbd className="px-1 py-0.5 bg-muted/30 rounded text-[9px]">↑↓</kbd>
+                    <kbd className="px-1 py-0.5 bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] rounded text-[9px]">↑↓</kbd>
                     {t('commandPalette.navigate')}
                   </span>
                   <span className="flex items-center gap-1">
-                    <kbd className="px-1 py-0.5 bg-muted/30 rounded text-[9px]">↵</kbd>
+                    <kbd className="px-1 py-0.5 bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] rounded text-[9px]">↵</kbd>
                     {t('commandPalette.select')}
                   </span>
                   <span className="flex items-center gap-1">
-                    <kbd className="px-1 py-0.5 bg-muted/30 rounded text-[9px]">Esc</kbd>
+                    <kbd className="px-1 py-0.5 bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] rounded text-[9px]">Esc</kbd>
                     {t('commandPalette.close')}
                   </span>
                 </div>

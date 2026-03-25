@@ -89,8 +89,8 @@ export function KeybindingRow({
         isRecording
           ? 'border-[var(--module-accent)]/40 bg-[var(--module-accent-subtle)] ring-1 ring-[var(--module-accent)]/20'
           : hasConflict
-            ? 'border-warning/40 bg-warning/5'
-            : 'border-border/40 bg-card hover:border-border/60'
+            ? 'border-[color-mix(in_srgb,var(--color-warning)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-warning)_5%,transparent)]'
+            : 'border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card hover:border-[color-mix(in_srgb,var(--color-border)_60%,transparent)]'
       )}
     >
       {/* Label */}
@@ -111,15 +111,15 @@ export function KeybindingRow({
       {/* Keybinding button / recorder */}
       {isRecording ? (
         <div className="flex items-center gap-2">
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-foreground/20 bg-foreground/5 animate-pulse">
-            <CornerDownLeft className="w-3 h-3 text-foreground/70" />
-            <span className="text-xs text-foreground/70 font-medium whitespace-nowrap">
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-[color-mix(in_srgb,var(--color-foreground)_20%,transparent)] bg-[color-mix(in_srgb,var(--color-foreground)_5%,transparent)] animate-pulse">
+            <CornerDownLeft className="w-3 h-3 text-[color-mix(in_srgb,var(--color-foreground)_70%,transparent)]" />
+            <span className="text-xs text-[color-mix(in_srgb,var(--color-foreground)_70%,transparent)] font-medium whitespace-nowrap">
               {t('settingsPage.keybindingsRecording')}
             </span>
           </div>
           <button
             onClick={(e) => { e.stopPropagation(); onStopRecording(); }}
-            className="p-1 rounded hover:bg-muted/50 transition-colors"
+            className="p-1 rounded hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
           >
             <X className="w-3.5 h-3.5 text-muted-foreground" />
           </button>
@@ -130,10 +130,10 @@ export function KeybindingRow({
             onClick={onStartRecording}
             className={cn(
               'px-2.5 py-1 rounded-md border text-xs font-mono transition-all',
-              'hover:border-foreground/20 hover:bg-foreground/5',
+              'hover:border-[color-mix(in_srgb,var(--color-foreground)_20%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-foreground)_5%,transparent)]',
               customized
                 ? 'border-[var(--module-accent)]/40 bg-[var(--module-accent-subtle)] text-[var(--module-accent)]'
-                : 'border-border/40 bg-muted/30 text-muted-foreground'
+                : 'border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] text-muted-foreground'
             )}
             title={t('settingsPage.keybindingsClickToRecord')}
           >
@@ -142,7 +142,7 @@ export function KeybindingRow({
           {customized && (
             <button
               onClick={(e) => { e.stopPropagation(); onReset(); }}
-              className="p-1 rounded hover:bg-muted/50 transition-colors"
+              className="p-1 rounded hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
               title={t('settingsPage.resetDefaults')}
             >
               <RotateCcw className="w-3 h-3 text-muted-foreground" />

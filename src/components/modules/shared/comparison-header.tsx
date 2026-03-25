@@ -29,7 +29,7 @@ export function ItemHeader<T extends { id: string | number }>({
   const subtitle = subtitleField ? String(getValue(item, String(subtitleField)) ?? '') : undefined;
 
   return (
-    <div className="flex flex-col items-center gap-1 p-3 bg-muted/30 rounded-lg min-w-0">
+    <div className="flex flex-col items-center gap-1 p-3 bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] rounded-lg min-w-0">
       <Tooltip delayDuration={200}>
         <TooltipTrigger asChild>
           <h4 className="font-semibold text-sm text-center truncate w-full italic">
@@ -73,7 +73,7 @@ export function MobileItemsSummary<T extends { id: string | number }>({
   const { t } = useTranslation();
 
   return (
-    <div className="md:hidden p-4 border-b border-border/30 bg-muted/20">
+    <div className="md:hidden p-4 border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]">
       <p className="text-xs text-muted-foreground mb-2 uppercase tracking-wide">
         {t('modules.comparison.selected', { count: items.length })}
       </p>
@@ -83,7 +83,7 @@ export function MobileItemsSummary<T extends { id: string | number }>({
           return (
             <div
               key={item.id}
-              className="flex items-center gap-1 px-2 py-1 bg-background/50 rounded-md border border-border/50"
+              className="flex items-center gap-1 px-2 py-1 bg-[color-mix(in_srgb,var(--color-background)_50%,transparent)] rounded-md border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]"
             >
               <Tooltip delayDuration={200}>
                 <TooltipTrigger asChild>

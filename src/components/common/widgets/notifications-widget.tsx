@@ -46,7 +46,7 @@ export function NotificationsWidget() {
             <Bell className="w-3.5 h-3.5" strokeWidth={1.5} />
             <span className="hidden @3xs:inline">{t('dashboard.widgets.notifications')}</span>
             {unreadCount > 0 && (
-              <span className="ml-0.5 px-1.5 py-0.5 text-[9px] font-semibold rounded-full bg-destructive/15 text-destructive">
+              <span className="ml-0.5 px-1.5 py-0.5 text-[9px] font-semibold rounded-full bg-[color-mix(in_srgb,var(--color-destructive)_15%,transparent)] text-destructive">
                 {unreadCount > 99 ? '99+' : unreadCount}
               </span>
             )}
@@ -79,7 +79,7 @@ export function NotificationsWidget() {
           {isLoading ? (
             <div className="space-y-2">
               {[1, 2, 3].map((i) => (
-                <div key={i} className="h-8 @xs:h-10 rounded-lg bg-muted/20 animate-pulse" />
+                <div key={i} className="h-8 @xs:h-10 rounded-lg bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)] animate-pulse" />
               ))}
             </div>
           ) : recentNotifications.length === 0 ? (
@@ -98,8 +98,8 @@ export function NotificationsWidget() {
                   }}
                   className={cn(
                     'w-full flex items-center gap-2 @xs:gap-2.5 px-2 @xs:px-2.5 rounded-lg text-left',
-                    'hover:bg-muted/30 transition-all duration-150 group',
-                    !notif.read && 'bg-primary/5'
+                    'hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] transition-all duration-150 group',
+                    !notif.read && 'bg-[color-mix(in_srgb,var(--color-primary)_5%,transparent)]'
                   )}
                 >
                   <span className={cn(

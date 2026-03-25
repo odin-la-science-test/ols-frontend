@@ -34,12 +34,12 @@ export function DetailPanelContent({
   return (
     <div className={cn('flex flex-col h-full overflow-hidden', className)}>
       {/* Header */}
-      <div className={cn('flex items-center gap-2 border-b border-border/50 px-3 py-2')}>
+      <div className={cn('flex items-center gap-2 border-b border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] px-3 py-2')}>
         <h2 className="text-sm font-semibold truncate flex-1 min-w-0">{title}</h2>
         {badge}
       </div>
       {subtitle && (
-        <div className="px-3 py-1 border-b border-border/20 bg-muted/20">
+        <div className="px-3 py-1 border-b border-[color-mix(in_srgb,var(--color-border)_20%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]">
           <p className="text-xs text-muted-foreground truncate">{subtitle}</p>
         </div>
       )}
@@ -51,7 +51,7 @@ export function DetailPanelContent({
 
       {/* Actions */}
       {actions && (
-        <div className={cn('border-t border-border/50 bg-muted/20', d.detailPadding)}>
+        <div className={cn('border-t border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]', d.detailPadding)}>
           {actions}
         </div>
       )}

@@ -106,8 +106,8 @@ export function ModuleToolbar({ className }: ModuleToolbarProps) {
             onClick={action.action}
             disabled={isDisabled}
             className={cn(
-              'h-6 gap-1.5 px-2 text-[11px] font-normal text-muted-foreground hover:text-foreground hover:bg-muted/50',
-              isActive && 'bg-muted/40 text-foreground'
+              'h-6 gap-1.5 px-2 text-[11px] font-normal text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
+              isActive && 'bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] text-foreground'
             )}
           >
             <ActionIcon className="h-3.5 w-3.5 shrink-0" />
@@ -131,8 +131,8 @@ export function ModuleToolbar({ className }: ModuleToolbarProps) {
             size="sm"
             onClick={handleFilterToggle}
             className={cn(
-              'h-6 gap-1.5 px-2 text-[11px] font-normal text-muted-foreground hover:text-foreground hover:bg-muted/50',
-              isFilterActive && 'bg-muted/40 text-foreground'
+              'h-6 gap-1.5 px-2 text-[11px] font-normal text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
+              isFilterActive && 'bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] text-foreground'
             )}
           >
             <SlidersHorizontal className="h-3.5 w-3.5 shrink-0" />
@@ -183,7 +183,7 @@ export function ToolbarSearch({ className }: { className?: string }) {
         value={local}
         onChange={(e) => setLocal(e.target.value)}
         placeholder={toolbarSearch.placeholder}
-        className="h-6 w-52 rounded-md border border-border/50 bg-background/50 pl-7 pr-6 text-[11px] text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/50 focus:bg-background transition-colors"
+        className="h-6 w-52 rounded-md border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] bg-[color-mix(in_srgb,var(--color-background)_50%,transparent)] pl-7 pr-6 text-[11px] text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-[color-mix(in_srgb,var(--color-primary)_50%,transparent)] focus:bg-background transition-colors"
       />
       {local && (
         <button

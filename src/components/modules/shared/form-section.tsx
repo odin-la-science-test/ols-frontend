@@ -40,13 +40,13 @@ export function FormSection({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: delay * 0.05 }}
       className={cn(
-        'rounded-xl border border-border/30 bg-card/50 scroll-mt-16',
+        'rounded-xl border border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] bg-[color-mix(in_srgb,var(--color-card)_50%,transparent)] scroll-mt-16',
         className
       )}
     >
       {title && (
         <div className={cn(
-          'border-b border-border/30 flex items-center justify-between',
+          'border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] flex items-center justify-between',
           d.density === 'compact' ? 'px-4 py-2.5' : d.density === 'comfortable' ? 'px-7 py-5' : 'px-6 py-4'
         )}>
           <div>

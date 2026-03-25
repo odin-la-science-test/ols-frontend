@@ -34,7 +34,7 @@ export function EmptyState({
         className
       )}
     >
-      <div className="p-4 rounded-full bg-muted/30 mb-4">
+      <div className="p-4 rounded-full bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] mb-4">
         <Icon className="h-8 w-8 text-muted-foreground/50" />
       </div>
       <h3 className="text-lg font-medium text-foreground mb-1">{title}</h3>

@@ -179,7 +179,7 @@ export function TabBarInner({ className, editorGroupId, externalDnd }: TabBarInn
         'hidden lg:flex items-end',
         isCompact ? 'px-1 pt-0.5' : 'px-1 pt-1',
         'bg-card border-b border-border z-20',
-        isDropTarget && 'bg-muted/60',
+        isDropTarget && 'bg-[color-mix(in_srgb,var(--color-muted)_60%,transparent)]',
         className,
       )}
       style={{ fontSize: '16px' }}

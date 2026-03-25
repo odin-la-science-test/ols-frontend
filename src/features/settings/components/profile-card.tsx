@@ -29,13 +29,13 @@ export function ProfileCard({ profile, isActive, onActivate, onExport, onDelete 
         'flex items-start gap-3 p-3 rounded-lg border transition-all',
         isActive
           ? 'border-[var(--module-accent)]/40 bg-[var(--module-accent-subtle)]'
-          : 'border-border/40 bg-card hover:border-border/60'
+          : 'border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card hover:border-[color-mix(in_srgb,var(--color-border)_60%,transparent)]'
       )}
     >
       {/* Icon */}
       <div className={cn(
         'shrink-0 p-2 rounded-lg',
-        isActive ? 'bg-foreground/10' : 'bg-muted/30'
+        isActive ? 'bg-[color-mix(in_srgb,var(--color-foreground)_10%,transparent)]' : 'bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]'
       )}>
         {getIconComponent(profile.icon, 'h-4 w-4')}
       </div>
@@ -84,7 +84,7 @@ export function ProfileCard({ profile, isActive, onActivate, onExport, onDelete 
         {!isActive && (
           <button
             onClick={onActivate}
-            className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+            className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
             title={t('profiles.activate')}
           >
             <Check className="w-3.5 h-3.5" />
@@ -92,7 +92,7 @@ export function ProfileCard({ profile, isActive, onActivate, onExport, onDelete 
         )}
         <button
           onClick={onExport}
-          className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+          className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
           title={t('profiles.export')}
         >
           <Copy className="w-3.5 h-3.5" />
@@ -100,7 +100,7 @@ export function ProfileCard({ profile, isActive, onActivate, onExport, onDelete 
         {!profile.isDefault && (
           <button
             onClick={onDelete}
-            className="p-1.5 rounded-md text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
+            className="p-1.5 rounded-md text-muted-foreground hover:text-destructive hover:bg-[color-mix(in_srgb,var(--color-destructive)_10%,transparent)] transition-colors"
             title={t('profiles.delete')}
           >
             <Trash2 className="w-3.5 h-3.5" />

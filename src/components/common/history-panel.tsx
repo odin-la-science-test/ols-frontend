@@ -68,7 +68,7 @@ export function HistoryPanel() {
   return (
     <div className="flex flex-col h-full">
       {/* Toolbar */}
-      <div className="flex items-center gap-1 px-2 py-1.5 border-b border-border/30">
+      <div className="flex items-center gap-1 px-2 py-1.5 border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]">
         <IconButtonWithTooltip
           icon={<Undo2 className="w-4 h-4" strokeWidth={1.5} />}
           tooltip={t('history.undo')}
@@ -113,8 +113,8 @@ export function HistoryPanel() {
                 onClick={() => handleJumpTo(entry.id)}
                 className={cn(
                   'flex items-center gap-2 w-full px-2 py-1.5 rounded-md text-left text-xs transition-colors duration-200',
-                  'hover:bg-muted/50',
-                  isActive && 'border-l-2 border-[var(--module-accent,var(--color-primary))] bg-muted/30',
+                  'hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
+                  isActive && 'border-l-2 border-[var(--module-accent,var(--color-primary))] bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]',
                   isUndone && 'opacity-40',
                   !isActive && !isUndone && 'border-l-2 border-transparent',
                 )}

@@ -76,7 +76,7 @@ function BiochemBar({ label, fullLabel, percentage }: {
       <TooltipTrigger asChild>
         <div className="flex flex-col items-center gap-1 group">
           {/* Bar container */}
-          <div className="relative w-6 h-8 rounded-md bg-muted/40 dark:bg-muted/20 overflow-hidden ring-1 ring-inset ring-border/20">
+          <div className="relative w-6 h-8 rounded-md bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] dark:bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)] overflow-hidden ring-1 ring-inset ring-border/20">
             {percentage !== null && (
               <motion.div
                 initial={{ height: 0 }}
@@ -233,7 +233,7 @@ export function GramOverviewPanel() {
         </div>
 
         {/* ── Separator ── */}
-        <div className="hidden sm:block w-px self-stretch bg-border/40" />
+        <div className="hidden sm:block w-px self-stretch bg-[color-mix(in_srgb,var(--color-border)_40%,transparent)]" />
 
         {/* ── Section 2: Clinical indicators ── */}
         <div className="flex flex-col gap-2 shrink-0">
@@ -257,7 +257,7 @@ export function GramOverviewPanel() {
         </div>
 
         {/* ── Separator ── */}
-        <div className="hidden sm:block w-px self-stretch bg-border/40" />
+        <div className="hidden sm:block w-px self-stretch bg-[color-mix(in_srgb,var(--color-border)_40%,transparent)]" />
 
         {/* ── Section 3: Biochemical profile ── */}
         <div className="flex flex-col gap-2 min-w-0">

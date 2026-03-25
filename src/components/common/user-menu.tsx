@@ -95,7 +95,7 @@ function MenuContent({
           </Button>
         )}
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-60 bg-card/80 backdrop-blur-xl border-border/50 shadow-2xl">
+      <DropdownMenuContent align="end" className="w-60 bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)] backdrop-blur-xl border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] shadow-2xl">
         {/* User Info */}
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
@@ -106,7 +106,7 @@ function MenuContent({
             <p className="text-xs text-primary font-medium">{getRoleLabel()}</p>
           </div>
         </DropdownMenuLabel>
-        <DropdownMenuSeparator className="bg-border/50" />
+        <DropdownMenuSeparator className="bg-[color-mix(in_srgb,var(--color-border)_50%,transparent)]" />
 
         {/* Profile & Settings */}
         <DropdownMenuItem onClick={() => navigate('/profile')} className="cursor-pointer">
@@ -119,7 +119,7 @@ function MenuContent({
         </DropdownMenuItem>
 
         {/* ── Workspace Profiles ── */}
-        <DropdownMenuSeparator className="bg-border/50" />
+        <DropdownMenuSeparator className="bg-[color-mix(in_srgb,var(--color-border)_50%,transparent)]" />
         <DropdownMenuLabel className="flex items-center justify-between text-xs text-muted-foreground font-normal py-1.5">
           <span className="flex items-center gap-1.5">
             <UserCircle className="h-3 w-3" />
@@ -155,7 +155,7 @@ function MenuContent({
           <span className="ml-5 text-xs">{t('profiles.create')} →</span>
         </DropdownMenuItem>
 
-        <DropdownMenuSeparator className="bg-border/50" />
+        <DropdownMenuSeparator className="bg-[color-mix(in_srgb,var(--color-border)_50%,transparent)]" />
 
         {/* Theme Toggle */}
         <DropdownMenuItem onClick={toggleTheme} className="cursor-pointer">
@@ -168,7 +168,7 @@ function MenuContent({
         </DropdownMenuItem>
 
         {/* Language Selection */}
-        <DropdownMenuSeparator className="bg-border/50" />
+        <DropdownMenuSeparator className="bg-[color-mix(in_srgb,var(--color-border)_50%,transparent)]" />
         <DropdownMenuLabel className="flex items-center text-xs text-muted-foreground font-normal">
           <Globe className="mr-2 h-3 w-3" />
           {t('settings.language')}
@@ -186,7 +186,7 @@ function MenuContent({
         ))}
 
         {/* Logout */}
-        <DropdownMenuSeparator className="bg-border/50" />
+        <DropdownMenuSeparator className="bg-[color-mix(in_srgb,var(--color-border)_50%,transparent)]" />
         <DropdownMenuItem
           onClick={logout}
           className="text-destructive focus:text-destructive cursor-pointer"

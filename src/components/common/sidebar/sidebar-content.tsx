@@ -191,9 +191,9 @@ export function UnifiedSidebarContent({
       <div
         className={cn(
           'flex flex-col h-full',
-          isActivity ? 'bg-card/80' : 'bg-card',
-          isActivity && (isLeft ? 'border-r border-border/30' : 'border-l border-border/30'),
-          !isActivity && isOverlay && (isLeft ? 'border-r border-border/30' : 'border-l border-border/30'),
+          isActivity ? 'bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)]' : 'bg-card',
+          isActivity && (isLeft ? 'border-r border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]' : 'border-l border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]'),
+          !isActivity && isOverlay && (isLeft ? 'border-r border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]' : 'border-l border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]'),
         )}
       >
         <SidebarHeader

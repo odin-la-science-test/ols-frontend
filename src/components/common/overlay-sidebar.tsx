@@ -106,14 +106,14 @@ export function OverlaySidebar({
             exit={{ x: isLeft ? -width : width, opacity: 0 }}
             transition={{ type: 'spring', damping: 28, stiffness: 320 }}
             className={cn(
-              'absolute bg-card/95 backdrop-blur-sm shadow-2xl flex flex-col rounded-lg overflow-hidden',
-              isLeft ? 'left-0 border border-border/40' : 'right-0 border border-border/40',
+              'absolute bg-[color-mix(in_srgb,var(--color-card)_95%,transparent)] backdrop-blur-sm shadow-2xl flex flex-col rounded-lg overflow-hidden',
+              isLeft ? 'left-0 border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]' : 'right-0 border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]',
             )}
             style={{ width, top: topOffset + 4, bottom: bottomOffset + 4, zIndex, [isLeft ? 'left' : 'right']: 4 }}
           >
             {/* Top resize handle */}
             <div
-              className="absolute left-2 right-2 top-0 h-1 cursor-ns-resize z-10 hover:bg-primary/30 active:bg-primary/50 transition-colors rounded-full"
+              className="absolute left-2 right-2 top-0 h-1 cursor-ns-resize z-10 hover:bg-[color-mix(in_srgb,var(--color-primary)_30%,transparent)] active:bg-[color-mix(in_srgb,var(--color-primary)_50%,transparent)] transition-colors rounded-full"
               onMouseDown={onTopMouseDown}
             />
             {/* Content */}
@@ -122,13 +122,13 @@ export function OverlaySidebar({
             </div>
             {/* Bottom resize handle */}
             <div
-              className="absolute left-2 right-2 bottom-0 h-1 cursor-ns-resize z-10 hover:bg-primary/30 active:bg-primary/50 transition-colors rounded-full"
+              className="absolute left-2 right-2 bottom-0 h-1 cursor-ns-resize z-10 hover:bg-[color-mix(in_srgb,var(--color-primary)_30%,transparent)] active:bg-[color-mix(in_srgb,var(--color-primary)_50%,transparent)] transition-colors rounded-full"
               onMouseDown={onBottomMouseDown}
             />
             {/* Width resize handle on inner edge */}
             <div
               className={cn(
-                'absolute top-2 bottom-2 w-1 cursor-ew-resize z-10 hover:bg-primary/30 active:bg-primary/50 transition-colors rounded-full',
+                'absolute top-2 bottom-2 w-1 cursor-ew-resize z-10 hover:bg-[color-mix(in_srgb,var(--color-primary)_30%,transparent)] active:bg-[color-mix(in_srgb,var(--color-primary)_50%,transparent)] transition-colors rounded-full',
                 isLeft ? 'right-0' : 'left-0',
               )}
               onMouseDown={onWidthMouseDown}

@@ -86,7 +86,7 @@ export function ModuleHeader({
   return (
     <div
       className={cn(
-        'w-full shrink-0 border-b border-border/30 lg:hidden',
+        'w-full shrink-0 border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] lg:hidden',
         className
       )}
     >
@@ -98,7 +98,7 @@ export function ModuleHeader({
         <div className="flex items-center gap-1 min-w-0">
           <Link
             to={backTo}
-            className="flex items-center justify-center h-7 w-7 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors shrink-0"
+            className="flex items-center justify-center h-7 w-7 rounded-md text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors shrink-0"
           >
             <ArrowLeft className="h-4 w-4" />
           </Link>

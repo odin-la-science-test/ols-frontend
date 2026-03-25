@@ -116,11 +116,11 @@ export function ExplorerPanel() {
                     'px-2', compactPy,
                     isActive
                       ? 'text-foreground font-medium'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted/50',
+                      : 'text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
                   )}
                 >
                   <div
-                    className={cn('w-1.5 h-1.5 rounded-full shrink-0', !isActive && 'opacity-0', isActive && !accentColor && 'bg-foreground/40')}
+                    className={cn('w-1.5 h-1.5 rounded-full shrink-0', !isActive && 'opacity-0', isActive && !accentColor && 'bg-[color-mix(in_srgb,var(--color-foreground)_40%,transparent)]')}
                     style={isActive && accentColor ? { backgroundColor: accentColor } : undefined}
                   />
                   {getIconComponent(tab.icon, 'h-4 w-4 shrink-0')}
@@ -131,7 +131,7 @@ export function ExplorerPanel() {
                       <TooltipTrigger asChild>
                         <span
                           onClick={(e) => { e.preventDefault(); e.stopPropagation(); togglePinTab(tab.id); }}
-                          className="p-0.5 rounded text-primary hover:bg-muted/80 transition-all"
+                          className="p-0.5 rounded text-primary hover:bg-[color-mix(in_srgb,var(--color-muted)_80%,transparent)] transition-all"
                         >
                           <Pin className="h-3 w-3" />
                         </span>
@@ -146,7 +146,7 @@ export function ExplorerPanel() {
                         <TooltipTrigger asChild>
                           <span
                             onClick={(e) => { e.preventDefault(); e.stopPropagation(); togglePinTab(tab.id); }}
-                            className="p-0.5 rounded hover:bg-muted/80"
+                            className="p-0.5 rounded hover:bg-[color-mix(in_srgb,var(--color-muted)_80%,transparent)]"
                           >
                             <Pin className="h-3 w-3" />
                           </span>
@@ -159,7 +159,7 @@ export function ExplorerPanel() {
                         <TooltipTrigger asChild>
                           <span
                             onClick={(e) => handleCloseTab(e, tab.id)}
-                            className="p-0.5 rounded hover:bg-muted/80"
+                            className="p-0.5 rounded hover:bg-[color-mix(in_srgb,var(--color-muted)_80%,transparent)]"
                           >
                             <X className="h-3 w-3" />
                           </span>
@@ -196,11 +196,11 @@ export function ExplorerPanel() {
                     'px-2', compactPy,
                     isActive
                       ? 'text-foreground font-medium'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted/50',
+                      : 'text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
                   )}
                 >
                   <div
-                    className={cn('w-1.5 h-1.5 rounded-full shrink-0', !isActive && 'opacity-0', isActive && !accentColor && 'bg-foreground/40')}
+                    className={cn('w-1.5 h-1.5 rounded-full shrink-0', !isActive && 'opacity-0', isActive && !accentColor && 'bg-[color-mix(in_srgb,var(--color-foreground)_40%,transparent)]')}
                     style={isActive && accentColor ? { backgroundColor: accentColor } : undefined}
                   />
                   {getIconComponent(item.icon, 'h-4 w-4 shrink-0')}
@@ -209,7 +209,7 @@ export function ExplorerPanel() {
                     <TooltipTrigger asChild>
                       <span
                         onClick={(e) => { e.preventDefault(); e.stopPropagation(); togglePin(item.path); }}
-                        className="p-0.5 rounded opacity-0 group-hover:opacity-100 hover:bg-muted/80 transition-all text-primary"
+                        className="p-0.5 rounded opacity-0 group-hover:opacity-100 hover:bg-[color-mix(in_srgb,var(--color-muted)_80%,transparent)] transition-all text-primary"
                       >
                         <PinOff className="h-3 w-3" />
                       </span>
@@ -245,11 +245,11 @@ export function ExplorerPanel() {
                     'px-2', compactPy,
                     isActive
                       ? 'text-foreground font-medium'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted/50',
+                      : 'text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
                   )}
                 >
                   <div
-                    className={cn('w-1.5 h-1.5 rounded-full shrink-0', !isActive && 'opacity-0', isActive && !accentColor && 'bg-foreground/40')}
+                    className={cn('w-1.5 h-1.5 rounded-full shrink-0', !isActive && 'opacity-0', isActive && !accentColor && 'bg-[color-mix(in_srgb,var(--color-foreground)_40%,transparent)]')}
                     style={isActive && accentColor ? { backgroundColor: accentColor } : undefined}
                   />
                   {getIconComponent(item.icon, 'h-4 w-4 shrink-0')}
@@ -260,7 +260,7 @@ export function ExplorerPanel() {
                       <TooltipTrigger asChild>
                         <span
                           onClick={(e) => { e.preventDefault(); e.stopPropagation(); togglePin(item.path); }}
-                          className={cn('p-0.5 rounded hover:bg-muted/80', pinned && 'text-primary')}
+                          className={cn('p-0.5 rounded hover:bg-[color-mix(in_srgb,var(--color-muted)_80%,transparent)]', pinned && 'text-primary')}
                         >
                           {pinned ? <PinOff className="h-3 w-3" /> : <Pin className="h-3 w-3" />}
                         </span>
@@ -271,7 +271,7 @@ export function ExplorerPanel() {
                       <TooltipTrigger asChild>
                         <span
                           onClick={(e) => { e.preventDefault(); e.stopPropagation(); removeRecent(item.path); }}
-                          className="p-0.5 rounded hover:bg-muted/80"
+                          className="p-0.5 rounded hover:bg-[color-mix(in_srgb,var(--color-muted)_80%,transparent)]"
                         >
                           <X className="h-3 w-3" />
                         </span>
@@ -294,7 +294,7 @@ export function ExplorerPanel() {
       </div>
 
       {/* Bottom action */}
-      <div className="p-2 border-t border-border/30">
+      <div className="p-2 border-t border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]">
         <Tooltip delayDuration={200}>
           <TooltipTrigger asChild>
             <button
@@ -302,13 +302,13 @@ export function ExplorerPanel() {
               className={cn(
                 'flex items-center gap-2 w-full rounded-lg',
                 density === 'compact' ? 'px-2 py-1' : 'px-2 py-1.5',
-                'text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50',
+                'text-sm text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
                 'transition-colors',
               )}
             >
               <Search className="h-4 w-4" />
               <span className="flex-1 text-left">{t('commandPalette.search')}</span>
-              <kbd className="px-1.5 py-0.5 text-[10px] bg-muted/50 rounded">
+              <kbd className="px-1.5 py-0.5 text-[10px] bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] rounded">
                 {t('shortcuts.keys.commandPalette')}
               </kbd>
             </button>

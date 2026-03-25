@@ -59,8 +59,8 @@ export function BottomPanelSection() {
                 className={cn(
                   'flex flex-col items-center gap-2 p-3 rounded-lg transition-all duration-150 min-w-[72px]',
                   isSelected
-                    ? 'bg-muted/40 text-foreground'
-                    : 'text-muted-foreground hover:bg-muted/30 hover:text-foreground'
+                    ? 'bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] text-foreground'
+                    : 'text-muted-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] hover:text-foreground'
                 )}
               >
                 <Icon className="w-4 h-4" />

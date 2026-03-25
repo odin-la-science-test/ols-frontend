@@ -114,7 +114,7 @@ export function SplitEditorPane({ externalDnd }: { externalDnd?: boolean }) {
 
         {/* Breadcrumbs + Outils row — mirrors the main editor group */}
         {showToolbarRow && (
-          <div className="relative z-30 shrink-0 flex items-center gap-2 px-4 py-1.5 border-b border-border/40 bg-card/85 backdrop-blur-sm min-h-8">
+          <div className="relative z-30 shrink-0 flex items-center gap-2 px-4 py-1.5 border-b border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-card)_85%,transparent)] backdrop-blur-sm min-h-8">
             {showBreadcrumbs && activePath && (
               <Breadcrumbs className="min-w-0" pathOverride={activePath} />
             )}

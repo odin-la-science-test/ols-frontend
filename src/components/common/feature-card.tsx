@@ -66,7 +66,7 @@ export function FeatureCard({
     >
       <motion.div 
         className={cn(
-          "relative h-full rounded-2xl overflow-hidden bg-card/90 backdrop-blur-md border border-border/70 transition-all duration-300 ease-out",
+          "relative h-full rounded-2xl overflow-hidden bg-[color-mix(in_srgb,var(--color-card)_90%,transparent)] backdrop-blur-md border border-[color-mix(in_srgb,var(--color-border)_70%,transparent)] transition-all duration-300 ease-out",
           isLocked 
             ? "grayscale-[30%]" 
             : !showColoredBg && "group-hover:border-border group-hover:bg-card"
@@ -200,7 +200,7 @@ export function FeatureCard({
             <h3 
               className={cn(
                 "text-lg font-semibold mb-2 transition-colors truncate",
-                !showColoredBg && "text-foreground group-hover:text-foreground/90"
+                !showColoredBg && "text-foreground group-hover:text-[color-mix(in_srgb,var(--color-foreground)_90%,transparent)]"
               )}
               style={showColoredBg ? { color: 'white' } : undefined}
             >

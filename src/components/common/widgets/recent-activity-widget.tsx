@@ -58,7 +58,7 @@ export function RecentActivityWidget() {
                   className={cn(
                     'w-full flex items-center gap-2 @xs:gap-2.5 px-2 @xs:px-2.5 rounded-lg text-left',
                     'text-muted-foreground hover:text-foreground',
-                    'hover:bg-muted/30 transition-all duration-150 group'
+                    'hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] transition-all duration-150 group'
                   )}
                 >
                   <span className="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity">

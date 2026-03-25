@@ -94,7 +94,7 @@ export default function SupportPanel() {
   return (
     <>
       {/* Quick capture */}
-      <div className="px-3 py-2.5 border-b border-border/30 space-y-2">
+      <div className="px-3 py-2.5 border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] space-y-2">
         <div className="flex items-center gap-2">
           <Input
             ref={inputRef}
@@ -105,7 +105,7 @@ export default function SupportPanel() {
             }}
             onKeyDown={handleKeyDown}
             placeholder={t('support.subjectPlaceholder')}
-            className="h-7 text-xs bg-muted/30 border-border/40"
+            className="h-7 text-xs bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]"
           />
           <Tooltip delayDuration={200}>
             <TooltipTrigger asChild>
@@ -116,8 +116,8 @@ export default function SupportPanel() {
                   'flex items-center justify-center rounded-md h-7 w-7 shrink-0',
                   'transition-colors',
                   quickSubject.trim() && quickDescription.trim()
-                    ? 'bg-primary text-primary-foreground hover:bg-primary/90'
-                    : 'bg-muted/50 text-muted-foreground cursor-not-allowed'
+                    ? 'bg-primary text-primary-foreground hover:bg-[color-mix(in_srgb,var(--color-primary)_90%,transparent)]'
+                    : 'bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] text-muted-foreground cursor-not-allowed'
                 )}
               >
                 {createTicket.isPending ? (
@@ -151,8 +151,8 @@ export default function SupportPanel() {
                     className={cn(
                       'text-[10px] px-2 py-0.5 rounded-md font-medium border transition-all',
                       quickCategory === cat
-                        ? 'border-primary/40 bg-primary/10 text-primary'
-                        : 'border-border/40 bg-card text-muted-foreground hover:border-border/60',
+                        ? 'border-[color-mix(in_srgb,var(--color-primary)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-primary)_10%,transparent)] text-primary'
+                        : 'border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card text-muted-foreground hover:border-[color-mix(in_srgb,var(--color-border)_60%,transparent)]',
                     )}
                   >
                     {ticketCategoryLabel(cat, t)}
@@ -176,7 +176,7 @@ export default function SupportPanel() {
                 }}
                 placeholder={t('support.descriptionPlaceholder')}
                 className={cn(
-                  'border-border/40 bg-muted/30',
+                  'border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]',
                   'text-xs',
                   'px-2.5 resize-none',
                   'min-h-[60px] max-h-[120px]'
@@ -211,7 +211,7 @@ export default function SupportPanel() {
                 onClick={() => navigate(supportRoute)}
                 className={cn(
                   'w-full flex items-start gap-2 rounded-lg text-left',
-                  'hover:bg-muted/50 transition-colors',
+                  'hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors',
                   density === 'compact' ? 'px-2 py-1' : 'px-2 py-1.5',
                 )}
               >
@@ -232,13 +232,13 @@ export default function SupportPanel() {
       </div>
 
       {/* View all link */}
-      <div className="p-2 border-t border-border/30">
+      <div className="p-2 border-t border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]">
         <Link
           to={supportRoute}
           className={cn(
             'flex items-center justify-center gap-2 w-full rounded-lg',
             density === 'compact' ? 'px-2 py-1' : 'px-2 py-1.5',
-            'text-xs text-muted-foreground hover:text-foreground hover:bg-muted/50',
+            'text-xs text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
             'transition-colors',
           )}
         >

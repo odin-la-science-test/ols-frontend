@@ -112,7 +112,7 @@ export function RegisterPage() {
   <Card variant="glass" className="overflow-hidden">
     <div className="grid md:grid-cols-2">
       {/* Left Side - Features */}
-      <div className="hidden md:flex bg-gradient-to-br from-primary/10 via-accent/5 to-transparent p-8 flex-col justify-center border-r border-border/50">
+      <div className="hidden md:flex bg-gradient-to-br from-primary/10 via-accent/5 to-transparent p-8 flex-col justify-center border-r border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -137,7 +137,7 @@ export function RegisterPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
               >
-                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[color-mix(in_srgb,var(--color-primary)_10%,transparent)] border border-[color-mix(in_srgb,var(--color-primary)_20%,transparent)] flex items-center justify-center">
                   <feature.icon className="h-5 w-5 text-primary" />
                 </div>
                 <div>
@@ -245,11 +245,11 @@ export function RegisterPage() {
                         </div>
                         <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
                           {t('auth.acceptTerms')}{' '}
-                          <Link to="/terms" className="text-primary hover:text-primary/90 transition-colors">
+                          <Link to="/terms" className="text-primary hover:text-[color-mix(in_srgb,var(--color-primary)_90%,transparent)] transition-colors">
                             {t('auth.termsOfService')}
                           </Link>{' '}
                           {t('auth.and')}{' '}
-                          <Link to="/privacy" className="text-primary hover:text-primary/90 transition-colors">
+                          <Link to="/privacy" className="text-primary hover:text-[color-mix(in_srgb,var(--color-primary)_90%,transparent)] transition-colors">
                             {t('auth.privacyPolicy')}
                           </Link>
                         </span>
@@ -276,7 +276,7 @@ export function RegisterPage() {
                     {t('auth.hasAccount')}{' '}
                     <Link
                       to="/login"
-                      className="relative text-primary font-medium transition-all duration-200 hover:text-primary/90 after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary/60 after:transition-all after:duration-300 hover:after:w-full"
+                      className="relative text-primary font-medium transition-all duration-200 hover:text-[color-mix(in_srgb,var(--color-primary)_90%,transparent)] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-[color-mix(in_srgb,var(--color-primary)_60%,transparent)] after:transition-all after:duration-300 hover:after:w-full"
                     >
                       {t('auth.signIn')}
                     </Link>

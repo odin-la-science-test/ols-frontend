@@ -51,7 +51,7 @@ export function DensitySection() {
               disabled={fontSize <= 12}
               className={cn(
                 'p-1.5 rounded-md transition-all',
-                fontSize <= 12 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-muted/30 text-muted-foreground hover:text-foreground'
+                fontSize <= 12 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] text-muted-foreground hover:text-foreground'
               )}
             >
               <Minus className="w-3.5 h-3.5" />
@@ -83,7 +83,7 @@ export function DensitySection() {
               disabled={fontSize >= 18}
               className={cn(
                 'p-1.5 rounded-md transition-all',
-                fontSize >= 18 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-muted/30 text-muted-foreground hover:text-foreground'
+                fontSize >= 18 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] text-muted-foreground hover:text-foreground'
               )}
             >
               <Plus className="w-3.5 h-3.5" />
@@ -92,7 +92,7 @@ export function DensitySection() {
         </div>
 
         {/* Preview */}
-        <div className="p-3 rounded-lg bg-muted/20">
+        <div className="p-3 rounded-lg bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]">
           <p className="text-xs text-muted-foreground mb-2">{t('settingsPage.preview')}</p>
           <div className="space-y-1" style={{ fontSize: `${fontSize}px` }}>
             <p className="font-medium">{t('settingsPage.previewTitle')}</p>

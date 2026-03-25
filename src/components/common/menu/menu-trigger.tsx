@@ -26,8 +26,8 @@ export function MenuTrigger({ id, icon, label: labelOverride, accentColor, isOpe
         'relative flex items-center gap-1.5 rounded-sm transition-colors',
         isCompact ? 'px-1.5 h-5 text-[11px]' : 'px-2 h-6 text-xs',
         isOpen
-          ? 'bg-muted/60 text-foreground'
-          : 'text-muted-foreground hover:text-foreground hover:bg-muted/40'
+          ? 'bg-[color-mix(in_srgb,var(--color-muted)_60%,transparent)] text-foreground'
+          : 'text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)]'
       )}
       style={isOpen && accentColor ? { color: accentColor } : undefined}
     >

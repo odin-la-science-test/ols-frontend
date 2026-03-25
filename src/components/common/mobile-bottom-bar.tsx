@@ -73,7 +73,7 @@ function TabSheet({ isOpen, onClose }: TabSheetProps) {
             className="fixed bottom-0 left-0 right-0 z-[95] bg-card border-t border-border rounded-t-2xl max-h-[60vh] flex flex-col"
           >
             {/* Handle + Header */}
-            <div className="flex flex-col items-center pt-3 pb-2 px-4 border-b border-border/50">
+            <div className="flex flex-col items-center pt-3 pb-2 px-4 border-b border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]">
               <div className="w-10 h-1 rounded-full bg-muted-foreground/30 mb-3" />
               <div className="flex items-center justify-between w-full">
                 <h3 className="text-sm font-semibold text-foreground">
@@ -101,8 +101,8 @@ function TabSheet({ isOpen, onClose }: TabSheetProps) {
                       className={cn(
                         'flex items-center gap-3 px-3 py-2.5 rounded-xl cursor-pointer transition-all',
                         isActive
-                          ? 'bg-primary/10 border border-primary/20'
-                          : 'hover:bg-muted/50 border border-transparent'
+                          ? 'bg-[color-mix(in_srgb,var(--color-primary)_10%,transparent)] border border-[color-mix(in_srgb,var(--color-primary)_20%,transparent)]'
+                          : 'hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] border border-transparent'
                       )}
                     >
                       {/* Icon */}
@@ -130,7 +130,7 @@ function TabSheet({ isOpen, onClose }: TabSheetProps) {
                       {/* Active indicator */}
                       {isActive && (
                         <div
-                          className={cn('w-2 h-2 rounded-full shrink-0', !accentColor && 'bg-foreground/40')}
+                          className={cn('w-2 h-2 rounded-full shrink-0', !accentColor && 'bg-[color-mix(in_srgb,var(--color-foreground)_40%,transparent)]')}
                           style={accentColor ? { backgroundColor: accentColor } : undefined}
                         />
                       )}
@@ -138,7 +138,7 @@ function TabSheet({ isOpen, onClose }: TabSheetProps) {
                       {/* Close button */}
                       <button
                         onClick={(e) => handleCloseTab(e, tab.id)}
-                        className="p-1 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors shrink-0"
+                        className="p-1 rounded-md text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors shrink-0"
                       >
                         <X className="h-3.5 w-3.5" />
                       </button>

@@ -79,7 +79,7 @@ export function ComparisonRowMobile<T extends { id: string | number }>({
       )}
     >
       {/* Field Label */}
-      <div className="flex items-center gap-2 mb-2 pb-2 border-b border-border/30">
+      <div className="flex items-center gap-2 mb-2 pb-2 border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]">
         <span className="text-sm font-medium text-foreground">{field.label}</span>
         {!allEqual && (
           <Minus className="h-3 w-3 text-amber-500 shrink-0" />

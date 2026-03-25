@@ -58,7 +58,7 @@ export function SlidePanel({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-background/80 z-40"
+              className="fixed inset-0 bg-[color-mix(in_srgb,var(--color-background)_80%,transparent)] z-40"
               onClick={onClose}
             />
           )}
@@ -77,9 +77,9 @@ export function SlidePanel({
               'fixed top-0 bottom-0 z-50',
               side === 'left' ? 'left-0' : 'right-0',
               'w-full max-w-md',
-              'bg-card/80 backdrop-blur-xl',
+              'bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)] backdrop-blur-xl',
               side === 'left' ? 'border-r' : 'border-l',
-              'border-border/50',
+              'border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]',
               'shadow-2xl',
               'flex flex-col',
               className
@@ -87,10 +87,10 @@ export function SlidePanel({
           >
             {/* Header */}
             {showHeader && (
-              <div className="flex items-center justify-between gap-4 p-4 border-b border-border/50">
+              <div className="flex items-center justify-between gap-4 p-4 border-b border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]">
                 <div className="flex items-center gap-3 min-w-0">
                   {Icon && (
-                    <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                    <div className="p-2 rounded-lg bg-[color-mix(in_srgb,var(--color-primary)_10%,transparent)] shrink-0">
                       <Icon className="h-5 w-5 text-primary" />
                     </div>
                   )}

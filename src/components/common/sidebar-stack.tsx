@@ -171,9 +171,9 @@ function SidebarStackTabs({
               onClick={() => handleTabClick(panel.id)}
               className={cn(
                 'relative flex-1 min-w-0 flex items-center gap-1.5 transition-colors cursor-pointer',
-                'border-r last:border-r-0 border-border/30',
+                'border-r last:border-r-0 border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]',
                 density === 'compact' ? 'px-2 py-1' : 'px-2.5 py-1.5',
-                isActive ? 'bg-muted/30' : 'bg-muted/10 hover:bg-muted/20',
+                isActive ? 'bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]' : 'bg-[color-mix(in_srgb,var(--color-muted)_10%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]',
               )}
             >
               <span
@@ -190,7 +190,7 @@ function SidebarStackTabs({
                   e.stopPropagation();
                   removeFromStack(side, panel.id);
                 }}
-                className="shrink-0 rounded p-0.5 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                className="shrink-0 rounded p-0.5 text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
               >
                 <X className="h-3 w-3" />
               </span>
@@ -252,7 +252,7 @@ function SidebarStackStacked({
           >
             <div className="flex flex-col h-full overflow-hidden">
               {/* Mini header with panel name + close */}
-              <div className="shrink-0 flex items-center justify-between px-3 py-1 border-b border-border/30 bg-muted/20">
+              <div className="shrink-0 flex items-center justify-between px-3 py-1 border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]">
                 <span
                   className="text-[10px] font-medium uppercase tracking-wider truncate text-muted-foreground"
                   style={panel.accentColor ? { color: panel.accentColor } : undefined}
@@ -261,7 +261,7 @@ function SidebarStackStacked({
                 </span>
                 <button
                   onClick={() => removeFromStack(panel.id)}
-                  className="ml-2 shrink-0 rounded p-0.5 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                  className="ml-2 shrink-0 rounded p-0.5 text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
                 >
                   <X className="h-3 w-3" />
                 </button>
@@ -305,7 +305,7 @@ export function StackLayoutToggle({ side, className }: StackLayoutToggleProps) {
           onClick={() => toggleLayout(side)}
           className={cn(
             'p-1 rounded-lg transition-colors',
-            'text-muted-foreground hover:text-foreground hover:bg-muted/50',
+            'text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
             className,
           )}
         >

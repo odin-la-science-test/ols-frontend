@@ -15,7 +15,7 @@ export function useSidebarDndOverlay() {
   useDndOverlay('sidebar-panel', useCallback((drag: DragMeta) => {
     const panel = usePanelRegistryStore.getState().panels[drag.id];
     return (
-      <div className="px-3 py-1.5 rounded-md bg-card border border-primary/40 shadow-xl text-xs font-medium text-foreground flex items-center gap-2">
+      <div className="px-3 py-1.5 rounded-md bg-card border border-[color-mix(in_srgb,var(--color-primary)_40%,transparent)] shadow-xl text-xs font-medium text-foreground flex items-center gap-2">
         <GripVertical className="h-3 w-3 text-muted-foreground/60" />
         {panel?.label ?? drag.id}
       </div>
@@ -24,7 +24,7 @@ export function useSidebarDndOverlay() {
 
   useDndOverlay('sidebar-zone', useCallback((drag: DragMeta) => {
     return (
-      <div className="px-3 py-1.5 rounded-md bg-card border border-primary/40 shadow-xl text-xs font-medium text-foreground flex items-center gap-2">
+      <div className="px-3 py-1.5 rounded-md bg-card border border-[color-mix(in_srgb,var(--color-primary)_40%,transparent)] shadow-xl text-xs font-medium text-foreground flex items-center gap-2">
         <GripVertical className="h-3 w-3 text-muted-foreground/60" />
         {drag.id === 'primary' ? 'Primary' : 'Secondary'}
       </div>

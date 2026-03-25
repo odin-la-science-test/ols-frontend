@@ -54,7 +54,7 @@ export function LatestNotesWidget() {
           {isLoading ? (
             <div className="space-y-2">
               {[1, 2, 3].map((i) => (
-                <div key={i} className="h-8 @xs:h-12 rounded-lg bg-muted/20 animate-pulse" />
+                <div key={i} className="h-8 @xs:h-12 rounded-lg bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)] animate-pulse" />
               ))}
             </div>
           ) : latestNotes.length === 0 ? (
@@ -70,7 +70,7 @@ export function LatestNotesWidget() {
                   onClick={() => navigate(registry.getRoutePath('notes') ?? '/lab/notes')}
                   className={cn(
                     'w-full flex items-center gap-2 @xs:gap-2.5 px-2 @xs:px-2.5 py-1.5 @xs:py-2 rounded-lg text-left',
-                    'hover:bg-muted/30 transition-all duration-150 group',
+                    'hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] transition-all duration-150 group',
                     note.color ? NOTE_COLORS[note.color] ?? '' : ''
                   )}
                 >
@@ -88,7 +88,7 @@ export function LatestNotesWidget() {
                     )}
                   </div>
                   {note.tags.length > 0 && (
-                    <span className="hidden @sm:inline text-[9px] text-muted-foreground/40 bg-muted/30 px-1.5 py-0.5 rounded shrink-0">
+                    <span className="hidden @sm:inline text-[9px] text-muted-foreground/40 bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] px-1.5 py-0.5 rounded shrink-0">
                       {note.tags[0]}
                     </span>
                   )}

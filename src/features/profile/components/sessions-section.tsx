@@ -37,8 +37,8 @@ function SessionCard({ session, onRevoke, isRevoking }: {
   const { t } = useTranslation();
 
   return (
-    <div className="flex items-center gap-3 p-3 rounded-lg border border-border/40 bg-card/50">
-      <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-muted/50 flex items-center justify-center">
+    <div className="flex items-center gap-3 p-3 rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-card)_50%,transparent)]">
+      <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] flex items-center justify-center">
         <DeviceIcon deviceInfo={session.deviceInfo} />
       </div>
 

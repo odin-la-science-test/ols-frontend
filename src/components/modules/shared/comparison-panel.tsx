@@ -105,7 +105,7 @@ export function ComparisonPanel<T extends { id: string | number }>({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-background/80 z-40"
+            className="absolute inset-0 bg-[color-mix(in_srgb,var(--color-background)_80%,transparent)] z-40"
             onClick={onClose}
           />
         )}
@@ -122,8 +122,8 @@ export function ComparisonPanel<T extends { id: string | number }>({
             className={cn(
               'absolute inset-x-0 bottom-0 z-50',
               'h-[85vh] md:h-[80vh]',
-              'bg-card/80 backdrop-blur-xl',
-              'border-t border-border/50',
+              'bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)] backdrop-blur-xl',
+              'border-t border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]',
               'shadow-2xl',
               'flex flex-col',
               'rounded-t-2xl',
@@ -131,9 +131,9 @@ export function ComparisonPanel<T extends { id: string | number }>({
             )}
           >
             {/* Header */}
-            <div className="flex items-center justify-between gap-2 sm:gap-4 p-4 border-b border-border/50 shrink-0">
+            <div className="flex items-center justify-between gap-2 sm:gap-4 p-4 border-b border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] shrink-0">
               <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-                <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                <div className="p-2 rounded-lg bg-[color-mix(in_srgb,var(--color-primary)_10%,transparent)] shrink-0">
                   <Icon className="h-5 w-5 text-primary" />
                 </div>
                 <div className="min-w-0">
@@ -192,7 +192,7 @@ export function ComparisonPanel<T extends { id: string | number }>({
 
             {/* Desktop: Item Headers - Sticky */}
             <div
-              className="hidden md:grid gap-2 p-4 border-b border-border/30 bg-muted/20 shrink-0 overflow-x-auto"
+              className="hidden md:grid gap-2 p-4 border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)] shrink-0 overflow-x-auto"
               style={{ gridTemplateColumns: `140px repeat(${items.length}, 1fr)` }}
             >
               <div /> {/* Empty cell for alignment */}

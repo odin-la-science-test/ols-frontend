@@ -50,7 +50,7 @@ export function PanelIcon({ item, isActive, isStacked, badge, onToggle, indicato
         'transition-all duration-200 group',
         isActive
           ? 'text-foreground'
-          : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+          : 'text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]'
       )}
     >
       {/* Animated indicator (single active panel — normal/tabs mode) */}
@@ -87,7 +87,7 @@ export function PanelIcon({ item, isActive, isStacked, badge, onToggle, indicato
       {isStacked && !isActive && (
         <div
           className={cn(
-            'absolute w-1 h-1 rounded-full bg-primary/60',
+            'absolute w-1 h-1 rounded-full bg-[color-mix(in_srgb,var(--color-primary)_60%,transparent)]',
             isHorizontal
               ? cn('left-1/2 -translate-x-1/2', indicatorOnTop ? 'top-0.5' : 'bottom-0.5')
               : cn(

@@ -76,10 +76,10 @@ export function DetailPanel({
   const panelContentMobile = (
     <>
       {/* Header with close button — mobile only */}
-      <div className={cn('flex items-start justify-between gap-4 border-b border-border/50', d.detailPadding)}>
+      <div className={cn('flex items-start justify-between gap-4 border-b border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]', d.detailPadding)}>
         <div className="flex items-start gap-3 min-w-0">
           {Icon && (
-            <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+            <div className="p-2 rounded-lg bg-[color-mix(in_srgb,var(--color-primary)_10%,transparent)] shrink-0">
               <Icon className="h-5 w-5 text-primary" />
             </div>
           )}
@@ -110,7 +110,7 @@ export function DetailPanel({
 
       {/* Actions */}
       {actions && (
-        <div className={cn('border-t border-border/50 bg-muted/20', d.detailPadding)}>
+        <div className={cn('border-t border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]', d.detailPadding)}>
           {actions}
         </div>
       )}
@@ -121,12 +121,12 @@ export function DetailPanel({
   const panelContentDesktop = (
     <>
       {/* Compact header — title + badge */}
-      <div className={cn('flex items-center gap-2 border-b border-border/50 px-3 py-2')}>
+      <div className={cn('flex items-center gap-2 border-b border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] px-3 py-2')}>
         <h2 className="text-sm font-semibold truncate flex-1 min-w-0">{title}</h2>
         {badge}
       </div>
       {subtitle && (
-        <div className="px-3 py-1 border-b border-border/20 bg-muted/20">
+        <div className="px-3 py-1 border-b border-[color-mix(in_srgb,var(--color-border)_20%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]">
           <p className="text-xs text-muted-foreground truncate">{subtitle}</p>
         </div>
       )}
@@ -138,7 +138,7 @@ export function DetailPanel({
 
       {/* Actions */}
       {actions && (
-        <div className={cn('border-t border-border/50 bg-muted/20', d.detailPadding)}>
+        <div className={cn('border-t border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]', d.detailPadding)}>
           {actions}
         </div>
       )}
@@ -165,7 +165,7 @@ export function DetailPanel({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-background/80 z-40 lg:hidden"
+            className="absolute inset-0 bg-[color-mix(in_srgb,var(--color-background)_80%,transparent)] z-40 lg:hidden"
             onClick={onClose}
           />
         )}
@@ -182,8 +182,8 @@ export function DetailPanel({
             className={cn(
               'absolute right-0 top-0 bottom-0 z-50 lg:hidden',
               'w-full max-w-md',
-              'bg-card/80 backdrop-blur-xl',
-              'border-l border-border/50',
+              'bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)] backdrop-blur-xl',
+              'border-l border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]',
               'shadow-2xl',
               'flex flex-col',
               'pb-14', // Clear MobileBottomBar on mobile

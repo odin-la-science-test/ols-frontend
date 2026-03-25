@@ -68,8 +68,8 @@ export function SearchInput({
         autoFocus={autoFocus}
         className={cn(
           'pl-9 pr-9',
-          'bg-background/50 border-border/50',
-          'focus:bg-background focus:border-primary/50',
+          'bg-[color-mix(in_srgb,var(--color-background)_50%,transparent)] border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]',
+          'focus:bg-background focus:border-[color-mix(in_srgb,var(--color-primary)_50%,transparent)]',
           'placeholder:text-muted-foreground/70'
         )}
       />

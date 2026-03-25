@@ -30,7 +30,7 @@ export function ToggleGroup<T extends string>({
   return (
     <div
       className={cn(
-        'inline-flex items-center rounded-lg bg-muted/50 p-1',
+        'inline-flex items-center rounded-lg bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] p-1',
         className
       )}
     >

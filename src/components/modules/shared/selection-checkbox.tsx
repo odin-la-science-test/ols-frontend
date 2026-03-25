@@ -38,7 +38,7 @@ export function SelectionCheckbox({
         'flex items-center justify-center',
         isSelected
           ? 'bg-primary border-primary text-primary-foreground'
-          : 'bg-background/80 backdrop-blur-sm border-border hover:border-primary/50',
+          : 'bg-[color-mix(in_srgb,var(--color-background)_80%,transparent)] backdrop-blur-sm border-border hover:border-[color-mix(in_srgb,var(--color-primary)_50%,transparent)]',
         isDisabled && !isSelected && 'opacity-50 cursor-not-allowed',
         className
       )}

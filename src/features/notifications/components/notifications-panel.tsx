@@ -44,7 +44,7 @@ export default function NotificationsPanel() {
       <div className="flex-1 overflow-y-auto">
         {/* Header actions */}
         {unreadCount > 0 && (
-          <div className={cn(density === 'compact' ? 'px-3 py-1' : 'px-3 py-2', 'border-b border-border/30')}>
+          <div className={cn(density === 'compact' ? 'px-3 py-1' : 'px-3 py-2', 'border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]')}>
             <button
               onClick={() => markAllAsRead.mutate(undefined, {
                 onSuccess: () => log({ type: 'action', message: t('activity.notifications.markAllAsRead'), icon: 'check-check', accentColor: HUGIN_PRIMARY }),
@@ -81,9 +81,9 @@ export default function NotificationsPanel() {
                   }}
                   className={cn(
                     'w-full flex items-start text-left',
-                    'hover:bg-muted/50 transition-colors',
+                    'hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors',
                     density === 'compact' ? 'gap-2 px-3 py-1.5' : 'gap-2.5 px-3 py-2.5',
-                    !notif.read && 'bg-muted/20'
+                    !notif.read && 'bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]'
                   )}
                 >
                   <TypeIcon className={cn('h-4 w-4 mt-0.5 shrink-0', typeColor)} />
@@ -117,13 +117,13 @@ export default function NotificationsPanel() {
       </div>
 
       {/* View all link */}
-      <div className="p-2 border-t border-border/30">
+      <div className="p-2 border-t border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]">
         <Link
           to="/notifications"
           className={cn(
             'flex items-center justify-center gap-2 w-full rounded-lg',
             density === 'compact' ? 'px-2 py-1' : 'px-2 py-1.5',
-            'text-xs text-muted-foreground hover:text-foreground hover:bg-muted/50',
+            'text-xs text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
             'transition-colors',
           )}
         >
