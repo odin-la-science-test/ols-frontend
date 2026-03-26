@@ -14,6 +14,7 @@ export interface UserDTO {
   lastName: string;
   role: string;
   avatarId: string | null;
+  emailVerified: boolean;
 }
 
 export const usersApi = {
@@ -22,4 +23,7 @@ export const usersApi = {
 
   updateAvatar: (avatarId: string | null) =>
     api.put<UserDTO>('/users/me/avatar', { avatarId }),
+
+  changePassword: (currentPassword: string, newPassword: string) =>
+    api.put('/users/me/password', { currentPassword, newPassword }),
 };

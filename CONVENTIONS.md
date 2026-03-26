@@ -162,6 +162,10 @@ Un module peut declarer une vue admin via `adminView` dans `ModuleDefinition`. S
 - Les pages admin (`admin-page.tsx`) vivent dans `features/{module}/`
 - Le switch est automatique dans le router via `AdminViewSwitch`
 
+### Tour guide (optionnel)
+
+- `tour?: TourStep[]` — Steps pour la visite guidee du module. Chaque module peut contribuer des steps declenches automatiquement a la premiere visite. Les steps utilisent des attributs `data-tour="..."` comme selecteurs (stables, grep-ables). Cles i18n : `{module}.tour.{step}.title` / `{module}.tour.{step}.description`.
+
 ### Ce qui est automatique
 
 Une fois `definition.ts` enregistre, le module obtient automatiquement :
@@ -283,10 +287,31 @@ Dark mode first.
 ### Style visuel
 
 - Bordures fines (1px, `border/30-50` opacite)
-- Effets glass subtils (`bg-card/50 backdrop-blur-xl`)
+- Effets glass via les **utility tiers** (voir ci-dessous)
 - Ombres minimales
 - Transitions smooth (300ms ease-out)
 - Animations presentes mais subtiles
+
+### Glass tiers (DRY)
+
+Les effets glassmorphism sont definis comme `@utility` dans `index.css`. **Ne jamais ecrire `bg-{token}/XX backdrop-blur-*` en inline** — utiliser le tier correspondant.
+
+| Utility | Rendu | Usage |
+|---------|-------|-------|
+| `glass-overlay` | `card/80 blur(32px) saturate(1.3) + inset highlight` | Popovers, menus, dropdowns, panels, overlays |
+| `glass-card` | `card/70 blur(32px) saturate(1.3) + inset highlight` | Cards surelevees (auth forms, modal cards) |
+| `glass-surface` | `card/50 blur(12px) saturate(1.2)` | Widgets, sidebars, conteneurs legers |
+| `glass-chrome` | `card/80 blur(12px) saturate(1.2)` | Shell chrome : menu bar, status bar, breadcrumbs |
+| `glass-subtle` | `card/30 blur(8px)` | Fonds tres legers (content areas) |
+| `glass-popover` | `popover blur(32px) saturate(1.3) + inset highlight` | Context menus, menu primitives (token `--popover`) |
+| `glass-popover-dense` | `popover/95 blur(32px) saturate(1.3)` | Tooltips, corrections IA, sidebar tooltips |
+| `glass-frosted` | `background/80 blur(4px)` | Boutons outline, checkboxes, overlay modals |
+| `glass-muted` | `muted/40 blur(4px)` | Widget handles, petits boutons interactifs |
+| `scrim-heavy` | `black/60 blur(4px)` | Modals plein ecran (session limit) |
+| `scrim` | `black/40 blur(4px)` | Drawers, menus mobiles |
+| `scrim-light` | `black/20 blur(4px)` | Overlays subtils (sidebar peek) |
+
+**Exceptions inline autorisees** : couleurs thematiques (banners colores type `bg-blue-500/10`), `backdrop-blur-sm` seul comme modificateur Tailwind (boutons flottants).
 
 ### Composants
 
@@ -314,21 +339,21 @@ La couleur d'accent (`--module-accent` / `primary`) sert **uniquement a indiquer
 
 ### Chips de selection — style segmented (DRY)
 
-Les boutons de selection/filtre utilisent un style **segmented** : fond plein quand selectionne, texte nu sinon. Les constantes sont definies dans `identification-ui.tsx` et importees partout :
+Les boutons de selection/filtre utilisent un style **segmented** : fond plein quand selectionne, texte nu sinon. Defini comme `@utility` dans `index.css` :
 
 ```tsx
-import { CHIP_BASE, CHIP_ACTIVE, CHIP_INACTIVE } from '@/components/modules/shared/identification-ui';
-
-<button className={cn(CHIP_BASE, 'px-2.5 py-1 text-xs', selected ? CHIP_ACTIVE : CHIP_INACTIVE)}>
+<button className={cn('chip-base px-2.5 py-1 text-xs', selected ? 'chip-active' : 'chip-inactive')}>
 ```
 
-- `CHIP_BASE` : `inline-flex items-center rounded-md font-medium transition-all`
-- `CHIP_ACTIVE` : `bg-primary text-primary-foreground shadow-sm`
-- `CHIP_INACTIVE` : `text-muted-foreground hover:text-foreground`
+| Utility | Rendu |
+|---------|-------|
+| `chip-base` | `inline-flex items-center rounded-md font-medium transition-all` |
+| `chip-active` | `bg-primary text-primary-foreground shadow-sm` |
+| `chip-inactive` | `text-muted-foreground hover:text-foreground` |
 
 Pour les variants colorees (identification), `ToggleButton` supporte `variant="positive"` (violet) et `variant="negative"` (pink).
 
-**Ne jamais re-definir ces classes en inline** — importer les constantes.
+**Ne jamais re-definir ces classes en inline** — utiliser les utilities.
 
 ### Toggles switch
 
@@ -345,9 +370,35 @@ Les elements du shell utilisent la couleur d'accent de deux facons differentes s
 | **Indicateur de navigation** — "ou je suis" | Suit le module **actif** (change quand on navigue) ; neutre sur pages systeme | `getAccentForPath(path)` → `string \| null` | Tab active, status bar stripe, activity bar dot de selection |
 | **Element possede par un module** — "a qui j'appartiens" | Couleur **intrinseque** du module qui l'a enregistre ; toujours la meme | `accentColor` passe au store lors du `register()` | Menu bar "Atlas" = violet, bottom panel "Gram Overview" = violet, "Activite" = neutre |
 
-**Indicateurs de navigation** : `getAccentForPath()` retourne `null` pour les routes systeme → le composant affiche un style muted (foreground/20, bg-muted) au lieu d'un trait colore.
+**Indicateurs de navigation** : `getAccentForPath()` retourne `null` pour les routes systeme → le composant utilise les utilities `neutral-*` (voir section suivante) au lieu d'un trait colore.
 
 **Elements possedes** : la couleur est fixee a l'enregistrement (`registerTab({ accentColor })`, `accentColor={MUNIN_PRIMARY}`) et ne change pas selon la navigation. Un panneau systeme (Activite, Historique) n'a pas de couleur d'accent.
+
+### Couleurs neutres (pages systeme)
+
+Quand `getAccentForPath()` retourne `null` (pages systeme) ou pour les composants system-only (`features/settings/`, `features/profile/`), utiliser les `@utility neutral-*` definis dans `index.css`. Source de verite unique — **ne jamais hardcoder d'opacites foreground dans le JSX**.
+
+**Indicateurs** (barres, dots, badges, borders) :
+
+| Utility | Usage |
+|---------|-------|
+| `neutral-indicator` | Barres actives 2px (activity bar, status bar stripe, TOC sidebar) |
+| `neutral-dot` | Dots de selection (stacked, split, explorer, mobile) |
+| `neutral-border` | Bordures actives (preset card, keybinding row, profile card) |
+| `neutral-ring` | Rings actifs (avatar picker) |
+| `neutral-check` | Icones check/actif (preset card, density option) |
+| `neutral-text` | Texte d'etat customise (keybinding row) |
+
+**Fonds** :
+
+| Utility | Usage |
+|---------|-------|
+| `neutral-bg-subtle` | Fond actif subtil (cards actives, recording state) |
+| `neutral-bg-badge` | Fond badge textuel (badge "Actif" dans profile card) |
+| `bg-muted` | Fond selectionne (onglet actif, item actif) — token Tailwind standard |
+| `bg-muted/50` | Fond hover — token Tailwind standard |
+
+**Regle** : les composants dans `features/settings/` et `features/profile/` sont system-only. Ils utilisent les utilities `neutral-*` directement, pas `--module-accent`.
 
 ---
 

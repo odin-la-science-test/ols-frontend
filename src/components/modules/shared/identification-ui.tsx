@@ -7,11 +7,8 @@ import { cn } from '@/lib/utils';
 // Based on Bacteriology implementation (Source of Truth)
 // ═══════════════════════════════════════════════════════════════════════════
 
-// ─── Segmented chip styles (shared with FilterChip) ───
-
-export const CHIP_BASE = 'inline-flex items-center rounded-md font-medium transition-all';
-export const CHIP_ACTIVE = 'bg-primary text-primary-foreground shadow-sm';
-export const CHIP_INACTIVE = 'text-muted-foreground hover:text-foreground';
+// ─── Segmented chip styles ───
+// Defined as @utility in index.css: chip-base, chip-active, chip-inactive
 
 export interface ToggleButtonProps {
   children: ReactNode;
@@ -33,15 +30,15 @@ export function ToggleButton({
       type="button"
       onClick={onClick}
       className={cn(
-        CHIP_BASE, 'justify-center',
+        'chip-base justify-center',
         size === 'sm' ? 'px-2.5 py-1 text-xs' : 'px-3 py-1.5 text-sm',
         active
           ? variant === 'positive'
             ? 'bg-violet-500 text-white shadow-sm'
             : variant === 'negative'
             ? 'bg-pink-500 text-white shadow-sm'
-            : CHIP_ACTIVE
-          : CHIP_INACTIVE
+            : 'chip-active'
+          : 'chip-inactive'
       )}
     >
       {children}

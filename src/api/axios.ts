@@ -19,7 +19,7 @@ const RETRY_DELAY = 1000; // 1 seconde
  * Instance Axios configurée pour l'API
  */
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL: '/api',
   headers: {
     'Content-Type': 'application/json',
   },

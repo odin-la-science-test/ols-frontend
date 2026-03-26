@@ -40,4 +40,9 @@ export const quickshareModule: ModuleDefinition = {
       }));
     },
   },
+
+  tour: [
+    { element: '[data-tour="collection-table"]', titleKey: 'quickshare.tour.table.title', descriptionKey: 'quickshare.tour.table.description' },
+    { element: '[data-tour="detail-panel"]', titleKey: 'quickshare.tour.detail.title', descriptionKey: 'quickshare.tour.detail.description', side: 'left' },
+  ],
 };

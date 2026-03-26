@@ -43,7 +43,7 @@ export function SessionLimitDialog({ data, credentials, onRevoked, onClose }: Se
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 scrim-heavy"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -76,9 +76,9 @@ export function SessionLimitDialog({ data, credentials, onRevoked, onClose }: Se
               {data.activeSessions.map((session: SessionDTO) => (
                   <div
                     key={session.id}
-                    className="flex items-center gap-3 p-2.5 rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-card)_50%,transparent)]"
+                    className="flex items-center gap-3 p-2.5 rounded-lg border border-border/40 bg-card/50"
                   >
-                    <div className="flex-shrink-0 w-8 h-8 rounded-md bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] flex items-center justify-center">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-md bg-muted/50 flex items-center justify-center">
                       <DeviceIcon deviceInfo={session.deviceInfo} />
                     </div>
                     <div className="flex-1 min-w-0">

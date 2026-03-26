@@ -121,8 +121,8 @@ export function PlatformMegaMenu({ platform, children }: PlatformMegaMenuProps) 
             className={cn(
               'absolute left-full top-0 z-50 ml-1.5',
               'min-w-[280px] max-w-[320px]',
-              'rounded-xl border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]',
-              'bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)] backdrop-blur-xl shadow-xl',
+              'rounded-xl border border-border/50',
+              'glass-overlay shadow-xl',
               'overflow-hidden'
             )}
             onMouseEnter={handleMouseEnter}
@@ -133,8 +133,8 @@ export function PlatformMegaMenu({ platform, children }: PlatformMegaMenuProps) 
               onClick={handleNavigatePlatform}
               className={cn(
                 'w-full flex items-center gap-3 px-3 py-2.5',
-                'border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] transition-colors',
-                'hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] cursor-pointer text-left'
+                'border-b border-border/30 transition-colors',
+                'hover:bg-muted/30 cursor-pointer text-left'
               )}
             >
               <div
@@ -184,7 +184,7 @@ export function PlatformMegaMenu({ platform, children }: PlatformMegaMenuProps) 
 
             {/* ─── Footer ─── */}
             {modules && modules.length > 0 && (
-              <div className="border-t border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] px-3 py-1.5">
+              <div className="border-t border-border/30 px-3 py-1.5">
                 <span className="text-[10px] text-muted-foreground/50">
                   {t('megaMenu.moduleCount', { count: modules.length })}
                 </span>
@@ -223,8 +223,8 @@ function ModuleMenuItem({ module, isLocked, isCurrentRoute, accentColor, delay, 
         'transition-colors duration-100 group/item',
         isLocked
           ? 'opacity-40 cursor-not-allowed'
-          : 'hover:bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] cursor-pointer',
-        isCurrentRoute && !isLocked && 'bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]'
+          : 'hover:bg-muted/40 cursor-pointer',
+        isCurrentRoute && !isLocked && 'bg-muted/30'
       )}
     >
       {/* Active indicator */}
@@ -240,17 +240,17 @@ function ModuleMenuItem({ module, isLocked, isCurrentRoute, accentColor, delay, 
       <div
         className={cn(
           'flex items-center justify-center w-7 h-7 rounded-md shrink-0 transition-colors',
-          isCurrentRoute ? 'bg-[color-mix(in_srgb,var(--color-muted)_60%,transparent)]' : 'bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] group-hover/item:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]'
+          isCurrentRoute ? 'bg-muted/60' : 'bg-muted/30 group-hover/item:bg-muted/50'
         )}
       >
-        <IconComp className="h-3.5 w-3.5 text-[color-mix(in_srgb,var(--color-foreground)_70%,transparent)]" />
+        <IconComp className="h-3.5 w-3.5 text-foreground/70" />
       </div>
 
       {/* Text */}
       <div className="min-w-0 flex-1">
         <div className={cn(
           'text-xs font-medium truncate',
-          isCurrentRoute ? 'text-foreground' : 'text-[color-mix(in_srgb,var(--color-foreground)_80%,transparent)]'
+          isCurrentRoute ? 'text-foreground' : 'text-foreground/80'
         )}>
           {module.title}
         </div>

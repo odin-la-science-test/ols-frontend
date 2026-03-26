@@ -32,7 +32,7 @@ export function WorkspacePage() {
         </div>
 
         {/* Actions */}
-        <div className="flex items-center gap-3">
+        <div data-tour="workspace-actions" className="flex items-center gap-3">
           <Button variant="default" size="sm" onClick={() => openCommandPalette()}>
             <Search className="h-4 w-4 mr-2" />
             {t('workspacePage.openPalette')}

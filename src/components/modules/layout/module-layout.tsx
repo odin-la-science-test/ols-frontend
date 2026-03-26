@@ -55,6 +55,7 @@ export function ModuleLayout({ children, className }: ModuleLayoutProps) {
   const Background = platform?.Background ?? DotsBackground;
 
   // System pages (no platform) use foreground-based neutral accent
+  // CSS vars are full color values (e.g. hsl(0 0% 98%)), so reference via var() directly
   const SYSTEM_ACCENT = 'var(--color-foreground)';
   const effectiveAccent = platform?.accent ?? SYSTEM_ACCENT;
   const style = platform
@@ -69,6 +70,9 @@ export function ModuleLayout({ children, className }: ModuleLayoutProps) {
         '--module-accent': SYSTEM_ACCENT,
         '--module-accent-subtle': `color-mix(in srgb, var(--module-accent) 10%, transparent)`,
         '--module-accent-muted': `color-mix(in srgb, var(--module-accent) 20%, transparent)`,
+        '--color-ring': SYSTEM_ACCENT,
+        '--color-primary': SYSTEM_ACCENT,
+        '--color-primary-foreground': 'var(--color-background)',
       } as CSSProperties;
 
   return (

@@ -66,7 +66,7 @@ export function SortableTab({
             e.stopPropagation();
             onClose();
           }}
-          className="shrink-0 rounded p-0.5 opacity-0 group-hover/tab:opacity-100 text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] transition-all"
+          className="shrink-0 rounded p-0.5 opacity-0 group-hover/tab:opacity-100 text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-all"
         >
           <X className="h-2.5 w-2.5" />
         </span>
@@ -78,7 +78,7 @@ export function SortableTab({
             'absolute bottom-0 left-1 right-1 h-[1.5px] rounded-full transition-all',
             isActive ? 'opacity-100' : 'opacity-0',
           )}
-          style={isActive ? { backgroundColor: panel.accentColor ?? 'var(--color-primary)' } : undefined}
+          style={isActive ? { backgroundColor: panel.accentColor ?? 'hsl(var(--primary))' } : undefined}
         />
       )}
     </div>

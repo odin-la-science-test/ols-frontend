@@ -33,7 +33,7 @@ export function SidebarStacked({
           >
             <div className="flex flex-col h-full overflow-hidden">
               {/* Mini header — ultra-compact */}
-              <div className="shrink-0 flex items-center justify-between px-2.5 py-0.5 border-b border-[color-mix(in_srgb,var(--color-border)_20%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_10%,transparent)]">
+              <div className="shrink-0 flex items-center justify-between px-2.5 py-0.5 border-b border-border/20 bg-muted/10">
                 <span
                   className="text-[9px] font-medium uppercase tracking-widest truncate text-muted-foreground/70"
                   style={panel.accentColor ? { color: panel.accentColor } : undefined}
@@ -42,7 +42,7 @@ export function SidebarStacked({
                 </span>
                 <button
                   onClick={() => onPanelClose(panel.id)}
-                  className="ml-1 shrink-0 rounded p-0.5 text-muted-foreground/50 hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] transition-colors"
+                  className="ml-1 shrink-0 rounded p-0.5 text-muted-foreground/50 hover:text-foreground hover:bg-muted/40 transition-colors"
                 >
                   <X className="h-2.5 w-2.5" />
                 </button>

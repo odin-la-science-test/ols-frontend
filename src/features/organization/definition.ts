@@ -42,4 +42,10 @@ export const organizationModule: ModuleDefinition = {
       }));
     },
   },
+
+  tour: [
+    { element: '[data-tour="collection-table"]', titleKey: 'organization.tour.table.title', descriptionKey: 'organization.tour.table.description' },
+    { element: '[data-tour="detail-panel"]', titleKey: 'organization.tour.detail.title', descriptionKey: 'organization.tour.detail.description', side: 'left' },
+    { element: '[data-tour="search-input"]', titleKey: 'organization.tour.search.title', descriptionKey: 'organization.tour.search.description', side: 'bottom' },
+  ],
 };

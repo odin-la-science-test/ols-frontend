@@ -35,7 +35,7 @@ export function MenuItem({ icon, label, onClick, disabled, danger, checked }: Me
           ? 'text-muted-foreground/50 cursor-not-allowed'
           : danger
             ? 'text-red-400 hover:bg-red-500/10'
-            : 'text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_60%,transparent)]',
+            : 'text-foreground hover:bg-muted/60',
       )}
     >
       {icon && <span className="w-4 h-4 flex items-center justify-center shrink-0">{icon}</span>}
@@ -50,7 +50,7 @@ export function MenuItem({ icon, label, onClick, disabled, danger, checked }: Me
 }
 
 export function MenuSeparator() {
-  return <div className="my-1 h-px bg-[color-mix(in_srgb,var(--color-border)_40%,transparent)]" />;
+  return <div className="my-1 h-px bg-border/40" />;
 }
 
 export interface SubMenuProps {
@@ -80,7 +80,7 @@ export function SubMenu({ icon, label, children }: SubMenuProps) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setOpen(false)}
     >
-      <button className="flex items-center gap-2 w-full px-3 py-1.5 text-xs rounded-md transition-colors text-left text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_60%,transparent)]">
+      <button className="flex items-center gap-2 w-full px-3 py-1.5 text-xs rounded-md transition-colors text-left text-foreground hover:bg-muted/60">
         {icon && <span className="w-4 h-4 flex items-center justify-center shrink-0">{icon}</span>}
         <span className="flex-1 truncate">{label}</span>
         <ArrowRight className="h-3 w-3 text-muted-foreground" />
@@ -94,7 +94,7 @@ export function SubMenu({ icon, label, children }: SubMenuProps) {
             transition={{ duration: 0.1 }}
             className={cn(
               'absolute top-0 min-w-[180px] py-1 px-1 rounded-lg',
-              'bg-popover border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] shadow-xl backdrop-blur-xl z-[101]',
+              'glass-popover border border-border/50 shadow-xl z-[101]',
               openLeft ? 'right-full mr-1' : 'left-full ml-1',
             )}
           >
@@ -155,7 +155,7 @@ export function BarContextMenu({ position, onClose, children, estimatedHeight = 
       transition={{ duration: 0.1 }}
       className={cn(
         'fixed z-[100] min-w-[200px] py-1.5 px-1 rounded-lg',
-        'bg-popover border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] shadow-xl backdrop-blur-xl',
+        'glass-popover border border-border/50 shadow-xl',
       )}
       style={{ left: adjustedPosition.x, top: adjustedPosition.y }}
     >

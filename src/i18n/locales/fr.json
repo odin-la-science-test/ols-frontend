@@ -163,6 +163,23 @@
     "passwordMin": "Le mot de passe doit contenir au moins 8 caractères",
     "passwordMismatch": "Les mots de passe ne correspondent pas",
     "passwordPlaceholder": "••••••••",
+    "forgotPassword": "Mot de passe oublié ?",
+    "forgotPasswordTitle": "Réinitialiser le mot de passe",
+    "forgotPasswordDesc": "Entrez votre adresse email et nous vous enverrons un lien de réinitialisation.",
+    "forgotPasswordSent": "Si un compte existe avec cet email, vous recevrez un lien de réinitialisation sous peu.",
+    "sendResetLink": "Envoyer le lien",
+    "resetPasswordTitle": "Nouveau mot de passe",
+    "resetPassword": "Réinitialiser le mot de passe",
+    "resetPasswordSuccess": "Mot de passe réinitialisé avec succès ! Redirection vers la connexion...",
+    "resetPasswordInvalidToken": "Ce lien de réinitialisation est invalide ou a expiré.",
+    "newPassword": "Nouveau mot de passe",
+    "backToLogin": "Retour à la connexion",
+    "verifyEmailLoading": "Vérification en cours...",
+    "verifyEmailSuccess": "Votre adresse email a été vérifiée ! Redirection...",
+    "verifyEmailExpired": "Ce lien de vérification est invalide ou a expiré.",
+    "verifyEmailResend": "Renvoyer l'email de vérification",
+    "verifyEmailBanner": "Veuillez vérifier votre adresse email.",
+    "verifyEmailBannerAction": "Renvoyer l'email",
     "privacyPolicy": "Politique de confidentialité",
     "registerFailed": "Échec de l'inscription. Veuillez réessayer.",
     "signIn": "Connexion",
@@ -196,7 +213,13 @@
     "oxydase": "Oxydase",
     "oxydaseShort": "Oxy.",
     "resistance": "Résistance",
-    "title": "Bactériologie"
+    "title": "Bactériologie",
+    "tour": {
+      "table": { "title": "Collection bactériologique", "description": "Explorez la liste des bactéries avec leurs espèces, souches et scores de confiance." },
+      "detail": { "title": "Panneau de détail", "description": "Cliquez sur une bactérie pour afficher ses caractéristiques détaillées." },
+      "filters": { "title": "Filtres", "description": "Affinez votre recherche par coloration de Gram, gènes de résistance et morphologie." },
+      "stats": { "title": "Statistiques", "description": "Consultez les statistiques de votre collection en un coup d'œil." }
+    }
   },
   "bottomPanel": {
     "alignCenter": "Centre",
@@ -213,6 +236,23 @@
       "noData": "Aucune donnée bactériologique chargée",
       "resistance": "Résist.",
       "tab": "Gram Overview"
+    },
+    "fungusOverview": {
+      "tab": "Vue d'ensemble Champignons",
+      "noData": "Aucune donnée mycologique chargée",
+      "typeDistribution": "Distribution par type",
+      "characteristics": "Caractéristiques",
+      "clinicalProfile": "Profil clinique",
+      "biochemProfile": "Profil biochimique",
+      "hosts": "Hôtes",
+      "toxins": "Toxines",
+      "allergens": "Allerg.",
+      "metabolites": "Métabolites secondaires",
+      "metabolitesShort": "Mét",
+      "enzymes": "Enzymes",
+      "enzymesShort": "Enz",
+      "substrates": "Substrats dégradables",
+      "substratesShort": "Sub"
     },
     "hide": "Masquer le panneau",
     "maximize": "Agrandir",
@@ -379,6 +419,11 @@
     "saveError": "Erreur lors de l'enregistrement",
     "searchPlaceholder": "Rechercher...",
     "title": "Contacts",
+    "tour": {
+      "table": { "title": "Liste des contacts", "description": "Retrouvez tous vos contacts professionnels avec leurs informations." },
+      "detail": { "title": "Fiche contact", "description": "Cliquez sur un contact pour voir sa fiche détaillée." },
+      "search": { "title": "Recherche", "description": "Recherchez un contact par nom, email ou organisation." }
+    },
     "unfavorite": "Retirer des favoris",
     "updated": "Contact mis à jour !",
     "updatedAt": "Modifié le",
@@ -617,6 +662,12 @@
     "pathogens": "Pathogènes",
     "profileSectionTitle": "Profil mycologique",
     "title": "Mycologie",
+    "tour": {
+      "table": { "title": "Collection mycologique", "description": "Parcourez la liste des champignons et levures avec leurs caractéristiques." },
+      "detail": { "title": "Panneau de détail", "description": "Cliquez sur un champignon pour afficher ses propriétés détaillées." },
+      "filters": { "title": "Filtres", "description": "Filtrez par type, métabolites secondaires et caractéristiques morphologiques." },
+      "stats": { "title": "Statistiques", "description": "Vue d'ensemble des statistiques de votre collection mycologique." }
+    },
     "toxic": "Toxiques",
     "yeasts": "Levures"
   },
@@ -658,6 +709,11 @@
     "title": "Notes",
     "titleLabel": "Titre",
     "titlePlaceholder": "Titre de la note",
+    "tour": {
+      "table": { "title": "Vos notes", "description": "Retrouvez toutes vos notes organisées par date de modification." },
+      "detail": { "title": "Contenu de la note", "description": "Cliquez sur une note pour lire son contenu et ses tags." },
+      "search": { "title": "Recherche et tags", "description": "Recherchez par titre ou utilisez les tags pour filtrer vos notes." }
+    },
     "updated": "Note mise à jour !",
     "updatedAt": "Modifiée le",
     "validation": {
@@ -691,6 +747,10 @@
       "ORGANIZATION_ROLE_CHANGED": "Rôle modifié",
       "ORGANIZATION_REMOVED": "Retrait organisation"
     },
+    "tour": {
+      "table": { "title": "Historique des notifications", "description": "Consultez vos notifications par ordre chronologique." },
+      "detail": { "title": "Détail de la notification", "description": "Cliquez sur une notification pour lire son contenu complet." }
+    },
     "unread": "non lue(s)",
     "viewAll": "Voir toutes les notifications"
   },
@@ -710,6 +770,7 @@
     "passwordMismatch": "Les mots de passe ne correspondent pas",
     "passwordRequired": "Tous les champs sont requis",
     "passwordTooShort": "Le mot de passe doit contenir au moins 4 caractères",
+    "passwordIncorrect": "Mot de passe actuel incorrect",
     "personalInfo": "Informations personnelles",
     "personalInfoDesc": "Gérez vos informations de compte",
     "role": "Rôle",
@@ -733,7 +794,14 @@
     "avatarCategoryRobots": "Robots",
     "avatarCategoryEmojis": "Emojis",
     "removeAvatar": "Retirer l'avatar",
-    "avatarChanged": "Avatar mis a jour !"
+    "avatarChanged": "Avatar mis a jour !",
+    "tour": {
+      "name": "Visite du profil",
+      "avatar": { "title": "Photo de profil", "description": "Personnalisez votre avatar en cliquant sur l'icône caméra." },
+      "info": { "title": "Informations personnelles", "description": "Modifiez votre nom et consultez votre rôle." },
+      "security": { "title": "Sécurité", "description": "Changez votre mot de passe dans cette section." },
+      "sessions": { "title": "Sessions actives", "description": "Gérez vos sessions et déconnectez-vous d'autres appareils." }
+    }
   },
   "profiles": {
     "activate": "Passer à ce profil",
@@ -830,6 +898,10 @@
     "titleLabel": "Titre",
     "titlePlaceholder": "Titre (optionnel)",
     "totalDownloads": "Téléchargements",
+    "tour": {
+      "table": { "title": "Vos partages", "description": "Retrouvez tous vos partages de fichiers et textes." },
+      "detail": { "title": "Détail du partage", "description": "Cliquez sur un partage pour voir son contenu et copier le code." }
+    },
     "type": "Type",
     "typeFile": "Fichier",
     "typeText": "Texte",
@@ -971,6 +1043,17 @@
     "notificationsDesc": "Gérez vos préférences de notification",
     "notificationsDisabled": "Notifications désactivées",
     "notificationsEnabled": "Notifications activées",
+    "notifInApp": "In-app",
+    "notifEmail": "Email",
+    "notifSupport": "Tickets support",
+    "notifSupportDesc": "Réponses et mises à jour de vos tickets",
+    "notifOrganization": "Organisations",
+    "notifOrganizationDesc": "Invitations et changements de rôle",
+    "notifLogin": "Connexions",
+    "notifLoginDesc": "Nouvelles connexions détectées sur votre compte",
+    "notifShare": "Partages",
+    "notifShareDesc": "Contenus partagés avec vous",
+    "notifSecurityNote": "Les emails de sécurité (mot de passe modifié, vérification email) sont toujours envoyés.",
     "panelAlignment": "Alignement du panneau",
     "platform": "Plateforme",
     "presetCatppuccin": "Catppuccin",
@@ -1033,6 +1116,19 @@
     "statusBarDesc": "Configurer la barre d'informations contextuelles en bas",
     "themePreset": "Thème prédéfini",
     "title": "Paramètres",
+    "tours": "Visites guidées",
+    "toursDesc": "Gérer les visites guidées de la plateforme",
+    "toursCompleted_one": "{{count}} visite terminée",
+    "toursCompleted_other": "{{count}} visites terminées",
+    "toursCompleted_zero": "Aucune visite terminée",
+    "toursReset": "Tout rejouer",
+    "tour": {
+      "name": "Visite des paramètres",
+      "appearance": { "title": "Apparence", "description": "Choisissez un thème et personnalisez les couleurs d'accent." },
+      "density": { "title": "Densité", "description": "Ajustez la taille de l'interface et la police selon vos préférences." },
+      "keybindings": { "title": "Raccourcis clavier", "description": "Consultez et personnalisez les raccourcis clavier." },
+      "profiles": { "title": "Profils", "description": "Sauvegardez et restaurez vos configurations de workspace." }
+    },
     "version": "Version"
   },
   "shortcuts": {
@@ -1120,6 +1216,11 @@
     "subjectPlaceholder": "Décrivez brièvement votre problème",
     "submit": "Envoyer",
     "title": "Support",
+    "tour": {
+      "table": { "title": "Vos tickets", "description": "Consultez vos tickets de support et leur statut." },
+      "detail": { "title": "Conversation", "description": "Cliquez sur un ticket pour voir l'historique des échanges." },
+      "filters": { "title": "Filtres", "description": "Filtrez par statut ou priorité pour retrouver un ticket." }
+    },
     "updated": "Ticket mis à jour !",
     "updatedAt": "Modifié le",
     "validation": {
@@ -1149,6 +1250,48 @@
     "restoreTab": "Restaurer l'onglet fermé",
     "title": "tabs",
     "unpin": "Désépingler l'onglet"
+  },
+  "tour": {
+    "global": {
+      "name": "Visite de l'interface",
+      "welcome": { "title": "Bienvenue dans votre espace de travail !", "description": "Découvrez les outils de navigation disponibles sur chaque page de module." },
+      "menuBar": { "title": "Barre de menu", "description": "Naviguez entre les plateformes Munin Atlas et Hugin Lab, et accédez à l'aide." },
+      "activityBar": { "title": "Barre d'activité", "description": "Accédez rapidement à vos modules favoris et panneaux d'activité." },
+      "tabBar": { "title": "Barre d'onglets", "description": "Travaillez sur plusieurs modules en parallèle grâce aux onglets." },
+      "commandPalette": { "title": "Palette de commandes", "description": "Appuyez sur Ctrl+K pour rechercher des modules, commandes et éléments depuis n'importe où." },
+      "statusBar": { "title": "Barre de statut", "description": "Consultez les informations contextuelles du module actif." }
+    },
+    "home": {
+      "name": "Visite de l'accueil",
+      "welcome": { "title": "Bienvenue sur Odin La Science !", "description": "Voici votre tableau de bord personnel. Découvrons-le ensemble." },
+      "platforms": { "title": "Plateformes", "description": "Munin Atlas regroupe les outils d'identification scientifique. Hugin Lab regroupe vos outils de laboratoire. Cliquez pour explorer." },
+      "dashboard": { "title": "Widgets", "description": "Vos widgets affichent les informations clés de chaque module." },
+      "customize": { "title": "Personnalisation", "description": "Cliquez sur Personnaliser pour réorganiser, redimensionner et masquer les widgets par glisser-déposer." }
+    },
+    "atlas": {
+      "name": "Visite de Munin Atlas",
+      "welcome": { "title": "Munin Atlas", "description": "Atlas regroupe les outils d'identification scientifique : bactériologie, mycologie et plus encore." },
+      "modules": { "title": "Modules disponibles", "description": "Chaque carte représente un module. Cliquez pour l'ouvrir et commencer à travailler." }
+    },
+    "lab": {
+      "name": "Visite de Hugin Lab",
+      "welcome": { "title": "Hugin Lab", "description": "Lab regroupe vos outils de laboratoire : notes, contacts, partage de fichiers, support et plus." },
+      "modules": { "title": "Modules disponibles", "description": "Chaque carte représente un outil. Cliquez pour l'ouvrir dans votre espace de travail." }
+    },
+    "workspace": {
+      "name": "Visite du workspace",
+      "actions": { "title": "Ouvrir un module", "description": "Utilisez la palette de commandes ou retournez à l'accueil pour choisir un module." },
+      "menuBar": { "title": "Barre de menu", "description": "Vous pouvez aussi naviguer via le menu pour accéder aux plateformes et modules." },
+      "activityBar": { "title": "Barre d'activité", "description": "Épinglez vos modules favoris ici pour y accéder en un clic." }
+    },
+    "buttons": {
+      "next": "Suivant",
+      "previous": "Précédent",
+      "finish": "Terminer",
+      "skip": "Passer"
+    },
+    "replay": "Visite guidée",
+    "replayModule": "Relancer la visite du module"
   },
   "workspace": {
     "addPanel": "Ajouter un panneau",
@@ -1242,6 +1385,11 @@
       "manager": "Responsable",
       "member": "Membre",
       "intern": "Stagiaire"
+    },
+    "tour": {
+      "table": { "title": "Vos organisations", "description": "Chaque organisation représente une équipe ou institution." },
+      "detail": { "title": "Détail de l'organisation", "description": "Cliquez sur une organisation pour voir ses membres." },
+      "search": { "title": "Recherche", "description": "Recherchez une organisation par nom." }
     }
   },
   "workspacePage": {

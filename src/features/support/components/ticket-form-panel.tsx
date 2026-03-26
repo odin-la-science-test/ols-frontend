@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { Controller } from 'react-hook-form';
 import { Button, Input, Textarea } from '@/components/ui';
 import { SidebarFormBody, SidebarFormField, SidebarFormActions } from '@/components/modules/shared';
-import { CHIP_BASE, CHIP_ACTIVE, CHIP_INACTIVE } from '@/components/modules/shared/identification-ui';
 import { cn } from '@/lib/utils';
 import { useCreateTicket } from '../hooks';
 import { toast } from '@/hooks';
@@ -61,7 +60,7 @@ export function TicketForm({ onSaved, onCancel, moduleKey }: TicketFormProps) {
           <Input
             {...register('subject')}
             placeholder={t('support.subjectPlaceholder')}
-            className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]"
+            className="bg-card border-border/40"
             autoFocus
           />
         </SidebarFormField>
@@ -78,8 +77,8 @@ export function TicketForm({ onSaved, onCancel, moduleKey }: TicketFormProps) {
                     type="button"
                     onClick={() => field.onChange(cat)}
                     className={cn(
-                      CHIP_BASE, 'px-3 py-1.5 text-xs',
-                      field.value === cat ? CHIP_ACTIVE : CHIP_INACTIVE
+                      'chip-base px-3 py-1.5 text-xs',
+                      field.value === cat ? 'chip-active' : 'chip-inactive'
                     )}
                   >
                     {ticketCategoryLabel(cat, t)}
@@ -95,7 +94,7 @@ export function TicketForm({ onSaved, onCancel, moduleKey }: TicketFormProps) {
             {...register('description')}
             placeholder={t('support.descriptionPlaceholder')}
             rows={8}
-            className="border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card"
+            className="border-border/40 bg-card"
           />
         </SidebarFormField>
       </SidebarFormBody>

@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils"
 
 export const cardStyles = {
   default: "bg-card border border-border",
-  glass: "bg-[color-mix(in_srgb,var(--color-card)_70%,transparent)] backdrop-blur-xl border border-[color-mix(in_srgb,var(--color-border)_60%,transparent)]",
-  elevated: "bg-card border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] shadow-lg shadow-black/5",
+  glass: "glass-card border border-border/60",
+  elevated: "bg-card border border-border/50 shadow-lg shadow-black/5",
   outline: "bg-transparent border border-border",
 }
 

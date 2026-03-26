@@ -18,6 +18,7 @@ import {
   Layers,
   Activity,
   Columns2,
+  Route,
 } from 'lucide-react';
 import { SettingsLayout, type SettingsSection } from '@/components/modules/layout';
 import { AppearanceSection } from './components/appearance-section';
@@ -34,6 +35,7 @@ import { SplitViewSection } from './components/split-view-section';
 import { ActivityBarSection } from './components/activity-bar-section';
 import { KeybindingsSection } from './components/keybindings-section';
 import { ProfilesSection } from './components/profiles-section';
+import { ToursSection } from './components/tours-section';
 import { AboutSection } from './components/about-section';
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -62,6 +64,7 @@ export function SettingsPage() {
     { id: 'activity-bar', icon: LayoutGrid, labelKey: 'settingsPage.activityBar', keywords: ['activity', 'bar', 'barre', 'activité', 'sidebar', 'explorer'] },
     { id: 'keybindings', icon: Keyboard, labelKey: 'settingsPage.keybindings', keywords: ['keyboard', 'shortcut', 'key', 'raccourci', 'clavier', 'binding'] },
     { id: 'profiles', icon: UserCircle, labelKey: 'settingsPage.profiles', keywords: ['profile', 'profil', 'workspace', 'save', 'export', 'import', 'sauvegarder', 'configuration'] },
+    { id: 'tours', icon: Route, labelKey: 'settingsPage.tours', keywords: ['tour', 'visite', 'guide', 'tutoriel', 'tutorial', 'onboarding', 'replay', 'rejouer'] },
     { id: 'about', icon: Info, labelKey: 'settingsPage.about', keywords: ['about', 'version', 'info', 'à propos'] },
   ];
 
@@ -86,6 +89,7 @@ export function SettingsPage() {
               {filteredSectionIds.includes('activity-bar') && <ActivityBarSection />}
               {filteredSectionIds.includes('keybindings') && <KeybindingsSection />}
               {filteredSectionIds.includes('profiles') && <ProfilesSection />}
+              {filteredSectionIds.includes('tours') && <ToursSection />}
               {filteredSectionIds.includes('about') && <AboutSection />}
       </>)}
     </SettingsLayout>

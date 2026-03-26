@@ -57,7 +57,7 @@ export function SearchInput({
   };
 
   return (
-    <div className={cn('relative', className)}>
+    <div data-tour="search-input" className={cn('relative', className)}>
       <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
       <Input
         ref={inputRef}
@@ -68,8 +68,8 @@ export function SearchInput({
         autoFocus={autoFocus}
         className={cn(
           'pl-9 pr-9',
-          'bg-[color-mix(in_srgb,var(--color-background)_50%,transparent)] border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]',
-          'focus:bg-background focus:border-[color-mix(in_srgb,var(--color-primary)_50%,transparent)]',
+          'bg-background/50 border-border/50',
+          'focus:bg-background focus:border-primary/50',
           'placeholder:text-muted-foreground/70'
         )}
       />

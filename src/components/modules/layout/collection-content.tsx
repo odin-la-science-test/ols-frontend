@@ -64,7 +64,7 @@ export function DesktopDetailPortal<T extends { id: number }>({
   if (showForm && renderEditor) {
     content = (
       <div className="flex flex-col h-full overflow-hidden">
-        <div className="flex items-center justify-between px-3 py-2 border-b border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] shrink-0">
+        <div className="flex items-center justify-between px-3 py-2 border-b border-border/50 shrink-0">
           <h2 className="text-sm font-semibold truncate">
             {formMode === 'create'
               ? (newItemConfig?.createTitle ? t(newItemConfig.createTitle) : t('common.create'))
@@ -197,13 +197,13 @@ export function MobileOverlays<T extends { id: number }>({
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 bg-background lg:hidden flex flex-col"
           >
-            <div className="flex items-center justify-between px-4 h-14 border-b border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] shrink-0">
+            <div className="flex items-center justify-between px-4 h-14 border-b border-border/50 shrink-0">
               <h2 className="text-base font-semibold">
                 {formMode === 'create'
                   ? (newItemConfig?.createTitle ? t(newItemConfig.createTitle) : t('common.create'))
                   : (newItemConfig?.editTitle ? t(newItemConfig.editTitle) : t('common.edit'))}
               </h2>
-              <button onClick={onCancelForm} className="p-1.5 rounded-md hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors">
+              <button onClick={onCancelForm} className="p-1.5 rounded-md hover:bg-muted/50 transition-colors">
                 <X className="w-5 h-5" />
               </button>
             </div>

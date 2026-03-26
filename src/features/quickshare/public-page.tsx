@@ -163,7 +163,7 @@ export function SharedViewPage() {
 
       <div className="relative z-10 flex flex-col flex-1">
         {/* Minimal header */}
-        <header className="bg-card border-b border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]">
+        <header className="bg-card border-b border-border/40">
           <div className="flex items-center justify-between h-14 px-4 md:px-6 max-w-3xl mx-auto w-full">
             <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Share2 className="w-5 h-5 text-[var(--module-accent)]" strokeWidth={1.5} />
@@ -199,7 +199,7 @@ export function SharedViewPage() {
                   exit={{ opacity: 0 }}
                   className="flex flex-col items-center justify-center py-20 text-center"
                 >
-                  <div className="p-4 rounded-full bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] mb-4">
+                  <div className="p-4 rounded-full bg-muted/50 mb-4">
                     <AlertTriangle className="w-8 h-8 text-muted-foreground" />
                   </div>
                   <h2 className="text-xl font-semibold mb-2">
@@ -229,9 +229,9 @@ export function SharedViewPage() {
                   className="space-y-5"
                 >
                   {/* Card header */}
-                  <div className="rounded-xl border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card overflow-hidden">
+                  <div className="rounded-xl border border-border/40 bg-card overflow-hidden">
                     {/* Title bar */}
-                    <div className="flex items-center gap-3 px-5 py-4 border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]">
+                    <div className="flex items-center gap-3 px-5 py-4 border-b border-border/30">
                       <div
                         className="p-2 rounded-lg bg-[var(--module-accent-subtle)]"
                       >
@@ -252,7 +252,7 @@ export function SharedViewPage() {
                     </div>
 
                     {/* Meta row */}
-                    <div className="flex items-center gap-4 px-5 py-3 bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] text-xs text-muted-foreground">
+                    <div className="flex items-center gap-4 px-5 py-3 bg-muted/30 text-xs text-muted-foreground">
                       <span className="flex items-center gap-1">
                         {isText ? <Eye className="w-3.5 h-3.5" /> : <Download className="w-3.5 h-3.5" />}
                         {item.downloadCount} {isText ? t('quickshare.views').toLowerCase() : t('quickshare.downloads').toLowerCase()}
@@ -274,7 +274,7 @@ export function SharedViewPage() {
                         <div className="space-y-3">
                           <pre className={cn(
                             'whitespace-pre-wrap break-words text-sm font-mono',
-                            'rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-muted p-4 max-h-[60vh] overflow-y-auto'
+                            'rounded-lg border border-border/40 bg-muted p-4 max-h-[60vh] overflow-y-auto'
                           )}>
                             {item.textContent}
                           </pre>
@@ -303,7 +303,7 @@ export function SharedViewPage() {
                           {item.files.map((file) => (
                             <div
                               key={file.id}
-                              className="rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] p-3 flex items-center gap-3"
+                              className="rounded-lg border border-border/40 bg-muted/40 p-3 flex items-center gap-3"
                             >
                               <File className="w-4 h-4 text-[var(--module-accent)] shrink-0" strokeWidth={1.5} />
                               <div className="flex-1 min-w-0">

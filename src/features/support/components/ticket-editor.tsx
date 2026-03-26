@@ -110,7 +110,7 @@ export function TicketEditor({ ticket, onSaved, onCancel }: TicketEditorProps) {
           placeholder={t('support.subjectPlaceholder')}
           value={subject}
           onChange={(e) => setSubject(e.target.value)}
-          className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]"
+          className="bg-card border-border/40"
           autoFocus
         />
       </div>
@@ -123,7 +123,7 @@ export function TicketEditor({ ticket, onSaved, onCancel }: TicketEditorProps) {
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value as TicketCategory)}
-          className="w-full rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[var(--module-accent)] focus:border-[var(--module-accent)] transition-colors"
+          className="w-full rounded-lg border border-border/40 bg-card px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[var(--module-accent)] focus:border-[var(--module-accent)] transition-colors"
         >
           {CATEGORIES.map((cat) => (
             <option key={cat} value={cat}>
@@ -143,7 +143,7 @@ export function TicketEditor({ ticket, onSaved, onCancel }: TicketEditorProps) {
           onChange={(e) => setDescription(e.target.value)}
           placeholder={t('support.descriptionPlaceholder')}
           rows={6}
-          className="border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card"
+          className="border-border/40 bg-card"
         />
       </div>
 

@@ -129,19 +129,19 @@ export function DataTable<T extends { id: string | number }>({
       >
         <div className="animate-pulse">
           {/* Header skeleton */}
-          <div className={cn('border-b border-border bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]', d.tableHeaderPadding)}>
-            <div className="h-4 bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] rounded w-1/3" />
+          <div className={cn('border-b border-border bg-muted/30', d.tableHeaderPadding)}>
+            <div className="h-4 bg-muted/50 rounded w-1/3" />
           </div>
           {/* Row skeletons */}
           {Array.from({ length: 5 }).map((_, i) => (
             <div
               key={i}
-              className={cn('border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] last:border-0', d.tableCellPadding)}
+              className={cn('border-b border-border/30 last:border-0', d.tableCellPadding)}
             >
               <div className="flex gap-4">
-                <div className="h-4 bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] rounded flex-1" />
-                <div className="h-4 bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] rounded w-20" />
-                <div className="h-4 bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] rounded w-16" />
+                <div className="h-4 bg-muted/30 rounded flex-1" />
+                <div className="h-4 bg-muted/30 rounded w-20" />
+                <div className="h-4 bg-muted/30 rounded w-16" />
               </div>
             </div>
           ))}
@@ -167,6 +167,7 @@ export function DataTable<T extends { id: string | number }>({
 
   return (
     <div
+      data-tour="collection-table"
       className={cn(
         'rounded-xl border border-border bg-card overflow-hidden',
         className
@@ -176,7 +177,7 @@ export function DataTable<T extends { id: string | number }>({
         <table className="w-full">
           {/* Header */}
           <thead>
-            <tr className="border-b border-border bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]">
+            <tr className="border-b border-border bg-muted/20">
               {/* Selection column header */}
               {isSelectionMode && (
                 <th className={d.tableCheckboxPadding}>
@@ -224,11 +225,11 @@ export function DataTable<T extends { id: string | number }>({
                     (onSelect || isSelectionMode) && 'cursor-pointer',
                     // Normal selection (detail view)
                     !isSelectionMode && selectedId === row.id
-                      ? 'bg-[color-mix(in_srgb,var(--color-primary)_5%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-primary)_10%,transparent)]'
-                      : !isSelectionMode && 'even:bg-[color-mix(in_srgb,var(--color-muted)_15%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]',
+                      ? 'bg-primary/5 hover:bg-primary/10'
+                      : !isSelectionMode && 'even:bg-muted/15 hover:bg-muted/30',
                     // Selection mode styling
-                    isSelectionMode && isChecked && 'bg-[color-mix(in_srgb,var(--color-primary)_5%,transparent)]',
-                    isSelectionMode && !isChecked && 'even:bg-[color-mix(in_srgb,var(--color-muted)_15%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]',
+                    isSelectionMode && isChecked && 'bg-primary/5',
+                    isSelectionMode && !isChecked && 'even:bg-muted/15 hover:bg-muted/30',
                     isSelectionMode && isMaxSelectionReached && !isChecked && 'opacity-60'
                   )}
                 >

@@ -7,24 +7,11 @@ import { cn } from '@/lib/utils';
 import { useDensity } from '@/hooks';
 import { useActivityLog } from '@/hooks/use-activity-log';
 import { HUGIN_PRIMARY } from '@/lib/accent-colors';
+import { formatRelativeTime } from '@/lib/format-time';
 import { useUnreadCount, useMyNotifications, useMarkAsRead, useMarkAllAsRead } from '../hooks';
 import { NOTIFICATION_TYPE_ICONS, NOTIFICATION_TYPE_COLORS } from '../notification-rendering';
 
 // ─── Notifications Panel (compact, activity bar sidebar) ─────────────
-
-function formatRelativeTime(dateStr: string): string {
-  const now = Date.now();
-  const date = new Date(dateStr).getTime();
-  const diff = now - date;
-  const minutes = Math.floor(diff / 60000);
-  const hours = Math.floor(diff / 3600000);
-  const days = Math.floor(diff / 86400000);
-
-  if (minutes < 1) return '1m';
-  if (minutes < 60) return `${minutes}m`;
-  if (hours < 24) return `${hours}h`;
-  return `${days}d`;
-}
 
 export default function NotificationsPanel() {
   const { t } = useTranslation();
@@ -44,7 +31,7 @@ export default function NotificationsPanel() {
       <div className="flex-1 overflow-y-auto">
         {/* Header actions */}
         {unreadCount > 0 && (
-          <div className={cn(density === 'compact' ? 'px-3 py-1' : 'px-3 py-2', 'border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]')}>
+          <div className={cn(density === 'compact' ? 'px-3 py-1' : 'px-3 py-2', 'border-b border-border/30')}>
             <button
               onClick={() => markAllAsRead.mutate(undefined, {
                 onSuccess: () => log({ type: 'action', message: t('activity.notifications.markAllAsRead'), icon: 'check-check', accentColor: HUGIN_PRIMARY }),
@@ -81,9 +68,9 @@ export default function NotificationsPanel() {
                   }}
                   className={cn(
                     'w-full flex items-start text-left',
-                    'hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors',
+                    'hover:bg-muted/50 transition-colors',
                     density === 'compact' ? 'gap-2 px-3 py-1.5' : 'gap-2.5 px-3 py-2.5',
-                    !notif.read && 'bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]'
+                    !notif.read && 'bg-muted/20'
                   )}
                 >
                   <TypeIcon className={cn('h-4 w-4 mt-0.5 shrink-0', typeColor)} />
@@ -103,7 +90,7 @@ export default function NotificationsPanel() {
                       </p>
                     )}
                     <p className="text-[10px] text-muted-foreground/60 mt-0.5">
-                      {formatRelativeTime(notif.createdAt)}
+                      {formatRelativeTime(notif.createdAt, t)}
                     </p>
                   </div>
                   {!notif.read && (
@@ -117,13 +104,13 @@ export default function NotificationsPanel() {
       </div>
 
       {/* View all link */}
-      <div className="p-2 border-t border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]">
+      <div className="p-2 border-t border-border/30">
         <Link
           to="/notifications"
           className={cn(
             'flex items-center justify-center gap-2 w-full rounded-lg',
             density === 'compact' ? 'px-2 py-1' : 'px-2 py-1.5',
-            'text-xs text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
+            'text-xs text-muted-foreground hover:text-foreground hover:bg-muted/50',
             'transition-colors',
           )}
         >

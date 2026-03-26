@@ -22,3 +22,4 @@ export { useLayoutStore } from './layout-store';
 export { useSidebarModeStore, type SidebarMode } from './sidebar-mode-store';
 export { usePanelRegistryStore, type PanelZone, type PanelCategory, type SidebarViewMode, type PanelRegistration, type SidebarZoneState } from './panel-registry-store';
 export { useHistoryStore } from './history-store';
+export { useTourStore } from './tour-store';

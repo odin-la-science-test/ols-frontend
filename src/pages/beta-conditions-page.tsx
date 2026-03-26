@@ -28,7 +28,7 @@ function ConditionSection({ icon, title, description, delay }: ConditionSectionP
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.4 }}
-      className="flex gap-4 p-4 rounded-lg bg-[color-mix(in_srgb,var(--color-card)_50%,transparent)] border border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]"
+      className="flex gap-4 p-4 rounded-lg bg-card/50 border border-border/30"
     >
       <div className="shrink-0 mt-0.5 text-amber-500">{icon}</div>
       <div>

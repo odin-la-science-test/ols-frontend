@@ -21,8 +21,8 @@ export function PresetCard({ preset, active, onClick }: PresetCardProps) {
       className={cn(
         'relative flex flex-col rounded-lg border overflow-hidden transition-all duration-150 group',
         active
-          ? 'border-[var(--module-accent)]/50 ring-1 ring-[var(--module-accent)]/30'
-          : 'border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] hover:border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]'
+          ? 'neutral-border ring-1 neutral-ring'
+          : 'border-border/30 hover:border-border/50'
       )}
     >
       {/* Color preview mini-window */}
@@ -61,7 +61,7 @@ export function PresetCard({ preset, active, onClick }: PresetCardProps) {
         active ? 'bg-card' : 'bg-card'
       )}>
         <span className="text-[11px] font-medium truncate">{t(preset.labelKey)}</span>
-        {active && <Check className={'w-3 h-3 shrink-0 text-[var(--module-accent)]'} />}
+        {active && <Check className={'w-3 h-3 shrink-0 neutral-check'} />}
       </div>
     </button>
   );

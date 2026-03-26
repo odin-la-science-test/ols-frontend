@@ -162,6 +162,23 @@
     "passwordMin": "Password must be at least 8 characters",
     "passwordMismatch": "Passwords do not match",
     "passwordPlaceholder": "••••••••",
+    "forgotPassword": "Forgot your password?",
+    "forgotPasswordTitle": "Reset password",
+    "forgotPasswordDesc": "Enter your email address and we'll send you a reset link.",
+    "forgotPasswordSent": "If an account exists with this email, you will receive a reset link shortly.",
+    "sendResetLink": "Send reset link",
+    "resetPasswordTitle": "New password",
+    "resetPassword": "Reset password",
+    "resetPasswordSuccess": "Password reset successfully! Redirecting to login...",
+    "resetPasswordInvalidToken": "This reset link is invalid or has expired.",
+    "newPassword": "New password",
+    "backToLogin": "Back to login",
+    "verifyEmailLoading": "Verifying...",
+    "verifyEmailSuccess": "Your email has been verified! Redirecting...",
+    "verifyEmailExpired": "This verification link is invalid or has expired.",
+    "verifyEmailResend": "Resend verification email",
+    "verifyEmailBanner": "Please verify your email address.",
+    "verifyEmailBannerAction": "Resend email",
     "privacyPolicy": "Privacy Policy",
     "registerFailed": "Registration failed. Please try again.",
     "signIn": "Sign In",
@@ -195,7 +212,13 @@
     "oxydase": "Oxydase",
     "oxydaseShort": "Oxy.",
     "resistance": "Resistance",
-    "title": "Bacteriology"
+    "title": "Bacteriology",
+    "tour": {
+      "table": { "title": "Bacteriology Collection", "description": "Browse bacteria with their species, strains, and confidence scores." },
+      "detail": { "title": "Detail Panel", "description": "Click on a bacterium to view its detailed characteristics." },
+      "filters": { "title": "Filters", "description": "Filter by Gram staining, resistance genes, and morphology." },
+      "stats": { "title": "Statistics", "description": "View your collection statistics at a glance." }
+    }
   },
   "bottomPanel": {
     "alignCenter": "Center",
@@ -212,6 +235,23 @@
       "noData": "No bacteriology data loaded",
       "resistance": "Resist.",
       "tab": "Gram Overview"
+    },
+    "fungusOverview": {
+      "tab": "Fungus Overview",
+      "noData": "No mycology data loaded",
+      "typeDistribution": "Type Distribution",
+      "characteristics": "Characteristics",
+      "clinicalProfile": "Clinical Profile",
+      "biochemProfile": "Biochemical Profile",
+      "hosts": "Hosts",
+      "toxins": "Toxins",
+      "allergens": "Allerg.",
+      "metabolites": "Secondary metabolites",
+      "metabolitesShort": "Met",
+      "enzymes": "Enzymes",
+      "enzymesShort": "Enz",
+      "substrates": "Degradable substrates",
+      "substratesShort": "Sub"
     },
     "hide": "Hide Panel",
     "maximize": "Maximize",
@@ -377,6 +417,11 @@
     "saveError": "Error saving contact",
     "searchPlaceholder": "Search...",
     "title": "Contacts",
+    "tour": {
+      "table": { "title": "Contacts List", "description": "Find all your professional contacts with their information." },
+      "detail": { "title": "Contact Details", "description": "Click on a contact to see their full profile." },
+      "search": { "title": "Search", "description": "Search for a contact by name, email, or organization." }
+    },
     "unfavorite": "Remove from favorites",
     "updated": "Contact updated!",
     "updatedAt": "Updated",
@@ -609,6 +654,12 @@
     "pathogens": "Pathogens",
     "profileSectionTitle": "Mycological Profile",
     "title": "Mycology",
+    "tour": {
+      "table": { "title": "Mycology Collection", "description": "Browse fungi and yeasts with their characteristics." },
+      "detail": { "title": "Detail Panel", "description": "Click on a fungus to view its detailed properties." },
+      "filters": { "title": "Filters", "description": "Filter by type, secondary metabolites, and morphology." },
+      "stats": { "title": "Statistics", "description": "Overview of your mycology collection statistics." }
+    },
     "toxic": "Toxic",
     "yeasts": "Yeasts"
   },
@@ -650,6 +701,11 @@
     "title": "Notes",
     "titleLabel": "Title",
     "titlePlaceholder": "Note title",
+    "tour": {
+      "table": { "title": "Your Notes", "description": "Browse all your notes organized by modification date." },
+      "detail": { "title": "Note Content", "description": "Click on a note to read its content and tags." },
+      "search": { "title": "Search & Tags", "description": "Search by title or use tags to filter your notes." }
+    },
     "updated": "Note updated!",
     "updatedAt": "Updated",
     "validation": {
@@ -670,6 +726,10 @@
     "open": "Open",
     "title": "Notifications",
     "titleLabel": "Title",
+    "tour": {
+      "table": { "title": "Notification History", "description": "View your notifications in chronological order." },
+      "detail": { "title": "Notification Detail", "description": "Click on a notification to read its full content." }
+    },
     "type": "Type",
     "types": {
       "CONTACT_ADDED": "Contact added",
@@ -702,6 +762,7 @@
     "passwordMismatch": "Passwords do not match",
     "passwordRequired": "All fields are required",
     "passwordTooShort": "Password must be at least 4 characters",
+    "passwordIncorrect": "Current password is incorrect",
     "personalInfo": "Personal Information",
     "personalInfoDesc": "Manage your account information",
     "role": "Role",
@@ -721,6 +782,13 @@
     "justNow": "Just now",
     "noSessions": "No active sessions",
     "title": "Profile",
+    "tour": {
+      "name": "Profile Tour",
+      "avatar": { "title": "Profile Picture", "description": "Customize your avatar by clicking the camera icon." },
+      "info": { "title": "Personal Information", "description": "Edit your name and view your role." },
+      "security": { "title": "Security", "description": "Change your password in this section." },
+      "sessions": { "title": "Active Sessions", "description": "Manage your sessions and sign out from other devices." }
+    },
     "pickAvatar": "Choose an avatar",
     "avatarCategoryRobots": "Robots",
     "avatarCategoryEmojis": "Emojis",
@@ -822,6 +890,10 @@
     "titleLabel": "Title",
     "titlePlaceholder": "Title (optional)",
     "totalDownloads": "Downloads",
+    "tour": {
+      "table": { "title": "Your Shares", "description": "Find all your file and text shares." },
+      "detail": { "title": "Share Details", "description": "Click on a share to view its content and copy the code." }
+    },
     "type": "Type",
     "typeFile": "File",
     "typeText": "Text",
@@ -963,6 +1035,17 @@
     "notificationsDesc": "Manage your notification preferences",
     "notificationsDisabled": "Notifications disabled",
     "notificationsEnabled": "Notifications enabled",
+    "notifInApp": "In-app",
+    "notifEmail": "Email",
+    "notifSupport": "Support tickets",
+    "notifSupportDesc": "Replies and updates on your tickets",
+    "notifOrganization": "Organizations",
+    "notifOrganizationDesc": "Invitations and role changes",
+    "notifLogin": "Logins",
+    "notifLoginDesc": "New logins detected on your account",
+    "notifShare": "Shares",
+    "notifShareDesc": "Content shared with you",
+    "notifSecurityNote": "Security emails (password changed, email verification) are always sent.",
     "panelAlignment": "Panel Alignment",
     "platform": "Platform",
     "presetCatppuccin": "Catppuccin",
@@ -1025,6 +1108,19 @@
     "statusBarDesc": "Configure the contextual information bar at the bottom",
     "themePreset": "Theme preset",
     "title": "Settings",
+    "tours": "Guided Tours",
+    "toursDesc": "Manage the platform's guided tours",
+    "toursCompleted_one": "{{count}} tour completed",
+    "toursCompleted_other": "{{count}} tours completed",
+    "toursCompleted_zero": "No tours completed",
+    "toursReset": "Replay all",
+    "tour": {
+      "name": "Settings Tour",
+      "appearance": { "title": "Appearance", "description": "Choose a theme and customize accent colors." },
+      "density": { "title": "Density", "description": "Adjust interface size and font according to your preferences." },
+      "keybindings": { "title": "Keyboard Shortcuts", "description": "View and customize keyboard shortcuts." },
+      "profiles": { "title": "Profiles", "description": "Save and restore workspace configurations." }
+    },
     "version": "Version"
   },
   "shortcuts": {
@@ -1107,6 +1203,11 @@
     "subjectPlaceholder": "Briefly describe your issue",
     "submit": "Submit",
     "title": "Support",
+    "tour": {
+      "table": { "title": "Your Tickets", "description": "View your support tickets and their status." },
+      "detail": { "title": "Conversation", "description": "Click on a ticket to see the conversation history." },
+      "filters": { "title": "Filters", "description": "Filter by status or priority to find a ticket." }
+    },
     "updated": "Ticket updated!",
     "updatedAt": "Updated",
     "validation": {
@@ -1136,6 +1237,48 @@
     "restoreTab": "Restore Closed Tab",
     "title": "tabs",
     "unpin": "Unpin tab"
+  },
+  "tour": {
+    "global": {
+      "name": "Interface Tour",
+      "welcome": { "title": "Welcome to your workspace!", "description": "Discover the navigation tools available on every module page." },
+      "menuBar": { "title": "Menu Bar", "description": "Navigate between Munin Atlas and Hugin Lab platforms, and access help." },
+      "activityBar": { "title": "Activity Bar", "description": "Quickly access your favorite modules and activity panels." },
+      "tabBar": { "title": "Tab Bar", "description": "Work on multiple modules in parallel using tabs." },
+      "commandPalette": { "title": "Command Palette", "description": "Press Ctrl+K to search for modules, commands, and items from anywhere." },
+      "statusBar": { "title": "Status Bar", "description": "View contextual information about the active module." }
+    },
+    "home": {
+      "name": "Home Tour",
+      "welcome": { "title": "Welcome to Odin La Science!", "description": "This is your personal dashboard. Let's explore it together." },
+      "platforms": { "title": "Platforms", "description": "Munin Atlas hosts scientific identification tools. Hugin Lab hosts your laboratory tools. Click to explore." },
+      "dashboard": { "title": "Widgets", "description": "Your widgets display key information from each module." },
+      "customize": { "title": "Customization", "description": "Click Customize to rearrange, resize, and hide widgets with drag-and-drop." }
+    },
+    "atlas": {
+      "name": "Munin Atlas Tour",
+      "welcome": { "title": "Munin Atlas", "description": "Atlas hosts scientific identification tools: bacteriology, mycology, and more." },
+      "modules": { "title": "Available Modules", "description": "Each card represents a module. Click to open it and start working." }
+    },
+    "lab": {
+      "name": "Hugin Lab Tour",
+      "welcome": { "title": "Hugin Lab", "description": "Lab hosts your laboratory tools: notes, contacts, file sharing, support, and more." },
+      "modules": { "title": "Available Tools", "description": "Each card represents a tool. Click to open it in your workspace." }
+    },
+    "workspace": {
+      "name": "Workspace Tour",
+      "actions": { "title": "Open a Module", "description": "Use the command palette or go back to the home page to pick a module." },
+      "menuBar": { "title": "Menu Bar", "description": "You can also navigate via the menu to access platforms and modules." },
+      "activityBar": { "title": "Activity Bar", "description": "Pin your favorite modules here for one-click access." }
+    },
+    "buttons": {
+      "next": "Next",
+      "previous": "Previous",
+      "finish": "Finish",
+      "skip": "Skip"
+    },
+    "replay": "Guided Tour",
+    "replayModule": "Replay module tour"
   },
   "workspace": {
     "addPanel": "Add a panel",
@@ -1174,6 +1317,11 @@
   },
   "organization": {
     "title": "Organizations",
+    "tour": {
+      "table": { "title": "Your Organizations", "description": "Each organization represents a team or institution." },
+      "detail": { "title": "Organization Details", "description": "Click on an organization to see its members." },
+      "search": { "title": "Search", "description": "Search for an organization by name." }
+    },
     "searchPlaceholder": "Search an organization...",
     "emptyTitle": "No organizations",
     "emptyDesc": "You are not a member of any organization",

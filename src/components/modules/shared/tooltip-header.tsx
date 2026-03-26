@@ -11,7 +11,7 @@ export function TooltipHeader({ shortLabel, fullLabel }: TooltipHeaderProps) {
   return (
     <Tooltip delayDuration={200}>
       <TooltipTrigger asChild>
-        <span className="cursor-default border-b border-dotted border-muted-foreground/40 hover:border-[color-mix(in_srgb,var(--color-primary)_60%,transparent)] transition-colors">
+        <span className="cursor-default border-b border-dotted border-muted-foreground/40 hover:border-primary/60 transition-colors">
           {shortLabel}
         </span>
       </TooltipTrigger>

@@ -55,8 +55,7 @@ export const useNotificationStream = () => {
     const ctrl = new AbortController();
     controllerRef.current = ctrl;
 
-    const baseUrl = import.meta.env.VITE_API_URL || '/api';
-    fetchEventSource(`${baseUrl}/notifications/stream`, {
+    fetchEventSource('/api/notifications/stream', {
       method: 'GET',
       headers: { Authorization: `Bearer ${token}` },
       signal: ctrl.signal,

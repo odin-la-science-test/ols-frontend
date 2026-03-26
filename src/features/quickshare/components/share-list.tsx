@@ -101,8 +101,8 @@ function ShareItem({ item, index, onView }: ShareItemProps) {
       onClick={onView}
       className={cn(
         'group flex items-center gap-3 p-3 rounded-lg cursor-pointer',
-        'border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card',
-        'hover:bg-card hover:border-[color-mix(in_srgb,var(--color-border)_60%,transparent)] transition-all duration-200',
+        'border border-border/40 bg-card',
+        'hover:bg-card hover:border-border/60 transition-all duration-200',
         isExpiredOrLimited && 'opacity-50'
       )}
     >
@@ -154,7 +154,7 @@ function ShareItem({ item, index, onView }: ShareItemProps) {
           <TooltipTrigger asChild>
             <button
               onClick={copyShareLink}
-              className="p-1.5 rounded-md hover:bg-[color-mix(in_srgb,var(--color-muted)_80%,transparent)] transition-colors"
+              className="p-1.5 rounded-md hover:bg-muted/80 transition-colors"
             >
               {copied ? (
                 <Check className="w-4 h-4 text-[var(--module-accent)]" />
@@ -170,7 +170,7 @@ function ShareItem({ item, index, onView }: ShareItemProps) {
             <button
               onClick={handleDelete}
               disabled={deleteMutation.isPending}
-              className="p-1.5 rounded-md hover:bg-[color-mix(in_srgb,var(--color-destructive)_10%,transparent)] transition-colors"
+              className="p-1.5 rounded-md hover:bg-destructive/10 transition-colors"
             >
               <Trash2 className="w-4 h-4 text-muted-foreground hover:text-destructive" />
             </button>

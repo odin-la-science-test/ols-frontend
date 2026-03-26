@@ -69,8 +69,8 @@ export function ContentDetail({
       transition={{ duration: 0.2 }}
       className={cn(
         'flex-shrink-0 h-full',
-        'bg-[color-mix(in_srgb,var(--color-card)_30%,transparent)] backdrop-blur-sm',
-        'border-l border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]',
+        'glass-subtle',
+        'border-l border-border/50',
         'overflow-hidden',
         className
       )}

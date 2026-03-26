@@ -62,7 +62,7 @@ export function FiltersPanel() {
     return (
       <div className="flex flex-col h-full overflow-hidden">
         {/* Module-header style tab bar — two headers side by side */}
-        <div className="flex shrink-0 border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]">
+        <div className="flex shrink-0 border-b border-border/30">
           {tabDefs.map(({ id, reg }) => {
             const isActive = activeTab === id;
             return (
@@ -71,10 +71,10 @@ export function FiltersPanel() {
                 onClick={() => setActiveTab(id)}
                 className={cn(
                   'flex-1 min-w-0 flex items-center gap-1.5 px-2.5 py-1.5 transition-colors cursor-pointer',
-                  'border-r last:border-r-0 border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]',
-                  isActive ? 'bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]' : 'bg-[color-mix(in_srgb,var(--color-muted)_10%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]'
+                  'border-r last:border-r-0 border-border/30',
+                  isActive ? 'bg-muted/30' : 'bg-muted/10 hover:bg-muted/20'
                 )}
-                style={isActive ? { borderBottom: `2px solid ${reg?.accentColor || 'color-mix(in srgb, var(--color-foreground) 40%, transparent)'}` } : { borderBottom: '2px solid transparent' }}
+                style={isActive ? { borderBottom: `2px solid ${reg?.accentColor || 'hsl(var(--foreground) / 0.4)'}` } : { borderBottom: '2px solid transparent' }}
               >
                 <span className={cn(
                   'flex-1 min-w-0 text-[10px] font-medium uppercase tracking-wider truncate',
@@ -85,7 +85,7 @@ export function FiltersPanel() {
                 <span
                   role="button"
                   onClick={(e) => { e.stopPropagation(); hideGroup(id); }}
-                  className="shrink-0 rounded p-0.5 text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
+                  className="shrink-0 rounded p-0.5 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
                 >
                   <X className="h-3 w-3" />
                 </span>

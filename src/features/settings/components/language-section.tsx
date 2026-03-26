@@ -43,8 +43,8 @@ export function LanguageSection() {
               'w-full flex items-center justify-between px-3 py-2.5 rounded-lg transition-all duration-150',
               'text-left',
               language === lang.code
-                ? 'bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] text-foreground'
-                : 'text-muted-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] hover:text-foreground'
+                ? 'bg-muted/40 text-foreground'
+                : 'text-muted-foreground hover:bg-muted/30 hover:text-foreground'
             )}
           >
             <div className="flex items-center gap-3">

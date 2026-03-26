@@ -43,7 +43,7 @@ export function SettingsQuickMenu({ barPosition = 'left' }: { barPosition?: Acti
       <DropdownMenuTrigger asChild>
         <button
           className={cn(
-            'relative flex items-center justify-center rounded-lg transition-all duration-200 group hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
+            'relative flex items-center justify-center rounded-lg transition-all duration-200 group hover:bg-muted/50',
             btnSize,
             isActive ? 'text-foreground' : 'text-muted-foreground',
           )}
@@ -56,7 +56,7 @@ export function SettingsQuickMenu({ barPosition = 'left' }: { barPosition?: Acti
         align="end"
         side={barPosition === 'top' ? 'bottom' : barPosition === 'bottom' ? 'top' : barPosition === 'right' ? 'left' : 'right'}
         sideOffset={4}
-        className="w-52 ml-1 bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)] backdrop-blur-xl border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] shadow-2xl"
+        className="w-52 ml-1 glass-overlay border-border/50 shadow-2xl"
       >
         {/* Density */}
         <DropdownMenuLabel className="flex items-center text-xs text-muted-foreground font-normal">
@@ -75,7 +75,7 @@ export function SettingsQuickMenu({ barPosition = 'left' }: { barPosition?: Acti
           </DropdownMenuItem>
         ))}
 
-        <DropdownMenuSeparator className="bg-[color-mix(in_srgb,var(--color-border)_50%,transparent)]" />
+        <DropdownMenuSeparator className="bg-border/50" />
 
         {/* Keyboard shortcuts */}
         <DropdownMenuItem onClick={() => navigate('/settings')} className="cursor-pointer">
@@ -83,7 +83,7 @@ export function SettingsQuickMenu({ barPosition = 'left' }: { barPosition?: Acti
           {t('menuBar.keyboardShortcuts')}
         </DropdownMenuItem>
 
-        <DropdownMenuSeparator className="bg-[color-mix(in_srgb,var(--color-border)_50%,transparent)]" />
+        <DropdownMenuSeparator className="bg-border/50" />
 
         {/* All settings */}
         <DropdownMenuItem onClick={() => navigate('/settings')} className="cursor-pointer">

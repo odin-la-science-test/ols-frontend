@@ -130,9 +130,10 @@ export function MenuBar() {
   return (
     <div
       ref={barRef}
+      data-tour="menu-bar"
       className={cn(
         'hidden lg:flex items-center w-full',
-        'bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)] backdrop-blur-sm border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]',
+        'glass-chrome border-b border-border/30',
         'select-none shrink-0 z-40',
         isCompact ? 'h-7 px-2 gap-0' : 'h-8 px-2 gap-0'
       )}
@@ -141,7 +142,7 @@ export function MenuBar() {
       {/* Home button */}
       <HomeButton isCompact={isCompact} onClose={() => setOpenMenu(null)} />
 
-      <div className="w-px h-3.5 bg-[color-mix(in_srgb,var(--color-border)_30%,transparent)] mx-1" />
+      <div className="w-px h-3.5 bg-border/30 mx-1" />
 
       {/* Platform menus */}
       <MenuTrigger
@@ -166,7 +167,7 @@ export function MenuBar() {
       {/* Module menu(s) — shown if module has actions OR admin view toggle */}
       {(hasModuleMenuActions || hasAdminViewToggle) && (
         <>
-          <div className="w-px h-3.5 bg-[color-mix(in_srgb,var(--color-border)_30%,transparent)] mx-1" />
+          <div className="w-px h-3.5 bg-border/30 mx-1" />
           <MenuTrigger
             id="module"
             label={mainModuleLabel ?? undefined}
@@ -190,7 +191,7 @@ export function MenuBar() {
         </>
       )}
 
-      <div className="w-px h-3.5 bg-[color-mix(in_srgb,var(--color-border)_30%,transparent)] mx-1" />
+      <div className="w-px h-3.5 bg-border/30 mx-1" />
 
       {/* Utility menus */}
       <MenuTrigger

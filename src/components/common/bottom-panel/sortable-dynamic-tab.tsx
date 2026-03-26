@@ -51,7 +51,7 @@ export function SortableDynamicTab({
           ? 'text-foreground border-b-2'
           : 'text-muted-foreground hover:text-foreground pb-[2px]',
       )}
-      style={isActive ? { ...style, borderBottomColor: tab.accentColor ?? 'var(--color-primary)' } : style}
+      style={isActive ? { ...style, borderBottomColor: tab.accentColor ?? 'color-mix(in srgb, var(--color-foreground) 25%, transparent)' } : style}
     >
       {getIconComponent(tab.icon, 'h-3.5 w-3.5')}
       {t(tab.labelKey)}

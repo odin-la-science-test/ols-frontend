@@ -10,7 +10,9 @@ import { cn } from '@/lib/utils';
 import { Tooltip, TooltipTrigger, TooltipContent, Input, Textarea } from '@/components/ui';
 import { useDensity } from '@/hooks';
 import { registry } from '@/lib/module-registry';
+import { HUGIN_PRIMARY } from '@/lib/accent-colors';
 import { useMyNotes, useCreateNote } from '../hooks';
+import { NOTE_COLOR_DOT_CLASSES } from '../types';
 
 // ─── Notes Panel (quick capture + recent notes, activity bar sidebar) ─
 
@@ -64,7 +66,7 @@ export default function NotesPanel() {
   return (
     <>
       {/* Quick capture */}
-      <div className="px-3 py-2.5 border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] space-y-2">
+      <div className="px-3 py-2.5 border-b border-border/30 space-y-2">
         <div className="flex items-center gap-2">
           <Input
             ref={inputRef}
@@ -75,19 +77,20 @@ export default function NotesPanel() {
             }}
             onKeyDown={handleKeyDown}
             placeholder={t('notes.titlePlaceholder')}
-            className="h-7 text-xs bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]"
+            className="h-7 text-xs bg-muted/30 border-border/40"
           />
           <Tooltip delayDuration={200}>
             <TooltipTrigger asChild>
               <button
                 onClick={handleQuickCreate}
                 disabled={!quickTitle.trim() || createNote.isPending}
+                style={quickTitle.trim() ? { backgroundColor: HUGIN_PRIMARY } : undefined}
                 className={cn(
                   'flex items-center justify-center rounded-md h-7 w-7 shrink-0',
                   'transition-colors',
                   quickTitle.trim()
-                    ? 'bg-[hsl(160,84%,39%)] text-white hover:bg-[hsl(160,84%,34%)]'
-                    : 'bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] text-muted-foreground cursor-not-allowed'
+                    ? 'text-white hover:brightness-90'
+                    : 'bg-muted/50 text-muted-foreground cursor-not-allowed'
                 )}
               >
                 {createNote.isPending ? (
@@ -126,7 +129,7 @@ export default function NotesPanel() {
                 }}
                 placeholder={t('notes.contentPlaceholder')}
                 className={cn(
-                  'border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]',
+                  'border-border/40 bg-muted/30',
                   'text-xs',
                   'px-2.5 resize-none',
                   'min-h-[60px] max-h-[120px]'
@@ -161,24 +164,15 @@ export default function NotesPanel() {
                 onClick={() => navigate(registry.getRoutePath('notes') ?? '/lab/notes')}
                 className={cn(
                   'w-full flex items-start gap-2 rounded-lg text-left',
-                  'hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors',
+                  'hover:bg-muted/50 transition-colors',
                   density === 'compact' ? 'px-2 py-1' : 'px-2 py-1.5',
                 )}
               >
                 <div
                   className={cn(
                     'w-1.5 h-1.5 rounded-full mt-1.5 shrink-0',
-                    note.color ? '' : 'bg-muted-foreground/30'
+                    note.color ? NOTE_COLOR_DOT_CLASSES[note.color] : 'bg-muted-foreground/30'
                   )}
-                  style={note.color ? {
-                    backgroundColor: note.color === 'BLUE' ? 'rgb(59 130 246)' :
-                      note.color === 'RED' ? 'rgb(239 68 68)' :
-                      note.color === 'GREEN' ? 'rgb(16 185 129)' :
-                      note.color === 'YELLOW' ? 'rgb(245 158 11)' :
-                      note.color === 'PURPLE' ? 'rgb(139 92 246)' :
-                      note.color === 'ORANGE' ? 'rgb(249 115 22)' :
-                      undefined
-                  } : undefined}
                 />
                 <div className="flex-1 min-w-0">
                   <p className={cn(
@@ -200,13 +194,13 @@ export default function NotesPanel() {
       </div>
 
       {/* View all link */}
-      <div className="p-2 border-t border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]">
+      <div className="p-2 border-t border-border/30">
         <Link
           to={registry.getRoutePath('notes') ?? '/lab/notes'}
           className={cn(
             'flex items-center justify-center gap-2 w-full rounded-lg',
             density === 'compact' ? 'px-2 py-1' : 'px-2 py-1.5',
-            'text-xs text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
+            'text-xs text-muted-foreground hover:text-foreground hover:bg-muted/50',
             'transition-colors',
           )}
         >

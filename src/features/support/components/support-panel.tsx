@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils';
 import { Tooltip, TooltipTrigger, TooltipContent, Input, Textarea } from '@/components/ui';
 import { useDensity } from '@/hooks';
 import { registry } from '@/lib/module-registry';
+import { formatRelativeTime } from '@/lib/format-time';
 import { useMyTickets, useCreateTicket } from '../hooks';
 import { ticketStatusLabel, ticketCategoryLabel } from '../types';
 import type { SupportTicket, TicketCategory } from '../types';
@@ -24,18 +25,6 @@ const STATUS_DOT: Record<string, string> = {
 };
 
 const CATEGORIES: TicketCategory[] = ['BUG', 'FEATURE_REQUEST', 'QUESTION', 'ACCOUNT', 'OTHER'];
-
-function formatRelativeTime(dateStr: string): string {
-  const diff = Date.now() - new Date(dateStr).getTime();
-  const minutes = Math.floor(diff / 60000);
-  const hours = Math.floor(diff / 3600000);
-  const days = Math.floor(diff / 86400000);
-
-  if (minutes < 1) return '1m';
-  if (minutes < 60) return `${minutes}m`;
-  if (hours < 24) return `${hours}h`;
-  return `${days}d`;
-}
 
 export default function SupportPanel() {
   const { t } = useTranslation();
@@ -94,7 +83,7 @@ export default function SupportPanel() {
   return (
     <>
       {/* Quick capture */}
-      <div className="px-3 py-2.5 border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] space-y-2">
+      <div className="px-3 py-2.5 border-b border-border/30 space-y-2">
         <div className="flex items-center gap-2">
           <Input
             ref={inputRef}
@@ -105,7 +94,7 @@ export default function SupportPanel() {
             }}
             onKeyDown={handleKeyDown}
             placeholder={t('support.subjectPlaceholder')}
-            className="h-7 text-xs bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] border-[color-mix(in_srgb,var(--color-border)_40%,transparent)]"
+            className="h-7 text-xs bg-muted/30 border-border/40"
           />
           <Tooltip delayDuration={200}>
             <TooltipTrigger asChild>
@@ -116,8 +105,8 @@ export default function SupportPanel() {
                   'flex items-center justify-center rounded-md h-7 w-7 shrink-0',
                   'transition-colors',
                   quickSubject.trim() && quickDescription.trim()
-                    ? 'bg-primary text-primary-foreground hover:bg-[color-mix(in_srgb,var(--color-primary)_90%,transparent)]'
-                    : 'bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] text-muted-foreground cursor-not-allowed'
+                    ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+                    : 'bg-muted/50 text-muted-foreground cursor-not-allowed'
                 )}
               >
                 {createTicket.isPending ? (
@@ -151,8 +140,8 @@ export default function SupportPanel() {
                     className={cn(
                       'text-[10px] px-2 py-0.5 rounded-md font-medium border transition-all',
                       quickCategory === cat
-                        ? 'border-[color-mix(in_srgb,var(--color-primary)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-primary)_10%,transparent)] text-primary'
-                        : 'border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card text-muted-foreground hover:border-[color-mix(in_srgb,var(--color-border)_60%,transparent)]',
+                        ? 'border-primary/40 bg-primary/10 text-primary'
+                        : 'border-border/40 bg-card text-muted-foreground hover:border-border/60',
                     )}
                   >
                     {ticketCategoryLabel(cat, t)}
@@ -176,7 +165,7 @@ export default function SupportPanel() {
                 }}
                 placeholder={t('support.descriptionPlaceholder')}
                 className={cn(
-                  'border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]',
+                  'border-border/40 bg-muted/30',
                   'text-xs',
                   'px-2.5 resize-none',
                   'min-h-[60px] max-h-[120px]'
@@ -211,7 +200,7 @@ export default function SupportPanel() {
                 onClick={() => navigate(supportRoute)}
                 className={cn(
                   'w-full flex items-start gap-2 rounded-lg text-left',
-                  'hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors',
+                  'hover:bg-muted/50 transition-colors',
                   density === 'compact' ? 'px-2 py-1' : 'px-2 py-1.5',
                 )}
               >
@@ -222,7 +211,7 @@ export default function SupportPanel() {
                     {ticketStatusLabel(ticket.status, t)}
                     <span className="text-muted-foreground/20">&middot;</span>
                     <Clock className="h-2.5 w-2.5 inline" />
-                    {formatRelativeTime(ticket.updatedAt)}
+                    {formatRelativeTime(ticket.updatedAt, t)}
                   </p>
                 </div>
               </button>
@@ -232,13 +221,13 @@ export default function SupportPanel() {
       </div>
 
       {/* View all link */}
-      <div className="p-2 border-t border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]">
+      <div className="p-2 border-t border-border/30">
         <Link
           to={supportRoute}
           className={cn(
             'flex items-center justify-center gap-2 w-full rounded-lg',
             density === 'compact' ? 'px-2 py-1' : 'px-2 py-1.5',
-            'text-xs text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
+            'text-xs text-muted-foreground hover:text-foreground hover:bg-muted/50',
             'transition-colors',
           )}
         >

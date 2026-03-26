@@ -127,7 +127,7 @@ export function AiCorrectionButton({ textareaRef, onApply, disabled, className }
             disabled={disabled || correction.isPending}
             className={cn(
               'h-7 w-7 rounded-md',
-              'text-muted-foreground/60 hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
+              'text-muted-foreground/60 hover:text-foreground hover:bg-muted/50',
               'transition-colors',
             )}
           >
@@ -154,8 +154,8 @@ export function AiCorrectionButton({ textareaRef, onApply, disabled, className }
             className={cn(
               'absolute bottom-full right-0 mb-2',
               'w-72 max-h-48 overflow-y-auto',
-              'rounded-lg border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]',
-              'bg-[color-mix(in_srgb,var(--color-popover)_95%,transparent)] backdrop-blur-xl shadow-xl',
+              'rounded-lg border border-border/50',
+              'glass-popover-dense shadow-xl',
               'p-3 z-50',
             )}
           >
@@ -222,7 +222,7 @@ function CorrectionDiff({ originalText, corrections }: { originalText: string; c
     const replacement = c.replacements[0];
     parts.push(
       <span key={`corr-${c.offset}`}>
-        <span className="line-through text-[color-mix(in_srgb,var(--color-destructive)_70%,transparent)] bg-[color-mix(in_srgb,var(--color-destructive)_10%,transparent)] rounded-sm px-0.5">{c.original}</span>
+        <span className="line-through text-destructive/70 bg-destructive/10 rounded-sm px-0.5">{c.original}</span>
         {replacement && (
           <span className="text-emerald-400 bg-emerald-400/10 rounded-sm px-0.5 font-medium">{replacement}</span>
         )}

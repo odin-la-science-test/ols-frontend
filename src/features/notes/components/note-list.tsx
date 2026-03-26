@@ -113,11 +113,11 @@ function NoteCard({ note, index, isSelected, onSelect }: NoteCardProps) {
       onClick={onSelect}
       className={cn(
         'group flex flex-col p-3 rounded-lg cursor-pointer border-l-[3px]',
-        'border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card',
-        'hover:bg-card hover:border-[color-mix(in_srgb,var(--color-border)_60%,transparent)] transition-all duration-200',
+        'border border-border/40 bg-card',
+        'hover:bg-card hover:border-border/60 transition-all duration-200',
         colorBorder || 'border-l-transparent',
         colorBg,
-        isSelected && 'ring-1 ring-[var(--module-accent)] border-[color-mix(in_srgb,var(--color-border)_60%,transparent)]'
+        isSelected && 'ring-1 ring-[var(--module-accent)] border-border/60'
       )}
     >
       {/* Header */}
@@ -145,7 +145,7 @@ function NoteCard({ note, index, isSelected, onSelect }: NoteCardProps) {
               <button
                 onClick={handleDelete}
                 disabled={deleteMutation.isPending}
-                className="p-1 rounded-md hover:bg-[color-mix(in_srgb,var(--color-destructive)_10%,transparent)] transition-colors"
+                className="p-1 rounded-md hover:bg-destructive/10 transition-colors"
               >
                 <Trash2 className="w-3.5 h-3.5 text-muted-foreground hover:text-destructive" />
               </button>

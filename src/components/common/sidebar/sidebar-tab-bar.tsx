@@ -26,7 +26,7 @@ export function SidebarTabBar({
 
   return (
     <SortableContext items={sortableIds} strategy={horizontalListSortingStrategy}>
-      <div className="flex shrink-0 border-b border-[color-mix(in_srgb,var(--color-border)_20%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_5%,transparent)]">
+      <div className="flex shrink-0 border-b border-border/20 bg-muted/5">
         {panels.map((panel) => {
           const isActive = panel.id === activeTab;
           return (

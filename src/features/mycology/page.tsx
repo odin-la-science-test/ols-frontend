@@ -2,7 +2,7 @@
 
 import { createCollectionPage } from '@/lib/create-collection-page';
 import { FungusDetail, IdentificationTools } from './components';
-import { useFungi, useFungiSearch } from './hooks';
+import { useFungi, useFungiSearch, useMycologyPanel } from './hooks';
 import {
   getFungiFilters,
   computeFungiStats,
@@ -16,7 +16,7 @@ import type { Fungus } from './types';
 // MYCOLOGY PAGE - Main module page
 // ═══════════════════════════════════════════════════════════════════════════
 
-export const MycologyPage = createCollectionPage<Fungus>({
+const MycologyPageBase = createCollectionPage<Fungus>({
   moduleKey: 'mycology',
   iconName: 'leaf',
   backTo: '/atlas',
@@ -43,3 +43,8 @@ export const MycologyPage = createCollectionPage<Fungus>({
     <FungusDetail fungus={item} onClose={onClose} />
   ),
 });
+
+export function MycologyPage() {
+  useMycologyPanel();
+  return <MycologyPageBase />;
+}

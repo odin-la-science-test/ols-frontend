@@ -139,7 +139,7 @@ export function GlobalSidebarContent({ className }: GlobalSidebarProps) {
     >
       {/* Panel header */}
       <div className={cn(
-        'flex items-center px-3 border-b border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] justify-between',
+        'flex items-center px-3 border-b border-border/50 justify-between',
         d.density === 'compact' ? 'h-8' : 'h-10'
       )}>
         <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
@@ -155,8 +155,8 @@ export function GlobalSidebarContent({ className }: GlobalSidebarProps) {
                     onClick={() => setAddMenuOpen((o) => !o)}
                     className={cn(
                       'p-1 rounded-lg transition-colors',
-                      'text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
-                      addMenuOpen && 'bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] text-foreground'
+                      'text-muted-foreground hover:text-foreground hover:bg-muted/50',
+                      addMenuOpen && 'bg-muted/50 text-foreground'
                     )}
                   >
                     <Plus className="h-3.5 w-3.5" />
@@ -168,8 +168,8 @@ export function GlobalSidebarContent({ className }: GlobalSidebarProps) {
                 <div
                   className={cn(
                     'absolute right-0 top-full mt-1 z-50',
-                    'min-w-[160px] rounded-lg border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]',
-                    'bg-[color-mix(in_srgb,var(--color-popover)_95%,transparent)] backdrop-blur-xl shadow-xl',
+                    'min-w-[160px] rounded-lg border border-border/50',
+                    'glass-popover-dense shadow-xl',
                     'py-1 animate-in fade-in-0 zoom-in-95'
                   )}
                 >
@@ -179,7 +179,7 @@ export function GlobalSidebarContent({ className }: GlobalSidebarProps) {
                       onClick={() => handleAddPanel(panelId)}
                       className={cn(
                         'w-full text-left px-3 py-1.5',
-                        'text-xs text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
+                        'text-xs text-muted-foreground hover:text-foreground hover:bg-muted/50',
                         'transition-colors cursor-pointer'
                       )}
                     >
@@ -202,7 +202,7 @@ export function GlobalSidebarContent({ className }: GlobalSidebarProps) {
                   onClick={toggleSidebarFilterLayout}
                   className={cn(
                     'p-1 rounded-lg transition-colors',
-                    'text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]'
+                    'text-muted-foreground hover:text-foreground hover:bg-muted/50'
                   )}
                 >
                   {sidebarFilterLayout === 'tabs'
@@ -225,7 +225,7 @@ export function GlobalSidebarContent({ className }: GlobalSidebarProps) {
                 onClick={() => setActivePanel(null)}
                 className={cn(
                   'p-1 rounded-lg',
-                  'text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
+                  'text-muted-foreground hover:text-foreground hover:bg-muted/50',
                   'transition-colors'
                 )}
               >

@@ -36,7 +36,7 @@ export function AppTopBar({ className, maxWidth = '' }: AppTopBarProps) {
         aria-label={t('common.home')}
       >
         <Logo size={28} animate={false} />
-        <span className="text-sm font-semibold brand-title tracking-tight group-hover:text-[color-mix(in_srgb,var(--color-foreground)_80%,transparent)] transition-colors">
+        <span className="text-sm font-semibold brand-title tracking-tight group-hover:text-foreground/80 transition-colors">
           {t('common.appName')}
         </span>
         <BetaBadge />

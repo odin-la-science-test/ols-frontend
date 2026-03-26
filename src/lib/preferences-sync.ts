@@ -8,6 +8,7 @@ import { useLanguageStore } from '@/stores/language-store';
 import { useKeybindingsStore } from '@/stores/keybindings-store';
 import { useDashboardStore } from '@/stores/dashboard-store';
 import { useProfilesStore } from '@/stores/profiles-store';
+import { useTourStore } from '@/stores/tour-store';
 import type { Density } from '@/stores/theme-store';
 import type { AxiosError } from 'axios';
 
@@ -54,6 +55,10 @@ export function collectPreferences(): SyncablePreferences {
       profiles: profiles.profiles,
       activeProfileId: profiles.activeProfileId,
     },
+    tour: {
+      completedTours: useTourStore.getState().completedTours,
+      dismissedTips: useTourStore.getState().dismissedTips,
+    },
   };
 }
 
@@ -92,6 +97,14 @@ export function applyPreferences(prefs: SyncablePreferences): void {
       profiles: prefs.profiles.profiles,
       activeProfileId: prefs.profiles.activeProfileId,
     });
+
+    // Tour
+    if (prefs.tour) {
+      useTourStore.setState({
+        completedTours: prefs.tour.completedTours,
+        dismissedTips: prefs.tour.dismissedTips,
+      });
+    }
   } finally {
     setTimeout(() => { _applyingFromServer = false; }, 50);
   }
@@ -106,6 +119,7 @@ function getLocalLastModified(): number {
     useKeybindingsStore.getState()._lastModified,
     useDashboardStore.getState()._lastModified,
     useProfilesStore.getState()._lastModified,
+    useTourStore.getState()._lastModified,
   );
 }
 
@@ -187,7 +201,7 @@ export function initPreferencesSync(): void {
   if (!isAuthenticated || isGuest()) return;
 
   // Skip first emission from each store (hydration)
-  const stores = [useThemeStore, useLanguageStore, useKeybindingsStore, useDashboardStore, useProfilesStore];
+  const stores = [useThemeStore, useLanguageStore, useKeybindingsStore, useDashboardStore, useProfilesStore, useTourStore];
   for (const store of stores) {
     let hydrated = false;
     const unsub = store.subscribe(() => {

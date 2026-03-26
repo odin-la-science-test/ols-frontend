@@ -14,25 +14,13 @@ import { cn } from '@/lib/utils';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui';
 import { useUnreadCount, useMyNotifications, useMarkAsRead } from '../hooks';
 import { NOTIFICATION_TYPE_ICONS, NOTIFICATION_TYPE_COLORS } from '../notification-rendering';
+import { HUGIN_PRIMARY } from '@/lib/accent-colors';
+import { formatRelativeTime } from '@/lib/format-time';
 
 // ═══════════════════════════════════════════════════════════════════════════
 // NOTIFICATION BELL - Compact bell icon with badge + dropdown
 // Designed for placement in GlobalSidebar or AppShell
 // ═══════════════════════════════════════════════════════════════════════════
-
-function formatShortTime(dateStr: string): string {
-  const now = Date.now();
-  const date = new Date(dateStr).getTime();
-  const diff = now - date;
-  const minutes = Math.floor(diff / 60000);
-  const hours = Math.floor(diff / 3600000);
-  const days = Math.floor(diff / 86400000);
-
-  if (minutes < 1) return '1m';
-  if (minutes < 60) return `${minutes}m`;
-  if (hours < 24) return `${hours}h`;
-  return `${days}j`;
-}
 
 interface NotificationBellProps {
   collapsed?: boolean;
@@ -92,7 +80,7 @@ export function NotificationBell({ collapsed }: NotificationBellProps) {
             onClick={handleToggle}
             className={cn(
               'relative flex items-center gap-2 w-full px-2 py-1.5 rounded-lg',
-              'text-sm text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
+              'text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50',
               'transition-colors',
               collapsed && 'justify-center px-2'
             )}
@@ -107,10 +95,11 @@ export function NotificationBell({ collapsed }: NotificationBellProps) {
           <motion.span
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
+            style={{ backgroundColor: HUGIN_PRIMARY }}
             className={cn(
               'absolute flex items-center justify-center',
               'min-w-[18px] h-[18px] px-1 rounded-full',
-              'bg-[hsl(160,84%,39%)] text-white text-[10px] font-bold',
+              'text-white text-[10px] font-bold',
               collapsed ? 'top-0 right-0' : 'top-0.5 right-1'
             )}
           >
@@ -136,7 +125,7 @@ export function NotificationBell({ collapsed }: NotificationBellProps) {
               className="max-h-[420px] overflow-hidden bg-popover border border-border rounded-xl shadow-xl"
             >
               {/* Header */}
-              <div className="flex items-center justify-between px-4 py-3 border-b border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]">
+              <div className="flex items-center justify-between px-4 py-3 border-b border-border/50">
                 <h4 className="text-sm font-semibold text-foreground">
                   {t('notifications.title')}
                 </h4>
@@ -173,8 +162,8 @@ export function NotificationBell({ collapsed }: NotificationBellProps) {
                         }}
                         className={cn(
                           'flex items-start gap-3 w-full px-4 py-3 text-left transition-colors',
-                          'hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] border-b border-[color-mix(in_srgb,var(--color-border)_20%,transparent)] last:border-b-0',
-                          !notif.read && 'bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]'
+                          'hover:bg-muted/50 border-b border-border/20 last:border-b-0',
+                          !notif.read && 'bg-muted/20'
                         )}
                       >
                         <Icon className={cn('h-4 w-4 mt-0.5 flex-shrink-0', iconColor)} />
@@ -187,7 +176,7 @@ export function NotificationBell({ collapsed }: NotificationBellProps) {
                               {notif.title}
                             </span>
                             {!notif.read && (
-                              <span className="h-1.5 w-1.5 rounded-full bg-[hsl(160,84%,39%)] flex-shrink-0" />
+                              <span className="h-1.5 w-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: HUGIN_PRIMARY }} />
                             )}
                           </div>
                           {notif.message && (
@@ -196,7 +185,7 @@ export function NotificationBell({ collapsed }: NotificationBellProps) {
                             </p>
                           )}
                           <span className="text-[10px] text-muted-foreground/50 mt-0.5">
-                            {formatShortTime(notif.createdAt)}
+                            {formatRelativeTime(notif.createdAt, t)}
                           </span>
                         </div>
                         {notif.actionUrl && (
@@ -209,13 +198,13 @@ export function NotificationBell({ collapsed }: NotificationBellProps) {
               </div>
 
               {/* Footer */}
-              <div className="px-4 py-2.5 border-t border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]">
+              <div className="px-4 py-2.5 border-t border-border/50">
                 <button
                   onClick={() => {
                     navigate('/lab/notifications');
                     setOpen(false);
                   }}
-                  className="text-xs text-[hsl(160,84%,39%)] hover:underline font-medium"
+                  className="text-xs hover:underline font-medium" style={{ color: HUGIN_PRIMARY }}
                 >
                   {t('notifications.viewAll')}
                 </button>

@@ -34,4 +34,11 @@ export const mycologyModule: ModuleDefinition = {
       }));
     },
   },
+
+  tour: [
+    { element: '[data-tour="collection-table"]', titleKey: 'mycology.tour.table.title', descriptionKey: 'mycology.tour.table.description' },
+    { element: '[data-tour="detail-panel"]', titleKey: 'mycology.tour.detail.title', descriptionKey: 'mycology.tour.detail.description', side: 'left' },
+    { element: '[data-tour="filter-panel"]', titleKey: 'mycology.tour.filters.title', descriptionKey: 'mycology.tour.filters.description', side: 'left' },
+    { element: '[data-tour="stats-bar"]', titleKey: 'mycology.tour.stats.title', descriptionKey: 'mycology.tour.stats.description', side: 'bottom' },
+  ],
 };

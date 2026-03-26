@@ -124,10 +124,10 @@ export function StatusBar() {
   if (!statusBarVisible) return null;
 
   return (
-    <div className="hidden lg:flex items-center h-6 border-t border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)] backdrop-blur-sm text-[10px] select-none shrink-0" onContextMenu={handleContextMenu}>
+    <div data-tour="status-bar" className="hidden lg:flex items-center h-6 border-t border-border/30 glass-chrome text-[10px] select-none shrink-0" onContextMenu={handleContextMenu}>
       {/* ─── Left accent stripe (colored for modules, neutral for system) ─── */}
       <div
-        className={cn('w-[2px] h-full shrink-0', !accentColor && 'bg-[color-mix(in_srgb,var(--color-foreground)_20%,transparent)]')}
+        className={cn('w-[2px] h-full shrink-0', !accentColor && 'neutral-indicator')}
         style={accentColor ? { backgroundColor: accentColor } : undefined}
       />
 
@@ -184,11 +184,11 @@ export function StatusBar() {
             text={t('statusBar.newNotifications', { count: unreadCount })}
             icon={undefined}
             tooltip={t('statusBar.newNotificationsTooltip', { count: unreadCount })}
-            className="text-warning"
+            className="text-amber-500"
             customIcon={
               <span className="relative">
                 <Bell className="h-2.5 w-2.5" />
-                <span className="absolute -top-0.5 -right-0.5 h-1.5 w-1.5 rounded-full bg-warning animate-pulse" />
+                <span className="absolute -top-0.5 -right-0.5 h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" />
               </span>
             }
           />
@@ -200,7 +200,7 @@ export function StatusBar() {
           text={t('statusBar.version', { version: APP_VERSION })}
           icon={undefined}
           tooltip={t('statusBar.versionTooltip', { version: APP_VERSION })}
-          className={IS_BETA ? 'text-[color-mix(in_srgb,var(--color-warning)_60%,transparent)]' : 'text-muted-foreground/60'}
+          className={IS_BETA ? 'text-amber-500/60' : 'text-muted-foreground/60'}
           customIcon={IS_BETA ? <FlaskConical className="h-2.5 w-2.5" /> : undefined}
         />
         )}
@@ -280,7 +280,7 @@ function ModuleGroup({ label, leftItems, rightItems, accentColor, splitMode = fa
           customIcon={
             splitMode ? (
               <span
-                className={cn('inline-block w-1.5 h-1.5 rounded-full shrink-0', !accentColor && 'bg-[color-mix(in_srgb,var(--color-foreground)_40%,transparent)]')}
+                className={cn('inline-block w-1.5 h-1.5 rounded-full shrink-0', !accentColor && 'neutral-dot')}
                 style={accentColor ? { backgroundColor: accentColor } : undefined}
               />
             ) : undefined
@@ -340,7 +340,7 @@ function StatusBarSegment({ text, icon, tooltip, onClick, className, style, cust
         'flex items-center gap-1 px-1.5 py-0.5 rounded-sm transition-colors duration-100',
         'text-muted-foreground/60',
         isClickable
-          ? 'hover:bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] hover:text-muted-foreground cursor-pointer'
+          ? 'hover:bg-muted/40 hover:text-muted-foreground cursor-pointer'
           : 'cursor-default',
         className
       )}

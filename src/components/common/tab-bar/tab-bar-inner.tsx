@@ -175,11 +175,12 @@ export function TabBarInner({ className, editorGroupId, externalDnd }: TabBarInn
   return (
     <div
       ref={setDropRef}
+      data-tour="tab-bar"
       className={cn(
         'hidden lg:flex items-end',
         isCompact ? 'px-1 pt-0.5' : 'px-1 pt-1',
         'bg-card border-b border-border z-20',
-        isDropTarget && 'bg-[color-mix(in_srgb,var(--color-muted)_60%,transparent)]',
+        isDropTarget && 'bg-muted/60',
         className,
       )}
       style={{ fontSize: '16px' }}

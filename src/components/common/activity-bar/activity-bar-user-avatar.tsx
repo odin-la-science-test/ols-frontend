@@ -75,7 +75,7 @@ export function ActivityBarUserAvatar({ barPosition = 'left' }: { barPosition?: 
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button
-          className={cn('relative flex items-center justify-center rounded-lg transition-all duration-200 group hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]', btnSize)}
+          className={cn('relative flex items-center justify-center rounded-lg transition-all duration-200 group hover:bg-muted/50', btnSize)}
         >
           <Avatar className={avatarSize}>
             <AvatarImage src={getAvatarUrl(user?.avatarId)} />
@@ -90,7 +90,7 @@ export function ActivityBarUserAvatar({ barPosition = 'left' }: { barPosition?: 
         align="end"
         side={barPosition === 'top' ? 'bottom' : barPosition === 'bottom' ? 'top' : barPosition === 'right' ? 'left' : 'right'}
         sideOffset={4}
-        className="w-60 ml-1 bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)] backdrop-blur-xl border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] shadow-2xl"
+        className="w-60 ml-1 glass-overlay border-border/50 shadow-2xl"
       >
         {/* User Info */}
         <DropdownMenuLabel className="font-normal">
@@ -102,7 +102,7 @@ export function ActivityBarUserAvatar({ barPosition = 'left' }: { barPosition?: 
             <p className="text-xs text-primary font-medium">{getRoleLabel()}</p>
           </div>
         </DropdownMenuLabel>
-        <DropdownMenuSeparator className="bg-[color-mix(in_srgb,var(--color-border)_50%,transparent)]" />
+        <DropdownMenuSeparator className="bg-border/50" />
 
         {/* Profile */}
         <DropdownMenuItem onClick={() => navigate('/profile')} className="cursor-pointer">
@@ -111,7 +111,7 @@ export function ActivityBarUserAvatar({ barPosition = 'left' }: { barPosition?: 
         </DropdownMenuItem>
 
         {/* ── Workspace Profiles ── */}
-        <DropdownMenuSeparator className="bg-[color-mix(in_srgb,var(--color-border)_50%,transparent)]" />
+        <DropdownMenuSeparator className="bg-border/50" />
         <DropdownMenuLabel className="flex items-center justify-between text-xs text-muted-foreground font-normal py-1.5">
           <span className="flex items-center gap-1.5">
             <UserCircle className="h-3 w-3" />
@@ -148,7 +148,7 @@ export function ActivityBarUserAvatar({ barPosition = 'left' }: { barPosition?: 
         </DropdownMenuItem>
 
         {/* Theme Toggle */}
-        <DropdownMenuSeparator className="bg-[color-mix(in_srgb,var(--color-border)_50%,transparent)]" />
+        <DropdownMenuSeparator className="bg-border/50" />
         <DropdownMenuItem onClick={toggleTheme} className="cursor-pointer">
           {theme === 'dark' ? (
             <Sun className="mr-2 h-4 w-4 text-muted-foreground" />
@@ -159,7 +159,7 @@ export function ActivityBarUserAvatar({ barPosition = 'left' }: { barPosition?: 
         </DropdownMenuItem>
 
         {/* Language Selection */}
-        <DropdownMenuSeparator className="bg-[color-mix(in_srgb,var(--color-border)_50%,transparent)]" />
+        <DropdownMenuSeparator className="bg-border/50" />
         <DropdownMenuLabel className="flex items-center text-xs text-muted-foreground font-normal">
           <Globe className="mr-2 h-3 w-3" />
           {t('settings.language')}
@@ -177,7 +177,7 @@ export function ActivityBarUserAvatar({ barPosition = 'left' }: { barPosition?: 
         ))}
 
         {/* Logout */}
-        <DropdownMenuSeparator className="bg-[color-mix(in_srgb,var(--color-border)_50%,transparent)]" />
+        <DropdownMenuSeparator className="bg-border/50" />
         <DropdownMenuItem
           onClick={logout}
           className="text-destructive focus:text-destructive cursor-pointer"

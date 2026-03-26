@@ -77,7 +77,7 @@ export function QuickSettings() {
             {getLanguageShortLabel(language)}
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)] backdrop-blur-xl border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] shadow-2xl">
+        <DropdownMenuContent align="end" className="glass-overlay border-border/50 shadow-2xl">
           {LANGUAGES.map((lang) => (
             <DropdownMenuItem
               key={lang.code}

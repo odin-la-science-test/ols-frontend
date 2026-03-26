@@ -78,7 +78,7 @@ function ResizableHandle({ withHandle, className, style, ...props }: ResizableHa
         // Cursor
         'aria-[orientation=vertical]:cursor-col-resize aria-[orientation=horizontal]:cursor-row-resize',
         // Hover / active: accent color
-        'hover:bg-[color-mix(in_srgb,var(--color-primary)_50%,transparent)] active:bg-primary',
+        'hover:bg-primary/50 active:bg-primary',
         // Focus ring
         'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
         className,

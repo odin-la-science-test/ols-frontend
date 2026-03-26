@@ -46,7 +46,7 @@ export function ApiErrorAlert({ error, fallbackMessageKey, className, onRetry }:
     }
     return {
       icon: AlertCircle,
-      className: 'bg-[color-mix(in_srgb,var(--color-destructive)_10%,transparent)] border-[color-mix(in_srgb,var(--color-destructive)_20%,transparent)] text-destructive',
+      className: 'bg-destructive/10 border-destructive/20 text-destructive',
     };
   };
 

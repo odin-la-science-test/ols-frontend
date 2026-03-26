@@ -36,7 +36,7 @@ export function IconButtonWithTooltip({
           onClick={onClick}
           disabled={disabled}
           className={cn(
-            'hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
+            'hover:bg-muted/50',
             className
           )}
         >

@@ -1,5 +1,7 @@
 import type { ComponentType, LazyExoticComponent } from 'react';
 import type { DynamicBottomTab } from '@/stores/bottom-panel-store';
+import type { TourStep } from '@/lib/tour/types';
+export type { TourStep } from '@/lib/tour/types';
 
 // ─── Activity Panel ──────────────────────────────────────────────────────
 
@@ -177,4 +179,6 @@ export interface ModuleDefinition {
   widgets?: ModuleWidget[];
   /** Optional: compact panel for the activity bar sidebar */
   activityPanel?: ModuleActivityPanel;
+  /** Optional: guided tour steps for this module (auto-triggered on first visit) */
+  tour?: TourStep[];
 }

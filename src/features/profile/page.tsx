@@ -98,6 +98,8 @@ export function ProfilePage() {
     }
   };
 
+  const [isChangingPassword, setIsChangingPassword] = useState(false);
+
   const handleChangePassword = async () => {
     if (!currentPassword || !newPassword || !confirmPassword) {
       toast({ title: t('profile.passwordRequired'), variant: 'destructive' });
@@ -111,11 +113,24 @@ export function ProfilePage() {
       toast({ title: t('profile.passwordTooShort'), variant: 'destructive' });
       return;
     }
-    toast({ title: t('profile.passwordChanged') });
-    setCurrentPassword('');
-    setNewPassword('');
-    setConfirmPassword('');
-    setShowPasswordSection(false);
+    setIsChangingPassword(true);
+    try {
+      await usersApi.changePassword(currentPassword, newPassword);
+      toast({ title: t('profile.passwordChanged') });
+      setCurrentPassword('');
+      setNewPassword('');
+      setConfirmPassword('');
+      setShowPasswordSection(false);
+    } catch (err: any) {
+      const status = err?.response?.status;
+      if (status === 401) {
+        toast({ title: t('profile.passwordIncorrect'), variant: 'destructive' });
+      } else {
+        toast({ title: t('profile.saveError'), variant: 'destructive' });
+      }
+    } finally {
+      setIsChangingPassword(false);
+    }
   };
 
   return (
@@ -194,7 +209,7 @@ export function ProfilePage() {
               <Input
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
-                className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] h-9"
+                className="bg-card border-border/40 h-9"
               />
             </div>
             <div className="space-y-1.5">
@@ -202,7 +217,7 @@ export function ProfilePage() {
               <Input
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
-                className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] h-9"
+                className="bg-card border-border/40 h-9"
               />
             </div>
           </div>
@@ -215,7 +230,7 @@ export function ProfilePage() {
             <Input
               value={email}
               disabled
-              className="bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] h-9 text-muted-foreground cursor-not-allowed"
+              className="bg-muted/30 border-border/30 h-9 text-muted-foreground cursor-not-allowed"
             />
             <p className="text-[10px] text-muted-foreground/60">{t('profile.emailHint')}</p>
           </div>
@@ -228,7 +243,7 @@ export function ProfilePage() {
             <Input
               value={getRoleLabel()}
               disabled
-              className="bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] h-9 text-muted-foreground cursor-not-allowed"
+              className="bg-muted/30 border-border/30 h-9 text-muted-foreground cursor-not-allowed"
             />
           </div>
 
@@ -275,7 +290,7 @@ export function ProfilePage() {
                   type={showCurrentPw ? 'text' : 'password'}
                   value={currentPassword}
                   onChange={(e) => setCurrentPassword(e.target.value)}
-                  className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] h-9 pr-9"
+                  className="bg-card border-border/40 h-9 pr-9"
                 />
                 <button
                   type="button"
@@ -295,7 +310,7 @@ export function ProfilePage() {
                     type={showNewPw ? 'text' : 'password'}
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
-                    className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] h-9 pr-9"
+                    className="bg-card border-border/40 h-9 pr-9"
                   />
                   <button
                     type="button"
@@ -312,7 +327,7 @@ export function ProfilePage() {
                   type="password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] h-9"
+                  className="bg-card border-border/40 h-9"
                 />
               </div>
             </div>
@@ -333,7 +348,8 @@ export function ProfilePage() {
               <Button
                 size="sm"
                 onClick={handleChangePassword}
-                disabled={!currentPassword || !newPassword || !confirmPassword}
+                disabled={!currentPassword || !newPassword || !confirmPassword || isChangingPassword}
+                loading={isChangingPassword}
                 className="gap-1.5"
               >
                 <KeyRound className="w-3.5 h-3.5" />

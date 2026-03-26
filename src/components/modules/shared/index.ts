@@ -21,3 +21,8 @@ export { FormSection } from './form-section';
 export { SidebarFormBody, SidebarFormField, SidebarFormActions } from './sidebar-form-components';
 export { ListSkeleton } from './list-skeleton';
 export { AiCorrectionButton } from './ai-correction-button';
+export { StatPill } from './stat-pill';
+export { BiochemBar } from './biochem-bar';
+export { DistributionBar } from './distribution-bar';
+export type { DistributionSegment } from './distribution-bar';
+export { OverviewSection, OverviewSeparator, pct } from './overview-section';

@@ -2,7 +2,7 @@ import type { TFunction } from 'i18next';
 import { Pin, Tag } from 'lucide-react';
 import type { ColumnDef, FilterConfig, StatItem, CardConfig } from '@/components/modules/types';
 import type { Note, NoteColor } from './types';
-import { noteColorLabel } from './types';
+import { noteColorLabel, NOTE_COLOR_DOT_CLASSES } from './types';
 import { Badge } from '@/components/modules/shared';
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -29,7 +29,7 @@ export function getNoteColumns(_data: Note[], t: TFunction): ColumnDef<Note>[] {
       render: (value, row) => (
         <div className="flex items-center gap-2 min-w-0">
           {row.color && (
-            <div className={`w-2 h-2 rounded-full shrink-0 bg-${row.color}-500`} />
+            <div className={`w-2 h-2 rounded-full shrink-0 ${NOTE_COLOR_DOT_CLASSES[row.color]}`} />
           )}
           <span className="font-medium truncate">{value as string}</span>
           {row.pinned && (

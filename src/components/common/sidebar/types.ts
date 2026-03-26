@@ -62,7 +62,7 @@ export interface UnifiedSidebarContentProps {
   renderPanel: (panelId: string) => ReactNode;
   /**
    * 'sidebar' (default) — module-level side panel, bg-card, chevron close button.
-   * 'activity' — app-level flyout next to activity bar, bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)], X close button.
+   * 'activity' — app-level flyout next to activity bar, bg-card/80, X close button.
    */
   variant?: 'sidebar' | 'activity';
   className?: string;

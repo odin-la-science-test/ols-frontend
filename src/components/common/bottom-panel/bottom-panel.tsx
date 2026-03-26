@@ -80,13 +80,13 @@ export function BottomPanel({ className }: BottomPanelProps) {
           <div
             onMouseDown={handleResizeStart}
             className={cn(
-              'h-1 cursor-row-resize hover:bg-[color-mix(in_srgb,var(--color-primary)_30%,transparent)] transition-colors shrink-0',
-              isResizing && 'bg-[color-mix(in_srgb,var(--color-primary)_40%,transparent)]',
+              'h-1 cursor-row-resize hover:bg-primary/30 transition-colors shrink-0',
+              isResizing && 'bg-primary/40',
             )}
           />
 
           {/* Tab bar */}
-          <div className="flex items-center gap-0 px-2 border-b border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] shrink-0" onContextMenu={handleLegacyCtx}>
+          <div className="flex items-center gap-0 px-2 border-b border-border/40 shrink-0" onContextMenu={handleLegacyCtx}>
             {BUILTIN_TABS.filter(({ id }) => !legacyHiddenTabs.has(id)).map(({ id, icon: TabIcon, labelKey }) => {
               const isActive = activeTab === id;
               return (
@@ -100,7 +100,7 @@ export function BottomPanel({ className }: BottomPanelProps) {
                       ? 'text-foreground border-b-2'
                       : 'text-muted-foreground hover:text-foreground pb-[2px]',
                   )}
-                  style={isActive ? { borderBottomColor: 'var(--color-primary)' } : undefined}
+                  style={isActive ? { borderBottomColor: 'color-mix(in srgb, var(--color-foreground) 25%, transparent)' } : undefined}
                 >
                   <TabIcon className="h-3.5 w-3.5" />
                   {t(labelKey)}
@@ -111,7 +111,7 @@ export function BottomPanel({ className }: BottomPanelProps) {
             {/* Dynamic module tabs */}
             {legacyVisibleDynamic.length > 0 && (
               <>
-                <div className="w-px h-4 bg-[color-mix(in_srgb,var(--color-border)_40%,transparent)] mx-1 shrink-0" />
+                <div className="w-px h-4 bg-border/40 mx-1 shrink-0" />
                 {legacyVisibleDynamic.map((tab) => {
                   const isActive = activeTab === tab.id;
                   return (
@@ -125,7 +125,7 @@ export function BottomPanel({ className }: BottomPanelProps) {
                           ? 'text-foreground border-b-2'
                           : 'text-muted-foreground hover:text-foreground pb-[2px]',
                       )}
-                      style={isActive ? { borderBottomColor: tab.accentColor ?? 'var(--color-primary)' } : undefined}
+                      style={isActive ? { borderBottomColor: tab.accentColor ?? 'color-mix(in srgb, var(--color-foreground) 25%, transparent)' } : undefined}
                     >
                       {getIconComponent(tab.icon, 'h-3.5 w-3.5')}
                       {t(tab.labelKey)}

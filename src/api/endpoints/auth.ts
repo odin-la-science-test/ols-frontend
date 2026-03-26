@@ -77,4 +77,16 @@ export const authApi = {
 
   me: () =>
     api.get<User>('/auth/me'),
+
+  forgotPassword: (email: string) =>
+    api.post('/auth/forgot-password', { email }, { skipAuthRedirect: true }),
+
+  resetPassword: (token: string, newPassword: string) =>
+    api.post('/auth/reset-password', { token, newPassword }, { skipAuthRedirect: true }),
+
+  verifyEmail: (token: string) =>
+    api.get('/auth/verify-email', { params: { token }, skipAuthRedirect: true }),
+
+  resendVerification: () =>
+    api.post('/auth/resend-verification'),
 };

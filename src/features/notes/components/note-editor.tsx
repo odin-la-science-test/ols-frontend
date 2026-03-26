@@ -123,7 +123,7 @@ export function NoteEditor({ note, onSaved, onCancel, moduleKey }: NoteEditorPro
           <Input
             {...register('title')}
             placeholder={t('notes.titlePlaceholder')}
-            className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] text-base font-semibold"
+            className="bg-card border-border/40 text-base font-semibold"
             autoFocus
           />
         </SidebarFormField>
@@ -133,7 +133,7 @@ export function NoteEditor({ note, onSaved, onCancel, moduleKey }: NoteEditorPro
           {...register('content')}
           placeholder={t('notes.contentPlaceholder')}
           rows={10}
-          className="border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card"
+          className="border-border/40 bg-card"
         />
 
         {/* Color picker */}
@@ -153,8 +153,8 @@ export function NoteEditor({ note, onSaved, onCancel, moduleKey }: NoteEditorPro
                         'w-7 h-7 rounded-lg border-2 transition-all flex items-center justify-center',
                         'bg-card',
                         field.value === null
-                          ? 'border-[color-mix(in_srgb,var(--color-foreground)_50%,transparent)] scale-110'
-                          : 'border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] hover:border-[color-mix(in_srgb,var(--color-border)_80%,transparent)]'
+                          ? 'border-foreground/50 scale-110'
+                          : 'border-border/40 hover:border-border/80'
                       )}
                     >
                       {field.value === null && <Check className="w-3.5 h-3.5 text-foreground" />}
@@ -198,7 +198,7 @@ export function NoteEditor({ note, onSaved, onCancel, moduleKey }: NoteEditorPro
                   {field.value.map((tag: string) => (
                     <span
                       key={tag}
-                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[color-mix(in_srgb,var(--color-muted)_60%,transparent)] text-xs"
+                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-muted/60 text-xs"
                     >
                       {tag}
                       <button
@@ -225,7 +225,7 @@ export function NoteEditor({ note, onSaved, onCancel, moduleKey }: NoteEditorPro
                       setTagInput('');
                     }
                   }}
-                  className="bg-card border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] h-8 text-xs"
+                  className="bg-card border-border/40 h-8 text-xs"
                 />
               </>
             )}

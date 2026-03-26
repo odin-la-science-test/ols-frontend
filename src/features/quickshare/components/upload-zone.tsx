@@ -91,7 +91,7 @@ export function UploadZone({ onFilesChange, selectedFiles, disabled }: UploadZon
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="flex items-center gap-3 p-3 rounded-lg border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] bg-card"
+            className="flex items-center gap-3 p-3 rounded-lg border border-border/50 bg-card"
           >
             <FileUp className="w-4 h-4 text-[var(--module-accent)] shrink-0" strokeWidth={1.5} />
             <div className="flex-1 min-w-0">
@@ -102,7 +102,7 @@ export function UploadZone({ onFilesChange, selectedFiles, disabled }: UploadZon
               <TooltipTrigger asChild>
                 <button
                   onClick={() => removeFile(index)}
-                  className="p-1 rounded hover:bg-[color-mix(in_srgb,var(--color-muted)_80%,transparent)] transition-colors"
+                  className="p-1 rounded hover:bg-muted/80 transition-colors"
                 >
                   <X className="w-4 h-4 text-muted-foreground" />
                 </button>
@@ -125,7 +125,7 @@ export function UploadZone({ onFilesChange, selectedFiles, disabled }: UploadZon
             'rounded-lg border-2 border-dashed transition-all duration-200 cursor-pointer',
             isDragOver
               ? 'border-[var(--module-accent)] bg-[var(--module-accent-subtle)]'
-              : 'border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] hover:border-border hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]',
+              : 'border-border/50 hover:border-border hover:bg-muted/30',
             disabled && 'opacity-50 cursor-not-allowed'
           )}
         >
@@ -145,7 +145,7 @@ export function UploadZone({ onFilesChange, selectedFiles, disabled }: UploadZon
             disabled={disabled}
             className={cn(
               'flex items-center gap-2 px-3 py-2 rounded-lg text-sm',
-              'border border-dashed border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] hover:border-border hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]',
+              'border border-dashed border-border/50 hover:border-border hover:bg-muted/30',
               'text-muted-foreground transition-all cursor-pointer',
               isDragOver && 'border-[var(--module-accent)] bg-[var(--module-accent-subtle)]',
               disabled && 'opacity-50 cursor-not-allowed'

@@ -71,7 +71,7 @@ export function SortableTabItem({
           ? getAccentForPath(tab.path)
             ? 'text-white shadow-sm'
             : 'bg-muted text-foreground shadow-sm'
-          : 'bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] text-muted-foreground hover:bg-muted hover:text-foreground',
+          : 'bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground',
 
       )}
       onMouseEnter={() => setIsHovered(true)}

@@ -79,7 +79,7 @@ export function BottomPanelContent({ className }: BottomPanelContentProps) {
   return (
     <div className={cn('flex flex-col h-full bg-card border-t border-border overflow-hidden', className)}>
       {/* Tab bar */}
-      <div className="flex items-center gap-0 px-2 border-b border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] shrink-0" onContextMenu={handleContextMenu}>
+      <div className="flex items-center gap-0 px-2 border-b border-border/40 shrink-0" onContextMenu={handleContextMenu}>
         {/* Built-in tabs */}
         {visibleBuiltinTabs.map(({ id, icon: TabIcon, labelKey }) => {
           const isActive = activeTab === id;
@@ -94,7 +94,7 @@ export function BottomPanelContent({ className }: BottomPanelContentProps) {
                   ? 'text-foreground border-b-2'
                   : 'text-muted-foreground hover:text-foreground pb-[2px]',
               )}
-              style={isActive ? { borderBottomColor: 'var(--color-primary)' } : undefined}
+              style={isActive ? { borderBottomColor: 'color-mix(in srgb, var(--color-foreground) 25%, transparent)' } : undefined}
             >
               <TabIcon className="h-3.5 w-3.5" />
               {t(labelKey)}
@@ -105,7 +105,7 @@ export function BottomPanelContent({ className }: BottomPanelContentProps) {
         {/* Dynamic module tabs — sortable */}
         {visibleDynamicTabs.length > 0 && (
           <>
-            <div className="w-px h-4 bg-[color-mix(in_srgb,var(--color-border)_40%,transparent)] mx-1 shrink-0" />
+            <div className="w-px h-4 bg-border/40 mx-1 shrink-0" />
             <DndContext
               sensors={sensors}
               collisionDetection={closestCenter}
@@ -149,7 +149,7 @@ export function BottomPanelContent({ className }: BottomPanelContentProps) {
                   className={cn(
                     'p-1 rounded-sm transition-colors',
                     alignment === opt.value
-                      ? 'text-foreground bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]'
+                      ? 'text-foreground bg-muted/50'
                       : 'text-muted-foreground hover:text-foreground'
                   )}
                 >

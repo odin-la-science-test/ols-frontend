@@ -30,15 +30,15 @@ export function ActivityBarItemRow({ id, icon, visible, onToggle }: ActivityBarI
       className={cn(
         'w-full flex items-center gap-3 px-3 py-2 rounded-lg border transition-all text-left',
         visible
-          ? 'border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card hover:border-[color-mix(in_srgb,var(--color-border)_60%,transparent)]'
-          : 'border-[color-mix(in_srgb,var(--color-border)_20%,transparent)] bg-[color-mix(in_srgb,var(--color-card)_50%,transparent)] opacity-60 hover:opacity-80'
+          ? 'border-border/40 bg-card hover:border-border/60'
+          : 'border-border/20 bg-card/50 opacity-60 hover:opacity-80'
       )}
     >
       <span className={cn('shrink-0', visible ? 'text-foreground' : 'text-muted-foreground')}>
         {getIconComponent(icon, 'h-4 w-4')}
       </span>
       <span className="flex-1 text-sm font-medium truncate">{label}</span>
-      <span className={cn('shrink-0', visible ? 'text-[color-mix(in_srgb,var(--color-foreground)_60%,transparent)]' : 'text-muted-foreground')}>
+      <span className={cn('shrink-0', visible ? 'text-foreground/60' : 'text-muted-foreground')}>
         {visible ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
       </span>
     </button>

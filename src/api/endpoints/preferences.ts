@@ -26,6 +26,10 @@ export interface SyncablePreferences {
     profiles: WorkspaceProfile[];
     activeProfileId: string | null;
   };
+  tour: {
+    completedTours: string[];
+    dismissedTips: string[];
+  };
 }
 
 export interface PreferencesPayload {

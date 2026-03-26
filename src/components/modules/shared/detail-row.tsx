@@ -126,7 +126,7 @@ export function DetailCodeList({ label, codes, className }: DetailCodeListProps)
             className="flex items-center justify-between gap-2 py-1"
           >
             <span className="text-xs text-muted-foreground">{item.gallery}</span>
-            <div className="flex-1 border-b border-dotted border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] mx-2" />
+            <div className="flex-1 border-b border-dotted border-border/50 mx-2" />
             <button
               onClick={() => handleCopy(item.code, index)}
               className="flex items-center gap-1.5 cursor-pointer text-muted-foreground hover:text-foreground transition-colors"

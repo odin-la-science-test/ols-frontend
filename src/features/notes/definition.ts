@@ -63,4 +63,10 @@ export const notesModule: ModuleDefinition = {
       }));
     },
   },
+
+  tour: [
+    { element: '[data-tour="collection-table"]', titleKey: 'notes.tour.table.title', descriptionKey: 'notes.tour.table.description' },
+    { element: '[data-tour="detail-panel"]', titleKey: 'notes.tour.detail.title', descriptionKey: 'notes.tour.detail.description', side: 'left' },
+    { element: '[data-tour="search-input"]', titleKey: 'notes.tour.search.title', descriptionKey: 'notes.tour.search.description', side: 'bottom' },
+  ],
 };

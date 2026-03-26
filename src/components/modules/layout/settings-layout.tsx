@@ -103,8 +103,11 @@ export function SettingsLayout({
 
   const scrollToSection = useCallback((id: string) => {
     const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const container = contentRef.current;
+    if (el && container) {
+      const elTop = el.getBoundingClientRect().top;
+      const containerTop = container.getBoundingClientRect().top;
+      container.scrollTo({ top: container.scrollTop + elTop - containerTop, behavior: 'smooth' });
     }
   }, []);
 
@@ -140,10 +143,10 @@ export function SettingsLayout({
       <div className="flex-1 flex overflow-hidden">
         {/* ─── Desktop TOC sidebar ─── */}
         {hasToc && (
-          <aside className="hidden lg:flex flex-col w-56 xl:w-64 shrink-0 border-r border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)]">
+          <aside className="hidden lg:flex flex-col w-56 xl:w-64 shrink-0 border-r border-border/30 bg-card/80">
             {/* Search */}
             {hasSearch && (
-              <div className="p-3 border-b border-[color-mix(in_srgb,var(--color-border)_20%,transparent)]">
+              <div className="p-3 border-b border-border/20">
                 <div className="relative">
                   <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted-foreground" />
                   <input
@@ -152,12 +155,12 @@ export function SettingsLayout({
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder={t('settingsPage.searchPlaceholder')}
-                    className="w-full pl-8 pr-8 py-1.5 text-xs rounded-md border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-background)_50%,transparent)] placeholder:text-muted-foreground/60 focus:outline-none focus:border-[color-mix(in_srgb,var(--color-foreground)_30%,transparent)] focus:ring-1 focus:ring-foreground/10 transition-all"
+                    className="w-full pl-8 pr-8 py-1.5 text-xs rounded-md border border-border/40 bg-background/50 placeholder:text-muted-foreground/60 focus:outline-none focus:border-foreground/30 focus:ring-1 focus:ring-foreground/10 transition-all"
                   />
                   {searchQuery && (
                     <button
                       onClick={() => setSearchQuery('')}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 p-0.5 rounded hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]"
+                      className="absolute right-2 top-1/2 -translate-y-1/2 p-0.5 rounded hover:bg-muted/50"
                     >
                       <X className="w-3 h-3 text-muted-foreground" />
                     </button>
@@ -182,14 +185,14 @@ export function SettingsLayout({
                     className={cn(
                       'w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-all duration-150 group text-left',
                       isActive
-                        ? 'bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] text-foreground'
-                        : 'text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]'
+                        ? 'bg-muted/50 text-foreground'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-muted/30'
                     )}
                   >
                     <div className={cn(
                       'w-0.5 h-4 rounded-full shrink-0 transition-all duration-150',
                       isActive
-                        ? 'bg-[var(--module-accent)]'
+                        ? 'neutral-indicator'
                         : 'bg-transparent group-hover:bg-muted-foreground/20'
                     )} />
                     <SectionIcon className="w-3.5 h-3.5 shrink-0" />
@@ -205,7 +208,7 @@ export function SettingsLayout({
 
             {/* Search result count */}
             {searchQuery && (
-              <div className="p-3 border-t border-[color-mix(in_srgb,var(--color-border)_20%,transparent)]">
+              <div className="p-3 border-t border-border/20">
                 <p className="text-[10px] text-muted-foreground/60 text-center">
                   {filteredSectionIds.length} / {sections.length} {t('settingsPage.sectionsVisible')}
                 </p>
@@ -218,7 +221,7 @@ export function SettingsLayout({
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Mobile search bar + horizontal TOC */}
           {hasToc && (
-            <div className="lg:hidden border-b border-[color-mix(in_srgb,var(--color-border)_20%,transparent)] space-y-0">
+            <div className="lg:hidden border-b border-border/20 space-y-0">
               {/* Mobile search */}
               {hasSearch && (
                 <div className="px-3 pt-2">
@@ -229,12 +232,12 @@ export function SettingsLayout({
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                       placeholder={t('settingsPage.searchPlaceholder')}
-                      className="w-full pl-8 pr-8 py-1.5 text-xs rounded-md border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-background)_50%,transparent)] placeholder:text-muted-foreground/60 focus:outline-none focus:border-[color-mix(in_srgb,var(--color-foreground)_30%,transparent)] transition-all"
+                      className="w-full pl-8 pr-8 py-1.5 text-xs rounded-md border border-border/40 bg-background/50 placeholder:text-muted-foreground/60 focus:outline-none focus:border-foreground/30 transition-all"
                     />
                     {searchQuery && (
                       <button
                         onClick={() => setSearchQuery('')}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 p-0.5 rounded hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]"
+                        className="absolute right-2 top-1/2 -translate-y-1/2 p-0.5 rounded hover:bg-muted/50"
                       >
                         <X className="w-3 h-3 text-muted-foreground" />
                       </button>
@@ -257,8 +260,8 @@ export function SettingsLayout({
                         className={cn(
                           'flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-medium whitespace-nowrap transition-all duration-150',
                           isActive
-                            ? 'bg-[color-mix(in_srgb,var(--color-muted)_60%,transparent)] text-[var(--module-accent)]'
-                            : 'text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]'
+                            ? 'bg-muted/60 text-foreground'
+                            : 'text-muted-foreground hover:text-foreground hover:bg-muted/30'
                         )}
                       >
                         <SectionIcon className="w-3 h-3" />

@@ -117,14 +117,14 @@ export function LandingPage() {
         >
           <button
             onClick={() => navigate('/login')}
-            className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-primary text-primary-foreground font-medium text-sm hover:bg-[color-mix(in_srgb,var(--color-primary)_90%,transparent)] transition-colors"
+            className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-colors"
           >
             <LogIn className="w-4 h-4" />
             {t('landing.login')}
           </button>
           <button
             onClick={() => navigate('/register')}
-            className="flex items-center gap-2 px-6 py-2.5 rounded-xl border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] bg-[color-mix(in_srgb,var(--color-card)_50%,transparent)] backdrop-blur-sm text-foreground font-medium text-sm hover:bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)] hover:border-border transition-colors"
+            className="flex items-center gap-2 px-6 py-2.5 rounded-xl border border-border/50 glass-surface text-foreground font-medium text-sm hover:glass-overlay hover:border-border transition-colors"
           >
             {t('landing.register')}
             <ArrowRight className="w-4 h-4" />

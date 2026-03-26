@@ -23,7 +23,7 @@ export function SearchResultItem({ result, onSelect }: SearchResultItemProps) {
       keywords={[result.title, result.subtitle || '', ...(result.tags || [])]}
       className={cn(
         'flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer',
-        'text-sm text-[color-mix(in_srgb,var(--color-foreground)_90%,transparent)]',
+        'text-sm text-foreground/90',
         'data-[selected=true]:bg-muted data-[selected=true]:text-foreground',
         'transition-colors duration-150'
       )}
@@ -42,7 +42,7 @@ export function SearchResultItem({ result, onSelect }: SearchResultItemProps) {
           {result.tags.slice(0, 2).map((tag) => (
             <span
               key={tag}
-              className="px-1.5 py-0.5 text-[10px] bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] text-muted-foreground rounded"
+              className="px-1.5 py-0.5 text-[10px] bg-muted/50 text-muted-foreground rounded"
             >
               {tag}
             </span>

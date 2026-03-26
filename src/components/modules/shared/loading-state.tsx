@@ -8,26 +8,11 @@ import { MUNIN_PRIMARY, HUGIN_PRIMARY } from '@/lib/accent-colors';
 // LOADING STATE - Wave DNA Loader (Elegant wave animation)
 // ═══════════════════════════════════════════════════════════════════════════
 
-// Couleurs thématiques
+// Couleurs thématiques — seul `primary` est utilisé par WaveLoader
 const THEME_COLORS = {
-  // Munin Atlas - Violet scientifique
-  munin: {
-    primary: MUNIN_PRIMARY,
-    secondary: 'hsl(262, 70%, 70%)',
-    glow: MUNIN_PRIMARY,
-  },
-  // Hugin Lab - Vert émeraude laboratoire
-  hugin: {
-    primary: HUGIN_PRIMARY,
-    secondary: 'hsl(160, 70%, 55%)',
-    glow: HUGIN_PRIMARY,
-  },
-  // Default - Bleu moderne
-  default: {
-    primary: 'hsl(217, 91%, 60%)',
-    secondary: 'hsl(217, 80%, 70%)',
-    glow: 'hsl(217, 91%, 60%)',
-  },
+  munin: { primary: MUNIN_PRIMARY },
+  hugin: { primary: HUGIN_PRIMARY },
+  default: { primary: 'hsl(217, 91%, 60%)' },
 } as const;
 
 export type LoaderTheme = keyof typeof THEME_COLORS;

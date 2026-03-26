@@ -32,8 +32,8 @@ export function MenuDropdown({ anchorId, children }: MenuDropdownProps) {
       className={cn(
         'fixed z-[100] mt-0',
         'min-w-[220px] max-w-[320px]',
-        'rounded-lg border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]',
-        'bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)] backdrop-blur-xl shadow-2xl',
+        'rounded-lg border border-border/50',
+        'glass-overlay shadow-2xl',
         'py-1'
       )}
       style={{ top: pos.top, left: pos.left }}

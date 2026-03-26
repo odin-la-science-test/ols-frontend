@@ -55,8 +55,8 @@ export function ModuleSidebar({
             transition={{ duration: 0.2, ease: 'easeInOut' }}
             className={cn(
               'hidden lg:flex flex-col flex-shrink-0',
-              'bg-[color-mix(in_srgb,var(--color-card)_50%,transparent)] backdrop-blur-sm',
-              'border-r border-[color-mix(in_srgb,var(--color-border)_50%,transparent)]',
+              'glass-surface',
+              'border-r border-border/50',
               'overflow-hidden',
               className
             )}
@@ -99,7 +99,7 @@ export function SidebarSection({
           'w-full flex items-center justify-between',
           'px-3 py-2.5 rounded-lg',
           'text-sm font-medium text-muted-foreground',
-          'hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors',
+          'hover:bg-muted/50 transition-colors',
           'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring'
         )}
       >

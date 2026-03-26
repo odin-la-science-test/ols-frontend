@@ -42,4 +42,8 @@ export const notificationsModule: ModuleDefinition = {
     defaultVisible: true,
   }],
 
+  tour: [
+    { element: '[data-tour="collection-table"]', titleKey: 'notifications.tour.table.title', descriptionKey: 'notifications.tour.table.description' },
+    { element: '[data-tour="detail-panel"]', titleKey: 'notifications.tour.detail.title', descriptionKey: 'notifications.tour.detail.description', side: 'left' },
+  ],
 };

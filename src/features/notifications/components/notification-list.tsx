@@ -23,27 +23,13 @@ import {
 } from '../hooks';
 import { useActivityLog } from '@/hooks/use-activity-log';
 import { HUGIN_PRIMARY } from '@/lib/accent-colors';
+import { formatRelativeTime } from '@/lib/format-time';
 import type { Notification } from '../types';
 import { NOTIFICATION_TYPE_ICONS, NOTIFICATION_TYPE_COLORS } from '../notification-rendering';
 
 // ═══════════════════════════════════════════════════════════════════════════
 // NOTIFICATION LIST - Main list component for notifications page
 // ═══════════════════════════════════════════════════════════════════════════
-
-function formatRelativeTime(dateStr: string): string {
-  const now = Date.now();
-  const date = new Date(dateStr).getTime();
-  const diff = now - date;
-  const minutes = Math.floor(diff / 60000);
-  const hours = Math.floor(diff / 3600000);
-  const days = Math.floor(diff / 86400000);
-
-  if (minutes < 1) return 'À l\'instant';
-  if (minutes < 60) return `Il y a ${minutes}min`;
-  if (hours < 24) return `Il y a ${hours}h`;
-  if (days < 7) return `Il y a ${days}j`;
-  return new Date(dateStr).toLocaleDateString();
-}
 
 interface NotificationItemProps {
   notification: Notification;
@@ -67,8 +53,8 @@ function NotificationItem({ notification, onMarkRead, onDelete, onNavigate }: No
       className={cn(
         'group flex items-start gap-3 p-3 rounded-lg border transition-all cursor-pointer',
         notification.read
-          ? 'bg-[color-mix(in_srgb,var(--color-card)_50%,transparent)] border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]'
-          : 'bg-card border-[color-mix(in_srgb,var(--color-border)_60%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] shadow-sm'
+          ? 'bg-card/50 border-border/30 hover:bg-muted/30'
+          : 'bg-card border-border/60 hover:bg-muted/40 shadow-sm'
       )}
       onMouseEnter={() => setShowActions(true)}
       onMouseLeave={() => setShowActions(false)}
@@ -79,7 +65,7 @@ function NotificationItem({ notification, onMarkRead, onDelete, onNavigate }: No
     >
       {/* Icon */}
       <div className={cn(
-        'mt-0.5 p-2 rounded-lg bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
+        'mt-0.5 p-2 rounded-lg bg-muted/50',
         !notification.read && 'bg-muted'
       )}>
         <Icon className={cn('h-4 w-4', iconColor)} />
@@ -95,7 +81,7 @@ function NotificationItem({ notification, onMarkRead, onDelete, onNavigate }: No
             {notification.title}
           </p>
           {!notification.read && (
-            <span className="flex-shrink-0 h-2 w-2 rounded-full bg-[hsl(160,84%,39%)]" />
+            <span className="flex-shrink-0 h-2 w-2 rounded-full bg-primary" />
           )}
         </div>
         {notification.message && (
@@ -104,7 +90,7 @@ function NotificationItem({ notification, onMarkRead, onDelete, onNavigate }: No
           </p>
         )}
         <p className="text-[11px] text-muted-foreground/60 mt-1">
-          {formatRelativeTime(notification.createdAt)}
+          {formatRelativeTime(notification.createdAt, t)}
         </p>
       </div>
 
@@ -156,7 +142,7 @@ function NotificationItem({ notification, onMarkRead, onDelete, onNavigate }: No
                     e.stopPropagation();
                     onDelete(notification.id);
                   }}
-                  className="p-1.5 rounded-md hover:bg-[color-mix(in_srgb,var(--color-destructive)_10%,transparent)] transition-colors text-muted-foreground hover:text-destructive"
+                  className="p-1.5 rounded-md hover:bg-destructive/10 transition-colors text-muted-foreground hover:text-destructive"
                 >
                   <Trash2 className="h-3.5 w-3.5" />
                 </button>

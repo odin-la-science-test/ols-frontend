@@ -39,7 +39,7 @@ function SupervisionList({
           <button
             onClick={() => onDelete(s.id)}
             disabled={isDeleting}
-            className="p-0.5 rounded opacity-0 group-hover:opacity-100 hover:bg-[color-mix(in_srgb,var(--color-destructive)_10%,transparent)] text-muted-foreground hover:text-destructive transition-all"
+            className="p-0.5 rounded opacity-0 group-hover:opacity-100 hover:bg-destructive/10 text-muted-foreground hover:text-destructive transition-all"
           >
             <X className="w-3 h-3" />
           </button>

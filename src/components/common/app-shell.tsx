@@ -11,6 +11,7 @@ import { FocusModeIndicator } from '@/components/common/focus-mode-indicator';
 import { useRegisterAppPanels, useRegisterDetailPanel } from '@/components/common/app-panel-bridge';
 import { ActivityBarBadgeSync } from '@/hooks/use-activity-bar-badge-sync';
 import { ShellDndProvider } from '@/components/common/shell-dnd-context';
+import { TourLauncher } from '@/components/common/tour-launcher';
 import { useKeyboardShortcuts } from '@/hooks';
 import { useNotificationStream } from '@/features/notifications';
 import { useWorkspaceStore, useActivityBarStore } from '@/stores';
@@ -64,6 +65,7 @@ export function AppShell() {
       <TabManager />
       <CommandPalette />
       <ActivityBarBadgeSync />
+      <TourLauncher />
 
       <div style={{ height: '100vh', width: '100vw', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
         <BetaBanner />

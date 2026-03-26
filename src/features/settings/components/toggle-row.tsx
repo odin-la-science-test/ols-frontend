@@ -15,7 +15,7 @@ export function ToggleRow({ icon, label, description, checked, onChange }: Toggl
   return (
     <button
       onClick={onChange}
-      className="w-full flex items-center gap-4 p-3 rounded-lg hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] transition-all duration-150 text-left"
+      className="w-full flex items-center gap-4 p-3 rounded-lg hover:bg-muted/30 transition-all duration-150 text-left"
     >
       <div className={cn('shrink-0', checked ? 'text-foreground' : 'text-muted-foreground')}>
         {icon}
@@ -29,7 +29,7 @@ export function ToggleRow({ icon, label, description, checked, onChange }: Toggl
         className={cn(
           'relative w-9 h-5 rounded-full shrink-0 transition-colors duration-200',
           checked
-            ? 'bg-[color-mix(in_srgb,var(--color-foreground)_60%,transparent)]'
+            ? 'bg-foreground/60'
             : 'bg-border'
         )}
       >

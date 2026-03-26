@@ -3,21 +3,8 @@ import { Laptop, Smartphone, Tablet, LogOut, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui';
 import { FormSection, Badge } from '@/components/modules/shared';
 import { useSessions, useRevokeSession, useRevokeAllOtherSessions } from '@/hooks/use-sessions';
+import { formatRelativeTime } from '@/lib/format-time';
 import type { SessionDTO } from '@/api/endpoints/auth';
-
-function formatRelativeTime(dateStr: string, t: (key: string) => string): string {
-  const date = new Date(dateStr);
-  const now = new Date();
-  const diffMs = now.getTime() - date.getTime();
-  const diffMin = Math.floor(diffMs / 60000);
-
-  if (diffMin < 1) return t('profile.justNow');
-  if (diffMin < 60) return `${diffMin}min`;
-  const diffH = Math.floor(diffMin / 60);
-  if (diffH < 24) return `${diffH}h`;
-  const diffD = Math.floor(diffH / 24);
-  return `${diffD}j`;
-}
 
 function DeviceIcon({ deviceInfo }: { deviceInfo: string }) {
   const lower = deviceInfo.toLowerCase();
@@ -37,8 +24,8 @@ function SessionCard({ session, onRevoke, isRevoking }: {
   const { t } = useTranslation();
 
   return (
-    <div className="flex items-center gap-3 p-3 rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-card)_50%,transparent)]">
-      <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] flex items-center justify-center">
+    <div className="flex items-center gap-3 p-3 rounded-lg border border-border/40 bg-card/50">
+      <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-muted/50 flex items-center justify-center">
         <DeviceIcon deviceInfo={session.deviceInfo} />
       </div>
 

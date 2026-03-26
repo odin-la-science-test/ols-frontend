@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import { LoginPage, RegisterPage, OAuthCallbackPage, HomePage, LandingPage, BetaConditionsPage, MuninAtlasPage, HuginLabPage, NotFoundPage, ErrorPage, WorkspacePage } from '@/pages';
+import { LoginPage, RegisterPage, ForgotPasswordPage, ResetPasswordPage, VerifyEmailPage, OAuthCallbackPage, HomePage, LandingPage, BetaConditionsPage, MuninAtlasPage, HuginLabPage, NotFoundPage, ErrorPage, WorkspacePage } from '@/pages';
 import { ProtectedRoute, PublicRoute, AppShell } from '@/components/common';
 import { ProfilePage } from '@/features/profile';
 import { SettingsPage } from '@/features/settings';
@@ -156,6 +156,18 @@ export const router = createBrowserRouter([
   {
     path: 'register',
     element: <PublicRoute><RegisterPage /></PublicRoute>,
+  },
+  {
+    path: 'forgot-password',
+    element: <PublicRoute><ForgotPasswordPage /></PublicRoute>,
+  },
+  {
+    path: 'reset-password',
+    element: <ResetPasswordPage />,
+  },
+  {
+    path: 'verify-email',
+    element: <VerifyEmailPage />,
   },
   {
     path: 'oauth-callback',

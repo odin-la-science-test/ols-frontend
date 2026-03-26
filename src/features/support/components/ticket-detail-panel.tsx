@@ -116,8 +116,8 @@ export function TicketDetailPanel({ ticket, onClose, onEdit }: TicketDetailPanel
       className="flex flex-col h-full"
     >
       {/* Header */}
-      <div className={cn('flex items-center gap-2 border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]', d.detailPadding)}>
-        <button onClick={onClose} className="p-1 rounded hover:bg-[color-mix(in_srgb,var(--color-muted)_80%,transparent)] transition-colors lg:hidden">
+      <div className={cn('flex items-center gap-2 border-b border-border/30', d.detailPadding)}>
+        <button onClick={onClose} className="p-1 rounded hover:bg-muted/80 transition-colors lg:hidden">
           <ArrowLeft className="w-4 h-4" />
         </button>
 
@@ -130,7 +130,7 @@ export function TicketDetailPanel({ ticket, onClose, onEdit }: TicketDetailPanel
           <p className="text-xs text-muted-foreground">#{ticket.id}</p>
         </div>
 
-        <button onClick={onClose} className="p-1 rounded hover:bg-[color-mix(in_srgb,var(--color-muted)_80%,transparent)] transition-colors hidden lg:block">
+        <button onClick={onClose} className="p-1 rounded hover:bg-muted/80 transition-colors hidden lg:block">
           <X className="w-4 h-4" />
         </button>
       </div>
@@ -175,7 +175,7 @@ export function TicketDetailPanel({ ticket, onClose, onEdit }: TicketDetailPanel
             <Tag className="w-3 h-3" />
             {t('support.description')}
           </label>
-          <div className="rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card p-3">
+          <div className="rounded-lg border border-border/40 bg-card p-3">
             <p className="text-sm whitespace-pre-wrap">{ticket.description}</p>
           </div>
         </div>
@@ -196,7 +196,7 @@ export function TicketDetailPanel({ ticket, onClose, onEdit }: TicketDetailPanel
                     'rounded-lg border p-3 space-y-1',
                     msg.admin
                       ? 'border-[var(--module-accent)]/20 bg-[var(--module-accent)]/5'
-                      : 'border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card'
+                      : 'border-border/40 bg-card'
                   )}
                 >
                   <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -217,7 +217,7 @@ export function TicketDetailPanel({ ticket, onClose, onEdit }: TicketDetailPanel
               <div ref={messagesEndRef} />
             </div>
           ) : (
-            <div className="flex items-center gap-2 rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)] p-3">
+            <div className="flex items-center gap-2 rounded-lg border border-border/40 bg-muted/20 p-3">
               <AlertTriangle className="w-4 h-4 text-muted-foreground" strokeWidth={1.5} />
               <p className="text-xs text-muted-foreground">{t('support.noMessages')}</p>
             </div>
@@ -226,14 +226,14 @@ export function TicketDetailPanel({ ticket, onClose, onEdit }: TicketDetailPanel
 
         {/* Metadata */}
         <div className="grid grid-cols-2 gap-3">
-          <div className="rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card p-3">
+          <div className="rounded-lg border border-border/40 bg-card p-3">
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-1">
               <Clock className="w-3 h-3" />
               {t('support.createdAt')}
             </div>
             <p className="text-sm font-medium">{formatDate(ticket.createdAt)}</p>
           </div>
-          <div className="rounded-lg border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card p-3">
+          <div className="rounded-lg border border-border/40 bg-card p-3">
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-1">
               <Clock className="w-3 h-3" />
               {t('support.updatedAt')}
@@ -245,7 +245,7 @@ export function TicketDetailPanel({ ticket, onClose, onEdit }: TicketDetailPanel
 
       {/* Message input (if not closed) */}
       {!isClosed && (
-        <div className={cn('border-t border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]', d.density === 'compact' ? 'p-2' : 'p-3')}>
+        <div className={cn('border-t border-border/30', d.density === 'compact' ? 'p-2' : 'p-3')}>
           <div className="flex items-end gap-2">
             <Textarea
               value={newMessage}
@@ -253,7 +253,7 @@ export function TicketDetailPanel({ ticket, onClose, onEdit }: TicketDetailPanel
               onKeyDown={handleKeyDown}
               placeholder={t('support.messagePlaceholder')}
               rows={2}
-              className="flex-1 border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card resize-none"
+              className="flex-1 border-border/40 bg-card resize-none"
             />
             <Button
               size="sm"

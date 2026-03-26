@@ -80,7 +80,7 @@ export function SecondarySidebarContent({ className }: SecondarySidebarProps) {
     >
       {/* Panel header */}
       <div className={cn(
-        'flex items-center px-3 border-b border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] justify-between shrink-0',
+        'flex items-center px-3 border-b border-border/50 justify-between shrink-0',
         d.density === 'compact' ? 'h-8' : 'h-10'
       )}>
         <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
@@ -95,7 +95,7 @@ export function SecondarySidebarContent({ className }: SecondarySidebarProps) {
                   onClick={toggleSidebarDetailLayout}
                   className={cn(
                     'p-1 rounded-lg transition-colors',
-                    'text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]'
+                    'text-muted-foreground hover:text-foreground hover:bg-muted/50'
                   )}
                 >
                   {sidebarDetailLayout === 'tabs'
@@ -118,7 +118,7 @@ export function SecondarySidebarContent({ className }: SecondarySidebarProps) {
                 onClick={handleClose}
                 className={cn(
                   'p-1 rounded-lg',
-                  'text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
+                  'text-muted-foreground hover:text-foreground hover:bg-muted/50',
                   'transition-colors'
                 )}
               >
@@ -142,7 +142,7 @@ export function SecondarySidebarContent({ className }: SecondarySidebarProps) {
         ) : sidebarDetailLayout === 'tabs' ? (
           // Tabs mode — module-header style tabs side by side
           <div className="flex flex-col h-full overflow-hidden">
-            <div className="flex shrink-0 border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]">
+            <div className="flex shrink-0 border-b border-border/30">
               {([DEFAULT_GROUP_ID, SPLIT_GROUP_ID] as const).map((id) => {
                 const reg = registrations[id];
                 const isActive = activeTab === id;
@@ -155,8 +155,8 @@ export function SecondarySidebarContent({ className }: SecondarySidebarProps) {
                     onClick={() => setActiveTab(id)}
                     className={cn(
                       'flex-1 min-w-0 flex items-center gap-1.5 px-2.5 py-1.5 transition-colors cursor-pointer',
-                      'border-r last:border-r-0 border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]',
-                      isActive ? 'bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]' : 'bg-[color-mix(in_srgb,var(--color-muted)_10%,transparent)] hover:bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]'
+                      'border-r last:border-r-0 border-border/30',
+                      isActive ? 'bg-muted/30' : 'bg-muted/10 hover:bg-muted/20'
                     )}
                     style={isActive ? { borderBottom: `2px solid ${reg?.accentColor}` } : { borderBottom: '2px solid transparent' }}
                   >
@@ -169,7 +169,7 @@ export function SecondarySidebarContent({ className }: SecondarySidebarProps) {
                     <span
                       role="button"
                       onClick={(e) => { e.stopPropagation(); handleCloseTab(); }}
-                      className="shrink-0 rounded p-0.5 text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
+                      className="shrink-0 rounded p-0.5 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
                     >
                       <X className="h-3 w-3" />
                     </span>

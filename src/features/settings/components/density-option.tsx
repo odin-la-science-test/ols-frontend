@@ -50,13 +50,13 @@ export function DensityOption({ density, active, onClick }: DensityOptionProps) 
       className={cn(
         'flex flex-col items-center gap-2 p-3 rounded-lg transition-all duration-150',
         active
-          ? 'bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] text-foreground'
-          : 'text-muted-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] hover:text-foreground'
+          ? 'bg-muted/40 text-foreground'
+          : 'text-muted-foreground hover:bg-muted/30 hover:text-foreground'
       )}
     >
       {DENSITY_ICONS[density]}
       <span className="text-xs font-medium">{labels[density]}</span>
-      {active && <Check className={'w-3 h-3 text-[var(--module-accent)]'} />}
+      {active && <Check className={'w-3 h-3 neutral-check'} />}
     </button>
   );
 }

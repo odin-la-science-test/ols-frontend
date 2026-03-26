@@ -1,4 +1,4 @@
-export { LoginPage, RegisterPage, OAuthCallbackPage } from './auth';
+export { LoginPage, RegisterPage, ForgotPasswordPage, ResetPasswordPage, VerifyEmailPage, OAuthCallbackPage } from './auth';
 export { BetaConditionsPage } from './beta-conditions-page';
 export { HomePage } from './home-page';
 export { LandingPage } from './landing-page';

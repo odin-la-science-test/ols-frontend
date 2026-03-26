@@ -46,13 +46,13 @@ export function ResumeWorkspaceButton({ className }: ResumeWorkspaceButtonProps)
           transition={{ duration: 0.25, ease: 'easeOut' }}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className={`group flex items-center gap-2 px-3 py-1.5 rounded-xl border border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-card)_50%,transparent)] backdrop-blur-sm hover:bg-[color-mix(in_srgb,var(--color-card)_80%,transparent)] hover:border-[color-mix(in_srgb,var(--color-border)_70%,transparent)] transition-all duration-200 ${className ?? ''}`}
+          className={`group flex items-center gap-2 px-3 py-1.5 rounded-xl border border-border/40 glass-surface hover:glass-overlay hover:border-border/70 transition-all duration-200 ${className ?? ''}`}
         >
           {/* Mobile: icon + tab count badge only */}
           <div className="flex sm:hidden items-center gap-1.5">
             <LayoutDashboard className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" strokeWidth={1.5} />
             {tabs.length > 0 && (
-              <span className="min-w-[18px] h-[18px] px-1 flex items-center justify-center rounded-full bg-[color-mix(in_srgb,var(--color-primary)_20%,transparent)] text-primary text-[10px] font-semibold">
+              <span className="min-w-[18px] h-[18px] px-1 flex items-center justify-center rounded-full bg-primary/20 text-primary text-[10px] font-semibold">
                 {tabs.length}
               </span>
             )}
@@ -65,13 +65,13 @@ export function ResumeWorkspaceButton({ className }: ResumeWorkspaceButtonProps)
               {previewTabs.map((tab) => (
                 <div
                   key={tab.id}
-                  className="w-5 h-5 rounded-md bg-[color-mix(in_srgb,var(--color-muted)_80%,transparent)] border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] flex items-center justify-center ring-1 ring-background"
+                  className="w-5 h-5 rounded-md bg-muted/80 border border-border/50 flex items-center justify-center ring-1 ring-background"
                 >
                   {getIconComponent(tab.icon, 'w-3 h-3 text-muted-foreground')}
                 </div>
               ))}
               {extraCount > 0 && (
-                <div className="w-5 h-5 rounded-md bg-[color-mix(in_srgb,var(--color-muted)_80%,transparent)] border border-[color-mix(in_srgb,var(--color-border)_50%,transparent)] flex items-center justify-center ring-1 ring-background">
+                <div className="w-5 h-5 rounded-md bg-muted/80 border border-border/50 flex items-center justify-center ring-1 ring-background">
                   <span className="text-[9px] text-muted-foreground font-medium">+{extraCount}</span>
                 </div>
               )}

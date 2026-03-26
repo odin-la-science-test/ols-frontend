@@ -72,7 +72,7 @@ function DashboardErrorState({ icon: Icon, onRetry, errorText }: DashboardErrorS
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
     >
-      <div className="p-4 rounded-full bg-[color-mix(in_srgb,var(--color-destructive)_10%,transparent)] mb-4">
+      <div className="p-4 rounded-full bg-destructive/10 mb-4">
         <Icon className="w-10 h-10 text-destructive" />
       </div>
       <p className="text-foreground font-medium mb-2">{errorText}</p>
@@ -193,7 +193,8 @@ export function DashboardPageTemplate({
               emptyText={translations.emptyText}
             />
           ) : (
-            <motion.div 
+            <motion.div
+              data-tour="hub-modules-grid"
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

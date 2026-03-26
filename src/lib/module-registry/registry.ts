@@ -1,4 +1,4 @@
-import type { ModuleDefinition, ModuleSearchProvider, ModuleActivityPanel } from './types';
+import type { ModuleDefinition, ModuleSearchProvider, ModuleActivityPanel, TourStep } from './types';
 import { logger } from '../logger';
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -111,6 +111,13 @@ class ModuleRegistry {
     return this.getAll()
       .filter((m): m is ModuleDefinition & { activityPanel: ModuleActivityPanel } => !!m.activityPanel)
       .map((m) => ({ module: m, panel: m.activityPanel }));
+  }
+
+  /** Get all modules that provide a guided tour */
+  getTours(): Array<{ module: ModuleDefinition; steps: TourStep[] }> {
+    return this.getAll()
+      .filter((m): m is ModuleDefinition & { tour: TourStep[] } => !!m.tour && m.tour.length > 0)
+      .map((m) => ({ module: m, steps: m.tour }));
   }
 
   /** Get the full route path for a module by id, e.g. '/lab/notes' */

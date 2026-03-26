@@ -57,16 +57,16 @@ export function FeatureCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay, ease: [0.25, 0.1, 0.25, 1] }}
       className={cn("relative h-full", className)}
-      style={hover3D ? ({ 
+      style={hover3D ? { 
         transformStyle: 'preserve-3d',
         perspective: '1000px',
-      } as any) : undefined}
+      } : undefined}
       onMouseEnter={needsHoverTracking ? () => !isLocked && setIsHovered(true) : undefined}
       onMouseLeave={needsHoverTracking ? () => setIsHovered(false) : undefined}
     >
       <motion.div 
         className={cn(
-          "relative h-full rounded-2xl overflow-hidden bg-[color-mix(in_srgb,var(--color-card)_90%,transparent)] backdrop-blur-md border border-[color-mix(in_srgb,var(--color-border)_70%,transparent)] transition-all duration-300 ease-out",
+          "relative h-full rounded-2xl overflow-hidden glass-card border border-border/70 transition-all duration-300 ease-out",
           isLocked 
             ? "grayscale-[30%]" 
             : !showColoredBg && "group-hover:border-border group-hover:bg-card"
@@ -83,7 +83,7 @@ export function FeatureCard({
             background: accentColor,
             borderColor: 'transparent',
           }),
-        } as any}
+        }}
       >
         {/* Content */}
         <div className={cn(
@@ -95,13 +95,13 @@ export function FeatureCard({
             <>
               <div
                 className="shrink-0 transition-colors duration-300"
-                  style={{
-                    color: isLocked
-                      ? 'var(--color-muted-foreground)'
-                      : showColoredBg
-                        ? 'white'
-                        : accentColor,
-                  }}
+                style={{
+                  color: isLocked
+                    ? 'hsl(var(--muted-foreground))'
+                    : showColoredBg
+                      ? 'white'
+                      : accentColor,
+                }}
               >
                 <div className="w-5 h-5 flex items-center justify-center">
                   {icon}
@@ -162,11 +162,11 @@ export function FeatureCard({
               transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               style={{ 
                 color: isLocked 
-                  ? 'var(--color-muted-foreground)' 
+                  ? 'hsl(var(--muted-foreground))' 
                   : showColoredBg 
                     ? 'white' 
                     : accentColor,
-              } as any}
+              }}
             >
               <div className="w-6 h-6 flex items-center justify-center">
                 {icon}
@@ -200,7 +200,7 @@ export function FeatureCard({
             <h3 
               className={cn(
                 "text-lg font-semibold mb-2 transition-colors truncate",
-                !showColoredBg && "text-foreground group-hover:text-[color-mix(in_srgb,var(--color-foreground)_90%,transparent)]"
+                !showColoredBg && "text-foreground group-hover:text-foreground/90"
               )}
               style={showColoredBg ? { color: 'white' } : undefined}
             >

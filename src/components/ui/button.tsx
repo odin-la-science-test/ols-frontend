@@ -12,17 +12,17 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: 
-          "bg-primary text-primary-foreground hover:bg-[color-mix(in_srgb,var(--color-primary)_90%,transparent)] active:scale-[0.98]",
+          "bg-primary text-primary-foreground hover:bg-primary/90 active:scale-[0.98]",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-[color-mix(in_srgb,var(--color-destructive)_90%,transparent)] active:scale-[0.98]",
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90 active:scale-[0.98]",
         outline:
-          "border border-border bg-[color-mix(in_srgb,var(--color-background)_80%,transparent)] backdrop-blur-sm hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] hover:border-muted-foreground/20 active:scale-[0.98]",
+          "border border-border glass-frosted hover:bg-muted/50 hover:border-muted-foreground/20 active:scale-[0.98]",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_srgb,var(--color-secondary)_80%,transparent)] active:scale-[0.98]",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 active:scale-[0.98]",
         ghost: 
-          "hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] hover:text-foreground active:scale-[0.98]",
+          "hover:bg-muted/50 hover:text-foreground active:scale-[0.98]",
         link: 
-          "text-primary underline-offset-4 hover:text-[color-mix(in_srgb,var(--color-primary)_80%,transparent)] hover:underline decoration-primary/50 transition-colors duration-200",
+          "text-primary underline-offset-4 hover:text-primary/80 hover:underline decoration-primary/50 transition-colors duration-200",
         gradient: 
           "relative bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] text-primary-foreground hover:bg-[position:100%_0] transition-all duration-500 active:scale-[0.98]",
       },

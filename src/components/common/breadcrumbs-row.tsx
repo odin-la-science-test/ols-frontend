@@ -25,7 +25,7 @@ export function BreadcrumbsRow({ children, className }: BreadcrumbsRowProps) {
   return (
     <div
       className={cn(
-        'relative z-30 shrink-0 flex items-center gap-2 px-4 py-1.5 border-b border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-[color-mix(in_srgb,var(--color-card)_85%,transparent)] backdrop-blur-sm min-h-8',
+        'relative z-30 shrink-0 flex items-center gap-2 px-4 py-1.5 border-b border-border/40 glass-chrome min-h-8',
         className,
       )}
       onContextMenu={handleContextMenu}

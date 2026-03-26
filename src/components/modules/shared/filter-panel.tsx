@@ -5,7 +5,6 @@ import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui';
 import type { FilterConfig, ActiveFilter, FilterOption } from '../types';
-import { CHIP_BASE, CHIP_ACTIVE, CHIP_INACTIVE } from './identification-ui';
 
 // ═══════════════════════════════════════════════════════════════════════════
 // FILTER PANEL - Dynamic filter controls
@@ -50,7 +49,7 @@ export function FilterPanel({
   };
 
   return (
-    <div className={cn('space-y-3', className)}>
+    <div data-tour="filter-panel" className={cn('space-y-3', className)}>
       {filters.map((filter) => (
         <FilterControl
           key={filter.key}
@@ -148,8 +147,8 @@ function FilterChip({ option, selected, onClick }: FilterChipProps) {
     <button
       onClick={onClick}
       className={cn(
-        CHIP_BASE, 'gap-1.5 px-2.5 py-1 text-xs',
-        selected ? CHIP_ACTIVE : CHIP_INACTIVE
+        'chip-base gap-1.5 px-2.5 py-1 text-xs',
+        selected ? 'chip-active' : 'chip-inactive'
       )}
     >
       <span>{option.label}</span>

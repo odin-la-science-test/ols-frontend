@@ -63,7 +63,7 @@ function FieldGrid<T>({
               hasTooltip ? (
                 <Tooltip delayDuration={200}>
                   <TooltipTrigger asChild>
-                    <span className="text-xs text-muted-foreground uppercase tracking-wide mb-1 cursor-default border-b border-dotted border-muted-foreground/40 hover:border-[color-mix(in_srgb,var(--color-primary)_60%,transparent)] transition-colors inline-block">
+                    <span className="text-xs text-muted-foreground uppercase tracking-wide mb-1 cursor-default border-b border-dotted border-muted-foreground/40 hover:border-primary/60 transition-colors inline-block">
                       {shortLabel}
                     </span>
                   </TooltipTrigger>
@@ -172,8 +172,8 @@ function DataCard<T extends { id: string | number }>({
         !isSelectionMode && isSelected && 'bg-muted',
         !isSelectionMode && !isSelected && 'hover:bg-muted',
         // Selection mode styling
-        isSelectionMode && isChecked && 'ring-2 ring-primary bg-[color-mix(in_srgb,var(--color-primary)_5%,transparent)]',
-        isSelectionMode && !isChecked && 'hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
+        isSelectionMode && isChecked && 'ring-2 ring-primary bg-primary/5',
+        isSelectionMode && !isChecked && 'hover:bg-muted/50',
         isSelectionMode && isSelectionDisabled && !isChecked && 'opacity-60'
       )}
     >
@@ -216,7 +216,7 @@ function DataCard<T extends { id: string | number }>({
 
       {/* Badges Section - subtle background */}
       {config.badges && config.badges.length > 0 && (
-        <div className={cn(d.cardSectionPadding, 'bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]')}>
+        <div className={cn(d.cardSectionPadding, 'bg-muted/20')}>
           <FieldGrid
             fields={config.badges}
             item={item}
@@ -230,7 +230,7 @@ function DataCard<T extends { id: string | number }>({
       {description && (
         <div className={cn(d.cardSectionPadding, 'bg')}>
           <p className="text-sm text-muted-foreground line-clamp-2">
-            <span className="font-medium text-[color-mix(in_srgb,var(--color-foreground)_80%,transparent)]">{config.descriptionLabel}: </span>
+            <span className="font-medium text-foreground/80">{config.descriptionLabel}: </span>
             {description}
           </p>
         </div>
@@ -238,7 +238,7 @@ function DataCard<T extends { id: string | number }>({
 
       {/* Info Fields Section */}
       {config.infoFields && config.infoFields.length > 0 && (
-        <div className={cn(d.cardSectionPadding, 'bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)]')}>
+        <div className={cn(d.cardSectionPadding, 'bg-muted/20')}>
           <FieldGrid
             fields={config.infoFields}
             item={item}
@@ -256,22 +256,22 @@ function CardSkeleton() {
   return (
     <div className="bg-card rounded-xl border border-border p-5 animate-pulse">
       <div className="mb-3">
-        <div className="h-5 bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] rounded w-3/4 mb-2" />
-        <div className="h-4 bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] rounded w-1/2" />
+        <div className="h-5 bg-muted/50 rounded w-3/4 mb-2" />
+        <div className="h-4 bg-muted/30 rounded w-1/2" />
       </div>
       <div className="flex gap-2 mb-3">
-        <div className="h-6 bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] rounded-full w-16" />
-        <div className="h-6 bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] rounded-full w-20" />
+        <div className="h-6 bg-muted/30 rounded-full w-16" />
+        <div className="h-6 bg-muted/30 rounded-full w-20" />
       </div>
       <div className="space-y-2 mb-3">
-        <div className="h-4 bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] rounded w-full" />
-        <div className="h-4 bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] rounded w-2/3" />
+        <div className="h-4 bg-muted/30 rounded w-full" />
+        <div className="h-4 bg-muted/30 rounded w-2/3" />
       </div>
-      <div className="grid grid-cols-3 gap-2 pt-3 border-t border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]">
+      <div className="grid grid-cols-3 gap-2 pt-3 border-t border-border/30">
         {[1, 2, 3].map((i) => (
           <div key={i} className="text-center">
-            <div className="h-3 bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] rounded w-12 mx-auto mb-1" />
-            <div className="h-4 bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] rounded w-8 mx-auto" />
+            <div className="h-3 bg-muted/30 rounded w-12 mx-auto mb-1" />
+            <div className="h-4 bg-muted/40 rounded w-8 mx-auto" />
           </div>
         ))}
       </div>

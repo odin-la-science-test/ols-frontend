@@ -34,4 +34,10 @@ export const contactsModule: ModuleDefinition = {
       }));
     },
   },
+
+  tour: [
+    { element: '[data-tour="collection-table"]', titleKey: 'contacts.tour.table.title', descriptionKey: 'contacts.tour.table.description' },
+    { element: '[data-tour="detail-panel"]', titleKey: 'contacts.tour.detail.title', descriptionKey: 'contacts.tour.detail.description', side: 'left' },
+    { element: '[data-tour="search-input"]', titleKey: 'contacts.tour.search.title', descriptionKey: 'contacts.tour.search.description', side: 'bottom' },
+  ],
 };

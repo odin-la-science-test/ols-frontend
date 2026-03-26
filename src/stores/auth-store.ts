@@ -12,6 +12,7 @@ export interface User {
   role: RoleType;
   avatarId?: string | null;
   authProvider?: AuthProviderType;
+  emailVerified?: boolean;
 }
 
 export function getAvatarUrl(avatarId?: string | null): string | undefined {

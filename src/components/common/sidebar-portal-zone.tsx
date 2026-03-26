@@ -78,14 +78,14 @@ export function SidebarPortalZone({
     <div className={cn('flex flex-col h-full overflow-hidden', className)} style={accentStyle}>
       {/* Module header — title + optional close button */}
       {registration && !effectiveHideHeader && (
-        <div className="shrink-0 flex items-center justify-between px-3 py-1.5 border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)] bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]">
+        <div className="shrink-0 flex items-center justify-between px-3 py-1.5 border-b border-border/30 bg-muted/30">
           <span className="text-[10px] font-medium uppercase tracking-wider truncate text-muted-foreground">
             {registration.moduleTitle}
           </span>
           {onClose && (
             <button
               onClick={onClose}
-              className="ml-2 shrink-0 rounded p-0.5 text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
+              className="ml-2 shrink-0 rounded p-0.5 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
             >
               <X className="h-3 w-3" />
             </button>

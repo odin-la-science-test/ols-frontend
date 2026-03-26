@@ -2,13 +2,19 @@
 
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
-import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui';
 import { useBacteria } from '../hooks';
 import type { BacterialMorphology, BiochemKey } from '../types';
 import { morphologyLabel, biochemKeyLabel } from '../types';
-import { Badge } from '@/components/modules/shared';
+import {
+  Badge,
+  StatPill,
+  BiochemBar,
+  DistributionBar,
+  OverviewSection,
+  OverviewSeparator,
+  pct,
+} from '@/components/modules/shared';
+import type { DistributionSegment } from '@/components/modules/shared';
 
 // ═══════════════════════════════════════════════════════════════════════════
 // GRAM OVERVIEW PANEL — Contextual bottom panel tab for Bacteriology
@@ -18,90 +24,7 @@ import { Badge } from '@/components/modules/shared';
 //   • Morphology breakdown
 //   • Biochemical profile (% positive)
 //   • Key clinical indicators
-//
-// Uses the app's design system (Badge variants, motion, ring-inset)
-// for a polished, integrated look.
 // ═══════════════════════════════════════════════════════════════════════════
-
-// ─── Helpers ────────────────────────────────────────────────────────────
-
-function pct(count: number, total: number): number {
-  if (total === 0) return 0;
-  return Math.round((count / total) * 100);
-}
-
-// ─── Mini stat pill — matches app's ring-inset badge style ──────────────
-
-function StatPill({ label, value, sub, variant = 'default' }: {
-  label: string;
-  value: string | number;
-  sub?: string;
-  variant?: 'default' | 'warning' | 'destructive';
-}) {
-  const colorMap = {
-    default: 'bg-slate-100 ring-slate-200/60 text-slate-700 dark:bg-slate-800/60 dark:ring-slate-700/40 dark:text-slate-200',
-    warning: 'bg-yellow-50 ring-yellow-200/60 text-yellow-800 dark:bg-yellow-500/10 dark:ring-yellow-500/30 dark:text-yellow-200',
-    destructive: 'bg-red-50 ring-red-200/60 text-red-800 dark:bg-red-500/10 dark:ring-red-500/30 dark:text-red-200',
-  };
-
-  return (
-    <div className={cn(
-      'flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-lg ring-1 ring-inset min-w-[64px]',
-      colorMap[variant],
-    )}>
-      <span className="text-base font-bold tabular-nums leading-none">{value}</span>
-      <span className="text-[10px] font-medium opacity-70 leading-tight text-center">{label}</span>
-      {sub && <span className="text-[9px] tabular-nums opacity-50">{sub}</span>}
-    </div>
-  );
-}
-
-// ─── Biochem bar with smooth gradient ───────────────────────────────────
-
-function BiochemBar({ label, fullLabel, percentage }: {
-  label: string;
-  fullLabel: string;
-  percentage: number | null;
-}) {
-  const barColor = percentage === null
-    ? 'bg-muted'
-    : percentage >= 70
-      ? 'bg-gradient-to-t from-emerald-500 to-emerald-400 dark:from-emerald-600 dark:to-emerald-500'
-      : percentage >= 40
-        ? 'bg-gradient-to-t from-amber-500 to-amber-400 dark:from-amber-600 dark:to-amber-500'
-        : 'bg-gradient-to-t from-rose-500 to-rose-400 dark:from-rose-600 dark:to-rose-500';
-
-  return (
-    <Tooltip delayDuration={200}>
-      <TooltipTrigger asChild>
-        <div className="flex flex-col items-center gap-1 group">
-          {/* Bar container */}
-          <div className="relative w-6 h-8 rounded-md bg-[color-mix(in_srgb,var(--color-muted)_40%,transparent)] dark:bg-[color-mix(in_srgb,var(--color-muted)_20%,transparent)] overflow-hidden ring-1 ring-inset ring-border/20">
-            {percentage !== null && (
-              <motion.div
-                initial={{ height: 0 }}
-                animate={{ height: `${percentage}%` }}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
-                className={cn('absolute bottom-0 inset-x-0 rounded-b-[3px]', barColor)}
-              />
-            )}
-          </div>
-          {/* Label */}
-          <span className="text-[9px] font-medium text-muted-foreground group-hover:text-foreground transition-colors leading-none">
-            {label}
-          </span>
-          {/* Value */}
-          <span className="text-[10px] tabular-nums text-muted-foreground/80 leading-none">
-            {percentage !== null ? `${percentage}%` : '—'}
-          </span>
-        </div>
-      </TooltipTrigger>
-      <TooltipContent side="top">{`${fullLabel}: ${percentage ?? '—'}%`}</TooltipContent>
-    </Tooltip>
-  );
-}
-
-// ─── Main Component ─────────────────────────────────────────────────────
 
 export function GramOverviewPanel() {
   const { t } = useTranslation();
@@ -160,57 +83,33 @@ export function GramOverviewPanel() {
   }
 
   const { total, gramPos, gramNeg, morphoCounts, biochem, withResistance, hemoBeta, hemoAlpha, hemoGamma } = stats;
-  const gramPosPct = pct(gramPos, total);
-  const gramNegPct = pct(gramNeg, total);
+
+  const gramSegments: DistributionSegment[] = [
+    {
+      key: 'gram-pos',
+      count: gramPos,
+      percentage: pct(gramPos, total),
+      className: 'bg-violet-100 dark:bg-violet-500/25',
+      labelClassName: 'text-violet-700 dark:text-violet-200',
+    },
+    {
+      key: 'gram-neg',
+      count: gramNeg,
+      percentage: pct(gramNeg, total),
+      className: 'bg-pink-100 dark:bg-pink-500/25',
+      labelClassName: 'text-pink-700 dark:text-pink-200',
+    },
+  ];
 
   return (
     <div className="h-full overflow-y-auto overflow-x-hidden">
-      <div className="flex items-start gap-6 px-4 py-3">
+      <div className="flex flex-wrap items-start gap-x-6 gap-y-3 px-4 py-3">
 
         {/* ── Section 1: Gram distribution ── */}
-        <div className="flex flex-col gap-2 min-w-0">
-          <div className="flex items-center gap-2">
-            <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
-              {t('bottomPanel.gramOverview.gramDistribution')}
-            </span>
-            <span className="text-[10px] tabular-nums text-muted-foreground/60">
-              n={total}
-            </span>
-          </div>
+        <OverviewSection title={t('bottomPanel.gramOverview.gramDistribution')} subtitle={`n=${total}`}>
+          <DistributionBar segments={gramSegments} />
 
-          {/* Proportional bar */}
-          <div className="flex h-5 rounded-md overflow-hidden ring-1 ring-inset ring-border/30" style={{ width: '180px' }}>
-            {gramPos > 0 && (
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: `${gramPosPct}%` }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
-                className="h-full bg-violet-100 dark:bg-violet-500/25 flex items-center justify-center"
-              >
-                {gramPosPct > 15 && (
-                  <span className="text-[9px] font-bold text-violet-700 dark:text-violet-200 tabular-nums">
-                    {gramPosPct}%
-                  </span>
-                )}
-              </motion.div>
-            )}
-            {gramNeg > 0 && (
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: `${gramNegPct}%` }}
-                transition={{ duration: 0.5, ease: 'easeOut', delay: 0.05 }}
-                className="h-full bg-pink-100 dark:bg-pink-500/25 flex items-center justify-center"
-              >
-                {gramNegPct > 15 && (
-                  <span className="text-[9px] font-bold text-pink-700 dark:text-pink-200 tabular-nums">
-                    {gramNegPct}%
-                  </span>
-                )}
-              </motion.div>
-            )}
-          </div>
-
-          {/* Gram legend using app badges */}
+          {/* Gram legend */}
           <div className="flex items-center gap-1.5">
             <Badge variant="gramPositive" size="sm">G+ {gramPos}</Badge>
             <Badge variant="gramNegative" size="sm">G− {gramNeg}</Badge>
@@ -230,10 +129,9 @@ export function GramOverviewPanel() {
                 );
               })}
           </div>
-        </div>
+        </OverviewSection>
 
-        {/* ── Separator ── */}
-        <div className="hidden sm:block w-px self-stretch bg-[color-mix(in_srgb,var(--color-border)_40%,transparent)]" />
+        <OverviewSeparator />
 
         {/* ── Section 2: Clinical indicators ── */}
         <div className="flex flex-col gap-2 shrink-0">
@@ -256,14 +154,10 @@ export function GramOverviewPanel() {
           </div>
         </div>
 
-        {/* ── Separator ── */}
-        <div className="hidden sm:block w-px self-stretch bg-[color-mix(in_srgb,var(--color-border)_40%,transparent)]" />
+        <OverviewSeparator />
 
         {/* ── Section 3: Biochemical profile ── */}
-        <div className="flex flex-col gap-2 min-w-0">
-          <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
-            {t('bottomPanel.gramOverview.biochemProfile')}
-          </span>
+        <OverviewSection title={t('bottomPanel.gramOverview.biochemProfile')}>
           <div className="flex items-end gap-2">
             {biochem.map((stat) => (
               <BiochemBar
@@ -274,7 +168,7 @@ export function GramOverviewPanel() {
               />
             ))}
           </div>
-        </div>
+        </OverviewSection>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { DashboardWidgetWrapper } from './widget-wrapper';
 import { useWorkspaceStore } from '@/stores';
 import { getIconComponent } from '@/lib/workspace-utils';
 import { cn } from '@/lib/utils';
+import { formatRelativeTime } from '@/lib/format-time';
 
 // ═══════════════════════════════════════════════════════════════════════════
 // RECENT ACTIVITY WIDGET - Shows recently visited modules
@@ -13,17 +14,6 @@ import { cn } from '@/lib/utils';
 //   < @xs  → icon + truncated title only
 //   >= @xs → full row with timestamp + arrow
 // ═══════════════════════════════════════════════════════════════════════════
-
-function formatRelativeTime(timestamp: number, t: (key: string) => string): string {
-  const diff = Date.now() - timestamp;
-  const minutes = Math.floor(diff / 60_000);
-  if (minutes < 1) return t('dashboard.timeJustNow');
-  if (minutes < 60) return t('dashboard.timeMinutes').replace('{{count}}', String(minutes));
-  const hours = Math.floor(minutes / 60);
-  if (hours < 24) return t('dashboard.timeHours').replace('{{count}}', String(hours));
-  const days = Math.floor(hours / 24);
-  return t('dashboard.timeDays').replace('{{count}}', String(days));
-}
 
 export function RecentActivityWidget() {
   const { t } = useTranslation();
@@ -58,7 +48,7 @@ export function RecentActivityWidget() {
                   className={cn(
                     'w-full flex items-center gap-2 @xs:gap-2.5 px-2 @xs:px-2.5 rounded-lg text-left',
                     'text-muted-foreground hover:text-foreground',
-                    'hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] transition-all duration-150 group'
+                    'hover:bg-muted/30 transition-all duration-150 group'
                   )}
                 >
                   <span className="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity">

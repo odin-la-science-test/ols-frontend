@@ -26,7 +26,7 @@ export function ActivityLogPanel() {
   return (
     <div className="flex-1 flex flex-col overflow-hidden">
       {/* Header with clear button */}
-      <div className="flex items-center justify-end px-3 py-1 border-b border-[color-mix(in_srgb,var(--color-border)_20%,transparent)]">
+      <div className="flex items-center justify-end px-3 py-1 border-b border-border/20">
         <Tooltip delayDuration={200}>
           <TooltipTrigger asChild>
             <button
@@ -49,13 +49,13 @@ export function ActivityLogPanel() {
           return (
             <div
               key={entry.id}
-              className="flex items-start gap-2 px-3 py-0.5 hover:bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)] transition-colors"
+              className="flex items-start gap-2 px-3 py-0.5 hover:bg-muted/30 transition-colors"
             >
               <span className="text-muted-foreground/60 shrink-0 tabular-nums w-16">
                 {formatTimestamp(entry.timestamp)}
               </span>
               <TypeIcon className={cn('h-3 w-3 mt-0.5 shrink-0', typeColor)} />
-              <span className="text-[color-mix(in_srgb,var(--color-foreground)_90%,transparent)] flex-1 break-words">
+              <span className="text-foreground/90 flex-1 break-words">
                 {entry.message}
                 {entry.detail && (
                   <span className="text-muted-foreground/60 ml-1">{entry.detail}</span>

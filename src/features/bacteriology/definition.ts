@@ -34,4 +34,11 @@ export const bacteriologyModule: ModuleDefinition = {
       }));
     },
   },
+
+  tour: [
+    { element: '[data-tour="collection-table"]', titleKey: 'bacteriology.tour.table.title', descriptionKey: 'bacteriology.tour.table.description' },
+    { element: '[data-tour="detail-panel"]', titleKey: 'bacteriology.tour.detail.title', descriptionKey: 'bacteriology.tour.detail.description', side: 'left' },
+    { element: '[data-tour="filter-panel"]', titleKey: 'bacteriology.tour.filters.title', descriptionKey: 'bacteriology.tour.filters.description', side: 'left' },
+    { element: '[data-tour="stats-bar"]', titleKey: 'bacteriology.tour.stats.title', descriptionKey: 'bacteriology.tour.stats.description', side: 'bottom' },
+  ],
 };

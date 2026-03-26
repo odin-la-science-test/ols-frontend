@@ -10,6 +10,7 @@ import { registry } from '@/lib/module-registry';
 import { getModuleIcon } from '@/lib/module-icons';
 import { IconButtonWithTooltip } from '@/components/ui';
 import { cn } from '@/lib/utils';
+import { formatRelativeTime } from '@/lib/format-time';
 
 // ═══════════════════════════════════════════════════════════════════════════
 // HISTORY PANEL — Activity bar panel for undo/redo history
@@ -25,16 +26,6 @@ const EMPTY_ENTRIES: never[] = [];
 function useActiveScope(): string {
   const { pathname } = useLocation();
   return registry.getByRoute(pathname)?.id ?? GLOBAL_SCOPE;
-}
-
-function formatRelativeTime(timestamp: number): string {
-  const diff = Date.now() - timestamp;
-  const seconds = Math.floor(diff / 1000);
-  if (seconds < 60) return `${seconds}s`;
-  const minutes = Math.floor(seconds / 60);
-  if (minutes < 60) return `${minutes}m`;
-  const hours = Math.floor(minutes / 60);
-  return `${hours}h`;
 }
 
 export function HistoryPanel() {
@@ -68,7 +59,7 @@ export function HistoryPanel() {
   return (
     <div className="flex flex-col h-full">
       {/* Toolbar */}
-      <div className="flex items-center gap-1 px-2 py-1.5 border-b border-[color-mix(in_srgb,var(--color-border)_30%,transparent)]">
+      <div className="flex items-center gap-1 px-2 py-1.5 border-b border-border/30">
         <IconButtonWithTooltip
           icon={<Undo2 className="w-4 h-4" strokeWidth={1.5} />}
           tooltip={t('history.undo')}
@@ -113,8 +104,8 @@ export function HistoryPanel() {
                 onClick={() => handleJumpTo(entry.id)}
                 className={cn(
                   'flex items-center gap-2 w-full px-2 py-1.5 rounded-md text-left text-xs transition-colors duration-200',
-                  'hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)]',
-                  isActive && 'border-l-2 border-[var(--module-accent,var(--color-primary))] bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]',
+                  'hover:bg-muted/50',
+                  isActive && 'border-l-2 border-[var(--module-accent,hsl(var(--primary)))] bg-muted/30',
                   isUndone && 'opacity-40',
                   !isActive && !isUndone && 'border-l-2 border-transparent',
                 )}
@@ -124,7 +115,7 @@ export function HistoryPanel() {
                 )}
                 <span className="truncate flex-1">{t(entry.labelKey)}</span>
                 <span className="text-muted-foreground shrink-0">
-                  {formatRelativeTime(entry.timestamp)}
+                  {formatRelativeTime(entry.timestamp, t)}
                 </span>
               </button>
             );

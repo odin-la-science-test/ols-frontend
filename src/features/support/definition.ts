@@ -41,4 +41,10 @@ export const supportModule: ModuleDefinition = {
       }));
     },
   },
+
+  tour: [
+    { element: '[data-tour="collection-table"]', titleKey: 'support.tour.table.title', descriptionKey: 'support.tour.table.description' },
+    { element: '[data-tour="detail-panel"]', titleKey: 'support.tour.detail.title', descriptionKey: 'support.tour.detail.description', side: 'left' },
+    { element: '[data-tour="filter-panel"]', titleKey: 'support.tour.filters.title', descriptionKey: 'support.tour.filters.description', side: 'left' },
+  ],
 };

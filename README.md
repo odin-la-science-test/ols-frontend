@@ -11,6 +11,7 @@ Frontend React pour la plateforme **Odin La Science**.
 - **Animations** : Framer Motion
 - **Icons** : Lucide React
 - **i18n** : react-i18next (FR/EN)
+- **Tour guide** : driver.js (visite guidee interactive des modules)
 - **Tests** : Vitest + Testing Library
 
 ## Pre-requis

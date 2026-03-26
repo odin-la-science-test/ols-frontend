@@ -28,14 +28,14 @@ export function ProfileCard({ profile, isActive, onActivate, onExport, onDelete 
       className={cn(
         'flex items-start gap-3 p-3 rounded-lg border transition-all',
         isActive
-          ? 'border-[var(--module-accent)]/40 bg-[var(--module-accent-subtle)]'
-          : 'border-[color-mix(in_srgb,var(--color-border)_40%,transparent)] bg-card hover:border-[color-mix(in_srgb,var(--color-border)_60%,transparent)]'
+          ? 'neutral-border neutral-bg-subtle'
+          : 'border-border/40 bg-card hover:border-border/60'
       )}
     >
       {/* Icon */}
       <div className={cn(
         'shrink-0 p-2 rounded-lg',
-        isActive ? 'bg-[color-mix(in_srgb,var(--color-foreground)_10%,transparent)]' : 'bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]'
+        isActive ? 'bg-foreground/10' : 'bg-muted/30'
       )}>
         {getIconComponent(profile.icon, 'h-4 w-4')}
       </div>
@@ -45,7 +45,7 @@ export function ProfileCard({ profile, isActive, onActivate, onExport, onDelete 
         <div className="flex items-center gap-2">
           <span className="text-sm font-medium truncate">{displayName}</span>
           {isActive && (
-            <span className="px-1.5 py-0.5 text-[10px] font-medium rounded-full bg-[var(--module-accent)]/15 text-[var(--module-accent)]">
+            <span className="px-1.5 py-0.5 text-[10px] font-medium rounded-full neutral-bg-badge neutral-text">
               {t('profiles.active')}
             </span>
           )}
@@ -84,7 +84,7 @@ export function ProfileCard({ profile, isActive, onActivate, onExport, onDelete 
         {!isActive && (
           <button
             onClick={onActivate}
-            className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
+            className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
             title={t('profiles.activate')}
           >
             <Check className="w-3.5 h-3.5" />
@@ -92,7 +92,7 @@ export function ProfileCard({ profile, isActive, onActivate, onExport, onDelete 
         )}
         <button
           onClick={onExport}
-          className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-[color-mix(in_srgb,var(--color-muted)_50%,transparent)] transition-colors"
+          className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
           title={t('profiles.export')}
         >
           <Copy className="w-3.5 h-3.5" />
@@ -100,7 +100,7 @@ export function ProfileCard({ profile, isActive, onActivate, onExport, onDelete 
         {!profile.isDefault && (
           <button
             onClick={onDelete}
-            className="p-1.5 rounded-md text-muted-foreground hover:text-destructive hover:bg-[color-mix(in_srgb,var(--color-destructive)_10%,transparent)] transition-colors"
+            className="p-1.5 rounded-md text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
             title={t('profiles.delete')}
           >
             <Trash2 className="w-3.5 h-3.5" />
