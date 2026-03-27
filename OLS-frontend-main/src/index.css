@@ -1,0 +1,988 @@
+@import "tailwindcss";
+@import "react-grid-layout/css/styles.css";
+@import "react-resizable/css/styles.css";
+
+@plugin "tailwindcss-animate";
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:not(.dark):not(.dark *));
+
+/* Bloquer le highlight des ResizableHandles pendant un drag overlay sidebar */
+body.ols-overlay-dragging [data-panel-resize-handle-enabled],
+body.ols-overlay-dragging [data-panel-resize-handle-id] {
+  pointer-events: none !important;
+  background: var(--color-border) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   OLS DESIGN SYSTEM
+   Identity: Violet / Purple
+   Mode: Dark (default) & Light
+   Style: Clean, minimal, functional
+═══════════════════════════════════════════════════════════════════════════ */
+
+@theme {
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* ─── Dark Mode (Default) ─── */
+  --color-background: hsl(240 10% 12%);
+  --color-foreground: hsl(0 0% 98%);
+  
+  /* Cards & Surfaces */
+  --color-card: hsl(240 6% 18%);
+  --color-card-foreground: hsl(0 0% 98%);
+  --color-popover: hsl(240 6% 18%);
+  --color-popover-foreground: hsl(0 0% 98%);
+  
+  /* Primary - Violet Identity */
+  --color-primary: hsl(262 83% 58%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  
+  /* Secondary */
+  --color-secondary: hsl(240 5% 22%);
+  --color-secondary-foreground: hsl(0 0% 98%);
+  
+  /* Muted */
+  --color-muted: hsl(240 4% 24%);
+  --color-muted-foreground: hsl(240 5% 72%);
+  
+  /* Accent - Purple/Violet deeper */
+  --color-accent: hsl(280 70% 50%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  
+  /* Semantic */
+  --color-destructive: hsl(0 84% 65%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-success: hsl(142 76% 36%);
+  --color-success-foreground: hsl(0 0% 100%);
+  --color-warning: hsl(38 92% 50%);
+  --color-warning-foreground: hsl(0 0% 0%);
+  
+  /* Borders & Inputs */
+  --color-border: hsl(240 4% 28%);
+  --color-input: hsl(240 4% 28%);
+  --color-ring: hsl(262 83% 58%);
+  
+  /* Charts */
+  --color-chart-1: hsl(262 83% 58%);
+  --color-chart-2: hsl(280 70% 50%);
+  --color-chart-3: hsl(142 76% 36%);
+  --color-chart-4: hsl(38 92% 50%);
+  --color-chart-5: hsl(0 72% 51%);
+  
+  /* Radius - Slightly larger for modern look */
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.25rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+}
+
+/* ─── Light Mode ─── */
+/* Using @custom-variant dark/light so we can nest this efficiently or use CSS nesting */
+@variant light {
+  --color-background: hsl(240 5% 96%);
+  --color-foreground: hsl(240 10% 4%);
+  
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(240 10% 4%);
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(240 10% 4%);
+  
+  --color-primary: hsl(262 83% 58%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  
+  --color-secondary: hsl(240 5% 92%);
+  --color-secondary-foreground: hsl(240 10% 4%);
+  
+  --color-muted: hsl(240 5% 92%);
+  --color-muted-foreground: hsl(240 4% 40%);
+  
+  --color-accent: hsl(280 70% 50%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  
+  --color-destructive: hsl(0 72% 51%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  
+  --color-border: hsl(240 6% 85%);
+  --color-input: hsl(240 6% 85%);
+  --color-ring: hsl(262 83% 58%);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   THEME PRESETS - data-theme attribute color overrides
+   The default @theme above is Odin Dark. @variant light above is Odin Light.
+   Every other theme is applied via data-theme="xxx" on <html>.
+   Convention: :root[data-theme="xxx"] (like Radix UI, DaisyUI, shadcn/ui).
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Nord (Dark) ─── */
+:root[data-theme="nord"] {
+  --color-background: hsl(220 16% 22%);
+  --color-foreground: hsl(219 28% 88%);
+  --color-card: hsl(222 16% 28%);
+  --color-card-foreground: hsl(219 28% 88%);
+  --color-popover: hsl(222 16% 28%);
+  --color-popover-foreground: hsl(219 28% 88%);
+  --color-primary: hsl(193 43% 67%);
+  --color-primary-foreground: hsl(220 16% 22%);
+  --color-secondary: hsl(220 16% 32%);
+  --color-secondary-foreground: hsl(219 28% 88%);
+  --color-muted: hsl(220 16% 32%);
+  --color-muted-foreground: hsl(219 28% 70%);
+  --color-accent: hsl(210 34% 63%);
+  --color-accent-foreground: hsl(220 16% 22%);
+  --color-destructive: hsl(0 84% 65%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(220 16% 36%);
+  --color-input: hsl(220 16% 36%);
+  --color-ring: hsl(193 43% 67%);
+  --color-chart-1: hsl(193 43% 67%);
+  --color-chart-2: hsl(210 34% 63%);
+}
+
+/* ─── Nord Light ─── */
+:root[data-theme="nord-light"] {
+  --color-background: hsl(219 28% 95%);
+  --color-foreground: hsl(220 16% 22%);
+  --color-card: hsl(219 28% 92%);
+  --color-card-foreground: hsl(220 16% 22%);
+  --color-popover: hsl(219 28% 95%);
+  --color-popover-foreground: hsl(220 16% 22%);
+  --color-primary: hsl(213 32% 52%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(219 28% 88%);
+  --color-secondary-foreground: hsl(220 16% 22%);
+  --color-muted: hsl(219 28% 88%);
+  --color-muted-foreground: hsl(220 16% 44%);
+  --color-accent: hsl(193 43% 52%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-destructive: hsl(0 72% 51%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(219 20% 82%);
+  --color-input: hsl(219 20% 82%);
+  --color-ring: hsl(213 32% 52%);
+  --color-chart-1: hsl(213 32% 52%);
+  --color-chart-2: hsl(193 43% 52%);
+}
+
+/* ─── Dracula (Dark) ─── */
+:root[data-theme="dracula"] {
+  --color-background: hsl(231 15% 18%);
+  --color-foreground: hsl(60 30% 96%);
+  --color-card: hsl(232 14% 31%);
+  --color-card-foreground: hsl(60 30% 96%);
+  --color-popover: hsl(232 14% 31%);
+  --color-popover-foreground: hsl(60 30% 96%);
+  --color-primary: hsl(265 89% 78%);
+  --color-primary-foreground: hsl(231 15% 18%);
+  --color-secondary: hsl(232 14% 36%);
+  --color-secondary-foreground: hsl(60 30% 96%);
+  --color-muted: hsl(232 14% 36%);
+  --color-muted-foreground: hsl(228 8% 64%);
+  --color-accent: hsl(326 100% 74%);
+  --color-accent-foreground: hsl(231 15% 18%);
+  --color-destructive: hsl(0 100% 67%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(232 14% 40%);
+  --color-input: hsl(232 14% 40%);
+  --color-ring: hsl(265 89% 78%);
+  --color-chart-1: hsl(265 89% 78%);
+  --color-chart-2: hsl(326 100% 74%);
+}
+
+/* ─── Dracula Light ─── */
+:root[data-theme="dracula-light"] {
+  --color-background: hsl(60 30% 97%);
+  --color-foreground: hsl(231 15% 18%);
+  --color-card: hsl(60 15% 94%);
+  --color-card-foreground: hsl(231 15% 18%);
+  --color-popover: hsl(60 30% 97%);
+  --color-popover-foreground: hsl(231 15% 18%);
+  --color-primary: hsl(265 70% 55%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(60 10% 90%);
+  --color-secondary-foreground: hsl(231 15% 18%);
+  --color-muted: hsl(60 10% 90%);
+  --color-muted-foreground: hsl(231 10% 45%);
+  --color-accent: hsl(326 80% 52%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-destructive: hsl(0 72% 51%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(60 10% 84%);
+  --color-input: hsl(60 10% 84%);
+  --color-ring: hsl(265 70% 55%);
+  --color-chart-1: hsl(265 70% 55%);
+  --color-chart-2: hsl(326 80% 52%);
+}
+
+/* ─── Solarized (Dark) ─── */
+:root[data-theme="solarized"] {
+  --color-background: hsl(192 100% 11%);
+  --color-foreground: hsl(186 8% 55%);
+  --color-card: hsl(192 81% 14%);
+  --color-card-foreground: hsl(186 8% 55%);
+  --color-popover: hsl(192 81% 14%);
+  --color-popover-foreground: hsl(186 8% 55%);
+  --color-primary: hsl(205 82% 45%);
+  --color-primary-foreground: hsl(44 87% 94%);
+  --color-secondary: hsl(192 81% 18%);
+  --color-secondary-foreground: hsl(186 8% 55%);
+  --color-muted: hsl(192 81% 18%);
+  --color-muted-foreground: hsl(186 8% 45%);
+  --color-accent: hsl(175 59% 40%);
+  --color-accent-foreground: hsl(44 87% 94%);
+  --color-destructive: hsl(1 71% 52%);
+  --color-destructive-foreground: hsl(44 87% 94%);
+  --color-border: hsl(192 81% 22%);
+  --color-input: hsl(192 81% 22%);
+  --color-ring: hsl(205 82% 45%);
+  --color-chart-1: hsl(205 82% 45%);
+  --color-chart-2: hsl(175 59% 40%);
+}
+
+/* ─── Solarized Light ─── */
+:root[data-theme="solarized-light"] {
+  --color-background: hsl(44 87% 94%);
+  --color-foreground: hsl(194 14% 40%);
+  --color-card: hsl(44 50% 88%);
+  --color-card-foreground: hsl(194 14% 40%);
+  --color-popover: hsl(44 87% 94%);
+  --color-popover-foreground: hsl(194 14% 40%);
+  --color-primary: hsl(205 82% 45%);
+  --color-primary-foreground: hsl(44 87% 94%);
+  --color-secondary: hsl(44 40% 84%);
+  --color-secondary-foreground: hsl(194 14% 40%);
+  --color-muted: hsl(44 40% 84%);
+  --color-muted-foreground: hsl(194 14% 50%);
+  --color-accent: hsl(175 59% 40%);
+  --color-accent-foreground: hsl(44 87% 94%);
+  --color-destructive: hsl(1 71% 52%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(44 30% 78%);
+  --color-input: hsl(44 30% 78%);
+  --color-ring: hsl(205 82% 45%);
+  --color-chart-1: hsl(205 82% 45%);
+  --color-chart-2: hsl(175 59% 40%);
+}
+
+/* ─── Monokai (Dark) ─── */
+:root[data-theme="monokai"] {
+  --color-background: hsl(70 8% 15%);
+  --color-foreground: hsl(60 30% 96%);
+  --color-card: hsl(60 5% 22%);
+  --color-card-foreground: hsl(60 30% 96%);
+  --color-popover: hsl(60 5% 22%);
+  --color-popover-foreground: hsl(60 30% 96%);
+  --color-primary: hsl(338 95% 56%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(60 5% 26%);
+  --color-secondary-foreground: hsl(60 30% 96%);
+  --color-muted: hsl(60 5% 26%);
+  --color-muted-foreground: hsl(50 11% 60%);
+  --color-accent: hsl(80 76% 53%);
+  --color-accent-foreground: hsl(70 8% 15%);
+  --color-destructive: hsl(0 84% 65%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(60 5% 30%);
+  --color-input: hsl(60 5% 30%);
+  --color-ring: hsl(338 95% 56%);
+  --color-chart-1: hsl(338 95% 56%);
+  --color-chart-2: hsl(80 76% 53%);
+}
+
+/* ─── Monokai Light ─── */
+:root[data-theme="monokai-light"] {
+  --color-background: hsl(0 0% 98%);
+  --color-foreground: hsl(70 8% 15%);
+  --color-card: hsl(0 0% 94%);
+  --color-card-foreground: hsl(70 8% 15%);
+  --color-popover: hsl(0 0% 98%);
+  --color-popover-foreground: hsl(70 8% 15%);
+  --color-primary: hsl(338 75% 48%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(0 0% 90%);
+  --color-secondary-foreground: hsl(70 8% 15%);
+  --color-muted: hsl(0 0% 90%);
+  --color-muted-foreground: hsl(50 6% 45%);
+  --color-accent: hsl(80 60% 40%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-destructive: hsl(0 72% 51%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(0 0% 84%);
+  --color-input: hsl(0 0% 84%);
+  --color-ring: hsl(338 75% 48%);
+  --color-chart-1: hsl(338 75% 48%);
+  --color-chart-2: hsl(80 60% 40%);
+}
+
+/* ─── GitHub Light ─── */
+:root[data-theme="github"] {
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(215 14% 16%);
+  --color-card: hsl(210 17% 98%);
+  --color-card-foreground: hsl(215 14% 16%);
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(215 14% 16%);
+  --color-primary: hsl(212 92% 45%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(210 13% 93%);
+  --color-secondary-foreground: hsl(215 14% 16%);
+  --color-muted: hsl(210 13% 93%);
+  --color-muted-foreground: hsl(215 14% 42%);
+  --color-accent: hsl(212 92% 45%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-destructive: hsl(0 72% 51%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(210 13% 87%);
+  --color-input: hsl(210 13% 87%);
+  --color-ring: hsl(212 92% 45%);
+  --color-chart-1: hsl(212 92% 45%);
+  --color-chart-2: hsl(212 92% 45%);
+}
+
+/* ─── GitHub Dark ─── */
+:root[data-theme="github-dark"] {
+  --color-background: hsl(215 21% 7%);
+  --color-foreground: hsl(213 14% 80%);
+  --color-card: hsl(215 19% 11%);
+  --color-card-foreground: hsl(213 14% 80%);
+  --color-popover: hsl(215 19% 11%);
+  --color-popover-foreground: hsl(213 14% 80%);
+  --color-primary: hsl(212 100% 67%);
+  --color-primary-foreground: hsl(215 21% 7%);
+  --color-secondary: hsl(215 14% 18%);
+  --color-secondary-foreground: hsl(213 14% 80%);
+  --color-muted: hsl(215 14% 18%);
+  --color-muted-foreground: hsl(213 10% 55%);
+  --color-accent: hsl(212 100% 67%);
+  --color-accent-foreground: hsl(215 21% 7%);
+  --color-destructive: hsl(0 84% 65%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(215 14% 22%);
+  --color-input: hsl(215 14% 22%);
+  --color-ring: hsl(212 100% 67%);
+  --color-chart-1: hsl(212 100% 67%);
+  --color-chart-2: hsl(212 100% 67%);
+}
+
+/* ─── Catppuccin Mocha (Dark) ─── */
+:root[data-theme="catppuccin"] {
+  --color-background: hsl(240 21% 15%);
+  --color-foreground: hsl(227 68% 88%);
+  --color-card: hsl(240 21% 20%);
+  --color-card-foreground: hsl(227 68% 88%);
+  --color-popover: hsl(240 21% 20%);
+  --color-popover-foreground: hsl(227 68% 88%);
+  --color-primary: hsl(267 84% 81%);
+  --color-primary-foreground: hsl(240 21% 15%);
+  --color-secondary: hsl(240 21% 25%);
+  --color-secondary-foreground: hsl(227 68% 88%);
+  --color-muted: hsl(240 21% 25%);
+  --color-muted-foreground: hsl(228 24% 60%);
+  --color-accent: hsl(316 72% 86%);
+  --color-accent-foreground: hsl(240 21% 15%);
+  --color-destructive: hsl(343 81% 75%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(240 21% 30%);
+  --color-input: hsl(240 21% 30%);
+  --color-ring: hsl(267 84% 81%);
+  --color-chart-1: hsl(267 84% 81%);
+  --color-chart-2: hsl(316 72% 86%);
+}
+
+/* ─── Catppuccin Latte (Light) ─── */
+:root[data-theme="catppuccin-light"] {
+  --color-background: hsl(220 23% 95%);
+  --color-foreground: hsl(234 16% 35%);
+  --color-card: hsl(220 22% 92%);
+  --color-card-foreground: hsl(234 16% 35%);
+  --color-popover: hsl(220 23% 95%);
+  --color-popover-foreground: hsl(234 16% 35%);
+  --color-primary: hsl(266 85% 58%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(220 22% 88%);
+  --color-secondary-foreground: hsl(234 16% 35%);
+  --color-muted: hsl(220 22% 88%);
+  --color-muted-foreground: hsl(233 10% 50%);
+  --color-accent: hsl(316 73% 55%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-destructive: hsl(347 87% 44%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(220 15% 82%);
+  --color-input: hsl(220 15% 82%);
+  --color-ring: hsl(266 85% 58%);
+  --color-chart-1: hsl(266 85% 58%);
+  --color-chart-2: hsl(316 73% 55%);
+}
+
+/* ─── Rosé Pine (Dark) ─── */
+:root[data-theme="rose-pine"] {
+  --color-background: hsl(249 22% 12%);
+  --color-foreground: hsl(245 50% 91%);
+  --color-card: hsl(247 23% 15%);
+  --color-card-foreground: hsl(245 50% 91%);
+  --color-popover: hsl(247 23% 15%);
+  --color-popover-foreground: hsl(245 50% 91%);
+  --color-primary: hsl(190 47% 55%);
+  --color-primary-foreground: hsl(249 22% 12%);
+  --color-secondary: hsl(249 15% 22%);
+  --color-secondary-foreground: hsl(245 50% 91%);
+  --color-muted: hsl(249 15% 22%);
+  --color-muted-foreground: hsl(249 12% 47%);
+  --color-accent: hsl(343 76% 68%);
+  --color-accent-foreground: hsl(249 22% 12%);
+  --color-destructive: hsl(343 76% 68%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(247 15% 25%);
+  --color-input: hsl(247 15% 25%);
+  --color-ring: hsl(190 47% 55%);
+  --color-chart-1: hsl(190 47% 55%);
+  --color-chart-2: hsl(343 76% 68%);
+}
+
+/* ─── Rosé Pine Dawn (Light) ─── */
+:root[data-theme="rose-pine-light"] {
+  --color-background: hsl(32 57% 95%);
+  --color-foreground: hsl(248 19% 40%);
+  --color-card: hsl(33 43% 91%);
+  --color-card-foreground: hsl(248 19% 40%);
+  --color-popover: hsl(32 57% 95%);
+  --color-popover-foreground: hsl(248 19% 40%);
+  --color-primary: hsl(189 43% 38%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(32 35% 87%);
+  --color-secondary-foreground: hsl(248 19% 40%);
+  --color-muted: hsl(32 35% 87%);
+  --color-muted-foreground: hsl(248 12% 52%);
+  --color-accent: hsl(343 63% 50%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-destructive: hsl(343 63% 50%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(33 20% 78%);
+  --color-input: hsl(33 20% 78%);
+  --color-ring: hsl(189 43% 38%);
+  --color-chart-1: hsl(189 43% 38%);
+  --color-chart-2: hsl(343 63% 50%);
+}
+
+/* ─── Tokyo Night (Dark) ─── */
+:root[data-theme="tokyo-night"] {
+  --color-background: hsl(235 21% 14%);
+  --color-foreground: hsl(224 15% 75%);
+  --color-card: hsl(235 19% 18%);
+  --color-card-foreground: hsl(224 15% 75%);
+  --color-popover: hsl(235 19% 18%);
+  --color-popover-foreground: hsl(224 15% 75%);
+  --color-primary: hsl(215 82% 65%);
+  --color-primary-foreground: hsl(235 21% 14%);
+  --color-secondary: hsl(235 19% 24%);
+  --color-secondary-foreground: hsl(224 15% 75%);
+  --color-muted: hsl(235 19% 24%);
+  --color-muted-foreground: hsl(224 10% 50%);
+  --color-accent: hsl(266 57% 68%);
+  --color-accent-foreground: hsl(235 21% 14%);
+  --color-destructive: hsl(0 72% 62%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(235 14% 28%);
+  --color-input: hsl(235 14% 28%);
+  --color-ring: hsl(215 82% 65%);
+  --color-chart-1: hsl(215 82% 65%);
+  --color-chart-2: hsl(266 57% 68%);
+}
+
+/* ─── Tokyo Night Light ─── */
+:root[data-theme="tokyo-night-light"] {
+  --color-background: hsl(225 27% 97%);
+  --color-foreground: hsl(233 14% 30%);
+  --color-card: hsl(225 20% 93%);
+  --color-card-foreground: hsl(233 14% 30%);
+  --color-popover: hsl(225 27% 97%);
+  --color-popover-foreground: hsl(233 14% 30%);
+  --color-primary: hsl(215 82% 50%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(225 20% 88%);
+  --color-secondary-foreground: hsl(233 14% 30%);
+  --color-muted: hsl(225 20% 88%);
+  --color-muted-foreground: hsl(233 10% 48%);
+  --color-accent: hsl(266 50% 52%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-destructive: hsl(0 72% 51%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(225 15% 83%);
+  --color-input: hsl(225 15% 83%);
+  --color-ring: hsl(215 82% 50%);
+  --color-chart-1: hsl(215 82% 50%);
+  --color-chart-2: hsl(266 50% 52%);
+}
+
+/* ─── One Dark (Atom) ─── */
+:root[data-theme="one-dark"] {
+  --color-background: hsl(220 13% 18%);
+  --color-foreground: hsl(219 14% 71%);
+  --color-card: hsl(220 13% 22%);
+  --color-card-foreground: hsl(219 14% 71%);
+  --color-popover: hsl(220 13% 22%);
+  --color-popover-foreground: hsl(219 14% 71%);
+  --color-primary: hsl(207 82% 66%);
+  --color-primary-foreground: hsl(220 13% 18%);
+  --color-secondary: hsl(220 13% 28%);
+  --color-secondary-foreground: hsl(219 14% 71%);
+  --color-muted: hsl(220 13% 28%);
+  --color-muted-foreground: hsl(219 10% 50%);
+  --color-accent: hsl(286 60% 67%);
+  --color-accent-foreground: hsl(220 13% 18%);
+  --color-destructive: hsl(355 65% 65%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(220 13% 32%);
+  --color-input: hsl(220 13% 32%);
+  --color-ring: hsl(207 82% 66%);
+  --color-chart-1: hsl(207 82% 66%);
+  --color-chart-2: hsl(286 60% 67%);
+}
+
+/* ─── One Light (Atom) ─── */
+:root[data-theme="one-light"] {
+  --color-background: hsl(230 1% 98%);
+  --color-foreground: hsl(230 8% 24%);
+  --color-card: hsl(230 1% 94%);
+  --color-card-foreground: hsl(230 8% 24%);
+  --color-popover: hsl(230 1% 98%);
+  --color-popover-foreground: hsl(230 8% 24%);
+  --color-primary: hsl(224 100% 50%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(230 1% 90%);
+  --color-secondary-foreground: hsl(230 8% 24%);
+  --color-muted: hsl(230 1% 90%);
+  --color-muted-foreground: hsl(230 5% 45%);
+  --color-accent: hsl(286 60% 45%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-destructive: hsl(5 64% 50%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(230 1% 84%);
+  --color-input: hsl(230 1% 84%);
+  --color-ring: hsl(224 100% 50%);
+  --color-chart-1: hsl(224 100% 50%);
+  --color-chart-2: hsl(286 60% 45%);
+}
+
+/* ─── Cyberpunk ─── */
+:root[data-theme="cyberpunk"] {
+  --color-background: hsl(240 50% 5%);
+  --color-foreground: hsl(185 80% 80%);
+  --color-card: hsl(245 40% 10%);
+  --color-card-foreground: hsl(185 80% 80%);
+  --color-popover: hsl(245 40% 10%);
+  --color-popover-foreground: hsl(185 80% 80%);
+  --color-primary: hsl(340 100% 58%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(245 40% 16%);
+  --color-secondary-foreground: hsl(185 70% 72%);
+  --color-muted: hsl(245 35% 16%);
+  --color-muted-foreground: hsl(240 20% 55%);
+  --color-accent: hsl(185 90% 46%);
+  --color-accent-foreground: hsl(240 50% 5%);
+  --color-destructive: hsl(0 90% 55%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(260 40% 22%);
+  --color-input: hsl(260 40% 22%);
+  --color-ring: hsl(340 100% 58%);
+  --color-chart-1: hsl(340 100% 58%);
+  --color-chart-2: hsl(185 90% 46%);
+}
+
+/* ─── Cyberpunk Light ─── */
+:root[data-theme="cyberpunk-light"] {
+  --color-background: hsl(260 30% 96%);
+  --color-foreground: hsl(260 40% 15%);
+  --color-card: hsl(260 25% 92%);
+  --color-card-foreground: hsl(260 40% 15%);
+  --color-popover: hsl(260 30% 96%);
+  --color-popover-foreground: hsl(260 40% 15%);
+  --color-primary: hsl(340 85% 42%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(260 20% 88%);
+  --color-secondary-foreground: hsl(260 40% 15%);
+  --color-muted: hsl(260 15% 88%);
+  --color-muted-foreground: hsl(260 15% 45%);
+  --color-accent: hsl(185 75% 32%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-destructive: hsl(0 80% 50%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(260 18% 82%);
+  --color-input: hsl(260 18% 82%);
+  --color-ring: hsl(340 85% 42%);
+  --color-chart-1: hsl(340 85% 42%);
+  --color-chart-2: hsl(185 75% 32%);
+}
+
+/* ─── Synthwave ─── */
+:root[data-theme="synthwave"] {
+  --color-background: hsl(270 40% 8%);
+  --color-foreground: hsl(280 50% 88%);
+  --color-card: hsl(270 35% 14%);
+  --color-card-foreground: hsl(280 50% 88%);
+  --color-popover: hsl(270 35% 14%);
+  --color-popover-foreground: hsl(280 50% 88%);
+  --color-primary: hsl(295 100% 75%);
+  --color-primary-foreground: hsl(270 40% 8%);
+  --color-secondary: hsl(270 30% 20%);
+  --color-secondary-foreground: hsl(280 40% 80%);
+  --color-muted: hsl(270 25% 18%);
+  --color-muted-foreground: hsl(270 20% 50%);
+  --color-accent: hsl(330 100% 62%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-destructive: hsl(0 85% 55%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(275 35% 24%);
+  --color-input: hsl(275 35% 24%);
+  --color-ring: hsl(295 100% 75%);
+  --color-chart-1: hsl(295 100% 75%);
+  --color-chart-2: hsl(330 100% 62%);
+}
+
+/* ─── Synthwave Light ─── */
+:root[data-theme="synthwave-light"] {
+  --color-background: hsl(280 40% 97%);
+  --color-foreground: hsl(275 50% 18%);
+  --color-card: hsl(280 30% 93%);
+  --color-card-foreground: hsl(275 50% 18%);
+  --color-popover: hsl(280 40% 97%);
+  --color-popover-foreground: hsl(275 50% 18%);
+  --color-primary: hsl(275 90% 52%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(280 20% 88%);
+  --color-secondary-foreground: hsl(275 50% 18%);
+  --color-muted: hsl(280 15% 88%);
+  --color-muted-foreground: hsl(275 15% 45%);
+  --color-accent: hsl(330 80% 48%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-destructive: hsl(0 75% 48%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(280 18% 82%);
+  --color-input: hsl(280 18% 82%);
+  --color-ring: hsl(275 90% 52%);
+  --color-chart-1: hsl(275 90% 52%);
+  --color-chart-2: hsl(330 80% 48%);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ROUTE-AWARE ACCENT - data-accent attribute on <html>
+   Automatically set by AppShell based on current route context.
+   Overrides primary/accent/ring for shell chrome (activity bar, tabs, etc.).
+   Module pages override these again via ModuleLayout inline styles.
+   
+   ⚠️  CASCADE ORDER: This section MUST come AFTER the theme presets above.
+   Both use :root[data-*] selectors with equal specificity, so source order
+   determines which wins. Route accent must win over theme preset colors.
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* Default = Munin / App (violet) — no override needed, uses @theme defaults */
+
+/* Hugin Lab context — emerald accent */
+:root[data-accent="lab"] {
+  --color-primary: hsl(160 84% 39%);
+  --color-accent: hsl(160 84% 39%);
+  --color-ring: hsl(160 84% 39%);
+  --color-chart-1: hsl(160 84% 39%);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE STYLES
+═══════════════════════════════════════════════════════════════════════════ */
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Density CSS variables — defaults (normal), overridden at runtime by theme-store */
+  --density-row-height: 40px;
+  --density-gap: 12px;
+  --density-padding: 12px;
+  --font-size-base: 14px;
+  /* font-size is set dynamically by applyDensity() as a percentage to scale all rem values */
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  font-feature-settings: 'cv11', 'ss01';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UTILITY CLASSES
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* Gradient Text - Uses theme primary/accent for full preset compatibility */
+@utility gradient-text {
+  background: linear-gradient(
+    135deg, 
+    var(--color-primary) 0%, 
+    color-mix(in srgb, var(--color-primary) 70%, var(--color-accent)) 50%,
+    var(--color-accent) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Brand Title - Primary color in light mode, foreground in dark mode */
+@utility brand-title {
+  color: var(--color-primary);
+}
+
+@variant dark {
+  .brand-title {
+    color: var(--color-foreground);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GLASS EFFECT TIERS — Single source of truth for glassmorphism
+   See CONVENTIONS.md "Style visuel" for usage guidance.
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* Popovers, menus, dropdown, panels, overlays */
+@utility glass-overlay {
+  background-color: hsl(var(--card) / 0.8);
+  backdrop-filter: blur(32px) saturate(1.3);
+  box-shadow: inset 0 0.5px 0 0 hsl(0 0% 100% / 0.06);
+}
+
+/* Elevated cards (auth forms, modal cards) */
+@utility glass-card {
+  background-color: hsl(var(--card) / 0.7);
+  backdrop-filter: blur(32px) saturate(1.3);
+  box-shadow: inset 0 0.5px 0 0 hsl(0 0% 100% / 0.06);
+}
+
+/* Widgets, sidebars, light containers */
+@utility glass-surface {
+  background-color: hsl(var(--card) / 0.5);
+  backdrop-filter: blur(12px) saturate(1.2);
+}
+
+/* Shell chrome: menu bar, status bar, breadcrumbs */
+@utility glass-chrome {
+  background-color: hsl(var(--card) / 0.8);
+  backdrop-filter: blur(12px) saturate(1.2);
+}
+
+/* Very light backgrounds (content areas) */
+@utility glass-subtle {
+  background-color: hsl(var(--card) / 0.3);
+  backdrop-filter: blur(8px);
+}
+
+/* Opaque popovers (context menus, menu primitives) — uses --popover token */
+@utility glass-popover {
+  background-color: var(--color-popover);
+  backdrop-filter: blur(32px) saturate(1.3);
+  box-shadow: inset 0 0.5px 0 0 hsl(0 0% 100% / 0.06);
+}
+
+/* Near-opaque popovers (tooltips, AI correction, sidebar tooltips) */
+@utility glass-popover-dense {
+  background-color: hsl(var(--popover) / 0.95);
+  backdrop-filter: blur(32px) saturate(1.3);
+}
+
+/* Frosted background controls (outline buttons, checkboxes) */
+@utility glass-frosted {
+  background-color: hsl(var(--background) / 0.8);
+  backdrop-filter: blur(4px);
+}
+
+/* Muted interactive controls (widget handles, small buttons) */
+@utility glass-muted {
+  background-color: hsl(var(--muted) / 0.4);
+  backdrop-filter: blur(4px);
+}
+
+/* Dark scrim overlays (modal backdrops, drawer dims) */
+@utility scrim-heavy {
+  background-color: hsl(0 0% 0% / 0.6);
+  backdrop-filter: blur(4px);
+}
+
+@utility scrim {
+  background-color: hsl(0 0% 0% / 0.4);
+  backdrop-filter: blur(4px);
+}
+
+@utility scrim-light {
+  background-color: hsl(0 0% 0% / 0.2);
+  backdrop-filter: blur(4px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   NEUTRAL INDICATORS — System pages & shell neutral state
+   Used when getAccentForPath() returns null or on system-only components.
+   Single source of truth for neutral opacities — never hardcode in JSX.
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Indicators (thin lines, dots, badges) ─── */
+@utility neutral-indicator {
+  background-color: color-mix(in srgb, var(--color-foreground) 25%, transparent);
+}
+@utility neutral-dot {
+  background-color: color-mix(in srgb, var(--color-foreground) 25%, transparent);
+}
+@utility neutral-border {
+  border-color: color-mix(in srgb, var(--color-foreground) 25%, transparent);
+}
+@utility neutral-ring {
+  --tw-ring-color: color-mix(in srgb, var(--color-foreground) 25%, transparent);
+}
+
+/* ─── Text (checks, labels, customized state) ─── */
+@utility neutral-check {
+  color: color-mix(in srgb, var(--color-foreground) 60%, transparent);
+}
+@utility neutral-text {
+  color: color-mix(in srgb, var(--color-foreground) 70%, transparent);
+}
+
+/* ─── Backgrounds (subtle fills, badges) ─── */
+@utility neutral-bg-subtle {
+  background-color: color-mix(in srgb, var(--color-foreground) 5%, transparent);
+}
+@utility neutral-bg-badge {
+  background-color: color-mix(in srgb, var(--color-foreground) 10%, transparent);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CHIP UTILITIES — Selection chips (segmented style)
+   Replaces TS constants CHIP_BASE/ACTIVE/INACTIVE from identification-ui.tsx.
+═══════════════════════════════════════════════════════════════════════════ */
+
+@utility chip-base {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-md, 0.375rem);
+  font-weight: 500;
+  transition: all 0.2s ease-out;
+}
+@utility chip-active {
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+  box-shadow: var(--shadow-sm);
+}
+@utility chip-inactive {
+  color: var(--color-muted-foreground);
+  &:hover {
+    color: var(--color-foreground);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SCROLLBAR STYLING - Subtle & Elegant
+═══════════════════════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted-foreground);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SELECTION STYLING
+═══════════════════════════════════════════════════════════════════════════ */
+
+::selection {
+  background: color-mix(in srgb, var(--color-primary) 30%, transparent);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DASHBOARD GRID (react-grid-layout)
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* Hide resize handles by default — only visible in edit mode */
+.react-resizable-handle {
+  display: none !important;
+}
+
+.dashboard-edit-mode .react-resizable-handle {
+  display: block !important;
+  z-index: 15;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* Larger touch target on mobile */
+@media (max-width: 768px) {
+  .dashboard-edit-mode .react-resizable-handle {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .dashboard-edit-mode .react-resizable-handle::after {
+    width: 8px !important;
+    height: 8px !important;
+    right: 4px !important;
+    bottom: 4px !important;
+    border-width: 0 2.5px 2.5px 0 !important;
+  }
+}
+
+.dashboard-edit-mode .react-resizable-handle::after {
+  width: 6px !important;
+  height: 6px !important;
+  right: 3px !important;
+  bottom: 3px !important;
+  border-color: color-mix(in srgb, var(--color-foreground) 35%, transparent) !important;
+  border-width: 0 2px 2px 0 !important;
+  opacity: 1;
+  transition: opacity 200ms ease;
+}
+
+.dashboard-edit-mode .react-grid-item:hover .react-resizable-handle::after {
+  border-color: color-mix(in srgb, var(--color-foreground) 60%, transparent) !important;
+}
+
+/* Smooth transitions for edit mode */
+.dashboard-edit-mode .react-grid-item {
+  border-radius: 0.75rem;
+}
+
+/* Smooth transitions for grid items when not dragging */
+.react-grid-item {
+  transition: all 200ms ease-out;
+}
+
+.react-grid-item.react-draggable-dragging {
+  transition: none;
+  z-index: 50;
+  opacity: 0.9;
+  box-shadow: 0 8px 32px -4px color-mix(in srgb, var(--color-primary) 15%, transparent) !important;
+}
+
+.react-grid-item.resizing {
+  transition: none;
+  box-shadow: 0 4px 16px -2px color-mix(in srgb, var(--color-primary) 10%, transparent) !important;
+}
+
+/* Placeholder shown where the item will land */
+.react-grid-item.react-grid-placeholder {
+  background: color-mix(in srgb, var(--color-primary) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
+  border-radius: 0.75rem;
+  opacity: 1;
+}

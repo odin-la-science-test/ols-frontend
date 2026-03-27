@@ -37,12 +37,12 @@ function MenuContent({
   toggleTheme: () => void;
   language: string;
   changeLanguage: (lang: string) => void;
-  user: { firstName?: string; lastName?: string; email?: string; role?: string; avatarId?: string | null } | null;
+  user: { firstName?: string; lastName?: string; email?: string; role?: string; avatar?: string } | null;
   logout: () => void;
   getInitials: () => string;
   getRoleLabel: () => string;
   navigate: (path: string) => void;
-  t: (key: string, opts?: Record<string, unknown>) => string;
+  t: (key: string, opts?: Record<string, string>) => string;
   variant?: 'default' | 'bottomBar';
 }) {
   const { profiles, activeProfileId, setActiveProfileId } = useProfilesStore();
@@ -74,7 +74,7 @@ function MenuContent({
         {variant === 'bottomBar' ? (
           <button className="flex flex-col items-center justify-center gap-0.5 flex-1 py-1.5 text-muted-foreground transition-colors relative">
             <Avatar className="h-6 w-6 hover:brightness-125 transition-all">
-              <AvatarImage src={getAvatarUrl(user?.avatarId)} />
+              <AvatarImage src={getAvatarUrl(user?.avatar)} />
               <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground text-[10px] font-medium">
                 {getInitials()}
               </AvatarFallback>
@@ -87,7 +87,7 @@ function MenuContent({
             className="rounded-full p-0 h-8 w-8 hover:bg-transparent active:scale-95 transition-all"
           >
             <Avatar className="h-8 w-8 hover:brightness-125 transition-all">
-              <AvatarImage src={getAvatarUrl(user?.avatarId)} />
+              <AvatarImage src={getAvatarUrl(user?.avatar)} />
               <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground text-sm font-medium">
                 {getInitials()}
               </AvatarFallback>
