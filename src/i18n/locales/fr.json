@@ -1,0 +1,2468 @@
+{
+  "activity": {
+    "bacteriology": {
+      "identify": "Identification bactériologique lancée"
+    },
+    "annotations": {
+      "create": "Annotation créée",
+      "delete": "Annotation supprimée",
+      "update": "Annotation mise à jour"
+    },
+    "contacts": {
+      "create": "Contact créé",
+      "delete": "Contact supprimé",
+      "toggleFavorite": "Favori modifié",
+      "update": "Contact mis à jour"
+    },
+    "mycology": {
+      "identify": "Identification mycologique lancée"
+    },
+    "notes": {
+      "create": "Note créée",
+      "delete": "Note supprimée",
+      "togglePin": "Épinglage de note modifié",
+      "update": "Note mise à jour"
+    },
+    "notifications": {
+      "delete": "Notification supprimée",
+      "markAllAsRead": "Toutes les notifications lues",
+      "markAsRead": "Notification marquée comme lue"
+    },
+    "quickshare": {
+      "createFile": "Fichier partagé",
+      "createText": "Texte partagé",
+      "delete": "Partage supprimé"
+    },
+    "studyCollections": {
+      "create": "Collection créée",
+      "delete": "Collection supprimée",
+      "update": "Collection mise à jour"
+    },
+    "support": {
+      "create": "Ticket créé",
+      "delete": "Ticket supprimé",
+      "sendMessage": "Message envoyé",
+      "update": "Ticket mis à jour"
+    }
+  },
+  "activityBar": {
+    "explorer": "Explorateur",
+    "explorerEmpty": "Aucun module épinglé ou récent. Naviguez vers un module pour le voir apparaître ici.",
+    "hide": "Masquer la barre d'activité",
+    "history": "Historique",
+    "modulePanel": "Outils",
+    "navLabel": "Barre d'activité",
+    "moveToBottom": "Déplacer la barre d'activité en bas",
+    "moveToLeft": "Déplacer la barre d'activité à gauche",
+    "moveToRight": "Déplacer la barre d'activité à droite",
+    "moveToTop": "Déplacer la barre d'activité en haut",
+    "position": "Position de la barre d'activité",
+    "positionBottom": "Bas",
+    "positionLeft": "Gauche",
+    "positionRight": "Droite",
+    "positionTop": "Haut",
+    "show": "Afficher la barre d'activité",
+    "title": "Barre d'activité"
+  },
+  "admin": {
+    "modulesCount": "{{count}} outils disponibles",
+    "noModules": "Aucun outil d'administration",
+    "subtitle": "Outils d'administration de la plateforme",
+    "title": "Administration"
+  },
+  "adminOrganization": {
+    "created": "Organisation créée",
+    "createError": "Erreur lors de la création",
+    "createTitle": "Créer une organisation",
+    "description": "Création et gestion des organisations par les administrateurs",
+    "emptyDesc": "Aucune organisation n'a encore été créée",
+    "emptyTitle": "Aucune organisation",
+    "newOrganization": "Nouvelle organisation",
+    "ownerEmail": "Email du responsable",
+    "searchPlaceholder": "Rechercher une organisation...",
+    "title": "Gestion des organisations"
+  },
+  "adminSupport": {
+    "changePriority": "Changer la priorité",
+    "changeStatus": "Changer le statut",
+    "date": "Date",
+    "description": "Gestion et traitement des tickets de support utilisateurs",
+    "emptyDesc": "Aucun ticket de support à traiter",
+    "emptyTitle": "Aucun ticket",
+    "priority": "Priorité",
+    "priorityError": "Erreur lors de la mise à jour de la priorité",
+    "priorityUpdated": "Priorité mise à jour !",
+    "responseError": "Erreur lors de l'envoi",
+    "responsePlaceholder": "Rédigez votre réponse...",
+    "responseSent": "Réponse envoyée !",
+    "searchPlaceholder": "Rechercher par sujet, nom, email...",
+    "stats": {
+      "closed": "Fermés",
+      "inProgress": "En cours",
+      "open": "Ouverts",
+      "resolved": "Résolus",
+      "total": "Total"
+    },
+    "status": "Statut",
+    "statusError": "Erreur lors de la mise à jour",
+    "statusUpdated": "Statut mis à jour !",
+    "subject": "Sujet",
+    "title": "Gestion du support",
+    "user": "Utilisateur"
+  },
+  "ai": {
+    "apply": "Appliquer",
+    "button": "Corriger l'orthographe et la grammaire",
+    "cancel": "Annuler",
+    "error": "Erreur lors de la correction",
+    "noCorrection": "Aucune correction necessaire",
+    "preview": "{{count}} correction(s) trouvee(s)",
+    "preview_one": "",
+    "preview_many": "",
+    "preview_other": "",
+    "selectionButton": "Corriger la selection",
+    "success": "{{count}} correction(s) appliquee(s)",
+    "success_one": "",
+    "success_many": "",
+    "success_other": "",
+    "tooShort": "Le texte est trop court pour etre corrige"
+  },
+  "annotations": {
+    "color": "Couleur",
+    "color.BLUE": "Bleu",
+    "color.GREEN": "Vert",
+    "color.PINK": "Rose",
+    "color.YELLOW": "Jaune",
+    "content": "Contenu",
+    "contentPlaceholder": "Écrivez votre annotation...",
+    "created": "Annotation ajoutée !",
+    "createTitle": "Créer une annotation",
+    "deleted": "Annotation supprimée",
+    "description": "Annotations personnelles sur les entités",
+    "editTitle": "Modifier l'annotation",
+    "emptyDesc": "Créez votre première annotation",
+    "emptyTitle": "Aucune annotation",
+    "entityId": "ID de l'entité",
+    "entityType": "Type d'entité",
+    "entityTypePlaceholder": "ex. bacteriology, mycology...",
+    "newAnnotation": "Nouvelle annotation",
+    "owner": "Propriétaire",
+    "saveError": "Erreur lors de la sauvegarde de l'annotation",
+    "searchPlaceholder": "Rechercher des annotations...",
+    "tips": {
+      "intro": {
+        "title": "Annotations",
+        "description": "Les annotations vous permettent d'ajouter des notes personnelles à toute entité dans les modules."
+      }
+    },
+    "settings": {
+      "title": "Annotations",
+      "defaultColor": "Couleur par défaut"
+    },
+    "title": "Annotations",
+    "updated": "Annotation mise à jour !",
+    "validation": {
+      "contentRequired": "Le contenu est requis",
+      "entityIdRequired": "L'ID de l'entité doit être un nombre positif",
+      "entityTypeRequired": "Le type d'entité est requis"
+    }
+  },
+  "atlas": {
+    "error": "Impossible de charger les modules",
+    "loading": "Chargement des modules...",
+    "modulesCount_one": "1 module pédagogique interactif",
+    "modulesCount_many": "{{count}} modules pédagogiques interactifs",
+    "modulesCount_other": "{{count}} modules pédagogiques interactifs",
+    "goToLab": "Voir Hugin Lab",
+    "noModules": "Aucun module disponible",
+    "subtitle": "Plateforme d'apprentissage complète en biologie médicale",
+    "title": "Munin Atlas"
+  },
+  "auth": {
+    "acceptTerms": "J'accepte les",
+    "and": "et la",
+    "backToLogin": "Retour à la connexion",
+    "comingSoon": "Bientôt",
+    "confirmPassword": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "••••••••",
+    "continueAsGuest": "Continuer en tant qu'invité",
+    "continueWithGoogle": "Continuer avec Google",
+    "continueWithUniversity": "Connexion Université",
+    "createAccount": "Créer un compte",
+    "email": "Email",
+    "emailInvalid": "Email invalide",
+    "emailPlaceholder": "vous@exemple.com",
+    "emailRequired": "L'email est requis",
+    "firstName": "Prénom",
+    "firstNameRequired": "Le prénom est requis",
+    "forgotPassword": "Mot de passe oublié ?",
+    "forgotPasswordDesc": "Entrez votre adresse email et nous vous enverrons un lien de réinitialisation.",
+    "forgotPasswordSent": "Si un compte existe avec cet email, vous recevrez un lien de réinitialisation sous peu.",
+    "forgotPasswordTitle": "Réinitialiser le mot de passe",
+    "hasAccount": "Déjà un compte ?",
+    "lastName": "Nom",
+    "lastNameRequired": "Le nom est requis",
+    "loginFailed": "Échec de la connexion. Veuillez réessayer.",
+    "mustAcceptTerms": "Vous devez accepter les conditions d'utilisation",
+    "newPassword": "Nouveau mot de passe",
+    "noAccount": "Pas encore de compte ?",
+    "oauthError": {
+      "cas_error": "Erreur lors de la connexion universitaire.",
+      "default": "Erreur d'authentification. Veuillez réessayer.",
+      "google_error": "Erreur lors de la connexion avec Google.",
+      "oauth_failed": "Erreur d'authentification. Veuillez réessayer.",
+      "provider_conflict": "Ce compte utilise une autre méthode de connexion."
+    },
+    "or": "ou",
+    "password": "Mot de passe",
+    "passwordMin": "Le mot de passe doit contenir au moins 8 caractères",
+    "passwordMismatch": "Les mots de passe ne correspondent pas",
+    "passwordPlaceholder": "••••••••",
+    "privacyPolicy": "Politique de confidentialité",
+    "registerFailed": "Échec de l'inscription. Veuillez réessayer.",
+    "resetPassword": "Réinitialiser le mot de passe",
+    "resetPasswordInvalidToken": "Ce lien de réinitialisation est invalide ou a expiré.",
+    "resetPasswordSuccess": "Mot de passe réinitialisé avec succès ! Redirection vers la connexion...",
+    "resetPasswordTitle": "Nouveau mot de passe",
+    "sendResetLink": "Envoyer le lien",
+    "sessionLimitMessage": "Vous avez déjà {{max}} sessions actives. Révoquez une session pour vous connecter.",
+    "sessionLimitTitle": "Limite de sessions atteinte",
+    "signIn": "Connexion",
+    "signUp": "S'inscrire",
+    "discoverPlatform": "Decouvrir la plateforme",
+    "termsOfService": "Conditions d'utilisation",
+    "verifyEmailBanner": "Veuillez vérifier votre adresse email.",
+    "verifyEmailBannerAction": "Renvoyer l'email",
+    "verifyEmailExpired": "Ce lien de vérification est invalide ou a expiré.",
+    "verifyEmailLoading": "Vérification en cours...",
+    "verifyEmailResend": "Renvoyer l'email de vérification",
+    "verifyEmailSuccess": "Votre adresse email a été vérifiée ! Redirection..."
+  },
+  "bacteriology": {
+    "apiCodePlaceholder": "5144572",
+    "catalase": "Catalase",
+    "catalaseShort": "Cat.",
+    "coagulase": "Coagulase",
+    "confidence": "Confiance",
+    "description": "Étude des bactéries et identification",
+    "indole": "Indole",
+    "lactose": "Lactose",
+    "mannitol": "Mannitol",
+    "mobility": "Mobilité",
+    "oxydase": "Oxydase",
+    "oxydaseShort": "Oxy.",
+    "resistance": "Résistance",
+    "title": "Bactériologie",
+    "tour": {
+      "detail": {
+        "description": "Cliquez sur une bactérie pour afficher ses caractéristiques détaillées.",
+        "title": "Panneau de détail"
+      },
+      "filters": {
+        "description": "Affinez votre recherche par coloration de Gram, gènes de résistance et morphologie.",
+        "title": "Filtres"
+      },
+      "stats": {
+        "description": "Consultez les statistiques de votre collection en un coup d'œil.",
+        "title": "Statistiques"
+      },
+      "table": {
+        "description": "Explorez la liste des bactéries avec leurs espèces, souches et scores de confiance.",
+        "title": "Collection bactériologique"
+      }
+    },
+    "tips": {
+      "identification": {
+        "title": "Outil d'identification",
+        "description": "Utilisez l'outil d'identification dans la barre latérale pour identifier les bactéries par leurs caractéristiques."
+      }
+    },
+    "settings": {
+      "title": "Bactériologie",
+      "scoreFormat": "Format des scores",
+      "scorePercent": "Pourcentage (%)",
+      "scoreFraction": "Fraction (x/y)",
+      "maxResults": "Résultats d'identification max"
+    }
+  },
+  "beta": {
+    "badge": "BETA",
+    "bannerDescription": "OLS est en cours de developpement actif. Certaines fonctionnalites peuvent evoluer et des bugs peuvent survenir. Vos retours sont precieux pour ameliorer la plateforme.",
+    "bannerDismiss": "Compris",
+    "bannerTitle": "Bienvenue dans la version beta",
+    "conditionsData": "Protection des donnees",
+    "conditionsDataDesc": "Vos donnees sont stockees de maniere securisee. Des sauvegardes regulieres sont effectuees. En cas de probleme, contactez notre support.",
+    "conditionsFeedback": "Retours et support",
+    "conditionsFeedbackDesc": "Utilisez le bouton de feedback integre a l'application ou contactez notre equipe de support pour toute question ou probleme.",
+    "conditionsIncluded": "Ce qui est inclus",
+    "conditionsIncludedDesc": "Acces a l'ensemble des modules disponibles sur les plateformes Munin Atlas et Hugin Lab, incluant la gestion des echantillons, l'identification microbiologique, la messagerie et les outils collaboratifs.",
+    "conditionsInProgress": "En cours de developpement",
+    "conditionsInProgressDesc": "De nouvelles fonctionnalites sont ajoutees regulierement. Consultez les mises a jour pour decouvrir les nouveautes.",
+    "conditionsLimitations": "Limitations connues",
+    "conditionsLimitationsDesc": "Certaines fonctionnalites sont en cours d'amelioration. Des bugs occasionnels peuvent survenir. Les performances sont optimisees progressivement.",
+    "conditionsLink": "Voir les conditions de la beta",
+    "conditionsSla": "Disponibilite",
+    "conditionsSlaDesc": "Nous visons une disponibilite maximale de la plateforme. En cas de maintenance planifiee, vous serez prevenu a l'avance.",
+    "conditionsTitle": "Conditions de la version beta",
+    "feedbackButton": "Feedback",
+    "feedbackCancel": "Annuler",
+    "feedbackDescription": "Aidez-nous a ameliorer OLS en partageant vos retours, suggestions ou bugs rencontres.",
+    "feedbackEmail": "Votre email (optionnel)",
+    "feedbackPlaceholder": "Decrivez votre retour, suggestion ou le probleme rencontre...",
+    "feedbackSend": "Envoyer",
+    "feedbackSuccess": "Merci pour votre retour !",
+    "feedbackTitle": "Donner un retour",
+    "feedbackTypeBug": "Bug",
+    "feedbackTypeLabel": "Type de retour",
+    "feedbackTypeOther": "Autre",
+    "feedbackTypeSuggestion": "Suggestion"
+  },
+  "bottomPanel": {
+    "activity": "Activité",
+    "alignCenter": "Centre",
+    "alignJustify": "Justifié",
+    "alignLeft": "Gauche",
+    "alignment": "Alignement du panneau",
+    "alignRight": "Droite",
+    "clearLog": "Effacer",
+    "close": "Fermer le panneau",
+    "fungusOverview": {
+      "allergens": "Allerg.",
+      "biochemProfile": "Profil biochimique",
+      "characteristics": "Caractéristiques",
+      "clinicalProfile": "Profil clinique",
+      "enzymes": "Enzymes",
+      "enzymesShort": "Enz",
+      "hosts": "Hôtes",
+      "metabolites": "Métabolites secondaires",
+      "metabolitesShort": "Mét",
+      "noData": "Aucune donnée mycologique chargée",
+      "substrates": "Substrats dégradables",
+      "substratesShort": "Sub",
+      "tab": "Vue d'ensemble Champignons",
+      "toxins": "Toxines",
+      "typeDistribution": "Distribution par type"
+    },
+    "gramOverview": {
+      "biochemProfile": "Profil biochimique (% positif)",
+      "clinicalIndicators": "Indicateurs cliniques",
+      "gramDistribution": "Répartition Gram",
+      "noData": "Aucune donnée bactériologique chargée",
+      "resistance": "Résist.",
+      "tab": "Gram Overview"
+    },
+    "hide": "Masquer le panneau",
+    "maximize": "Agrandir",
+    "minimize": "Réduire",
+    "noActivity": "Aucune activité enregistrée",
+    "show": "Afficher le panneau",
+    "title": "Panel"
+  },
+  "breadcrumbs": {
+    "home": "Accueil"
+  },
+  "button": {
+    "click": "Cliquer"
+  },
+  "commandPalette": {
+    "actions": "Actions",
+    "close": "fermer",
+    "hideFilters": "Masquer le panneau Outils",
+    "hideNotes": "Masquer le panneau Notes",
+    "hints": {
+      "commands": "> commandes",
+      "entities": "@ entités",
+      "label": "Astuces :",
+      "tags": "# tags"
+    },
+    "keywords": {
+      "account": "compte",
+      "activityBar": "barre d'activité",
+      "atlas": "atlas",
+      "avatar": "avatar",
+      "base": "base",
+      "compare": "comparer",
+      "comparison": "comparaison",
+      "config": "configuration",
+      "dark": "sombre",
+      "english": "anglais",
+      "filters": "filtres",
+      "focus": "focus",
+      "french": "français",
+      "fullscreen": "plein écran",
+      "hide": "masquer",
+      "home": "accueil",
+      "homeAlt": "principal",
+      "hugin": "hugin",
+      "keybindings": "raccourcis",
+      "ide": "ide avancé",
+      "keyboard": "clavier",
+      "layoutClassic": "classique simple",
+      "knowledge": "connaissance",
+      "lab": "laboratoire",
+      "language": "langue",
+      "light": "clair",
+      "menuBar": "barre de menu",
+      "mode": "mode",
+      "munin": "munin",
+      "password": "mot de passe",
+      "pinned": "épinglé",
+      "preferences": "préférences",
+      "profile": "profil",
+      "recent": "récent",
+      "select": "sélectionner",
+      "settings": "paramètres",
+      "shortcuts": "raccourcis clavier",
+      "show": "afficher",
+      "sidebar": "barre latérale",
+      "statusBar": "barre de statut",
+      "tabs": "onglets",
+      "theme": "thème",
+      "toggle": "basculer",
+      "tools": "outils",
+      "zen": "zen"
+    },
+    "modes": {
+      "command": "Commandes",
+      "entity": "Entités",
+      "tag": "Tags"
+    },
+    "modules": "Modules",
+    "navigate": "naviguer",
+    "navigation": "Navigation",
+    "noResults": "Aucun résultat trouvé",
+    "pinned": "Épinglés",
+    "placeholder": "Rechercher modules, actions, paramètres...",
+    "placeholders": {
+      "commands": "Filtrer les commandes...",
+      "entities": "Rechercher bactéries, champignons, contacts, notes...",
+      "tags": "Rechercher par tag..."
+    },
+    "recent": "Récents",
+    "recentActions": "Actions récentes",
+    "resultCount_one": "{{count}} résultat",
+    "resultCount_many": "{{count}} résultats",
+    "resultCount_other": "{{count}} résultats",
+    "search": "Rechercher...",
+    "searching": "Recherche en cours...",
+    "select": "sélectionner",
+    "showFilters": "Afficher le panneau Outils",
+    "showNotes": "Afficher le panneau Notes",
+    "title": "Palette de commandes",
+    "switchToClassic": "Passer en mode Classique",
+    "switchToIde": "Passer en mode IDE",
+    "toggleSelection": "Basculer le mode sélection"
+  },
+  "common": {
+    "addFavorite": "Ajouter aux favoris",
+    "appName": "Odin La Science",
+    "appShortName": "OLS",
+    "back": "Retour",
+    "cancel": "Annuler",
+    "clearProfile": "Effacer le profil",
+    "confirm": "",
+    "create": "Créer",
+    "batchDeleteConfirm": "Supprimer {{count}} éléments ?",
+    "batchDeleteError": "Échec de la suppression",
+    "batchDeleteSuccess": "{{count}} éléments supprimés",
+    "deleteSelected": "Supprimer la sélection",
+    "description": "Description",
+    "detail": "Détail",
+    "edit": "Modifier",
+    "enterCode": "Saisir le code",
+    "error": "Une erreur est survenue",
+    "export": "Exporter",
+    "saveError": "Erreur lors de la sauvegarde",
+    "filters": "Filtres",
+    "home": "Accueil",
+    "id": "ID",
+    "label": "Libellé",
+    "identify": "Identifier",
+    "invalidCode": "Code invalide",
+    "loading": "Chargement...",
+    "logout": "Déconnexion",
+    "more": "Plus",
+    "no": "Non",
+    "none": "Aucun",
+    "noResults": "Aucun résultat trouvé",
+    "of": "sur",
+    "page": "Page",
+    "reconnected": "Connexion rétablie",
+    "remove": "Retirer",
+    "removeFavorite": "Retirer des favoris",
+    "favorites": "Favoris",
+    "favoritesOnly": "Favoris uniquement",
+    "retry": "Réessayer",
+    "retryError": "L'opération a échoué après plusieurs tentatives",
+    "retrying": "Reconnexion... (tentative {{count}})",
+    "retrying_one": "",
+    "retrying_many": "",
+    "retrying_other": "",
+    "search": "Rechercher",
+    "searchPlaceholder": "Rechercher...",
+    "selectMode": "Sélectionner",
+    "exitSelectMode": "Quitter la sélection",
+    "selectRow": "Sélectionner la ligne",
+    "selection": "Sélection",
+    "skipToContent": "Aller au contenu principal",
+    "tagline": "Système de Gestion de Laboratoire",
+    "total": "Total",
+    "value": "Valeur",
+    "viewCards": "Vue cartes",
+    "viewTable": "Vue tableau",
+    "yes": "Oui"
+  },
+  "contacts": {
+    "cancel": "Annuler",
+    "create": "Créer",
+    "created": "Contact ajouté !",
+    "createdAt": "Ajouté le",
+    "createTitle": "Ajouter un contact",
+    "delete": "Supprimer",
+    "deleteError": "Erreur lors de la suppression du contact",
+    "deleted": "Contact supprimé",
+    "restored": "Contact restauré",
+    "description": "Carnet de contacts professionnels et collaborateurs de laboratoire",
+    "edit": "Modifier",
+    "editTitle": "Modifier le contact",
+    "email": "Email",
+    "emailPlaceholder": "email@exemple.com",
+    "emptyDesc": "Ajoutez votre premier contact pour commencer",
+    "emptyTitle": "Aucun contact",
+    "favorite": "Favori",
+    "favorites": "Favoris",
+    "firstName": "Prénom",
+    "firstNamePlaceholder": "Prénom du contact",
+    "jobTitle": "Fonction",
+    "jobTitlePlaceholder": "Chercheur, technicien...",
+    "lastName": "Nom",
+    "lastNamePlaceholder": "Nom du contact",
+    "name": "Nom",
+    "newContact": "Nouveau contact",
+    "notes": "Notes",
+    "notesPlaceholder": "Notes libres sur ce contact...",
+    "olsUsers": "Utilisateurs OLS",
+    "organization": "Organisation",
+    "organizationPlaceholder": "Laboratoire, institution...",
+    "phone": "Téléphone",
+    "phonePlaceholder": "+33 6 12 34 56 78",
+    "save": "Enregistrer",
+    "saveError": "Erreur lors de l'enregistrement",
+    "searchPlaceholder": "Rechercher...",
+    "tips": {
+      "tryCards": {
+        "description": "Vous avez beaucoup de contacts ! Essayez le mode Cartes pour une vue plus visuelle."
+      }
+    },
+    "title": "Contacts",
+    "tour": {
+      "detail": {
+        "description": "Cliquez sur un contact pour voir sa fiche détaillée.",
+        "title": "Fiche contact"
+      },
+      "search": {
+        "description": "Recherchez un contact par nom, email ou organisation.",
+        "title": "Recherche"
+      },
+      "table": {
+        "description": "Retrouvez tous vos contacts professionnels avec leurs informations.",
+        "title": "Liste des contacts"
+      }
+    },
+    "unfavorite": "Retirer des favoris",
+    "updated": "Contact mis à jour !",
+    "updatedAt": "Modifié le",
+    "validation": {
+      "atLeastOneField": "Au moins un champ doit être rempli",
+      "emailInvalid": "Adresse email invalide"
+    },
+    "withOrganization": "Avec organisation"
+  },
+  "contextMenu": {
+    "breadcrumbs": "Fil d'Ariane",
+    "moduleLabel": "Libellé du module",
+    "network": "Réseau",
+    "notifications": "Notifications"
+  },
+  "dashboard": {
+    "addShortcut": "Ajouter",
+    "customize": "Personnaliser",
+    "doneEditing": "Terminer",
+    "hiddenWidgets": "Widgets masqués",
+    "markAllRead": "Tout marquer comme lu",
+    "noNotes": "Aucune note pour l'instant",
+    "noNotifications": "Aucune notification",
+    "noRecentActivity": "Aucune activité récente",
+    "noWidgets": "Aucun widget visible. Cliquez sur Personnaliser pour en ajouter.",
+    "reset": "Réinitialiser",
+    "settings": {
+      "iconOnly": "Icônes uniquement"
+    },
+    "showWidget": "Afficher",
+    "timeDays": "Il y a {{count}}j",
+    "timeDays_one": "",
+    "timeDays_many": "",
+    "timeDays_other": "",
+    "timeHours": "Il y a {{count}}h",
+    "timeHours_one": "",
+    "timeHours_many": "",
+    "timeHours_other": "",
+    "timeJustNow": "À l'instant",
+    "timeMinutes": "Il y a {{count}}m",
+    "timeMinutes_one": "",
+    "timeMinutes_many": "",
+    "timeMinutes_other": "",
+    "viewAll": "Voir tout",
+    "widgets": {
+      "latestNotes": "Dernières notes",
+      "notifications": "Notifications",
+      "quickShortcuts": "Raccourcis rapides",
+      "recentActivity": "Activité récente"
+    }
+  },
+  "editorGroups": {
+    "closeSplit": "Fermer la vue divisée",
+    "moduleNotAvailable": "Module non disponible en vue scindée",
+    "splitEmpty": "Glissez un onglet ici ou utilisez le clic droit → Diviser",
+    "splitHorizontal": "Diviser l'éditeur à droite",
+    "splitVertical": "Diviser l'éditeur en bas"
+  },
+  "entityActions": {
+    "addAnnotation": "Ajouter une annotation",
+    "addToCollection": "Ajouter à une collection",
+    "addedToCollection": "Ajouté à la collection",
+    "alreadyInCollection": "Déjà dans cette collection",
+    "annotationColor": "Couleur",
+    "annotations": "Annotations",
+    "createCollection": "Créer une collection",
+    "noAnnotations": "Aucune annotation",
+    "writeAnnotation": "Écrire une annotation..."
+  },
+  "errors": {
+    "forbidden": "Accès interdit. Vous n'avez pas les permissions nécessaires.",
+    "generic": "Une erreur s'est produite",
+    "goHome": "Retour à l'accueil",
+    "networkError": "Impossible de contacter le serveur. Vérifiez votre connexion ou réessayez plus tard.",
+    "notFound": "Ressource introuvable.",
+    "oops": "Oups !",
+    "pageNotFound": "Page introuvable",
+    "pageNotFoundDesc": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "rateLimited": "Trop de requêtes. Veuillez réessayer dans quelques instants.",
+    "serverError": "Le serveur a rencontré une erreur. Veuillez réessayer plus tard.",
+    "timeout": "La requête a expiré. Veuillez réessayer.",
+    "unauthorized": "Non autorisé. Veuillez vous connecter.",
+    "unexpected": "Erreur inattendue",
+    "unknown": "Erreur inconnue",
+    "validationError": "Données invalides. Veuillez vérifier votre saisie."
+  },
+  "focusMode": {
+    "enter": "Activer le mode Focus",
+    "exit": "Quitter le mode Focus",
+    "exitHint": "Quitter le mode Focus"
+  },
+  "history": {
+    "clear": "Effacer l'historique",
+    "clearConfirm": "Historique efface",
+    "contacts": {
+      "create": "Création de contact",
+      "delete": "Suppression de contact",
+      "restore": "Restauration de contact",
+      "toggleFavorite": "Favori modifié",
+      "update": "Modification de contact"
+    },
+    "empty": "Aucune action enregistree",
+    "jumpTo": "Aller a cette action",
+    "notes": {
+      "create": "Creation de note",
+      "delete": "Suppression de note",
+      "restore": "Restauration de note",
+      "togglePin": "Epinglage de note",
+      "update": "Modification de note"
+    },
+    "quickshare": {
+      "createText": "Création de partage texte"
+    },
+    "redo": "Refaire",
+    "studyCollections": {
+      "create": "Création de collection",
+      "delete": "Suppression de collection",
+      "update": "Modification de collection"
+    },
+    "support": {
+      "create": "Création de ticket",
+      "delete": "Suppression de ticket",
+      "update": "Modification de ticket"
+    },
+    "title": "Historique",
+    "undo": "Annuler",
+    "undoFailed": "L'annulation a echoue",
+    "redoFailed": "Le retablissement a echoue",
+    "jumpToFailed": "Certaines etapes du saut ont echoue",
+    "undoneLabel": "Annule"
+  },
+  "home": {
+    "atlasDescription": "Base de connaissances",
+    "huginLab": "Hugin Lab",
+    "labDescription": "Outils de laboratoire",
+    "subtitle": "Plateforme d'apprentissage scientifique"
+  },
+  "keybindings": {
+    "actions": {
+      "commandPalette": "Palette de commandes",
+      "goToTab": "Aller a l'onglet",
+      "historyRedo": "Refaire",
+      "historyUndo": "Annuler",
+      "lastTab": "Dernier onglet",
+      "nextTab": "Onglet suivant",
+      "previousTab": "Onglet precedent",
+      "quickCapture": "Capture rapide (Notes)",
+      "toggleActivityBar": "Afficher/masquer la barre d'activite",
+      "toggleBottomPanel": "Afficher/masquer le panneau inferieur",
+      "toggleFocusMode": "Activer/desactiver le mode focus",
+      "toggleSidebar": "Afficher/masquer la barre laterale",
+      "toggleSplit": "Activer/desactiver la vue scindee",
+      "toggleTabBar": "Afficher/masquer la barre d'onglets"
+    },
+    "descriptions": {
+      "commandPalette": "Ouvrir la palette de commandes",
+      "goToTab": "Basculer vers un onglet par numero",
+      "historyRedo": "Refaire la derniere action annulee",
+      "historyUndo": "Annuler la derniere action",
+      "lastTab": "Basculer vers le dernier onglet",
+      "nextTab": "Basculer vers l'onglet suivant",
+      "previousTab": "Basculer vers l'onglet precedent",
+      "quickCapture": "Ouvrir la capture rapide de notes",
+      "toggleActivityBar": "Afficher ou masquer la barre d'activite",
+      "toggleBottomPanel": "Afficher ou masquer le panneau inferieur",
+      "toggleFocusMode": "Activer ou desactiver le mode focus",
+      "toggleSidebar": "Afficher ou masquer la barre laterale",
+      "toggleSplit": "Activer ou desactiver la vue scindee",
+      "toggleTabBar": "Afficher ou masquer la barre d'onglets"
+    }
+  },
+  "lab": {
+    "error": "Impossible de charger les outils",
+    "loading": "Chargement des outils...",
+    "modulesCount_one": "1 outil interactif disponible",
+    "modulesCount_many": "{{count}} outils interactifs disponibles",
+    "modulesCount_other": "{{count}} outils interactifs disponibles",
+    "goToAtlas": "Voir Munin Atlas",
+    "noModules": "Aucun outil disponible",
+    "subtitle": "Outils pratiques et simulations de laboratoire",
+    "title": "Hugin Lab"
+  },
+  "landing": {
+    "nav": {
+      "tools": "Produit",
+      "features": "Avantages",
+      "security": "Securite",
+      "pricing": "Tarifs",
+      "login": "Connexion",
+      "register": "S'inscrire",
+      "menuOpen": "Ouvrir le menu",
+      "menuClose": "Fermer le menu"
+    },
+    "hero": {
+      "title": "La science a portee de main",
+      "titleStart": "La science a",
+      "flip": {
+        "hand": "portee de main",
+        "click": "clic",
+        "all": "tous"
+      },
+      "description": "Revolutionnez votre recherche scientifique avec une plateforme integree. Odin centralise vos donnees, optimise vos experiences et facilite la collaboration mondiale.",
+      "cta": "S'inscrire",
+      "stats": {
+        "modules": "Modules",
+        "modulesValue": 10,
+        "security": "Protections",
+        "securityValue": 6,
+        "european": "Europeen",
+        "europeanValue": 100
+      },
+      "tagline": "Innover pour demain",
+      "webAccess": "Acces Web",
+      "demo": "Voir la demo"
+    },
+    "trust": {
+      "title": "Ils nous font confiance",
+      "partners": {
+        "bioEcoAgro": "BioEcoAgro",
+        "univLille": "Universite de Lille"
+      }
+    },
+    "features": {
+      "title": "Une plateforme web pensee pour la performance",
+      "subtitle": "Accessible depuis n'importe quel navigateur, sans installation.",
+      "browser": {
+        "title": "Optimisee pour tous les navigateurs",
+        "description": "Compatible Chrome, Firefox, Safari et Edge. Une experience fluide et rapide sur tous vos appareils.",
+        "longDescription": "Compatible Chrome, Firefox, Safari et Edge. Profitez d'une experience fluide et rapide sur tous vos appareils, sans installation ni configuration requise. Notre plateforme s'adapte a votre environnement."
+      },
+      "share": {
+        "title": "Partage universel",
+        "description": "Partagez vos resultats et rapports avec un simple lien. Collaborez sans barriere technique.",
+        "shortDescription": "Partagez resultats et rapports avec un simple lien."
+      },
+      "updates": {
+        "title": "Mises a jour automatiques",
+        "description": "Toujours la derniere version, sans action de votre part. Les nouvelles fonctionnalites arrivent instantanement.",
+        "shortDescription": "Toujours la derniere version, sans action de votre part."
+      },
+      "webReady": {
+        "title": "Application Web",
+        "description": "Acces complet depuis votre navigateur, sans installation."
+      },
+      "mobileComingSoon": {
+        "title": "Application Mobile",
+        "description": "Consultez vos donnees depuis votre smartphone.",
+        "badge": "Bientot"
+      }
+    },
+    "security": {
+      "title": "Une plateforme securisee pour vos recherches",
+      "subtitle": "La securite et l'integrite de vos donnees sont nos priorites absolues.",
+      "description": "Vos donnees de recherche meritent une protection maximale. Notre infrastructure est concue pour repondre aux exigences des institutions les plus strictes.",
+      "rgpdBadge": "RGPD Compliant",
+      "https": {
+        "title": "Chiffrement HTTPS/TLS",
+        "description": "Toutes les communications sont chiffrees via TLS pour garantir la confidentialite de vos echanges."
+      },
+      "rgpd": {
+        "title": "Conformite RGPD",
+        "description": "Pleinement conforme au Reglement General sur la Protection des Donnees europeen."
+      },
+      "jwt": {
+        "title": "Authentification JWT",
+        "description": "Systeme d'authentification securise par jetons avec rafraichissement automatique."
+      },
+      "sanitization": {
+        "title": "Validation des donnees",
+        "description": "Protection contre les injections XSS grace a la sanitisation systematique des entrees."
+      },
+      "headers": {
+        "title": "En-tetes de securite",
+        "description": "Protection CSRF, clickjacking et XSS via des en-tetes HTTP renforces."
+      },
+      "european": {
+        "title": "Standard Europeen",
+        "description": "Fierement developpe et heberge au sein de l'Union Europeenne."
+      }
+    },
+    "platforms": {
+      "title": "Accessible partout, sur tous vos ecrans",
+      "subtitle": "Une application web responsive qui s'adapte a votre appareil : ordinateur, tablette ou smartphone.",
+      "web": {
+        "title": "Une seule app, tous vos ecrans",
+        "description": "Odin est une application web pensee mobile-first. L'interface s'adapte a la taille de votre ecran pour une experience optimale, que vous soyez au bureau ou sur le terrain.",
+        "badge": "Disponible",
+        "features": {
+          "noInstall": "Aucune installation requise",
+          "autoUpdate": "Mises a jour automatiques transparentes",
+          "accessibility": "Accessibilite universelle 24/7",
+          "responsive": "Interface responsive mobile-first"
+        }
+      }
+    },
+    "tools": {
+      "title": "Tout ce dont vous avez besoin",
+      "subtitle": "Une suite d'outils puissants pour chaque etape de votre workflow.",
+      "muninAtlas": {
+        "title": "Munin Atlas",
+        "description": "Visualisation cartographique de vos donnees experimentales et collaboration spatiale en temps reel."
+      },
+      "huginLab": {
+        "title": "Hugin Lab",
+        "description": "Gestion complete des stocks, des protocoles et du suivi des echantillons en laboratoire."
+      },
+      "analysis": {
+        "title": "Analyse Avancee",
+        "description": "Moteurs statistiques et IA pour identifier des tendances invisibles dans vos jeux de donnees."
+      },
+      "dataManagement": {
+        "title": "Gestion de Donnees",
+        "description": "Centralisez, indexez et securisez l'ensemble de votre patrimoine scientifique."
+      }
+    },
+    "why": {
+      "title": "Pourquoi choisir Odin ?",
+      "subtitle": "Plus qu'un logiciel, un partenaire pour accelerer la decouverte.",
+      "time": {
+        "title": "Gain de temps",
+        "description": "Automatisez les taches repetitives pour vous concentrer sur l'essentiel : la reflexion scientifique."
+      },
+      "security": {
+        "title": "Securite maximale",
+        "description": "Vos travaux sont proteges par les meilleurs protocoles de securite actuels."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "Partagez vos decouvertes avec vos pairs en un clic, tout en controlant finement les acces."
+      },
+      "flexibility": {
+        "title": "Flexibilite mobile",
+        "description": "Consultez vos observations directement sur le terrain avec notre interface web mobile optimisee."
+      }
+    },
+    "modules": {
+      "title": "Des outils pour chaque besoin",
+      "subtitle": "Modules specialises concus avec des experts du domaine.",
+      "comingSoon": "Bientot",
+      "cultureTracking": {
+        "title": "CultureTracking",
+        "description": "Suivi phenotypique et environnemental de vos cultures experimentales."
+      },
+      "sequenceLens": {
+        "title": "SequenceLens",
+        "description": "Analyse et comparaison rapide de sequences genomiques."
+      },
+      "excelLab": {
+        "title": "Excel Lab",
+        "description": "Importez et dynamisez vos anciens fichiers de donnees en un instant."
+      },
+      "analyseBio": {
+        "title": "Analyse Bio",
+        "description": "Traitement avance et modelisation de donnees biologiques complexes."
+      }
+    },
+    "pricing": {
+      "title": "Choisissez votre plan",
+      "subtitle": "Des solutions flexibles adaptees a la taille de votre structure.",
+      "discount": "-20% pour les instituts publics",
+      "packComplete": {
+        "title": "Pack Complet",
+        "price": "900",
+        "period": "/ compte / an",
+        "description": "Tout ce dont votre equipe a besoin pour demarrer.",
+        "popular": "Populaire",
+        "features": {
+          "unlimited": "Chercheurs illimites",
+          "suite": "Suite complete d'outils",
+          "mobile": "Experience Mobile optimisee",
+          "support": "Support prioritaire 24/7"
+        },
+        "cta": "Choisir ce plan"
+      },
+      "enterprise": {
+        "title": "Enterprise",
+        "price": "Sur mesure",
+        "description": "Pour les grandes organisations avec des besoins specifiques.",
+        "features": {
+          "hosting": "Hebergement dedie",
+          "api": "Integration API personnalisee",
+          "training": "Formation sur site"
+        },
+        "cta": "Contacter l'equipe"
+      }
+    },
+    "cta": {
+      "title": "Pret a revolutionner votre recherche ?",
+      "subtitle": "Rejoignez des milliers de chercheurs qui utilisent Odin pour accelerer leurs decouvertes.",
+      "button": "S'inscrire maintenant"
+    },
+    "footer": {
+      "product": {
+        "title": "Produit",
+        "features": "Fonctionnalites",
+        "pricing": "Tarification",
+        "modules": "Modules"
+      },
+      "company": {
+        "title": "Entreprise",
+        "about": "A propos",
+        "contact": "Contact",
+        "careers": "Carrieres"
+      },
+      "legal": {
+        "title": "Legal",
+        "mentions": "Mentions legales",
+        "terms": "CGU",
+        "privacy": "Confidentialite"
+      },
+      "copyright": "Tous droits reserves."
+    },
+    "description": "Une plateforme interactive pour explorer la biologie, la microbiologie et les sciences de laboratoire. Apprenez, experimentez et collaborez.",
+    "login": "Se connecter",
+    "register": "Creer un compte"
+  },
+  "legal": {
+    "mentions": {
+      "title": "Mentions legales",
+      "lastUpdate": "Derniere mise a jour : [A REMPLIR]",
+      "editorTitle": "1. Editeur du site",
+      "editorIntro": "Le site Odin La Science (ci-apres « OLS ») est une plateforme web d'apprentissage en sciences (bacteriologie, mycologie, etc.).",
+      "editor": {
+        "companyName": "Raison sociale",
+        "companyNameValue": "[A REMPLIR]",
+        "legalForm": "Forme juridique",
+        "legalFormValue": "[A REMPLIR]",
+        "capital": "Capital social",
+        "capitalValue": "[A REMPLIR]",
+        "siret": "Numero SIRET",
+        "siretValue": "[A REMPLIR]",
+        "rcs": "Immatriculation RCS",
+        "rcsValue": "[A REMPLIR]",
+        "address": "Siege social",
+        "addressValue": "[A REMPLIR]",
+        "vat": "Numero de TVA intracommunautaire",
+        "vatValue": "[A REMPLIR]",
+        "director": "Directeur de la publication",
+        "directorValue": "[A REMPLIR]",
+        "email": "Email de contact",
+        "emailValue": "[A REMPLIR]",
+        "phone": "Telephone",
+        "phoneValue": "[A REMPLIR]"
+      },
+      "hostTitle": "2. Hebergeur",
+      "host": {
+        "name": "Nom de l'hebergeur",
+        "nameValue": "[A REMPLIR]",
+        "companyName": "Raison sociale",
+        "companyNameValue": "[A REMPLIR]",
+        "address": "Adresse",
+        "addressValue": "[A REMPLIR]",
+        "phone": "Telephone",
+        "phoneValue": "[A REMPLIR]",
+        "website": "Site web",
+        "websiteValue": "[A REMPLIR]"
+      },
+      "ipTitle": "3. Propriete intellectuelle",
+      "ipContent1": "L'ensemble des contenus figurant sur le site OLS (textes, images, illustrations, photographies, logos, icones, sons, videos, logiciels, base de donnees, mises en page) est la propriete exclusive de [A REMPLIR] ou de ses partenaires et est protege par les lois francaises et internationales relatives a la propriete intellectuelle.",
+      "ipContent2": "Toute reproduction, representation, modification, publication, adaptation, totale ou partielle, de l'un quelconque de ces elements, par quelque moyen ou procede que ce soit, est interdite sans l'autorisation ecrite prealable de [A REMPLIR].",
+      "ipContent3": "Toute exploitation non autorisee du site ou de l'un quelconque de ses elements sera consideree comme constitutive d'une contrefacon et poursuivie conformement aux dispositions des articles L.335-2 et suivants du Code de la propriete intellectuelle.",
+      "liabilityTitle": "4. Limitation de responsabilite",
+      "liabilityIntro": "Les informations contenues sur le site OLS sont aussi precises que possible et le site est periodiquement mis a jour. Toutefois, [A REMPLIR] ne peut garantir l'exactitude, la completude et l'actualite des informations diffusees sur le site. [A REMPLIR] ne pourra etre tenu responsable :",
+      "liabilityItem1": "Des dommages directs ou indirects causes au materiel de l'utilisateur lors de l'acces au site",
+      "liabilityItem2": "Des dommages directs ou indirects resultant de l'utilisation des informations fournies sur le site",
+      "liabilityItem3": "De tout dysfonctionnement, impossibilite d'acces ou mauvaises conditions d'utilisation du site imputable a un cas de force majeure, a une maintenance programmee ou non, ou a un evenement hors du controle de [A REMPLIR]",
+      "liabilityItem4": "Du contenu des sites externes auxquels renvoient d'eventuels liens hypertextes presents sur le site",
+      "liabilityCookieNote": "L'utilisateur est informe que lors de ses visites sur le site, un ou plusieurs cookies pourront s'installer automatiquement sur son logiciel de navigation (voir section 5).",
+      "cookiesTitle": "5. Cookies et traceurs",
+      "cookiesContent1": "Le site OLS n'utilise pas de cookies HTTP. L'authentification des utilisateurs repose sur un systeme de JWT (JSON Web Token) Bearer Token, transmis via les en-tetes HTTP des requetes et non stocke dans des cookies.",
+      "cookiesContent2": "Aucun cookie publicitaire, de suivi ou d'analyse n'est depose lors de la navigation sur le site a la date de la derniere mise a jour de ces mentions.",
+      "cookiesContent3": "Si des cookies a des fins d'analyse d'audience ou de mesure de performance venaient a etre deployes ulterieurement, cette section sera mise a jour en conformite avec la reglementation en vigueur (RGPD et recommandations de la CNIL). Le consentement de l'utilisateur sera alors recueilli prealablement a tout depot de cookies non essentiels.",
+      "dataTitle": "6. Protection des donnees personnelles",
+      "dataContent1": "Conformement au Reglement General sur la Protection des Donnees (RGPD - Reglement UE 2016/679) et a la loi Informatique et Libertes du 6 janvier 1978 modifiee, les utilisateurs disposent de droits concernant leurs donnees personnelles (acces, rectification, suppression, portabilite, limitation, opposition).",
+      "dataContent2": "Pour toute information relative au traitement de vos donnees personnelles, veuillez consulter notre Politique de confidentialite. Pour exercer vos droits ou pour toute question relative a la protection de vos donnees, vous pouvez nous contacter :",
+      "dataContactEmail": "Par email : [A REMPLIR]",
+      "dataContactMail": "Par courrier : [A REMPLIR]",
+      "dataCnil": "Vous disposez egalement du droit d'introduire une reclamation aupres de la Commission Nationale de l'Informatique et des Libertes (CNIL) : https://www.cnil.fr.",
+      "jurisdictionTitle": "7. Droit applicable et juridiction competente",
+      "jurisdictionContent": "Les presentes mentions legales sont regies par le droit francais. En cas de litige relatif a l'utilisation du site OLS, et a defaut de resolution amiable, les tribunaux competents de [A REMPLIR] seront seuls competents.",
+      "creditsTitle": "8. Credits",
+      "creditsContent": "Conception et developpement : [A REMPLIR]",
+      "updateNotice": "Les presentes mentions legales pourront etre modifiees a tout moment. L'utilisateur est invite a les consulter regulierement."
+    },
+    "privacy": {
+      "title": "Politique de confidentialite",
+      "lastUpdate": "Derniere mise a jour : [A REMPLIR]",
+      "version": "Version 1.0",
+      "controllerTitle": "1. Responsable du traitement",
+      "controller": {
+        "companyName": "Raison sociale",
+        "companyNameValue": "[A REMPLIR]",
+        "siret": "SIRET",
+        "siretValue": "[A REMPLIR]",
+        "address": "Adresse",
+        "addressValue": "[A REMPLIR]",
+        "email": "Email de contact",
+        "emailValue": "[A REMPLIR]",
+        "dpo": "Delegue a la Protection des Donnees (DPO)",
+        "dpoValue": "[A REMPLIR]"
+      },
+      "serviceTitle": "2. Presentation du service",
+      "serviceContent": "Odin La Science (OLS) est une plateforme SaaS d'apprentissage en sciences (bacteriologie, mycologie, entre autres) destinee aux laboratoires et universites. Elle propose des modules pedagogiques interactifs et une messagerie instantanee integree.",
+      "dataCollectedTitle": "3. Donnees personnelles collectees",
+      "accountDataTitle": "3.1 Donnees de compte",
+      "accountData": {
+        "email": "Email",
+        "emailPurpose": "Identification, communication — Execution du contrat",
+        "name": "Prenom et nom",
+        "namePurpose": "Personnalisation du profil — Execution du contrat",
+        "password": "Mot de passe (hashe)",
+        "passwordPurpose": "Authentification — Execution du contrat",
+        "avatar": "Avatar",
+        "avatarPurpose": "Personnalisation du profil — Consentement",
+        "authProvider": "Fournisseur d'authentification",
+        "authProviderPurpose": "Gestion de la connexion — Execution du contrat",
+        "passwordNote": "Le mot de passe n'est jamais stocke en clair. Seule une empreinte cryptographique irreversible est conservee."
+      },
+      "sessionDataTitle": "3.2 Donnees de session",
+      "sessionData": {
+        "ip": "Adresse IP",
+        "ipPurpose": "Securite, detection d'anomalies — Interet legitime",
+        "device": "Informations appareil",
+        "devicePurpose": "Securite, gestion des sessions — Interet legitime",
+        "dates": "Dates de connexion",
+        "datesPurpose": "Audit de securite — Interet legitime",
+        "limitNote": "Le nombre de sessions simultanees est limite a 3 par utilisateur. Chaque utilisateur peut consulter et revoquer ses sessions actives depuis son espace personnel."
+      },
+      "contactsDataTitle": "3.3 Carnet de contacts",
+      "contactsData": {
+        "nameEmail": "Nom, email, telephone",
+        "nameEmailPurpose": "Gestion des contacts professionnels — Execution du contrat",
+        "orgPosition": "Organisation, poste",
+        "orgPositionPurpose": "Contextualisation du contact — Execution du contrat",
+        "notes": "Notes",
+        "notesPurpose": "Information libre saisie par l'utilisateur — Execution du contrat"
+      },
+      "historyTitle": "3.4 Historique des actions",
+      "historyContent": "Les actions effectuees sur la plateforme sont tracees avec des instantanes (snapshots) JSON de l'etat avant et apres modification. Cette tracabilite permet l'audit, le suivi pedagogique et la resolution d'incidents. Base legale : Interet legitime (securite et qualite du service).",
+      "annotationsTitle": "3.5 Annotations",
+      "annotationsContent": "Les utilisateurs peuvent ajouter des notes textuelles sur les entites de la plateforme (modules, resultats, etc.). Ces annotations sont liees au compte de l'utilisateur. Base legale : Execution du contrat.",
+      "notificationsTitle": "3.6 Notifications",
+      "notifications": {
+        "titleMessage": "Titre et message",
+        "titleMessagePurpose": "Information de l'utilisateur — Execution du contrat",
+        "metadata": "Metadonnees associees",
+        "metadataPurpose": "Routage et affichage contextuel — Execution du contrat"
+      },
+      "organizationsTitle": "3.7 Organisations",
+      "organizations": {
+        "nameDesc": "Nom, description, type",
+        "nameDescPurpose": "Structuration des groupes — Execution du contrat",
+        "website": "Site web",
+        "websitePurpose": "Information complementaire — Execution du contrat",
+        "members": "Liste des membres",
+        "membersPurpose": "Gestion des acces et des roles — Execution du contrat"
+      },
+      "authTitle": "4. Authentification et gestion des sessions",
+      "authMechanismTitle": "4.1 Mecanisme d'authentification",
+      "authMechanismContent": "OLS utilise un systeme de JWT (JSON Web Token) Bearer Token stateless : access token d'une duree de vie de 15 minutes, refresh token d'une duree de vie de 7 jours.",
+      "noCookiesTitle": "4.2 Absence de cookies HTTP",
+      "noCookiesContent": "OLS n'utilise pas de cookies HTTP. L'authentification repose exclusivement sur les tokens JWT transmis dans les en-tetes des requetes.",
+      "retentionTitle": "5. Durees de conservation",
+      "retention": {
+        "accountData": "Donnees de compte",
+        "accountDataDuration": "Duree de vie du compte + 30 jours apres suppression",
+        "sessionData": "Donnees de session",
+        "sessionDataDuration": "7 jours apres expiration de la session",
+        "history": "Historique des actions",
+        "historyDuration": "12 mois glissants",
+        "annotations": "Annotations",
+        "annotationsDuration": "Duree de vie du compte",
+        "notifications": "Notifications",
+        "notificationsDuration": "90 jours",
+        "contacts": "Contacts",
+        "contactsDuration": "Duree de vie du compte"
+      },
+      "retentionNote": "A l'expiration de ces delais, les donnees sont supprimees ou anonymisees de maniere irreversible.",
+      "subprocessorsTitle": "6. Sous-traitants et transferts de donnees",
+      "subprocessors": {
+        "googleLabel": "Google (OAuth2)",
+        "google": "Authentification externe — Etats-Unis / UE — Clauses contractuelles types (CCT)",
+        "casLabel": "CAS Universite de Lille",
+        "cas": "Authentification universitaire — France (UE) — Pas de transfert hors UE",
+        "infomaniakLabel": "Infomaniak",
+        "infomaniak": "Envoi d'emails (SMTP) — Suisse — Decision d'adequation UE"
+      },
+      "subprocessorsNote": "Aucun sous-traitant n'a acces aux mots de passe des utilisateurs (ceux-ci sont hashes avant tout stockage).",
+      "securityTitle": "7. Securite des donnees",
+      "security": {
+        "https": "Chiffrement des communications via HTTPS/TLS",
+        "hash": "Hashage cryptographique des mots de passe",
+        "sessionLimit": "Limitation a 3 sessions simultanees par utilisateur",
+        "tokenLifetime": "Tokens d'acces a duree de vie courte (15 minutes)",
+        "logging": "Journalisation des actions pour detection d'anomalies",
+        "rbac": "Controle d'acces base sur les roles (RBAC)"
+      },
+      "rightsTitle": "8. Droits des utilisateurs",
+      "rightsIntro": "Conformement au Reglement General sur la Protection des Donnees (RGPD), vous disposez des droits suivants :",
+      "rights": {
+        "access": "Acces",
+        "accessDesc": "Obtenir une copie de l'ensemble de vos donnees personnelles.",
+        "rectification": "Rectification",
+        "rectificationDesc": "Corriger des donnees inexactes ou incompletes.",
+        "erasure": "Effacement",
+        "erasureDesc": "Demander la suppression de vos donnees personnelles.",
+        "portability": "Portabilite",
+        "portabilityDesc": "Recevoir vos donnees dans un format structure et lisible par machine.",
+        "restriction": "Limitation",
+        "restrictionDesc": "Demander la restriction du traitement de vos donnees.",
+        "objection": "Opposition",
+        "objectionDesc": "Vous opposer au traitement de vos donnees pour des motifs legitimes."
+      },
+      "rightsExerciseTitle": "8.1 Comment exercer vos droits",
+      "rightsExerciseContent": "Pour exercer l'un de ces droits, contactez-nous a l'adresse : [A REMPLIR]. Nous nous engageons a repondre dans un delai d'un mois a compter de la reception de votre demande, conformement a la reglementation.",
+      "rightsFeaturesTitle": "8.2 Fonctionnalites disponibles dans l'application",
+      "rightsFeatures": {
+        "sessions": "Gestion des sessions : vous pouvez consulter vos sessions actives et revoquer celles de votre choix directement depuis votre espace personnel.",
+        "export": "Export de donnees : cette fonctionnalite est en cours de developpement et sera prochainement disponible.",
+        "deletion": "Suppression de compte : cette fonctionnalite est en cours de developpement. En attendant, toute demande de suppression peut etre adressee par email a l'adresse indiquee ci-dessus."
+      },
+      "complaintTitle": "9. Reclamation aupres de l'autorite de controle",
+      "complaintContent": "Si vous estimez que le traitement de vos donnees personnelles constitue une violation du RGPD, vous avez le droit d'introduire une reclamation aupres de la Commission Nationale de l'Informatique et des Libertes (CNIL) : https://www.cnil.fr — 3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07.",
+      "changesTitle": "10. Modifications de cette politique",
+      "changesContent": "Nous nous reservons le droit de modifier cette politique de confidentialite a tout moment. En cas de modification substantielle, les utilisateurs seront informes via une notification sur la plateforme. La date de derniere mise a jour figure en haut de ce document.",
+      "contactTitle": "11. Contact",
+      "contactContent": "Pour toute question relative a cette politique de confidentialite ou au traitement de vos donnees personnelles :",
+      "contactEmail": "Email : [A REMPLIR]",
+      "contactDpo": "DPO : [A REMPLIR]"
+    },
+    "terms": {
+      "title": "Conditions Generales d'Utilisation",
+      "lastUpdate": "Derniere mise a jour : [A REMPLIR]",
+      "draftNotice": "BROUILLON — Ce document doit etre valide par un professionnel du droit avant publication.",
+      "purposeTitle": "1. Objet",
+      "purposeContent1": "Les presentes Conditions Generales d'Utilisation (ci-apres « CGU ») ont pour objet de definir les modalites et conditions d'utilisation de la plateforme Odin La Science (ci-apres « OLS » ou « le Service »), accessible a l'adresse [A REMPLIR].",
+      "purposeContent2": "OLS est une plateforme web de type SaaS dediee a l'apprentissage en sciences, notamment en bacteriologie et mycologie. Elle propose des modules d'identification d'especes avec systeme de scoring, un carnet de contacts, des fonctionnalites de prise de notes et d'annotations, un systeme de notifications, un mecanisme de partage rapide (QuickShare) ainsi qu'une gestion d'organisations et d'equipes.",
+      "purposeContent3": "Le Service est destine aux laboratoires, universites, etudiants et professionnels du domaine scientifique.",
+      "acceptanceTitle": "2. Acceptation des CGU",
+      "acceptanceContent1": "L'inscription au Service et son utilisation impliquent l'acceptation pleine et entiere des presentes CGU. L'utilisateur reconnait en avoir pris connaissance et s'engage a les respecter.",
+      "acceptanceContent2": "Toute inscription ou utilisation du Service vaut acceptation sans reserve des presentes CGU dans leur version en vigueur au moment de l'inscription ou de l'utilisation.",
+      "accessTitle": "3. Acces au service",
+      "registrationTitle": "3.1 Conditions d'inscription",
+      "registrationContent1": "L'acces au Service necessite la creation d'un compte utilisateur. L'inscription est ouverte a toute personne physique ou morale souhaitant utiliser le Service a des fins educatives, de recherche ou professionnelles.",
+      "registrationContent2": "L'utilisateur s'engage a fournir des informations exactes, completes et a jour lors de son inscription.",
+      "authMethodsTitle": "3.2 Methodes d'authentification",
+      "authMethods": {
+        "local": "Compte local : creation d'un compte avec adresse email et mot de passe",
+        "google": "Google OAuth : authentification via un compte Google",
+        "cas": "CAS universitaire : authentification via le systeme CAS de l'etablissement de l'utilisateur"
+      },
+      "emailVerificationTitle": "3.3 Verification de l'adresse email",
+      "emailVerificationContent": "L'activation du compte est conditionnee a la verification de l'adresse email communiquee lors de l'inscription. Un email de verification est envoye a l'utilisateur, qui doit confirmer son adresse avant de pouvoir acceder au Service.",
+      "accountTitle": "4. Compte utilisateur",
+      "passwordTitle": "4.1 Responsabilite du mot de passe",
+      "passwordContent1": "L'utilisateur est seul responsable de la confidentialite de ses identifiants de connexion (adresse email et mot de passe). Toute activite realisee depuis son compte est reputee effectuee par lui.",
+      "passwordContent2": "L'utilisateur s'engage a informer immediatement l'editeur de toute utilisation non autorisee de son compte ou de toute atteinte a la securite de celui-ci.",
+      "sessionsTitle": "4.2 Sessions simultanees",
+      "sessionsContent": "Le nombre de sessions simultanees est limite a trois (3) par compte utilisateur. Au-dela de cette limite, la session la plus ancienne pourra etre automatiquement deconnectee.",
+      "accuracyTitle": "4.3 Exactitude des informations",
+      "accuracyContent": "L'utilisateur s'engage a maintenir ses informations personnelles a jour. L'editeur ne saurait etre tenu responsable des consequences liees a des informations erronees ou obsoletes.",
+      "usageTitle": "5. Utilisation du service",
+      "authorizedTitle": "5.1 Usages autorises",
+      "authorized": {
+        "educational": "Educatif : apprentissage et formation en sciences",
+        "research": "De recherche : support aux activites de recherche scientifique",
+        "professional": "Professionnel : formation continue et perfectionnement des competences en laboratoire"
+      },
+      "prohibitedTitle": "5.2 Usages interdits",
+      "prohibited": {
+        "illegal": "Utiliser le Service a des fins illegales, frauduleuses ou portant atteinte aux droits de tiers",
+        "unauthorized": "Tenter d'acceder de maniere non autorisee aux systemes, serveurs ou reseaux lies au Service",
+        "scraping": "Collecter, extraire ou exploiter de maniere automatisee les donnees du Service (scraping, crawling, etc.)",
+        "harmful": "Diffuser des contenus illicites, diffamatoires, injurieux, discriminatoires ou contraires a l'ordre public",
+        "disrupt": "Perturber ou tenter de perturber le fonctionnement normal du Service",
+        "shareCredentials": "Partager ses identifiants de connexion avec des tiers",
+        "commercial": "Utiliser le Service a des fins commerciales non autorisees par l'editeur",
+        "bypass": "Contourner les mesures techniques de protection ou de limitation d'acces mises en place par l'editeur"
+      },
+      "userContentTitle": "6. Contenu utilisateur",
+      "ownershipTitle": "6.1 Propriete des donnees utilisateur",
+      "ownershipContent": "L'utilisateur reste proprietaire de l'ensemble des contenus qu'il cree, importe ou saisit dans le cadre de l'utilisation du Service, notamment :",
+      "ownership": {
+        "contacts": "Les contacts enregistres dans le carnet de contacts",
+        "notes": "Les notes et annotations",
+        "progress": "Les donnees de progression et de scoring",
+        "other": "Tout autre contenu genere par l'utilisateur"
+      },
+      "licenseTitle": "6.2 Licence d'utilisation",
+      "licenseContent": "En utilisant le Service, l'utilisateur accorde a l'editeur une licence non exclusive, mondiale et limitee a la duree d'utilisation du Service, aux seules fins de fournir, maintenir et ameliorer le Service. Cette licence prend fin a la suppression du compte utilisateur.",
+      "contentResponsibilityTitle": "6.3 Responsabilite du contenu",
+      "contentResponsibilityContent": "L'utilisateur est seul responsable des contenus qu'il publie ou partage via le Service, notamment via la fonctionnalite QuickShare. L'editeur ne saurait etre tenu responsable des contenus generes par les utilisateurs.",
+      "ipTitle": "7. Propriete intellectuelle",
+      "ipPedagogicalTitle": "7.1 Contenu pedagogique",
+      "ipPedagogicalContent": "L'ensemble du contenu pedagogique mis a disposition sur le Service (textes, images, schemas, donnees scientifiques, modules d'apprentissage, bases de donnees d'especes) est la propriete exclusive de l'editeur ou de ses ayants droit. Toute reproduction, representation, modification ou distribution, totale ou partielle, est interdite sans autorisation prealable ecrite de l'editeur.",
+      "ipSoftwareTitle": "7.2 Logiciel et interface",
+      "ipSoftwareContent": "Le code source, l'architecture logicielle, l'interface utilisateur, les elements graphiques et le nom « Odin La Science » sont la propriete exclusive de l'editeur. Ils sont proteges par les dispositions du Code de la propriete intellectuelle relatives au droit d'auteur et au droit des marques.",
+      "availabilityTitle": "8. Disponibilite du service",
+      "bestEffortTitle": "8.1 Obligation de moyens",
+      "bestEffortContent": "L'editeur s'engage a mettre en oeuvre les moyens necessaires au bon fonctionnement du Service. Il s'agit d'une obligation de moyens et non de resultat. L'editeur ne garantit pas que le Service sera exempt d'interruptions, d'erreurs ou de defauts.",
+      "maintenanceTitle": "8.2 Maintenance et interruptions",
+      "maintenanceContent": "L'editeur se reserve le droit d'interrompre temporairement l'acces au Service pour des raisons de maintenance, de mise a jour ou d'amelioration. L'editeur s'efforcera de prevenir les utilisateurs dans un delai raisonnable avant toute interruption programmee.",
+      "betaStatusTitle": "8.3 Statut beta",
+      "betaStatus": {
+        "bugs": "Le Service peut presenter des dysfonctionnements, des erreurs ou des fonctionnalites incompletes",
+        "stability": "L'editeur ne garantit pas la stabilite ni la perennite des fonctionnalites proposees en version beta",
+        "conditions": "Des conditions specifiques a la phase beta sont presentees a l'utilisateur lors de son utilisation du Service",
+        "changes": "L'editeur se reserve le droit de modifier, suspendre ou supprimer des fonctionnalites sans preavis durant la phase beta"
+      },
+      "dataProtectionTitle": "9. Protection des donnees personnelles",
+      "dataProtectionContent1": "L'editeur s'engage a traiter les donnees personnelles des utilisateurs conformement au Reglement General sur la Protection des Donnees (RGPD) et a la loi Informatique et Libertes.",
+      "dataProtectionContent2": "Les modalites de collecte, de traitement et de conservation des donnees personnelles sont detaillees dans la Politique de confidentialite, accessible a l'adresse [A REMPLIR]. Pour toute question relative a la protection des donnees, l'utilisateur peut contacter le responsable du traitement a l'adresse [A REMPLIR].",
+      "liabilityTitle": "10. Responsabilite",
+      "editorLiabilityTitle": "10.1 Limitation de responsabilite de l'editeur",
+      "editorLiability": {
+        "interruptions": "Des interruptions temporaires du Service, quelle qu'en soit la cause",
+        "damages": "Des dommages directs ou indirects resultant de l'utilisation ou de l'impossibilite d'utilisation du Service",
+        "dataLoss": "De la perte de donnees ou de contenus utilisateur, notamment en phase beta",
+        "scientific": "Des dommages lies a l'utilisation de contenus scientifiques a des fins diagnostiques ou therapeutiques",
+        "userContent": "Des contenus publies ou partages par les utilisateurs",
+        "technical": "De tout dysfonctionnement lie a l'environnement technique de l'utilisateur (navigateur, connexion internet, etc.)"
+      },
+      "userLiabilityTitle": "10.2 Responsabilite de l'utilisateur",
+      "userLiabilityContent": "L'utilisateur est responsable de l'utilisation qu'il fait du Service et s'engage a indemniser l'editeur de tout prejudice resultant du non-respect des presentes CGU.",
+      "terminationTitle": "11. Resiliation",
+      "userTerminationTitle": "11.1 A l'initiative de l'utilisateur",
+      "userTerminationContent": "L'utilisateur peut a tout moment demander la suppression de son compte. Cette fonctionnalite est en cours de deploiement. En attendant, toute demande de suppression peut etre adressee a [A REMPLIR]. La suppression du compte entraine la suppression definitive des donnees associees, sous reserve des obligations legales de conservation.",
+      "editorTerminationTitle": "11.2 A l'initiative de l'editeur",
+      "editorTermination": {
+        "violation": "Violation des presentes CGU",
+        "abuse": "Utilisation frauduleuse ou abusive du Service",
+        "inactivity": "Inactivite prolongee du compte (duree a definir)",
+        "authority": "Demande d'une autorite judiciaire ou administrative competente"
+      },
+      "editorTerminationNote": "L'editeur s'efforcera d'informer l'utilisateur prealablement, sauf en cas d'urgence ou d'obligation legale.",
+      "changesTitle": "12. Modification des CGU",
+      "changesContent1": "L'editeur se reserve le droit de modifier les presentes CGU a tout moment. Les utilisateurs seront informes de toute modification substantielle par :",
+      "changes": {
+        "notification": "Une notification au sein du Service",
+        "email": "Un email envoye a l'adresse associee au compte utilisateur"
+      },
+      "changesContent2": "La poursuite de l'utilisation du Service apres notification des modifications vaut acceptation des nouvelles CGU. En cas de desaccord, l'utilisateur peut proceder a la suppression de son compte conformement a l'article 11.",
+      "jurisdictionTitle": "13. Droit applicable et juridiction competente",
+      "jurisdictionContent1": "Les presentes CGU sont soumises au droit francais.",
+      "jurisdictionContent2": "En cas de litige relatif a l'interpretation ou a l'execution des presentes CGU, les parties s'engagent a rechercher une solution amiable prealablement a toute action en justice.",
+      "jurisdictionContent3": "A defaut de resolution amiable, tout litige sera soumis a la competence exclusive des tribunaux de [A REMPLIR].",
+      "contactTitle": "14. Contact",
+      "contactIntro": "Pour toute question relative aux presentes CGU ou au Service, l'utilisateur peut contacter l'editeur :",
+      "contact": {
+        "companyName": "Raison sociale : [A REMPLIR]",
+        "address": "Siege social : [A REMPLIR]",
+        "email": "Email : [A REMPLIR]",
+        "representative": "Representant legal : [A REMPLIR]"
+      }
+    },
+    "footerMentions": "Mentions legales",
+    "footerTerms": "CGU",
+    "footerPrivacy": "Confidentialite"
+  },
+  "megaMenu": {
+    "moduleCount_one": "{{count}} module",
+    "moduleCount_many": "{{count}} modules",
+    "moduleCount_other": "{{count}} modules",
+    "noModules": "Aucun module disponible"
+  },
+  "menuBar": {
+    "about": "À propos d'OLS",
+    "activityBar": "Barre d'activité",
+    "adminView": "Vue administration",
+    "breadcrumbs": "Fil d'Ariane",
+    "explorerPanel": "Barre latérale d'activité",
+    "focusMode": "Mode Focus",
+    "help": "Aide",
+    "hide": "Masquer la barre de menus",
+    "keyboardShortcuts": "Raccourcis clavier",
+    "menuBar": "Barre de menus",
+    "module": "Module",
+    "primarySidebar": "Barre latérale primaire",
+    "secondarySidebar": "Barre latérale secondaire",
+    "show": "Afficher la barre de menus",
+    "sidebar": "Barre latérale",
+    "statusBar": "Barre de statut",
+    "support": "Support",
+    "tabBar": "Barre d'onglets",
+    "userView": "Vue utilisateur",
+    "view": "Affichage",
+    "viewAll": "Voir tout"
+  },
+  "modules": {
+    "clearFilters": "Réinitialiser les filtres",
+    "compare": "Comparer",
+    "comparison": {
+      "copyComparison": "Copier la comparaison",
+      "copiedToClipboard": "Comparaison copiée dans le presse-papiers",
+      "copyFailed": "Échec de la copie de la comparaison",
+      "differences": "Différences",
+      "maxReached": "Limite atteinte ({{max}} max)",
+      "title": "Comparaison",
+      "viewComparison_one": "Comparer ({{count}})",
+      "viewComparison_many": "Comparer ({{count}})",
+      "viewComparison_other": "Comparer ({{count}})"
+    },
+    "selection": {
+      "selectItems": "Sélectionnez des éléments",
+      "selected_one": "{{count}} sélectionné",
+      "selected_many": "{{count}} sélectionnés",
+      "selected_other": "{{count}} sélectionnés",
+      "selectMin": "Sélectionnez au moins 2 éléments",
+      "deselectAll": "Tout désélectionner"
+    },
+    "emptyDatabase": "La base de données est vide",
+    "emptyTitle": "Aucune donnée",
+    "filterNoMatch": "Aucun élément ne correspond aux filtres sélectionnés",
+    "filtersActive_one": "1 filtre actif",
+    "filtersActive_many": "{{count}} filtres actifs",
+    "filtersActive_other": "{{count}} filtres actifs",
+    "identification": "Identification",
+    "identificationResults_one": "1 résultat d'identification",
+    "identificationResults_many": "{{count}} résultats d'identification",
+    "identificationResults_other": "{{count}} résultats d'identification",
+    "loadError": "Erreur de chargement",
+    "loadErrorDesc": "Impossible de charger les données",
+    "noMatchFound": "Aucune correspondance trouvée",
+    "searchNoResults": "Aucun résultat trouvé pour \"{{query}}\"",
+    "showAll": "Afficher tout"
+  },
+  "mycology": {
+    "aerobic": "Aérobie",
+    "aerobicShort": "Aér.",
+    "apiCodePlaceholder": "SAC001",
+    "culture": "Culture",
+    "description": "Science des champignons et levures",
+    "diagnostic": "Diagnostic",
+    "dimorphic": "Dimorphique",
+    "dimorphicShort": "Dim.",
+    "edible": "Comestibles",
+    "encapsulated": "Encapsulé",
+    "encapsulatedShort": "Enc.",
+    "fermentation": "Fermentation",
+    "filamentous": "Filamenteux",
+    "medicinal": "Médicinaux",
+    "melanin": "Mélanine",
+    "melaninProducer": "Producteur de mélanine",
+    "melaninShort": "Mél.",
+    "molds": "Moisissures",
+    "pathogens": "Pathogènes",
+    "profileSectionTitle": "Profil mycologique",
+    "title": "Mycologie",
+    "tour": {
+      "detail": {
+        "description": "Cliquez sur un champignon pour afficher ses propriétés détaillées.",
+        "title": "Panneau de détail"
+      },
+      "filters": {
+        "description": "Filtrez par type, métabolites secondaires et caractéristiques morphologiques.",
+        "title": "Filtres"
+      },
+      "stats": {
+        "description": "Vue d'ensemble des statistiques de votre collection mycologique.",
+        "title": "Statistiques"
+      },
+      "table": {
+        "description": "Parcourez la liste des champignons et levures avec leurs caractéristiques.",
+        "title": "Collection mycologique"
+      }
+    },
+    "toxic": "Toxiques",
+    "yeasts": "Levures",
+    "settings": {
+      "title": "Mycologie",
+      "scoreFormat": "Format des scores",
+      "scorePercent": "Pourcentage (%)",
+      "scoreFraction": "Fraction (x/y)",
+      "maxResults": "Résultats d'identification max"
+    }
+  },
+  "navigation": {
+    "back": "Retour",
+    "forward": "Avancer"
+  },
+  "notes": {
+    "cancel": "Annuler",
+    "color": "Couleur",
+    "colorLabel": "Couleur",
+    "colors": {
+      "blue": "Bleu",
+      "green": "Vert",
+      "orange": "Orange",
+      "purple": "Violet",
+      "red": "Rouge",
+      "yellow": "Jaune"
+    },
+    "content": "Contenu",
+    "contentPlaceholder": "Écrivez le contenu de votre note ici...",
+    "create": "Créer",
+    "created": "Note créée !",
+    "createdAt": "Créée le",
+    "createTitle": "Créer une note",
+    "delete": "Supprimer",
+    "deleteError": "Erreur lors de la suppression de la note",
+    "deleted": "Note supprimée",
+    "restored": "Note restaurée",
+    "description": "Prise de notes, cahier de labo et documents collaboratifs",
+    "edit": "Modifier",
+    "editTitle": "Modifier la note",
+    "emptyDesc": "Créez votre première note pour commencer",
+    "emptyTitle": "Aucune note",
+    "newNote": "Nouvelle note",
+    "noColor": "Aucune",
+    "pin": "Épingler",
+    "unpin": "Désépingler",
+    "pinned": "Épinglées",
+    "save": "Enregistrer",
+    "saveError": "Erreur lors de l'enregistrement",
+    "searchPlaceholder": "Rechercher...",
+    "tagPlaceholder": "Ajouter un tag (Entrée pour valider)",
+    "tags": "Tags",
+    "tagsLabel": "Tags",
+    "tips": {
+      "quickCapture": {
+        "title": "Capture rapide",
+        "description": "Appuyez sur Alt+N pour capturer rapidement une note depuis n'importe où."
+      }
+    },
+    "settings": {
+      "title": "Notes",
+      "defaultColor": "Couleur par défaut",
+      "defaultSort": "Tri par défaut",
+      "sortByDate": "Par date",
+      "sortByTitle": "Par titre"
+    },
+    "title": "Notes",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre de la note",
+    "tour": {
+      "detail": {
+        "description": "Cliquez sur une note pour lire son contenu et ses tags.",
+        "title": "Contenu de la note"
+      },
+      "search": {
+        "description": "Recherchez par titre ou utilisez les tags pour filtrer vos notes.",
+        "title": "Recherche et tags"
+      },
+      "table": {
+        "description": "Retrouvez toutes vos notes organisées par date de modification.",
+        "title": "Vos notes"
+      }
+    },
+    "updated": "Note mise à jour !",
+    "updatedAt": "Modifiée le",
+    "validation": {
+      "titleRequired": "Le titre est requis"
+    },
+    "withTags": "Avec tags"
+  },
+  "notifications": {
+    "date": "Date",
+    "delete": "Supprimer",
+    "deleted": "Notification supprimée",
+    "description": "Historique et préférences de notifications par module",
+    "emptyDesc": "Vous serez notifié des partages et autres activités ici",
+    "emptyTitle": "Aucune notification",
+    "markAllRead": "Tout marquer comme lu",
+    "markAsRead": "Marquer comme lue",
+    "message": "Message",
+    "open": "Ouvrir",
+    "title": "Notifications",
+    "titleLabel": "Titre",
+    "tour": {
+      "detail": {
+        "description": "Cliquez sur une notification pour lire son contenu complet.",
+        "title": "Détail de la notification"
+      },
+      "table": {
+        "description": "Consultez vos notifications par ordre chronologique.",
+        "title": "Historique des notifications"
+      }
+    },
+    "type": "Type",
+    "types": {
+      "CONTACT_ADDED": "Contact ajouté",
+      "MODULE_ACCESS_GRANTED": "Accès module accordé",
+      "NEW_LOGIN": "Nouvelle connexion",
+      "ORGANIZATION_INVITED": "Invitation organisation",
+      "ORGANIZATION_REMOVED": "Retrait organisation",
+      "ORGANIZATION_ROLE_CHANGED": "Rôle modifié",
+      "QUICKSHARE_RECEIVED": "Partage reçu",
+      "SUPPORT_REPLY": "Réponse support",
+      "SUPPORT_STATUS_CHANGED": "Statut du ticket modifié",
+      "SYSTEM": "Système"
+    },
+    "unread": "non lue(s)",
+    "viewAll": "Voir toutes les notifications"
+  },
+  "organization": {
+    "addMember": "Ajouter un membre",
+    "addMemberTitle": "Ajouter un membre",
+    "addSupervisee": "Ajouter un supervisé",
+    "addSupervisor": "Ajouter un superviseur",
+    "changeRole": "Changer le rôle",
+    "confirmRemove": "Confirmer",
+    "createdAt": "Créé le",
+    "createdBy": "Créé par",
+    "description": "Description",
+    "email": "Email",
+    "emptyDesc": "Vous n'êtes membre d'aucune organisation",
+    "emptyTitle": "Aucune organisation",
+    "info": "Informations",
+    "joinedAt": "Rejoint le",
+    "manageMembers": "Gérer les membres",
+    "memberAdded": "Membre ajouté",
+    "memberEmail": "Email du membre",
+    "memberRemoved": "Membre retiré",
+    "memberRoleChanged": "Rôle modifié",
+    "members": "Membres",
+    "membersOf": "Membres de {{name}}",
+    "name": "Nom",
+    "noMembers": "Aucun membre",
+    "noMembersDesc": "Ajoutez un membre pour commencer",
+    "noSupervisions": "Aucune relation de supervision",
+    "removeMember": "Retirer",
+    "role": "Rôle",
+    "roles": {
+      "intern": "Stagiaire",
+      "manager": "Responsable",
+      "member": "Membre",
+      "owner": "Propriétaire"
+    },
+    "searchMemberPlaceholder": "Rechercher un membre...",
+    "searchPlaceholder": "Rechercher une organisation...",
+    "status": "Statut",
+    "statuses": {
+      "active": "Actif",
+      "invited": "Invité",
+      "suspended": "Suspendu"
+    },
+    "supervisedBy": "Supervisé par",
+    "supervises": "Supervise",
+    "supervisionAdded": "Supervision ajoutée",
+    "supervisionRemoved": "Supervision supprimée",
+    "supervisions": "Supervisions",
+    "title": "Organisations",
+    "tour": {
+      "detail": {
+        "description": "Cliquez sur une organisation pour voir ses membres.",
+        "title": "Détail de l'organisation"
+      },
+      "search": {
+        "description": "Recherchez une organisation par nom.",
+        "title": "Recherche"
+      },
+      "table": {
+        "description": "Chaque organisation représente une équipe ou institution.",
+        "title": "Vos organisations"
+      }
+    },
+    "type": "Type",
+    "types": {
+      "company": "Entreprise",
+      "hospital": "Hôpital",
+      "laboratory": "Laboratoire",
+      "other": "Autre",
+      "researchCenter": "Centre de recherche",
+      "university": "Université"
+    },
+    "website": "Site web"
+  },
+  "profile": {
+    "allSessionsRevoked": "Toutes les autres sessions ont été révoquées",
+    "avatarCategoryEmojis": "Emojis",
+    "avatarCategoryRobots": "Robots",
+    "avatarChanged": "Avatar mis a jour !",
+    "changeAvatar": "Changer la photo de profil",
+    "changePassword": "Changer le mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "currentPassword": "Mot de passe actuel",
+    "currentSession": "Session actuelle",
+    "email": "Adresse email",
+    "emailHint": "L'adresse email ne peut pas être modifiée",
+    "firstName": "Prénom",
+    "identity": "Identité",
+    "justNow": "À l'instant",
+    "lastActive": "Dernière activité",
+    "lastName": "Nom",
+    "newPassword": "Nouveau mot de passe",
+    "noSessions": "Aucune session active",
+    "passwordChanged": "Mot de passe modifié !",
+    "passwordHint": "Cliquez sur le bouton ci-dessus pour modifier votre mot de passe.",
+    "passwordIncorrect": "Mot de passe actuel incorrect",
+    "passwordMismatch": "Les mots de passe ne correspondent pas",
+    "passwordRequired": "Tous les champs sont requis",
+    "passwordTooShort": "Le mot de passe doit contenir au moins 4 caractères",
+    "personalInfo": "Informations personnelles",
+    "personalInfoDesc": "Gérez vos informations de compte",
+    "pickAvatar": "Choisir un avatar",
+    "removeAvatar": "Retirer l'avatar",
+    "revokeAllOther": "Révoquer les autres",
+    "revokeSession": "Révoquer",
+    "role": "Rôle",
+    "save": "Enregistrer",
+    "saved": "Profil mis à jour !",
+    "saveError": "Erreur lors de la sauvegarde",
+    "security": "Sécurité",
+    "securityDesc": "Gérez votre mot de passe",
+    "sessionRevoked": "Session révoquée",
+    "sessions": "Sessions actives",
+    "sessionsDesc": "Gérez les appareils connectés à votre compte",
+    "title": "Profil",
+    "tour": {
+      "avatar": {
+        "description": "Personnalisez votre avatar en cliquant sur l'icône caméra.",
+        "title": "Photo de profil"
+      },
+      "info": {
+        "description": "Modifiez votre nom et consultez votre rôle.",
+        "title": "Informations personnelles"
+      },
+      "name": "Visite du profil",
+      "security": {
+        "description": "Changez votre mot de passe dans cette section.",
+        "title": "Sécurité"
+      },
+      "sessions": {
+        "description": "Gérez vos sessions et déconnectez-vous d'autres appareils.",
+        "title": "Sessions actives"
+      }
+    }
+  },
+  "profiles": {
+    "activate": "Passer à ce profil",
+    "activated": "Passage au profil : {{name}}",
+    "active": "Actif",
+    "cancel": "Annuler",
+    "chooseIcon": "Choisir une icône",
+    "create": "Nouveau profil",
+    "created": "Profil créé !",
+    "createDesc": "Sauvegarder la configuration actuelle comme nouveau profil",
+    "createTitle": "Créer un profil",
+    "defaultDesc": "Configuration par defaut de l'espace de travail",
+    "defaultName": "Par defaut",
+    "delete": "Supprimer",
+    "deleted": "Profil supprimé",
+    "descriptionPlaceholder": "Brève description (optionnel)",
+    "export": "Exporter",
+    "exported": "Profil copié dans le presse-papiers !",
+    "exportError": "Échec de l'export du profil",
+    "import": "Importer",
+    "importDesc": "Collez le JSON d'un profil pour l'importer",
+    "imported": "Profil importé !",
+    "importError": "Format de profil invalide",
+    "importPlaceholder": "Collez le JSON du profil ici...",
+    "importTitle": "Importer un profil",
+    "namePlaceholder": "Nom du profil",
+    "resetAll": "Réinitialiser les profils",
+    "resetDone": "Profils réinitialisés",
+    "save": "Enregistrer",
+    "switchProfile": "Changer de profil",
+    "title": "Profils d'espace de travail"
+  },
+  "progress": {
+    "widget": {
+      "empty": "Aucune donnée de progression",
+      "entitiesCreated": "Entités créées",
+      "identifications": "Identifications",
+      "modulesExplored": "Modules explorés",
+      "title": "Progression"
+    }
+  },
+  "quickshare": {
+    "active": "Actifs",
+    "addMore": "Ajouter",
+    "cancel": "Annuler",
+    "content": "Contenu",
+    "copyLink": "Copier le lien",
+    "copyText": "Copier",
+    "created": "Partage créé !",
+    "createdAt": "Créé le",
+    "createError": "Erreur lors de la création",
+    "createTitle": "Créer un partage",
+    "delete": "Supprimer",
+    "description": "Partage instantané de fichiers et données entre collaborateurs",
+    "downloadAll": "Tout télécharger (.zip)",
+    "downloadError": "Erreur de téléchargement",
+    "downloads": "Téléchargements",
+    "dropzone": "Glissez un fichier ici ou cliquez pour sélectionner",
+    "emptyDesc": "Créez votre premier partage pour commencer",
+    "emptyTitle": "Aucun partage",
+    "expiration": "Expiration",
+    "expiration1h": "1h",
+    "expiration24h": "24h",
+    "expiration7d": "7j",
+    "expirationNever": "Jamais",
+    "expired": "Expiré",
+    "expiresLabel": "Expiration",
+    "file": "fichier",
+    "fileInfo": "Informations du fichier",
+    "files": "fichiers",
+    "link": "Lien",
+    "linkCopied": "Lien copié !",
+    "maxDownloads": "Accès max",
+    "maxDownloadsLabel": "Accès max",
+    "maxSize": "50 Mo maximum",
+    "modeFile": "Fichier",
+    "modeText": "Texte",
+    "never": "Jamais",
+    "newShare": "Nouveau partage",
+    "public": {
+      "expiredDesc": "Ce partage a expiré et n'est plus disponible.",
+      "expiredTitle": "Partage expiré",
+      "expiresOn": "Expire le",
+      "limitDesc": "Ce partage a atteint son nombre maximum de consultations.",
+      "limitTitle": "Limite atteinte",
+      "loading": "Chargement du partage...",
+      "notFoundDesc": "Ce lien de partage est invalide ou le partage a été supprimé.",
+      "notFoundTitle": "Partage introuvable",
+      "poweredBy": "Partagé via OLS QuickShare",
+      "sharedBy": "Partagé par {{name}}"
+    },
+    "recipientHint": "Appuyez sur Entrée pour utiliser cet email",
+    "recipientLabel": "Envoyer à un contact (optionnel)",
+    "recipientPlaceholder": "Rechercher un contact ou saisir un email...",
+    "searchPlaceholder": "Rechercher un partage...",
+    "share": "Partager",
+    "shareCode": "Code de partage",
+    "sharedTo": "Partagé à",
+    "shareLink": "Lien de partage",
+    "textCopied": "Texte copié !",
+    "textPlaceholder": "Collez ou saisissez votre texte ici...",
+    "title": "QuickShare",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Titre (optionnel)",
+    "totalDownloads": "Téléchargements",
+    "tour": {
+      "detail": {
+        "description": "Cliquez sur un partage pour voir son contenu et copier le code.",
+        "title": "Détail du partage"
+      },
+      "table": {
+        "description": "Retrouvez tous vos partages de fichiers et textes.",
+        "title": "Vos partages"
+      }
+    },
+    "settings": {
+      "title": "QuickShare",
+      "defaultExpiration": "Expiration par défaut",
+      "expiration1h": "1 heure",
+      "expiration24h": "24 heures",
+      "expiration7d": "7 jours",
+      "expirationNever": "Jamais",
+      "defaultMaxDownloads": "Téléchargements max par défaut (0 = illimité)"
+    },
+    "type": "Type",
+    "typeFile": "Fichier",
+    "typeText": "Texte",
+    "untitled": "Sans titre",
+    "untitledText": "Texte sans titre",
+    "views": "Consultations"
+  },
+  "register": {
+    "feature1Desc": "Vos données sont protégées avec un chiffrement de niveau bancaire",
+    "feature1Title": "Sécurité maximale",
+    "feature2Desc": "Une plateforme rapide et fiable pour votre laboratoire",
+    "feature2Title": "Performance optimale",
+    "feature3Desc": "Travaillez en équipe avec des outils de partage avancés",
+    "feature3Title": "Collaboration facile",
+    "whyJoin": "Pourquoi nous rejoindre ?",
+    "whyJoinDesc": "Découvrez les avantages de notre plateforme"
+  },
+  "scientific": {
+    "allergens": "Allergènes",
+    "apiCode": "Code API",
+    "apiCodeLabel": "Code à 7 chiffres",
+    "applications": "Applications",
+    "biochemicalProfile": "Profil biochimique",
+    "category": "Catégorie",
+    "characteristics": "Caractéristiques",
+    "classification": "Classification",
+    "clinicalInfo": "Informations cliniques",
+    "cultureMedium": "Milieu de culture",
+    "degradableSubstrates": "Substrats dégradables",
+    "enzymes": "Enzymes",
+    "genomeSize": "Taille du génome",
+    "genomicData": "Données génomiques",
+    "gram": "Gram",
+    "gramNegative": "Gram -",
+    "gramPositive": "Gram +",
+    "gramVariable": "Gram ±",
+    "growthConditions": "Conditions de croissance",
+    "habitat": "Habitat",
+    "hemolysis": "Hémolyse",
+    "hemolysisAlpha": "α",
+    "hemolysisB": "β",
+    "hemolysisGamma": "γ",
+    "hosts": "Hôtes",
+    "identification": "Identification",
+    "maldiProfile": "Profil MALDI",
+    "maximalTemperature": "Température maximale",
+    "metabolism": "Métabolisme",
+    "mlst": "MLST",
+    "morphology": {
+      "bacilli": "Bacilles",
+      "cocci": "Coques",
+      "coccobacilli": "Coccobacilles",
+      "label": "Morphologie",
+      "spiral": "Spiralés"
+    },
+    "optimalTemperature": "Température optimale",
+    "pathogenicity": "Pathogénicité",
+    "plasmids": "Plasmides",
+    "reproduction": "Reproduction",
+    "resistanceGenes": "Gènes de résistance",
+    "secondaryMetabolites": "Métabolites secondaires",
+    "species": "Espèce",
+    "strain": "Souche",
+    "toxins": "Toxines",
+    "type": "Type",
+    "virulenceFactors": "Facteurs de virulence"
+  },
+  "settings": {
+    "darkMode": "Mode sombre",
+    "guest": "Invité",
+    "language": "Langue",
+    "languages": {
+      "english": "Anglais",
+      "french": "Français",
+      "short": {
+        "english": "EN",
+        "french": "FR"
+      }
+    },
+    "lightMode": "Mode clair",
+    "profile": "Profil",
+    "roles": {
+      "admin": "Administrateur",
+      "guest": "Invité",
+      "professional": "Professionnel",
+      "student": "Étudiant"
+    },
+    "title": "Paramètres",
+    "toggleTheme": "Changer le thème"
+  },
+  "settingsPage": {
+    "about": "À propos",
+    "activityBar": "Barre d'activité",
+    "activityBarDesc": "Configurer la barre d'icônes verticale sur le côté gauche",
+    "activityBarItems": "Éléments visibles",
+    "activityBarPosition": "Position",
+    "activityBarReset": "Barre d'activité réinitialisée",
+    "appearance": "Apparence",
+    "appearanceDesc": "Personnalisez l'apparence de l'application",
+    "bottomPanel": "Panneau inférieur",
+    "classicSidebarAtlas": "Atlas",
+    "classicSidebarLab": "Lab",
+    "classicSidebarSearch": "Rechercher...",
+    "classicSidebarSettings": "Réglages",
+    "bottomPanelDesc": "Configurer le panneau inférieur pour les journaux d'activité et les tâches",
+    "brightnessMode": "Luminosité",
+    "colorIntensity": "Intensité des couleurs",
+    "intensityVivid": "Coloré",
+    "intensitySubtle": "Subtil",
+    "intensityNeutral": "Neutre",
+    "density": "Densité d'affichage",
+    "densityComfortable": "Confortable",
+    "densityCompact": "Compact",
+    "densityNormal": "Normal",
+    "densitySizing": "Densité et tailles",
+    "densitySizingDesc": "Ajustez la densité visuelle et la taille de police selon votre usage",
+    "enableFocusMode": "Activer le mode Focus",
+    "enableFocusModeDesc": "Masquer tout le chrome de navigation (Ctrl+Shift+F)",
+    "enableNotifications": "Activer les notifications",
+    "enableNotificationsDesc": "Recevez des alertes pour les partages et activités",
+    "enableSplitView": "Activer la vue scindée",
+    "enableSplitViewDesc": "Scinder l'éditeur pour voir deux modules simultanément",
+    "colorFamily": "Thème de couleur",
+    "familyAmber": "Ambre",
+    "familyCoral": "Corail",
+    "familyJade": "Jade",
+    "familyOcean": "Océan",
+    "familyOdin": "Odin",
+    "familyRose": "Rose",
+    "familySlate": "Ardoise",
+    "familyForest": "Forêt",
+    "familyBerry": "Mûre",
+    "familySand": "Sable",
+    "focusMode": "Mode Focus",
+    "focusModeDesc": "Masquer la barre latérale et les onglets pour une expérience sans distraction",
+    "fontSize": "Taille de police",
+    "keybindings": "Raccourcis clavier",
+    "layoutClassic": "Classique",
+    "layoutClassicDesc": "Navigation simplifiée avec sidebar et contenu",
+    "layoutIde": "IDE",
+    "layoutIdeDesc": "Interface complète avec onglets, panneaux et vue scindée",
+    "layoutMode": "Mode de layout",
+    "layoutModeDesc": "Choisissez entre l'interface classique simplifiée et l'interface IDE complète",
+    "keybindingsCatLayout": "Disposition",
+    "keybindingsCatNavigation": "Navigation",
+    "keybindingsCatTabs": "Onglets",
+    "keybindingsClickToRecord": "Cliquez pour changer le raccourci",
+    "keybindingsConflict": "Conflit de raccourci détecté",
+    "keybindingsConflictDesc": "Deux actions ou plus partagent le même raccourci clavier.",
+    "keybindingsDesc": "Personnalisez les raccourcis clavier pour toutes les actions",
+    "keybindingsRecording": "Appuyez sur une touche...",
+    "keybindingsReset": "Tous les raccourcis ont été réinitialisés",
+    "keybindingsResetAll": "Réinitialiser tous les raccourcis",
+    "language": "Langue",
+    "languageDesc": "Choisissez la langue de l'interface",
+    "menuBarSection": "Barre de menu",
+    "menuBarSectionDesc": "Configurer la barre de menu de l'application en haut",
+    "modeDark": "Sombre",
+    "modeDim": "Atténué",
+    "modeLight": "Clair",
+    "modeOnyx": "Onyx",
+    "moduleSettings": "Paramètres des modules",
+    "navigation": "Navigation",
+    "navigationDesc": "Configurer les options d'affichage de la navigation",
+    "noResults": "Aucun réglage trouvé",
+    "noResultsDesc": "Essayez un autre terme de recherche",
+    "notifEmail": "Email",
+    "notifications": "Notifications",
+    "notificationsDesc": "Gérez vos préférences de notification",
+    "notificationsDisabled": "Notifications désactivées",
+    "notificationsEnabled": "Notifications activées",
+    "notifInApp": "In-app",
+    "notifLogin": "Connexions",
+    "notifLoginDesc": "Nouvelles connexions détectées sur votre compte",
+    "notifOrganization": "Organisations",
+    "notifOrganizationDesc": "Invitations et changements de rôle",
+    "notifSecurityNote": "Les emails de sécurité (mot de passe modifié, vérification email) sont toujours envoyés.",
+    "notifShare": "Partages",
+    "notifShareDesc": "Contenus partagés avec vous",
+    "notifSupport": "Tickets support",
+    "notifSupportDesc": "Réponses et mises à jour de vos tickets",
+    "panelAlignment": "Alignement du panneau",
+    "platform": "Plateforme",
+    "presetAmberDark": "Ambre Sombre",
+    "presetAmberDim": "Ambre Atténué",
+    "presetAmberLight": "Ambre Clair",
+    "presetAmberOnyx": "Ambre Onyx",
+    "presetCoralDark": "Corail Sombre",
+    "presetCoralDim": "Corail Atténué",
+    "presetCoralLight": "Corail Clair",
+    "presetCoralOnyx": "Corail Onyx",
+    "presetJadeDark": "Jade Sombre",
+    "presetJadeDim": "Jade Atténué",
+    "presetJadeLight": "Jade Clair",
+    "presetJadeOnyx": "Jade Onyx",
+    "presetOceanDark": "Océan Sombre",
+    "presetOceanDim": "Océan Atténué",
+    "presetOceanLight": "Océan Clair",
+    "presetOceanOnyx": "Océan Onyx",
+    "presetOdinDark": "Odin Sombre",
+    "presetOdinDim": "Odin Atténué",
+    "presetOdinLight": "Odin Clair",
+    "presetOdinOnyx": "Odin Onyx",
+    "presetRoseDark": "Rose Sombre",
+    "presetRoseDim": "Rose Atténué",
+    "presetRoseLight": "Rose Clair",
+    "presetRoseOnyx": "Rose Onyx",
+    "presetSlateDark": "Ardoise Sombre",
+    "presetSlateDim": "Ardoise Atténué",
+    "presetSlateLight": "Ardoise Clair",
+    "presetSlateOnyx": "Ardoise Onyx",
+    "presetForestDark": "Forêt Sombre",
+    "presetForestDim": "Forêt Atténué",
+    "presetForestLight": "Forêt Clair",
+    "presetForestOnyx": "Forêt Onyx",
+    "presetBerryDark": "Mûre Sombre",
+    "presetBerryDim": "Mûre Atténué",
+    "presetBerryLight": "Mûre Clair",
+    "presetBerryOnyx": "Mûre Onyx",
+    "presetSandDark": "Sable Sombre",
+    "presetSandDim": "Sable Atténué",
+    "presetSandLight": "Sable Clair",
+    "presetSandOnyx": "Sable Onyx",
+    "preview": "Aperçu",
+    "previewDescription": "Voici comment le texte apparaîtra dans l'application.",
+    "previewTitle": "Texte d'exemple à la taille actuelle",
+    "primarySidebarMode": "Barre latérale principale",
+    "primarySidebarModeDesc": "Barre latérale gauche (Explorateur, Notes, Notifications)",
+    "profiles": "Profils",
+    "profilesDesc": "Sauvegarder et restaurer des configurations complètes",
+    "resetDefaults": "Réinitialiser",
+    "searchPlaceholder": "Rechercher un réglage...",
+    "secondarySidebarMode": "Barre latérale secondaire",
+    "secondarySidebarModeDesc": "Barre latérale droite (panneau de détail)",
+    "sectionsVisible": "sections",
+    "showActivityBar": "Afficher la barre d'activité",
+    "showActivityBarDesc": "Afficher la barre d'icônes pour la navigation rapide (Ctrl+J)",
+    "showBottomPanel": "Afficher le panneau inférieur",
+    "showBottomPanelDesc": "Afficher le panneau inférieur avec le journal d'activité et les tâches",
+    "showBreadcrumbs": "Afficher le fil d'Ariane",
+    "showBreadcrumbsDesc": "Afficher un chemin de navigation contextuel en haut de chaque page",
+    "showMenuBar": "Afficher la barre de menu",
+    "showMenuBarDesc": "Afficher la barre de menu avec la navigation par plateforme et les contrôles de vue",
+    "showStatusBar": "Afficher la barre de statut",
+    "showStatusBarDesc": "Afficher une barre contextuelle avec les infos du module et le statut de connexion",
+    "sidebarMode": "Barres latérales",
+    "sidebarModeDesc": "Choisir comment chaque barre latérale est affichée",
+    "sidebarModeDock": "Ancrer",
+    "sidebarModeLabel": "Mode",
+    "sidebarModeOverlay": "Superposer",
+    "sidebarModePinned": "Épingler (sans fond)",
+    "sidebarSideLabel": "Côté",
+    "sidebarViewLabel": "Vue",
+    "splitView": "Vue scindée",
+    "splitViewDesc": "Voir plusieurs modules côte à côte",
+    "statusBar": "Barre de statut",
+    "statusBarDesc": "Configurer la barre d'informations contextuelles en bas",
+    "themePreset": "Thème prédéfini",
+    "title": "Paramètres",
+    "tour": {
+      "appearance": {
+        "description": "Choisissez un thème et personnalisez les couleurs d'accent.",
+        "title": "Apparence"
+      },
+      "density": {
+        "description": "Ajustez la taille de l'interface et la police selon vos préférences.",
+        "title": "Densité"
+      },
+      "keybindings": {
+        "description": "Consultez et personnalisez les raccourcis clavier.",
+        "title": "Raccourcis clavier"
+      },
+      "name": "Visite des paramètres",
+      "profiles": {
+        "description": "Sauvegardez et restaurez vos configurations de workspace.",
+        "title": "Profils"
+      }
+    },
+    "tours": "Visites guidées",
+    "toursCompleted_zero": "Aucune visite terminée",
+    "toursCompleted_one": "{{count}} visite terminée",
+    "toursCompleted_many": "",
+    "toursCompleted_other": "{{count}} visites terminées",
+    "toursDesc": "Gérer les visites guidées de la plateforme",
+    "toursReset": "Tout rejouer",
+    "version": "Version",
+    "whatsNew": "Nouveautés",
+    "data": "Mes données",
+    "dataExportDesc": "Téléchargez une copie de toutes vos données au format JSON.",
+    "dataExportButton": "Exporter mes données",
+    "dataExportSuccess": "Données exportées avec succès",
+    "dataExportError": "Erreur lors de l'export des données",
+    "dataDeleteDesc": "Supprimez définitivement votre compte et toutes les données associées.",
+    "dataDeleteButton": "Supprimer mon compte",
+    "dataDeleteWarning": "Cette action est irréversible. Toutes vos données, modules, paramètres et contenus seront définitivement supprimés. Cette opération ne peut pas être annulée.",
+    "dataDeleteConfirmLabel": "Saisissez votre adresse email pour confirmer",
+    "dataDeleteEmailPlaceholder": "votre@email.com",
+    "dataDeleteConfirm": "Confirmer la suppression",
+    "dataDeleteSuccess": "Compte supprimé avec succès",
+    "dataDeleteError": "Erreur lors de la suppression du compte. Vérifiez que l'email saisi est correct."
+  },
+  "shell": {
+    "errorBoundary": {
+      "description": "",
+      "reload": "",
+      "title": ""
+    },
+    "statusBar": {
+      "online": "{{count}} en ligne",
+      "online_one": "",
+      "online_many": "",
+      "online_other": ""
+    }
+  },
+  "shortcuts": {
+    "keys": {
+      "commandPalette": "Ctrl+K",
+      "restoreTab": "Ctrl+Shift+T"
+    }
+  },
+  "statusBar": {
+    "filtered_one": "{{count}} filtré",
+    "filtered_many": "{{count}} filtrés",
+    "filtered_other": "{{count}} filtrés",
+    "hide": "Masquer la barre de statut",
+    "items_one": "{{count}} élément",
+    "items_many": "{{count}} éléments",
+    "items_other": "{{count}} éléments",
+    "newNotifications_one": "{{count}} notification",
+    "newNotifications_many": "{{count}} notifications",
+    "newNotifications_other": "{{count}} notifications",
+    "newNotificationsTooltip_one": "{{count}} nouvelle notification",
+    "newNotificationsTooltip_many": "{{count}} nouvelles notifications",
+    "newNotificationsTooltip_other": "{{count}} nouvelles notifications",
+    "offline": "Hors ligne",
+    "offlineLabel": "Hors ligne",
+    "offlineTooltip": "Pas de connexion réseau — les données peuvent être obsolètes",
+    "online": "En ligne",
+    "onlineTooltip": "Connecté au serveur",
+    "pending_one": "{{count}} en attente",
+    "pending_many": "{{count}} en attente",
+    "pending_other": "{{count}} en attente",
+    "selected_one": "{{count}} sélectionné",
+    "selected_many": "{{count}} sélectionnés",
+    "selected_other": "{{count}} sélectionnés",
+    "show": "Afficher la barre de statut",
+    "sort": "Tri : {{field}}",
+    "version": "v{{version}}",
+    "versionTooltip": "OLS v{{version}} — Version beta",
+    "view": "Vue : {{mode}}"
+  },
+  "support": {
+    "cancel": "Annuler",
+    "categories": {
+      "ACCOUNT": "Compte",
+      "BUG": "Bug",
+      "FEATURE_REQUEST": "Suggestion",
+      "OTHER": "Autre",
+      "QUESTION": "Question"
+    },
+    "category": "Catégorie",
+    "conversation": "Conversation",
+    "created": "Ticket créé !",
+    "createdAt": "Créé le",
+    "createTitle": "Nouveau ticket",
+    "delete": "Supprimer",
+    "deleted": "Ticket supprimé",
+    "description": "Description",
+    "descriptionPlaceholder": "Décrivez votre problème en détail...",
+    "edit": "Modifier",
+    "emptyDesc": "Créez un ticket si vous avez besoin d'aide",
+    "emptyTitle": "Aucun ticket",
+    "messageError": "Erreur lors de l'envoi du message",
+    "messagePlaceholder": "Écrivez votre message...",
+    "messageSent": "Message envoyé !",
+    "newTicket": "Nouveau ticket",
+    "noMessages": "Aucun message pour le moment. Notre équipe traitera votre demande prochainement.",
+    "priorities": {
+      "CRITICAL": "Critique",
+      "HIGH": "Haute",
+      "LOW": "Basse",
+      "MEDIUM": "Moyenne"
+    },
+    "save": "Enregistrer",
+    "saveError": "Erreur lors de l'enregistrement",
+    "searchPlaceholder": "Rechercher des tickets...",
+    "stats": {
+      "inProgress": "En cours",
+      "open": "Ouverts",
+      "resolved": "Résolus",
+      "total": "Total"
+    },
+    "status": "Statut",
+    "statuses": {
+      "CLOSED": "Fermé",
+      "IN_PROGRESS": "En cours",
+      "OPEN": "Ouvert",
+      "RESOLVED": "Résolu"
+    },
+    "subject": "Sujet",
+    "subjectPlaceholder": "Décrivez brièvement votre problème",
+    "submit": "Envoyer",
+    "title": "Support",
+    "tour": {
+      "detail": {
+        "description": "Cliquez sur un ticket pour voir l'historique des échanges.",
+        "title": "Conversation"
+      },
+      "filters": {
+        "description": "Filtrez par statut ou priorité pour retrouver un ticket.",
+        "title": "Filtres"
+      },
+      "table": {
+        "description": "Consultez vos tickets de support et leur statut.",
+        "title": "Vos tickets"
+      }
+    },
+    "updated": "Ticket mis à jour !",
+    "updatedAt": "Modifié le",
+    "validation": {
+      "descriptionRequired": "La description est requise",
+      "subjectRequired": "Le sujet est requis"
+    }
+  },
+  "studyCollections": {
+    "addedAt": "Ajouté",
+    "cancel": "Annuler",
+    "create": "Créer",
+    "created": "Collection créée !",
+    "createTitle": "Créer une collection",
+    "deleted": "Collection supprimée",
+    "description": "Playlists d'étude cross-modules",
+    "descriptionPlaceholder": "Décrivez cette collection...",
+    "edit": "Modifier",
+    "editTitle": "Modifier la collection",
+    "emptyDesc": "Créez votre première collection d'étude",
+    "emptyTitle": "Aucune collection",
+    "itemCount": "{{count}} éléments",
+    "itemRemoved": "Élément retiré",
+    "items": "Éléments",
+    "module": "Module",
+    "name": "Nom",
+    "namePlaceholder": "Nom de la collection...",
+    "newCollection": "Nouvelle collection",
+    "noItems": "Aucun élément dans cette collection",
+    "notes": "Notes",
+    "removeItem": "Retirer l'élément",
+    "save": "Enregistrer",
+    "saveError": "Erreur lors de l'enregistrement",
+    "searchPlaceholder": "Rechercher des collections...",
+    "tips": {
+      "intro": {
+        "title": "Collections d'étude",
+        "description": "Créez des playlists d'étude pour regrouper des entités de différents modules."
+      }
+    },
+    "title": "Collections d'étude",
+    "updated": "Collection mise à jour !",
+    "updatedAt": "Modifié le",
+    "validation": {
+      "nameRequired": "Le nom est requis"
+    }
+  },
+  "tabs": {
+    "closeAll": "Fermer tout",
+    "closeOthers": "Fermer les autres",
+    "closeTab": "Fermer l'onglet",
+    "closeToRight": "Fermer à droite",
+    "copyPath": "Copier le lien",
+    "groups": {
+      "color": "Couleur",
+      "defaultName": "Groupe",
+      "deleteGroup": "Supprimer le groupe",
+      "newGroup": "Nouveau groupe",
+      "removeFromGroup": "Retirer du groupe",
+      "title": "Groupe d'onglets"
+    },
+    "hideTabBar": "Masquer la barre d'onglets",
+    "moveToOtherGroup": "Déplacer vers l'autre groupe",
+    "noTabs": "Aucun onglet ouvert",
+    "openTabs": "Onglets ouverts",
+    "pin": "Épingler l'onglet",
+    "restoreTab": "Restaurer l'onglet fermé",
+    "title": "tabs",
+    "unpin": "Désépingler l'onglet"
+  },
+  "tour": {
+    "atlas": {
+      "modules": {
+        "description": "Chaque carte représente un module. Cliquez pour l'ouvrir et commencer à travailler.",
+        "title": "Modules disponibles"
+      },
+      "name": "Visite de Munin Atlas",
+      "welcome": {
+        "description": "Atlas regroupe les outils d'identification scientifique : bactériologie, mycologie et plus encore.",
+        "title": "Munin Atlas"
+      }
+    },
+    "buttons": {
+      "finish": "Terminer",
+      "next": "Suivant",
+      "previous": "Précédent",
+      "skip": "Passer"
+    },
+    "classic": {
+      "commandPalette": {
+        "description": "Appuyez sur Ctrl+K pour rechercher des modules, lancer des commandes et naviguer rapidement.",
+        "title": "Palette de commandes"
+      },
+      "name": "Visite de l'interface classique",
+      "search": {
+        "description": "Retrouvez rapidement n'importe quel module ou action depuis la barre de recherche.",
+        "title": "Recherche rapide"
+      },
+      "sidebar": {
+        "description": "Naviguez entre vos modules Atlas et Lab depuis cette barre latérale. Cliquez sur le logo pour revenir à l'accueil.",
+        "title": "Barre de navigation"
+      },
+      "welcome": {
+        "description": "Découvrez l'interface simplifiée d'Odin La Science. Tout est accessible depuis la barre latérale.",
+        "title": "Bienvenue !"
+      }
+    },
+    "global": {
+      "activityBar": {
+        "description": "Accédez rapidement à vos modules favoris et panneaux d'activité.",
+        "title": "Barre d'activité"
+      },
+      "commandPalette": {
+        "description": "Appuyez sur Ctrl+K pour rechercher des modules, commandes et éléments depuis n'importe où.",
+        "title": "Palette de commandes"
+      },
+      "menuBar": {
+        "description": "Naviguez entre les plateformes Munin Atlas et Hugin Lab, et accédez à l'aide.",
+        "title": "Barre de menu"
+      },
+      "name": "Visite de l'interface",
+      "statusBar": {
+        "description": "Consultez les informations contextuelles du module actif.",
+        "title": "Barre de statut"
+      },
+      "tabBar": {
+        "description": "Travaillez sur plusieurs modules en parallèle grâce aux onglets.",
+        "title": "Barre d'onglets"
+      },
+      "welcome": {
+        "description": "Découvrez les outils de navigation disponibles sur chaque page de module.",
+        "title": "Bienvenue dans votre espace de travail !"
+      }
+    },
+    "home": {
+      "customize": {
+        "description": "Cliquez sur Personnaliser pour réorganiser, redimensionner et masquer les widgets par glisser-déposer.",
+        "title": "Personnalisation"
+      },
+      "dashboard": {
+        "description": "Vos widgets affichent les informations clés de chaque module.",
+        "title": "Widgets"
+      },
+      "name": "Visite de l'accueil",
+      "platforms": {
+        "description": "Munin Atlas regroupe les outils d'identification scientifique. Hugin Lab regroupe vos outils de laboratoire. Cliquez pour explorer.",
+        "title": "Plateformes"
+      },
+      "welcome": {
+        "description": "Voici votre tableau de bord personnel. Découvrons-le ensemble.",
+        "title": "Bienvenue sur Odin La Science !"
+      }
+    },
+    "lab": {
+      "modules": {
+        "description": "Chaque carte représente un outil. Cliquez pour l'ouvrir dans votre espace de travail.",
+        "title": "Modules disponibles"
+      },
+      "name": "Visite de Hugin Lab",
+      "welcome": {
+        "description": "Lab regroupe vos outils de laboratoire : notes, contacts, partage de fichiers, support et plus.",
+        "title": "Hugin Lab"
+      }
+    },
+    "replay": "Visite guidée",
+    "replayModule": "Relancer la visite du module",
+    "workspace": {
+      "actions": {
+        "description": "Utilisez la palette de commandes ou retournez à l'accueil pour choisir un module.",
+        "title": "Ouvrir un module"
+      },
+      "activityBar": {
+        "description": "Épinglez vos modules favoris ici pour y accéder en un clic.",
+        "title": "Barre d'activité"
+      },
+      "menuBar": {
+        "description": "Vous pouvez aussi naviguer via le menu pour accéder aux plateformes et modules.",
+        "title": "Barre de menu"
+      },
+      "name": "Visite du workspace"
+    }
+  },
+  "whatsNew": {
+    "body": "",
+    "description": "Voici les nouveautés de cette version",
+    "dismiss": "Compris",
+    "features": {
+      "annotations": "Annotations sur les entités",
+      "batchDelete": "Suppression en batch",
+      "comparison": "Comparaison améliorée (presse-papiers)",
+      "favorites": "Favoris",
+      "offlineMode": "Mode hors-ligne",
+      "pagination": "Pagination dans les collections",
+      "studyCollections": "Collections d'étude cross-modules",
+      "tips": "Tips contextuels par module"
+    },
+    "title": "Nouveautés de la v{{version}}",
+    "viewAgain": "Nouveautés"
+  },
+  "workspace": {
+    "addPanel": "Ajouter un panneau",
+    "collapse": "Réduire la barre latérale",
+    "expand": "Développer la barre latérale",
+    "hideSidebar": "Masquer le panneau",
+    "hideTabs": "Masquer les onglets",
+    "left": "← Gauche",
+    "moveToLeft": "Déplacer à gauche",
+    "moveToRight": "Déplacer à droite",
+    "openTabs": "Onglets ouverts",
+    "panels": "Panneaux",
+    "pin": "Épingler",
+    "pinned": "Épinglés",
+    "primarySidebar": "Primary",
+    "recent": "Récents",
+    "resume": "Reprendre mon espace de travail",
+    "right": "Droite →",
+    "secondarySidebar": "Secondary",
+    "showTabs": "Afficher les onglets",
+    "sidebarLayoutStacked": "Vue empilée",
+    "sidebarLayoutTabs": "Vue onglets",
+    "unpin": "Désépingler"
+  },
+  "workspacePage": {
+    "description": "Ouvrez un module depuis la barre latérale ou la palette de commandes.",
+    "goHome": "Accueil",
+    "hint": "Appuyez sur Ctrl+K pour ouvrir la palette de commandes",
+    "openPalette": "Ouvrir un module",
+    "title": "Espace de travail vide"
+  }
+}

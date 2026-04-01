@@ -1,0 +1,150 @@
+@reference "../../index.css";
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TOUR THEME — Custom driver.js styles matching OLS dark glassmorphism
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Overlay — subtle dark backdrop (no blur — highlighted elements must stay sharp) */
+.driver-overlay {
+  background-color: hsl(var(--background) / 0.6) !important;
+}
+
+/* ─── Popover container — uses shared glass-overlay tier ─── */
+.ols-tour-popover {
+  @apply glass-overlay;
+  border: 1px solid hsl(var(--border) / 0.5) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 25px 50px -12px hsl(0 0% 0% / 0.25) !important;
+  color: hsl(var(--foreground)) !important;
+  max-width: 360px !important;
+  min-width: 280px !important;
+  padding: 0 !important;
+}
+
+/* ─── Arrow — match popover background via border trick ─── */
+.ols-tour-popover .driver-popover-arrow {
+  border: 5px solid transparent !important;
+}
+
+.ols-tour-popover .driver-popover-arrow-side-top {
+  border-top-color: hsl(var(--card)) !important;
+}
+
+.ols-tour-popover .driver-popover-arrow-side-bottom {
+  border-bottom-color: hsl(var(--card)) !important;
+}
+
+.ols-tour-popover .driver-popover-arrow-side-left {
+  border-left-color: hsl(var(--card)) !important;
+}
+
+.ols-tour-popover .driver-popover-arrow-side-right {
+  border-right-color: hsl(var(--card)) !important;
+}
+
+/* ─── Title ─── */
+.ols-tour-popover .driver-popover-title {
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  color: hsl(var(--foreground)) !important;
+  padding: 1rem 1.25rem 0 !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+/* ─── Description ─── */
+.ols-tour-popover .driver-popover-description {
+  font-size: 0.8125rem !important;
+  color: hsl(var(--muted-foreground)) !important;
+  padding: 0.5rem 1.25rem !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* ─── Footer ─── */
+.ols-tour-popover .driver-popover-footer {
+  padding: 0.75rem 1.25rem 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+/* Progress text */
+.ols-tour-popover .driver-popover-progress-text {
+  font-size: 0.6875rem !important;
+  color: hsl(var(--muted-foreground) / 0.5) !important;
+  margin-right: auto !important;
+}
+
+/* ─── Navigation buttons — shared base ─── */
+.ols-tour-popover .driver-popover-navigation-btns {
+  display: flex !important;
+  gap: 0.375rem !important;
+  margin-left: auto !important;
+}
+
+.ols-tour-popover .driver-popover-prev-btn,
+.ols-tour-popover .driver-popover-next-btn {
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  border-radius: 0.375rem !important;
+  padding: 0.375rem 0.75rem !important;
+  cursor: pointer !important;
+  transition: background-color 200ms, color 200ms, opacity 200ms !important;
+  line-height: 1.2 !important;
+  border: none !important;
+  text-shadow: none !important;
+}
+
+/* Previous button — ghost style */
+.ols-tour-popover .driver-popover-prev-btn {
+  background: transparent !important;
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+.ols-tour-popover .driver-popover-prev-btn:hover {
+  background: hsl(var(--accent)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Next / Finish button — primary style */
+.ols-tour-popover .driver-popover-next-btn {
+  background: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+.ols-tour-popover .driver-popover-next-btn:hover {
+  opacity: 0.9 !important;
+}
+
+/* ─── Close button ─── */
+.ols-tour-popover .driver-popover-close-btn {
+  all: unset !important;
+  position: absolute !important;
+  top: 0.75rem !important;
+  right: 0.75rem !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  cursor: pointer !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  color: hsl(var(--muted-foreground)) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 0.25rem !important;
+  transition: background-color 200ms, color 200ms !important;
+  z-index: 1 !important;
+}
+
+.ols-tour-popover .driver-popover-close-btn:hover {
+  background: hsl(var(--accent)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+/* ─── Highlighted element — subtle ring ─── */
+.driver-active-element {
+  outline: 2px solid hsl(var(--primary) / 0.5) !important;
+  outline-offset: 4px !important;
+  border-radius: 0.5rem !important;
+}

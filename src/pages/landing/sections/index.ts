@@ -1,0 +1,10 @@
+export { HeroSection } from './hero-section';
+export { TrustSection } from './trust-section';
+export { FeaturesSection } from './features-section';
+export { SecuritySection } from './security-section';
+export { PlatformsSection } from './platforms-section';
+export { ToolsSection } from './tools-section';
+export { WhySection } from './why-section';
+export { ModulesSection } from './modules-section';
+export { PricingSection } from './pricing-section';
+export { CtaSection } from './cta-section';

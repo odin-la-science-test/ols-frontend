@@ -1,0 +1,95 @@
+name: Build & Deploy Frontend
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: odin-la-science/ols-frontend
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/${{ env.IMAGE_NAME }}:latest
+            ghcr.io/${{ env.IMAGE_NAME }}:${{ github.sha }}
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    permissions:
+      packages: read
+
+    steps:
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ENV_POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+          ENV_POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          ENV_POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+          ENV_MINIO_ROOT_USER: ${{ secrets.MINIO_ROOT_USER }}
+          ENV_MINIO_ROOT_PASSWORD: ${{ secrets.MINIO_ROOT_PASSWORD }}
+          ENV_JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          ENV_APP_PORT: ${{ secrets.APP_PORT }}
+          ENV_CORS_ALLOWED_ORIGINS: ${{ secrets.CORS_ALLOWED_ORIGINS }}
+          ENV_FRONTEND_URL: ${{ secrets.FRONTEND_URL }}
+          ENV_MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
+          ENV_MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+          ENV_GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          ENV_GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          ENV_GOOGLE_REDIRECT_URI: ${{ secrets.GOOGLE_REDIRECT_URI }}
+          ENV_REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
+          ENV_CAS_SERVICE_URL: ${{ secrets.CAS_SERVICE_URL }}
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          envs: GH_TOKEN,ENV_POSTGRES_DB,ENV_POSTGRES_USER,ENV_POSTGRES_PASSWORD,ENV_MINIO_ROOT_USER,ENV_MINIO_ROOT_PASSWORD,ENV_REDIS_PASSWORD,ENV_JWT_SECRET,ENV_APP_PORT,ENV_CORS_ALLOWED_ORIGINS,ENV_FRONTEND_URL,ENV_MAIL_USERNAME,ENV_MAIL_PASSWORD,ENV_GOOGLE_CLIENT_ID,ENV_GOOGLE_CLIENT_SECRET,ENV_GOOGLE_REDIRECT_URI,ENV_CAS_SERVICE_URL
+          script: |
+            cat > /opt/ols/.env <<ENVEOF
+            POSTGRES_DB=${ENV_POSTGRES_DB}
+            POSTGRES_USER=${ENV_POSTGRES_USER}
+            POSTGRES_PASSWORD=${ENV_POSTGRES_PASSWORD}
+            REDIS_PASSWORD=${ENV_REDIS_PASSWORD}
+            MINIO_ROOT_USER=${ENV_MINIO_ROOT_USER}
+            MINIO_ROOT_PASSWORD=${ENV_MINIO_ROOT_PASSWORD}
+            JWT_SECRET=${ENV_JWT_SECRET}
+            APP_PORT=${ENV_APP_PORT}
+            CORS_ALLOWED_ORIGINS=${ENV_CORS_ALLOWED_ORIGINS}
+            FRONTEND_URL=${ENV_FRONTEND_URL}
+            MAIL_USERNAME=${ENV_MAIL_USERNAME}
+            MAIL_PASSWORD=${ENV_MAIL_PASSWORD}
+            GOOGLE_CLIENT_ID=${ENV_GOOGLE_CLIENT_ID}
+            GOOGLE_CLIENT_SECRET=${ENV_GOOGLE_CLIENT_SECRET}
+            GOOGLE_REDIRECT_URI=${ENV_GOOGLE_REDIRECT_URI}
+            CAS_SERVICE_URL=${ENV_CAS_SERVICE_URL}
+            ENVEOF
+            sed -i 's/^            //' /opt/ols/.env
+            echo "$GH_TOKEN" | docker login ghcr.io -u github-actions --password-stdin
+            cd /opt/ols
+            docker compose pull frontend
+            docker compose up -d
+            docker image prune -f
