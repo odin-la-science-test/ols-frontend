@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -33,13 +33,25 @@ export function LandingNav() {
   const { theme, toggleTheme, isDesignEnabled, setDesignEnabled, isParticlesEnabled, setParticlesEnabled } = useThemeStore();
   const { language, changeLanguage } = useLanguageStore();
 
+  const [isScrolledPastHero, setIsScrolledPastHero] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolledPastHero(window.scrollY > window.innerHeight * 0.75);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const showFloating = (isDesignEnabled || isParticlesEnabled) && !isScrolledPastHero;
+
   return (
     <nav 
       className={cn(
         "fixed left-0 right-0 z-50 transition-all duration-500",
-        (isDesignEnabled || isParticlesEnabled)
+        showFloating
           ? "top-[30px] mx-4 sm:mx-6 lg:mx-8 bg-background/80 backdrop-blur-xl border border-border/30 rounded-2xl shadow-sm" 
-          : "top-0 bg-background/95 backdrop-blur-md border-b border-border/50"
+          : "top-[-10px] bg-background/95 backdrop-blur-md border-b border-border/50"
       )}
     >
       <div className="mx-auto max-w-7xl flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
