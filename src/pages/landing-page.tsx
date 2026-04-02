@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 import {
   HeroSection,
-  TrustSection,
+  ManifestoSection,
   FeaturesSection,
   SecuritySection,
   PlatformsSection,
@@ -11,6 +11,7 @@ import {
   WhySection,
   ModulesSection,
   PricingSection,
+  TrustSection,
   CtaSection,
 } from './landing/sections';
 import { LandingNav, LandingFooter } from './landing/components';
@@ -55,13 +56,14 @@ export function LandingPage() {
 
       <main className="flex-1">
         <HeroSection />
-        <TrustSection />
+        <ManifestoSection />
         <FeaturesSection />
         <SecuritySection />
         <PlatformsSection />
         <ToolsSection />
         <WhySection />
         <ModulesSection />
+        <TrustSection />
         <PricingSection />
         <CtaSection />
       </main>

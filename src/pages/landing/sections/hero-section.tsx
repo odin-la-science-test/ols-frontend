@@ -8,8 +8,8 @@ import { useThemeStore } from '@/stores';
 import { AnimatePresence } from 'framer-motion';
 
 const STATS = [
-  { target: 10, suffix: '+', labelKey: 'landing.hero.stats.modules' },
   { target: 6, suffix: '', labelKey: 'landing.hero.stats.security' },
+  { target: 10, suffix: '+', labelKey: 'landing.hero.stats.modules' },
   { target: 100, suffix: '%', labelKey: 'landing.hero.stats.european' },
 ];
 

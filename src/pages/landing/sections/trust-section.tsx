@@ -17,12 +17,20 @@ export function TrustSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-2xl font-bold text-muted-foreground opacity-60 hover:opacity-100 transition-opacity">
-            {t('landing.trust.partners.bioEcoAgro')}
-          </span>
-          <span className="text-2xl font-bold text-muted-foreground opacity-60 hover:opacity-100 transition-opacity">
-            {t('landing.trust.partners.univLille')}
-          </span>
+          <div className="group relative flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+            <img 
+              src="/images/partners/bioecoagro.png" 
+              alt={t('landing.trust.partners.bioEcoAgro')}
+              className="h-16 md:h-20 w-auto object-contain"
+            />
+          </div>
+          <div className="group relative flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+            <img 
+              src="/images/partners/univ-lille.jpg" 
+              alt={t('landing.trust.partners.univLille')}
+              className="h-16 md:h-20 w-auto object-contain"
+            />
+          </div>
         </motion.div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 export { HeroSection } from './hero-section';
+export { ManifestoSection } from './manifesto-section';
 export { TrustSection } from './trust-section';
 export { FeaturesSection } from './features-section';
 export { SecuritySection } from './security-section';

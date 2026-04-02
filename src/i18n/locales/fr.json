@@ -229,7 +229,7 @@
     "sessionLimitTitle": "Limite de sessions atteinte",
     "signIn": "Connexion",
     "signUp": "S'inscrire",
-    "discoverPlatform": "Decouvrir la plateforme",
+    "discoverPlatform": "Découvrir la plateforme",
     "termsOfService": "Conditions d'utilisation",
     "verifyEmailBanner": "Veuillez vérifier votre adresse email.",
     "verifyEmailBannerAction": "Renvoyer l'email",
@@ -287,28 +287,28 @@
   },
   "beta": {
     "badge": "BETA",
-    "bannerDescription": "OLS est en cours de developpement actif. Certaines fonctionnalites peuvent evoluer et des bugs peuvent survenir. Vos retours sont precieux pour ameliorer la plateforme.",
+    "bannerDescription": "OLS est en cours de développement actif. Certaines fonctionnalités peuvent évoluer et des bugs peuvent survenir. Vos retours sont précieux pour améliorer la plateforme.",
     "bannerDismiss": "Compris",
-    "bannerTitle": "Bienvenue dans la version beta",
-    "conditionsData": "Protection des donnees",
-    "conditionsDataDesc": "Vos donnees sont stockees de maniere securisee. Des sauvegardes regulieres sont effectuees. En cas de probleme, contactez notre support.",
+    "bannerTitle": "Bienvenue dans la version bêta",
+    "conditionsData": "Protection des données",
+    "conditionsDataDesc": "Vos données sont stockées de manière sécurisée. Des sauvegardes régulières sont effectuées. En cas de problème, contactez notre support.",
     "conditionsFeedback": "Retours et support",
-    "conditionsFeedbackDesc": "Utilisez le bouton de feedback integre a l'application ou contactez notre equipe de support pour toute question ou probleme.",
+    "conditionsFeedbackDesc": "Utilisez le bouton de feedback intégré à l'application ou contactez notre équipe de support pour toute question ou problème.",
     "conditionsIncluded": "Ce qui est inclus",
-    "conditionsIncludedDesc": "Acces a l'ensemble des modules disponibles sur les plateformes Munin Atlas et Hugin Lab, incluant la gestion des echantillons, l'identification microbiologique, la messagerie et les outils collaboratifs.",
-    "conditionsInProgress": "En cours de developpement",
-    "conditionsInProgressDesc": "De nouvelles fonctionnalites sont ajoutees regulierement. Consultez les mises a jour pour decouvrir les nouveautes.",
+    "conditionsIncludedDesc": "Accès à l'ensemble des modules disponibles sur les plateformes Munin Atlas et Hugin Lab, incluant la gestion des échantillons, l'identification microbiologique, la messagerie et les outils collaboratifs.",
+    "conditionsInProgress": "En cours de développement",
+    "conditionsInProgressDesc": "De nouvelles fonctionnalités sont ajoutées régulièrement. Consultez les mises à jour pour découvrir les nouveautés.",
     "conditionsLimitations": "Limitations connues",
-    "conditionsLimitationsDesc": "Certaines fonctionnalites sont en cours d'amelioration. Des bugs occasionnels peuvent survenir. Les performances sont optimisees progressivement.",
-    "conditionsLink": "Voir les conditions de la beta",
-    "conditionsSla": "Disponibilite",
-    "conditionsSlaDesc": "Nous visons une disponibilite maximale de la plateforme. En cas de maintenance planifiee, vous serez prevenu a l'avance.",
-    "conditionsTitle": "Conditions de la version beta",
+    "conditionsLimitationsDesc": "Certaines fonctionnalités sont en cours d'amélioration. Des bugs occasionnels peuvent survenir. Les performances sont optimisées progressivement.",
+    "conditionsLink": "Voir les conditions de la bêta",
+    "conditionsSla": "Disponibilité",
+    "conditionsSlaDesc": "Nous visons une disponibilité maximale de la plateforme. En cas de maintenance planifiée, vous serez prévenu à l'avance.",
+    "conditionsTitle": "Conditions de la version bêta",
     "feedbackButton": "Feedback",
     "feedbackCancel": "Annuler",
-    "feedbackDescription": "Aidez-nous a ameliorer OLS en partageant vos retours, suggestions ou bugs rencontres.",
+    "feedbackDescription": "Aidez-nous à améliorer OLS en partageant vos retours, suggestions ou bugs rencontrés.",
     "feedbackEmail": "Votre email (optionnel)",
-    "feedbackPlaceholder": "Decrivez votre retour, suggestion ou le probleme rencontre...",
+    "feedbackPlaceholder": "Décrivez votre retour, suggestion ou le problème rencontré...",
     "feedbackSend": "Envoyer",
     "feedbackSuccess": "Merci pour votre retour !",
     "feedbackTitle": "Donner un retour",
@@ -767,7 +767,7 @@
     "nav": {
       "tools": "Produit",
       "features": "Avantages",
-      "security": "Securite",
+      "security": "Sécurité",
       "pricing": "Tarifs",
       "login": "Connexion",
       "register": "S'inscrire",
@@ -776,56 +776,75 @@
       "menuClose": "Fermer le menu"
     },
     "hero": {
-      "title": "La science a portee de main",
-      "titleStart": "La science a",
+      "title": "La science à portée de main",
+      "titleStart": "La science à",
       "flip": {
-        "hand": "portee de main",
+        "hand": "portée de main",
         "click": "clic",
         "all": "tous"
       },
-      "description": "Revolutionnez votre recherche scientifique avec une plateforme integree. Odin centralise vos donnees, optimise vos experiences et facilite la collaboration mondiale.",
+      "description": "Révolutionnez votre recherche scientifique avec une plateforme intégrée. Odin centralise vos données, optimise vos expériences et facilite la collaboration mondiale.",
       "cta": "S'inscrire",
       "tryGuest": "ou explorer librement, sans inscription",
       "stats": {
-        "modules": "Modules",
+        "modules": "Produit",
         "modulesValue": 10,
-        "security": "Protections",
+        "security": "Sécurité",
         "securityValue": 6,
-        "european": "Europeen",
+        "european": "Européen",
         "europeanValue": 100
       },
       "tagline": "Innover pour demain",
-      "webAccess": "Acces Web",
-      "demo": "Voir la demo"
+      "webAccess": "Accès Web",
+      "demo": "Voir la démo"
     },
-    "trust": {
+    "manifesto": {
+        "title": "L'origine de notre projet",
+        "who": {
+          "title": "Projet Étudiant",
+          "description": "Nous sommes des étudiants en BUT Génie Biologique et BUT Informatique, associés pour mettre en commun nos compétences et répondre aux vrais besoins du terrain."
+        },
+        "problem": {
+          "title": "Ce que nous créons",
+          "description": "OLS fournit un socle numérique moderne (Hugin Lab & Munin Atlas) pour centraliser les opérations et organiser le savoir scientifique en un seul lieu."
+        },
+        "why": {
+          "title": "Notre Mission",
+          "description": "Remplacer la multitude d'outils isolés et incompatibles par une solution fluide, conçue pour simplifier la vie des laboratoires et des équipes médicales."
+        },
+        "origin": {
+          "title": "Origine d'Odin La Science",
+          "fullText": "Odin La Science (OLS) est né d’un constat simple : les laboratoires, instituts et équipes médicales utilisent aujourd’hui une multitude d’outils isolés, souvent incompatibles. Les données sont dispersées entre Excel, LIMS, PDF ou logiciels de suivi de cultures, et les mêmes informations — identifiants patients, résultats expérimentaux, protocoles — sont souvent saisies plusieurs fois. Cette fragmentation entraîne pertes de temps, risques d’erreurs et complexité dans la gestion quotidienne.\n\nDe plus, ces logiciels ne communiquent pas entre eux : un suivi de cultures cellulaires peut ne pas être synchronisé avec le LIMS, et les données issues des expériences sont difficilement intégrables dans les bases de connaissances ou les revues scientifiques. L’accès au savoir est donc limité et chronophage, et la traçabilité des données sensibles reste complexe, ce qui pose des problèmes de sécurité et de conformité. Pour répondre à ces défis, OLS propose une plateforme unique et intégrée, accessible sur web et mobile, combinant gestion opérationnelle et accès au savoir scientifique.\n\n• Hugin Lab centralise toutes les opérations quotidiennes : messagerie interne, suivi patients et cultures, emploi du temps, documentation et revue scientifique. Il élimine les doublons, simplifie les workflows et facilite la collaboration.\n\n• Munin Atlas organise le savoir scientifique par discipline (bactériologie, immunologie, hématologie, génétique, etc.) et permet un accès rapide et structuré à l’information. Les équipes peuvent ainsi exploiter des données fiables et pertinentes pour orienter leurs décisions et renforcer leurs recherches.\n\nEn centralisant opérations et connaissances, OLS résout les principaux problèmes des laboratoires : fragmentation des données, incompatibilité des outils, accès limité au savoir et difficultés de traçabilité. Il offre un socle numérique moderne, sûr et collaboratif, permettant aux équipes scientifiques de se concentrer sur l’innovation et la recherche plutôt que sur la gestion fastidieuse de logiciels disparates."
+        }
+      },
+      "trust": {
       "title": "Ils nous font confiance",
       "partners": {
         "bioEcoAgro": "BioEcoAgro",
-        "univLille": "Universite de Lille"
+        "univLille": "Université de Lille"
       }
     },
     "features": {
-      "title": "Une plateforme web pensee pour la performance",
+      "title": "Une plateforme web pensée pour la performance",
       "subtitle": "Accessible depuis n'importe quel navigateur, sans installation.",
       "browser": {
-        "title": "Optimisee pour tous les navigateurs",
-        "description": "Compatible Chrome, Firefox, Safari et Edge. Une experience fluide et rapide sur tous vos appareils.",
-        "longDescription": "Compatible Chrome, Firefox, Safari et Edge. Profitez d'une experience fluide et rapide sur tous vos appareils, sans installation ni configuration requise. Notre plateforme s'adapte a votre environnement."
+        "title": "Optimisée pour tous les navigateurs",
+        "description": "Compatible Chrome, Firefox, Safari et Edge. Une expérience fluide et rapide sur tous vos appareils.",
+        "longDescription": "Compatible Chrome, Firefox, Safari et Edge. Profitez d'une expérience fluide et rapide sur tous vos appareils, sans installation ni configuration requise. Notre plateforme s'adapte à votre environnement."
       },
       "share": {
         "title": "Partage universel",
-        "description": "Partagez vos resultats et rapports avec un simple lien. Collaborez sans barriere technique.",
-        "shortDescription": "Partagez resultats et rapports avec un simple lien."
+        "description": "Partagez vos résultats et rapports avec un simple lien. Collaborez sans barrière technique.",
+        "shortDescription": "Partagez résultats et rapports avec un simple lien."
       },
       "updates": {
-        "title": "Mises a jour automatiques",
-        "description": "Toujours la derniere version, sans action de votre part. Les nouvelles fonctionnalites arrivent instantanement.",
-        "shortDescription": "Toujours la derniere version, sans action de votre part."
+        "title": "Mises à jour automatiques",
+        "description": "Toujours la dernière version, sans action de votre part. Les nouvelles fonctionnalités arrivent instantanément.",
+        "shortDescription": "Toujours la dernière version, sans action de votre part."
       },
       "webReady": {
         "title": "Application Web",
-        "description": "Acces complet depuis votre navigateur, sans installation."
+        "description": "Accès complet depuis votre navigateur, sans installation."
       },
       "mobileComingSoon": {
         "title": "Application Mobile",
