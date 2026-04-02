@@ -52,7 +52,7 @@ export function HeroSection() {
             className="absolute inset-0 pointer-events-none z-0"
           >
             {/* Interactive Particles like Active Theory - Large, Static, Magnetic */}
-            <InteractiveParticles className="opacity-50" count={2000} />
+            <InteractiveParticles className="opacity-50" count={1000} />
           </motion.div>
         )}
       </AnimatePresence>

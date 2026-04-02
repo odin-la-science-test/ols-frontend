@@ -51,7 +51,7 @@ export function LandingNav() {
         "fixed left-0 right-0 z-50 transition-all duration-500",
         showFloating
           ? "top-[30px] mx-4 sm:mx-6 lg:mx-8 bg-background/80 backdrop-blur-xl border border-border/30 rounded-2xl shadow-sm" 
-          : "top-[-10px] bg-background/95 backdrop-blur-md border-b border-border/50"
+          : "top-[3px] bg-background/95 backdrop-blur-md border-b border-border/50"
       )}
     >
       <div className="mx-auto max-w-7xl flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
