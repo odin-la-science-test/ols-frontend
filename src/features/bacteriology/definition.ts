@@ -14,6 +14,7 @@ export const bacteriologyModule: ModuleDefinition = {
   icon: 'bug',
   accentColor: MUNIN_PRIMARY,
   platform: 'atlas',
+  guestAccess: 'read',
 
   route: {
     path: 'atlas/bacteriology',

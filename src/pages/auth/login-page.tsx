@@ -181,7 +181,7 @@ export function LoginPage() {
           {/* Discover Link — outside card */}
           <p className="text-center text-xs text-muted-foreground/40 mt-4">
             <Link
-              to="/welcome"
+              to="/"
               className="hover:text-muted-foreground transition-colors"
             >
               {t('auth.discoverPlatform')}

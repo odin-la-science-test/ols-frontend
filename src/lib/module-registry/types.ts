@@ -210,4 +210,6 @@ export interface ModuleDefinition {
   settings?: ModuleSettingsSection[];
   /** Optional: contextual tips (single-step hints, auto-triggered based on conditions) */
   tips?: ContextualTip[];
+  /** Guest access level: 'none' (default, locked) or 'read' (can view, not write) */
+  guestAccess?: 'none' | 'read';
 }

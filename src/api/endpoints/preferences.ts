@@ -38,7 +38,7 @@ export interface PreferencesPayload {
 }
 
 export const preferencesApi = {
-  get: () => api.get<PreferencesPayload>('/users/me/preferences'),
+  get: () => api.get<PreferencesPayload>('/users/me/preferences', { skipAuthRedirect: true }),
   update: (payload: PreferencesPayload) =>
-    api.put<PreferencesPayload>('/users/me/preferences', payload),
+    api.put<PreferencesPayload>('/users/me/preferences', payload, { skipAuthRedirect: true }),
 };

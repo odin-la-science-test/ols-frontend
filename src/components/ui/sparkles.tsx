@@ -78,14 +78,20 @@ export const SparklesCore = (props: ParticlesProps) => {
                   mode: "push",
                 },
                 onHover: {
-                  enable: false,
-                  mode: "repulse",
+                  enable: true,
+                  mode: "grab",
                 },
                 resize: true,
               } as Record<string, unknown>,
               modes: {
                 push: {
                   quantity: 4,
+                },
+                grab: {
+                  distance: 200,
+                  links: {
+                    opacity: 0.5,
+                  },
                 },
                 repulse: {
                   distance: 200,
@@ -396,13 +402,13 @@ export const SparklesCore = (props: ParticlesProps) => {
               links: {
                 blink: false,
                 color: {
-                  value: "#fff",
+                  value: particleColor || "#ffffff",
                 },
                 consent: false,
-                distance: 100,
-                enable: false,
+                distance: 140,
+                enable: true,
                 frequency: 1,
-                opacity: 1,
+                opacity: 0.3,
                 shadow: {
                   blur: 5,
                   color: {

@@ -36,9 +36,10 @@ function App() {
   }, [initTheme, initLanguage]);
 
   // Valider la session au demarrage (le cookie httpOnly peut avoir expire)
+  // Les guests n'ont pas de profil en DB — skip la validation et la sync preferences
   useEffect(() => {
-    const { isAuthenticated } = useAuthStore.getState();
-    if (isAuthenticated) {
+    const { isAuthenticated, isGuest } = useAuthStore.getState();
+    if (isAuthenticated && !isGuest()) {
       authApi.me()
         .then((res) => {
           useAuthStore.getState().setAuth(res.data);

@@ -5,6 +5,7 @@ import { useTourStore } from '@/stores/tour-store';
 import { preferencesApi } from '@/api';
 import { collectPreferences } from '@/lib/preferences-sync';
 import { useAuthStore } from '@/stores/auth-store';
+import { useGuestGuard } from '@/hooks';
 import { logger } from '@/lib/logger';
 
 const log = logger.tagged('tours-section');
@@ -14,13 +15,14 @@ const log = logger.tagged('tours-section');
 export function ToursSection() {
   const { t } = useTranslation();
   const { completedTours, resetAll } = useTourStore();
-  const { isAuthenticated, isGuest } = useAuthStore();
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+  const { canWrite } = useGuestGuard();
 
   const handleReset = async () => {
     resetAll();
 
     // Push the reset to the server so it persists across devices
-    if (isAuthenticated && !isGuest()) {
+    if (isAuthenticated && canWrite) {
       try {
         const prefs = collectPreferences();
         await preferencesApi.update({

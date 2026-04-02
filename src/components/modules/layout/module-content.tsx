@@ -71,7 +71,7 @@ export function ContentDetail({
       transition={{ duration: 0.2 }}
       className={cn(
         'flex-shrink-0 h-full',
-        'glass-subtle',
+        'surface-high',
         'border-l border-border/50',
         'overflow-hidden',
         className

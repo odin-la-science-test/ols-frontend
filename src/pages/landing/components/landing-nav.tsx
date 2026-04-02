@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Sun, Moon, Check, Menu, X } from 'lucide-react';
+import { Sun, Moon, Check, Menu, X, Wand2, Sparkles as SparklesIcon } from 'lucide-react';
+import { cn } from '@/lib/utils';
 import { Logo, BetaBadge } from '@/components/common';
 import {
   Button,
@@ -19,9 +20,9 @@ interface NavLink {
 }
 
 const NAV_LINKS: NavLink[] = [
-  { labelKey: 'landing.nav.tools', href: '#tools' },
   { labelKey: 'landing.nav.features', href: '#features' },
   { labelKey: 'landing.nav.security', href: '#security' },
+  { labelKey: 'landing.nav.tools', href: '#tools' },
   { labelKey: 'landing.nav.pricing', href: '#pricing' },
 ];
 
@@ -29,11 +30,18 @@ export function LandingNav() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useThemeStore();
+  const { theme, toggleTheme, isDesignEnabled, setDesignEnabled, isParticlesEnabled, setParticlesEnabled } = useThemeStore();
   const { language, changeLanguage } = useLanguageStore();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/30">
+    <nav 
+      className={cn(
+        "fixed left-0 right-0 z-50 transition-all duration-500",
+        (isDesignEnabled || isParticlesEnabled)
+          ? "top-[30px] mx-4 sm:mx-6 lg:mx-8 bg-background/80 backdrop-blur-xl border border-border/30 rounded-2xl shadow-sm" 
+          : "top-0 bg-background/95 backdrop-blur-md border-b border-border/50"
+      )}
+    >
       <div className="mx-auto max-w-7xl flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <div className="flex items-center gap-2.5">
@@ -61,6 +69,32 @@ export function LandingNav() {
         <div className="flex items-center gap-2">
           <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full h-8 w-8">
             {theme === 'light' ? <Moon className="h-3.5 w-3.5" /> : <Sun className="h-3.5 w-3.5" />}
+          </Button>
+
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={() => setDesignEnabled(!isDesignEnabled)} 
+            className={cn(
+              "rounded-full h-8 w-8 transition-colors",
+              isDesignEnabled ? "text-primary bg-primary/10" : "text-muted-foreground"
+            )}
+            title={isDesignEnabled ? "Désactiver le design" : "Activer le design"}
+          >
+            <Wand2 className="h-3.5 w-3.5" />
+          </Button>
+
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={() => setParticlesEnabled(!isParticlesEnabled)} 
+            className={cn(
+              "rounded-full h-8 w-8 transition-colors",
+              isParticlesEnabled ? "text-[#7C3AED] bg-[#7C3AED]/10" : "text-muted-foreground"
+            )}
+            title={isParticlesEnabled ? "Désactiver les particules" : "Activer les particules"}
+          >
+            <SparklesIcon className="h-3.5 w-3.5" />
           </Button>
 
           <DropdownMenu>

@@ -7,8 +7,9 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Lock, ChevronRight, Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useHubModules, type HubModule } from '@/hooks';
-import { useAuthStore, useThemeStore } from '@/stores';
+import { useHubModules, useGuestGuard, type HubModule } from '@/hooks';
+import { useThemeStore } from '@/stores';
+import { registry } from '@/lib/module-registry';
 import { DynamicIcon } from '@/components/ui/dynamic-icon';
 import { MUNIN_PRIMARY, HUGIN_PRIMARY } from '@/lib/accent-colors';
 import type { ModuleType } from '@/api';
@@ -55,7 +56,7 @@ export function PlatformMegaMenu({ platform, children }: PlatformMegaMenuProps) 
   const location = useLocation();
   const config = PLATFORM_CONFIG[platform];
   const density = useThemeStore((s) => s.density);
-  const isGuest = useAuthStore((s) => s.user?.role === 'GUEST');
+  const { isGuest } = useGuestGuard();
 
   const [open, setOpen] = useState(false);
   const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -169,17 +170,19 @@ export function PlatformMegaMenu({ platform, children }: PlatformMegaMenuProps) 
                 </div>
               )}
 
-              {!isLoading && modules && modules.map((mod, index) => (
+              {!isLoading && modules && modules.map((mod, index) => {
+                const regMod = registry.getByModuleKey(mod.moduleKey);
+                return (
                 <ModuleMenuItem
                   key={mod.moduleKey}
                   module={mod}
-                  isLocked={mod.locked || !!isGuest}
+                  isLocked={mod.locked || (isGuest && regMod?.guestAccess !== 'read')}
                   isCurrentRoute={location.pathname === mod.routePath || location.pathname.startsWith(mod.routePath + '/')}
                   accentColor={config.accentColor}
                   delay={index * 30}
                   onNavigate={handleNavigateModule}
                 />
-              ))}
+              ); })}
             </div>
 
             {/* ─── Footer ─── */}

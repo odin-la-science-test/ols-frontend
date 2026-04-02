@@ -1,5 +1,5 @@
-import { Suspense } from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { Suspense, type ReactNode } from 'react';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { LoginPage, RegisterPage, ForgotPasswordPage, ResetPasswordPage, VerifyEmailPage, OAuthCallbackPage, HomePage, LandingPage, BetaConditionsPage, MentionsLegalesPage, PrivacyPage, TermsPage, MuninAtlasPage, HuginLabPage, NotFoundPage, ErrorPage, WorkspacePage } from '@/pages';
 import { ProtectedRoute, PublicRoute, AppShell } from '@/components/common';
 import { ProfilePage } from '@/features/profile';
@@ -13,6 +13,21 @@ import { useAdminViewStore } from '@/stores/admin-view-store';
 import type { ModuleDefinition } from '@/lib/module-registry/types';
 import { ModuleErrorBoundary } from '@/components/common/module-error-boundary';
 import { ModuleLifecycleWrapper } from '@/components/common/module-lifecycle-wrapper';
+
+/**
+ * Guard that redirects guests away from modules they cannot access.
+ * Modules opt-in to guest access via guestAccess: 'read' in their definition.
+ */
+function GuestModuleGuard({ mod, children }: { mod: ModuleDefinition; children: ReactNode }) {
+  const isGuest = useAuthStore((s) => s.user?.role === 'GUEST');
+
+  if (isGuest && mod.guestAccess !== 'read') {
+    const hubPath = mod.platform === 'lab' ? '/lab' : '/atlas';
+    return <Navigate to={hubPath} replace />;
+  }
+
+  return <>{children}</>;
+}
 
 /**
  * Wrapper that renders adminView for ADMIN users, or the regular element otherwise.
@@ -69,13 +84,15 @@ function buildModuleRoutes() {
     // If module has an admin view, use AdminViewSwitch to swap views based on role
     if (mod.adminView) {
       const platformId = getPlatformId(mod.platform);
-      const inner = <ModuleErrorBoundary moduleId={mod.id}><ModuleLifecycleWrapper moduleId={mod.id}><AdminViewSwitch mod={mod} /></ModuleLifecycleWrapper></ModuleErrorBoundary>;
+      const inner = <GuestModuleGuard mod={mod}><ModuleErrorBoundary moduleId={mod.id}><ModuleLifecycleWrapper moduleId={mod.id}><AdminViewSwitch mod={mod} /></ModuleLifecycleWrapper></ModuleErrorBoundary></GuestModuleGuard>;
       const element = platformId
         ? <PlatformProvider platform={platformId}>{inner}</PlatformProvider>
         : inner;
       routes.push({ path: mod.route.path, element });
     } else {
-      routes.push(toRouteObject(mod.route, mod.platform, mod.id));
+      // Wrap with GuestModuleGuard for guest access control
+      const route = toRouteObject(mod.route, mod.platform, mod.id);
+      routes.push({ ...route, element: <GuestModuleGuard mod={mod}>{route.element}</GuestModuleGuard> });
     }
 
     // Child routes (e.g., public shared view)
@@ -119,7 +136,7 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: '/',
+        path: 'home',
         element: <HomePage />,
       },
       {
@@ -149,7 +166,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: 'welcome',
+    path: '/',
     element: <PublicRoute><LandingPage /></PublicRoute>,
   },
   {

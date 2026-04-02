@@ -49,10 +49,11 @@ const CROSS_MODULE_INVALIDATIONS: Record<string, readonly string[][]> = {
 export const useNotificationStream = () => {
   const queryClient = useQueryClient();
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+  const isGuest = useAuthStore((s) => s.user?.role === 'GUEST');
   const controllerRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
-    if (!isAuthenticated) return;
+    if (!isAuthenticated || isGuest) return;
 
     const ctrl = new AbortController();
     controllerRef.current = ctrl;

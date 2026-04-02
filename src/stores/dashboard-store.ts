@@ -71,11 +71,64 @@ function packLayout(widgets: ModuleWidget[], cols: number): LayoutItem[] {
   return grid;
 }
 
+// ─── Curated default positions (lg: 6 cols) ───────────────────────────
+// Hand-crafted layout for a balanced dashboard.
+// Widgets not listed here fall back to auto-packing.
+
+const CURATED_LG: Record<string, { x: number; y: number; w: number; h: number }> = {
+  'quick-shortcuts':  { x: 0, y: 0, w: 4, h: 1 },
+  'recent-activity':  { x: 4, y: 0, w: 2, h: 3 },
+  'latest-notes':     { x: 0, y: 1, w: 4, h: 5 },
+  'notifications':    { x: 4, y: 3, w: 2, h: 3 },
+  'progress':         { x: 0, y: 6, w: 6, h: 3 },
+};
+
+const CURATED_MD: Record<string, { x: number; y: number; w: number; h: number }> = {
+  'quick-shortcuts':  { x: 0, y: 0, w: 4, h: 1 },
+  'recent-activity':  { x: 0, y: 1, w: 2, h: 3 },
+  'latest-notes':     { x: 2, y: 1, w: 2, h: 4 },
+  'notifications':    { x: 0, y: 4, w: 2, h: 3 },
+  'progress':         { x: 0, y: 7, w: 4, h: 3 },
+};
+
+/** Generate curated layout for known widgets + auto-pack the rest */
+function curatedLayout(widgets: ModuleWidget[], curated: Record<string, { x: number; y: number; w: number; h: number }>, cols: number): LayoutItem[] {
+  const layout: LayoutItem[] = [];
+  const unknown: ModuleWidget[] = [];
+
+  for (const widget of widgets) {
+    const pos = curated[widget.id];
+    if (pos) {
+      layout.push({
+        i: widget.id,
+        ...pos,
+        minW: widget.minSize?.w ?? 1,
+        minH: widget.minSize?.h ?? 1,
+        maxW: widget.maxSize?.w,
+        maxH: widget.maxSize?.h,
+      });
+    } else {
+      unknown.push(widget);
+    }
+  }
+
+  // Pack unknown widgets below the curated ones
+  if (unknown.length > 0) {
+    const maxY = layout.reduce((max, item) => Math.max(max, item.y + item.h), 0);
+    const packed = packLayout(unknown, cols);
+    for (const item of packed) {
+      layout.push({ ...item, y: item.y + maxY });
+    }
+  }
+
+  return layout;
+}
+
 /** Generate default layouts for all breakpoints from widget definitions */
 export function generateDefaultLayouts(widgets: ModuleWidget[]): ResponsiveLayouts {
   return {
-    lg: packLayout(widgets, GRID_COLS.lg),
-    md: packLayout(widgets, GRID_COLS.md),
+    lg: curatedLayout(widgets, CURATED_LG, GRID_COLS.lg),
+    md: curatedLayout(widgets, CURATED_MD, GRID_COLS.md),
     sm: packLayout(widgets, GRID_COLS.sm),
   };
 }
@@ -181,7 +234,7 @@ export const useDashboardStore = create<DashboardState>()(
     }),
     {
       name: 'ols-dashboard',
-      version: 17,
+      version: 19,
       migrate: () => ({
         widgets: [],
         layouts: {},

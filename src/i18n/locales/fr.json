@@ -453,6 +453,18 @@
     "switchToIde": "Passer en mode IDE",
     "toggleSelection": "Basculer le mode sélection"
   },
+  "guest": {
+    "banner": {
+      "message": "Vous explorez OLS en mode invite",
+      "cta": "Creer un compte gratuit",
+      "dismiss": "Masquer"
+    },
+    "readOnly": "Mode lecture seule",
+    "settingsHint": "Creez un compte pour personnaliser vos parametres",
+    "moduleLocked": "Ce module est disponible avec un compte",
+    "dataLimited": "Apercu limite \u2014 inscrivez-vous pour acceder a toutes les donnees",
+    "signUp": "S'inscrire"
+  },
   "common": {
     "addFavorite": "Ajouter aux favoris",
     "appName": "Odin La Science",
@@ -759,6 +771,7 @@
       "pricing": "Tarifs",
       "login": "Connexion",
       "register": "S'inscrire",
+      "tryGuest": "Essayer",
       "menuOpen": "Ouvrir le menu",
       "menuClose": "Fermer le menu"
     },
@@ -772,6 +785,7 @@
       },
       "description": "Revolutionnez votre recherche scientifique avec une plateforme integree. Odin centralise vos donnees, optimise vos experiences et facilite la collaboration mondiale.",
       "cta": "S'inscrire",
+      "tryGuest": "ou explorer librement, sans inscription",
       "stats": {
         "modules": "Modules",
         "modulesValue": 10,
@@ -958,7 +972,8 @@
     "cta": {
       "title": "Pret a revolutionner votre recherche ?",
       "subtitle": "Rejoignez des milliers de chercheurs qui utilisent Odin pour accelerer leurs decouvertes.",
-      "button": "S'inscrire maintenant"
+      "button": "S'inscrire maintenant",
+      "tryGuest": "Ou essayer sans compte"
     },
     "footer": {
       "product": {

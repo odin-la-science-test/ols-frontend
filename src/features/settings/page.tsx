@@ -21,7 +21,10 @@ import {
   Puzzle,
   Database,
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { UserPlus } from 'lucide-react';
 import { SettingsLayout, type SettingsSection } from '@/components/modules/layout';
+import { useGuestGuard } from '@/hooks';
 import { AppearanceSection } from './components/appearance-section';
 import { LanguageSection } from './components/language-section';
 import { DensitySection } from './components/density-section';
@@ -51,6 +54,8 @@ import { registry } from '@/lib/module-registry';
 
 export function SettingsPage() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { isReadOnly } = useGuestGuard();
 
   // ─── Settings sections for TOC navigation ───
   const hasModuleSettings = registry.getSettings().length > 0;
@@ -83,24 +88,38 @@ export function SettingsPage() {
       sections={sections}
     >
       {(filteredSectionIds) => (<>
-              {filteredSectionIds.includes('appearance') && <AppearanceSection />}
-              {filteredSectionIds.includes('language') && <LanguageSection />}
-              {filteredSectionIds.includes('density') && <DensitySection />}
-              {filteredSectionIds.includes('notifications') && <NotificationsSection />}
-              {filteredSectionIds.includes('focus') && <FocusSection />}
-              {filteredSectionIds.includes('navigation') && <NavigationSection />}
-              {filteredSectionIds.includes('status-bar') && <StatusBarSection />}
-              {filteredSectionIds.includes('menu-bar') && <MenuBarSection />}
-              {filteredSectionIds.includes('sidebar-mode') && <SidebarModeSection />}
-              {filteredSectionIds.includes('bottom-panel') && <BottomPanelSection />}
-              {filteredSectionIds.includes('split-view') && <SplitViewSection />}
-              {filteredSectionIds.includes('activity-bar') && <ActivityBarSection />}
-              {filteredSectionIds.includes('keybindings') && <KeybindingsSection />}
-              {filteredSectionIds.includes('profiles') && <ProfilesSection />}
-              {filteredSectionIds.includes('tours') && <ToursSection />}
-              {filteredSectionIds.includes('data') && <DataSection />}
-              {filteredSectionIds.includes('module-settings') && <ModuleSettingsSection />}
-              {filteredSectionIds.includes('about') && <AboutSection />}
+              {isReadOnly && (
+                <div className="flex items-center gap-3 px-4 py-3 mb-6 rounded-xl bg-primary/5 border border-primary/15 text-sm">
+                  <span className="text-muted-foreground flex-1">{t('guest.settingsHint')}</span>
+                  <button
+                    onClick={() => navigate('/register')}
+                    className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-primary text-primary-foreground text-xs font-medium hover:opacity-90 transition-opacity shrink-0"
+                  >
+                    <UserPlus className="w-3 h-3" />
+                    {t('guest.signUp')}
+                  </button>
+                </div>
+              )}
+              <div className={isReadOnly ? 'pointer-events-none opacity-60 select-none' : undefined}>
+                {filteredSectionIds.includes('appearance') && <AppearanceSection />}
+                {filteredSectionIds.includes('language') && <LanguageSection />}
+                {filteredSectionIds.includes('density') && <DensitySection />}
+                {filteredSectionIds.includes('notifications') && <NotificationsSection />}
+                {filteredSectionIds.includes('focus') && <FocusSection />}
+                {filteredSectionIds.includes('navigation') && <NavigationSection />}
+                {filteredSectionIds.includes('status-bar') && <StatusBarSection />}
+                {filteredSectionIds.includes('menu-bar') && <MenuBarSection />}
+                {filteredSectionIds.includes('sidebar-mode') && <SidebarModeSection />}
+                {filteredSectionIds.includes('bottom-panel') && <BottomPanelSection />}
+                {filteredSectionIds.includes('split-view') && <SplitViewSection />}
+                {filteredSectionIds.includes('activity-bar') && <ActivityBarSection />}
+                {filteredSectionIds.includes('keybindings') && <KeybindingsSection />}
+                {filteredSectionIds.includes('profiles') && <ProfilesSection />}
+                {filteredSectionIds.includes('tours') && <ToursSection />}
+                {filteredSectionIds.includes('data') && <DataSection />}
+                {filteredSectionIds.includes('module-settings') && <ModuleSettingsSection />}
+                {filteredSectionIds.includes('about') && <AboutSection />}
+              </div>
       </>)}
     </SettingsLayout>
   );

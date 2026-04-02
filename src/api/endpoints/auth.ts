@@ -72,7 +72,7 @@ export const authApi = {
     api.delete('/sessions'),
 
   me: () =>
-    api.get<User>('/users/me'),
+    api.get<User>('/users/me', { skipAuthRedirect: true }),
 
   forgotPassword: (email: string) =>
     api.post('/auth/forgot-password', { email }, { skipAuthRedirect: true }),

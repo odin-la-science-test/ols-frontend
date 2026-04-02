@@ -12,8 +12,7 @@ import {
 import { FeatureCard, AppTopBar } from '@/components/common';
 import { Button } from '@/components/ui';
 import { LoadingState } from '@/components/modules/shared';
-import { useHubModules, type HubModule } from '@/hooks';
-import { useAuthStore } from '@/stores';
+import { useHubModules, useGuestGuard, type HubModule } from '@/hooks';
 import { DynamicIcon } from '@/components/ui/dynamic-icon';
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -28,7 +27,7 @@ interface ModuleCardProps {
 }
 
 function DashboardModuleCard({ module, accentColor, delay = 0, onLockedClick }: ModuleCardProps) {
-  const isGuest = useAuthStore((state) => state.user?.role === 'GUEST');
+  const { isGuest } = useGuestGuard();
   const isLocked = module.locked || isGuest;
 
   const handleClick = (e: MouseEvent) => {
@@ -136,7 +135,7 @@ export function DashboardPageTemplate({
   const { data: modules, isLoading, isError, refetch } = useHubModules(category);
 
   const handleLockedClick = () => {
-    navigate('/login');
+    navigate('/register');
   };
 
   return (

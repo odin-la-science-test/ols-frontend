@@ -13,6 +13,7 @@ import { workspaceTour } from '@/lib/tour/workspace-tour';
 import { profileTour } from '@/lib/tour/profile-tour';
 import { settingsTour } from '@/lib/tour/settings-tour';
 import { useAuthStore } from '@/stores/auth-store';
+import { useGuestGuard } from '@/hooks';
 import { useWorkspaceStore } from '@/stores';
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -46,7 +47,8 @@ export function TourLauncher() {
   const location = useLocation();
   const { isTourCompleted, activeTourId, setActiveTour } = useTourStore();
   const { runTour, triggerModuleTourIfNew } = useTour();
-  const { isAuthenticated, isGuest } = useAuthStore();
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+  const { isGuest } = useGuestGuard();
   const isClassic = useWorkspaceStore((s) => s.layoutMode === 'classic');
   const hasTriggeredGlobalShell = useRef(false);
 
@@ -60,7 +62,7 @@ export function TourLauncher() {
 
   // ─── Home tour: first visit to dashboard ───
   useEffect(() => {
-    if (!isAuthenticated || isGuest()) return;
+    if (!isAuthenticated || isGuest) return;
     if (location.pathname !== '/') return;
     if (isTourCompleted('home')) return;
 
@@ -70,7 +72,7 @@ export function TourLauncher() {
 
   // ─── Hub tours: first visit to Atlas/Lab ───
   useEffect(() => {
-    if (!isAuthenticated || isGuest()) return;
+    if (!isAuthenticated || isGuest) return;
 
     if (location.pathname === '/atlas' && !isTourCompleted('hub-atlas')) {
       const timer = setTimeout(() => runTour(atlasTour), PAGE_TOUR_DELAY);
@@ -84,7 +86,7 @@ export function TourLauncher() {
 
   // ─── Global shell tour + module tours: first visit to a module page ───
   useEffect(() => {
-    if (!isAuthenticated || isGuest()) return;
+    if (!isAuthenticated || isGuest) return;
 
     // System page tours
     if (location.pathname === '/profile' && !isTourCompleted('system-profile')) {

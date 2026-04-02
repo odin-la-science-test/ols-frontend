@@ -32,7 +32,7 @@ function ErrorFallback({
 
   return (
     <div className="flex flex-col items-center justify-center gap-6 p-12">
-      <div className="glass-surface flex flex-col items-center gap-4 rounded-xl border border-border/40 p-8">
+      <div className="bg-card flex flex-col items-center gap-4 rounded-xl border border-border/40 p-8">
         <AlertTriangle className="h-10 w-10 text-destructive" strokeWidth={1.5} />
 
         <div className="flex flex-col items-center gap-1 text-center">

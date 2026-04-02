@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { registry } from '@/lib/module-registry';
 import { useModuleAccessStore } from '@/stores/module-access-store';
+import { useAuthStore } from '@/stores/auth-store';
 import type { ModuleSearchResult } from '@/lib/module-registry';
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -72,12 +73,14 @@ export function useGlobalSearch(query: string, mode: SearchMode = 'entity') {
   const trimmed = query.trim();
   const enabled = trimmed.length >= MIN_QUERY_LENGTH;
   const canAccess = useModuleAccessStore((s) => s.canAccess);
+  const isGuest = useAuthStore((s) => s.user?.role === 'GUEST');
 
   return useQuery<GlobalSearchResults>({
-    queryKey: ['global-search', mode, trimmed],
+    queryKey: ['global-search', mode, trimmed, isGuest],
     queryFn: async (): Promise<GlobalSearchResults> => {
       const providers = registry.getSearchProviders()
-        .filter(({ module }) => canAccess(module.moduleKey));
+        .filter(({ module }) => canAccess(module.moduleKey))
+        .filter(({ module }) => !isGuest || module.guestAccess === 'read');
 
       // In tag mode, only keep modules that provide searchByTag
       const filtered = mode === 'tag'

@@ -174,9 +174,9 @@ export function HomePage() {
 
   const handleLayoutChange = useCallback(
     (_layout: Layout, allLayouts: ResponsiveLayouts) => {
-      updateLayouts(allLayouts);
+      if (editMode) updateLayouts(allLayouts);
     },
-    [updateLayouts],
+    [updateLayouts, editMode],
   );
 
   // Close settings panel when leaving edit mode
@@ -186,7 +186,7 @@ export function HomePage() {
   }, [toggleEditMode]);
 
   return (
-    <div className="h-[100dvh] flex flex-col relative overflow-hidden">
+    <div className="h-full flex flex-col relative overflow-hidden">
       <AppTopBar />
 
       <div className="relative z-10 flex-1 overflow-y-auto scrollbar-thin pb-20 lg:pb-6">

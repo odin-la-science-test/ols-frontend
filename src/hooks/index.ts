@@ -34,3 +34,4 @@ export { useSmartTips } from './use-smart-tips';
 export { usePresence } from './use-presence';
 export { usePagination } from './use-pagination';
 export { useOfflineStatus, type OfflineStatus } from './use-offline-status';
+export { useGuestGuard } from './use-guest-guard';

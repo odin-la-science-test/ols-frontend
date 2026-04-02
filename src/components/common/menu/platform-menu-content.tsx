@@ -3,8 +3,8 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Lock, Loader2, Check } from 'lucide-react';
-import { useAuthStore } from '@/stores';
-import { useHubModules } from '@/hooks';
+import { useHubModules, useGuestGuard } from '@/hooks';
+import { registry } from '@/lib/module-registry';
 import { DynamicIcon } from '@/components/ui/dynamic-icon';
 import { MenuItem, MenuSeparator } from './menu-primitives';
 import type { PlatformMenuContentProps } from './types';
@@ -13,7 +13,7 @@ export function PlatformMenuContent({ type, accentColor, onClose }: PlatformMenu
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
-  const isGuest = useAuthStore((s) => s.user?.role === 'GUEST');
+  const { isGuest } = useGuestGuard();
   const { data: modules, isLoading } = useHubModules(type);
 
   const platformPath = type === 'MUNIN_ATLAS' ? '/atlas' : '/lab';
@@ -56,7 +56,8 @@ export function PlatformMenuContent({ type, accentColor, onClose }: PlatformMenu
 
       {/* Module list */}
       {!isLoading && modules?.map((mod) => {
-        const isLocked = mod.locked || !!isGuest;
+        const regMod = registry.getByModuleKey(mod.moduleKey);
+        const isLocked = mod.locked || (isGuest && regMod?.guestAccess !== 'read');
         const isCurrent = location.pathname === mod.routePath || location.pathname.startsWith(mod.routePath + '/');
 
         return (

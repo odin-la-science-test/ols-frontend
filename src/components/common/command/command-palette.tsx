@@ -22,6 +22,7 @@ import { useGlobalSearch, parseSearchInput, type SearchResult } from '@/hooks';
 import { registry } from '@/lib/module-registry';
 import { filterAccessibleModules } from '@/lib/module-registry/registry';
 import { useModuleAccessStore } from '@/stores/module-access-store';
+import { useAuthStore } from '@/stores';
 import { toast } from '@/hooks';
 
 import { CommandGroup } from './command-item';
@@ -54,13 +55,16 @@ export function CommandPalette() {
   const { profiles, activeProfileId, setActiveProfileId } = useProfilesStore();
 
   const canAccess = useModuleAccessStore((s) => s.canAccess);
-  const modules = useMemo(() => filterAccessibleModules(registry.getAll(), canAccess).map((m) => ({
-    moduleKey: m.moduleKey,
-    title: t(m.translationKey),
-    icon: m.icon,
-    description: m.descriptionKey ? t(m.descriptionKey) : '',
-    routePath: `/${m.route.path}`,
-  })), [t, canAccess]);
+  const isGuest = useAuthStore((s) => s.user?.role === 'GUEST');
+  const modules = useMemo(() => filterAccessibleModules(registry.getAll(), canAccess)
+    .filter((m) => !isGuest || m.guestAccess === 'read')
+    .map((m) => ({
+      moduleKey: m.moduleKey,
+      title: t(m.translationKey),
+      icon: m.icon,
+      description: m.descriptionKey ? t(m.descriptionKey) : '',
+      routePath: `/${m.route.path}`,
+    })), [t, canAccess, isGuest]);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const [search, setSearch] = useState('');

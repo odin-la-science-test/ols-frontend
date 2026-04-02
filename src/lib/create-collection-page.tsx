@@ -1,8 +1,11 @@
 import type { ComponentType, ReactNode } from 'react';
 
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { UserPlus } from 'lucide-react';
 import type { TFunction } from 'i18next';
 import { CollectionLayout, type CollectionTranslations } from '@/components/modules/layout/collection-layout';
+import { useGuestGuard } from '@/hooks/use-guest-guard';
 import type { ColumnDef, FilterConfig, StatItem, CardConfig } from '@/components/modules/types';
 import type { ComparisonField } from '@/components/modules/shared/comparison-panel';
 import type { MobileMenuItem } from '@/components/modules/layout/module-header';
@@ -67,10 +70,25 @@ export function createCollectionPage<T extends { id: number; confidenceScore?: n
 ) {
   return function CollectionPage() {
     const { t } = useTranslation();
+    const navigate = useNavigate();
+    const { isGuest } = useGuestGuard();
     const translations = config.translations(t);
     const batchDeleteHandler = config.useBatchDelete ? config.useBatchDelete() : undefined;
 
     return (
+      <>
+      {isGuest && (
+        <div className="flex items-center justify-center gap-3 px-4 py-2 bg-primary/5 border-b border-primary/15 text-sm">
+          <span className="text-muted-foreground">{t('guest.dataLimited')}</span>
+          <button
+            onClick={() => navigate('/register')}
+            className="flex items-center gap-1.5 px-3 py-0.5 rounded-md bg-primary text-primary-foreground text-xs font-medium hover:opacity-90 transition-opacity shrink-0"
+          >
+            <UserPlus className="w-3 h-3" />
+            {t('guest.signUp')}
+          </button>
+        </div>
+      )}
       <CollectionLayout<T>
         moduleKey={config.moduleKey}
         title={translations.title}
@@ -99,6 +117,7 @@ export function createCollectionPage<T extends { id: number; confidenceScore?: n
         entityActions={config.entityActions}
         translations={translations}
       />
+      </>
     );
   };
 }

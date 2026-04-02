@@ -1,4 +1,5 @@
 import { logger } from '@/lib/logger';
+import { isGuestUser } from '@/lib/guest-access';
 import type { ThemePresetId } from '@/lib/theme-presets';
 import { preferencesApi } from '@/api';
 import type { SyncablePreferences, PreferencesPayload } from '@/api';
@@ -166,8 +167,8 @@ export async function syncOnLogin(): Promise<void> {
 async function saveToServer(): Promise<void> {
   if (_applyingFromServer) return;
 
-  const { isAuthenticated, isGuest } = useAuthStore.getState();
-  if (!isAuthenticated || isGuest()) return;
+  const { isAuthenticated } = useAuthStore.getState();
+  if (!isAuthenticated || isGuestUser()) return;
 
   try {
     await preferencesApi.update(buildPayload());
@@ -195,8 +196,8 @@ function scheduleSave(): void {
 export function initPreferencesSync(): void {
   stopPreferencesSync();
 
-  const { isAuthenticated, isGuest } = useAuthStore.getState();
-  if (!isAuthenticated || isGuest()) return;
+  const { isAuthenticated } = useAuthStore.getState();
+  if (!isAuthenticated || isGuestUser()) return;
 
   // Skip first emission from each store (hydration)
   const stores = [useThemeStore, useLanguageStore, useKeybindingsStore, useDashboardStore, useProfilesStore, useTourStore];

@@ -46,7 +46,7 @@ export function ResumeWorkspaceButton({ className }: ResumeWorkspaceButtonProps)
           transition={{ duration: 0.25, ease: 'easeOut' }}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className={`group flex items-center gap-2 px-3 py-1.5 rounded-xl border border-border/40 glass-surface hover:glass-overlay hover:border-border/70 transition-all duration-200 ${className ?? ''}`}
+          className={`group flex items-center gap-2 px-3 py-1.5 rounded-xl border border-border/40 glass-overlay hover:border-border/70 transition-all duration-200 ${className ?? ''}`}
         >
           {/* Mobile: icon + tab count badge only */}
           <div className="flex sm:hidden items-center gap-1.5">

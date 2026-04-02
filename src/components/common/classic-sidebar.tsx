@@ -10,7 +10,7 @@ import { Button, Avatar, AvatarFallback, AvatarImage, Tooltip, TooltipTrigger, T
 import { useAuthStore, useModuleAccessStore } from '@/stores';
 import { useCommandPaletteStore } from '@/stores/command-palette-store';
 import { getAvatarUrl } from '@/stores/auth-store';
-import { useLogout } from '@/hooks';
+import { useLogout, useGuestGuard } from '@/hooks';
 import { useUnreadCount } from '@/features/notifications';
 import { Logo } from '@/components/common/logo';
 import { BetaBadge } from '@/components/common/beta-badge';
@@ -138,6 +138,7 @@ export function ClassicSidebar() {
   const canAccess = useModuleAccessStore((s) => s.canAccess);
   const openPalette = useCommandPaletteStore((s) => s.open);
   const { logout } = useLogout();
+  const { canWrite } = useGuestGuard();
 
   const { data: unreadData } = useUnreadCount();
   const unreadCount = unreadData?.count ?? 0;
@@ -253,18 +254,20 @@ export function ClassicSidebar() {
           collapsed={collapsed}
           onClick={() => navigate('/settings')}
         />
-        <NavItem
-          icon={
-            <Avatar className="h-5 w-5 shrink-0">
-              <AvatarImage src={user ? getAvatarUrl(user.avatarId) : undefined} />
-              <AvatarFallback className="text-[9px]">{getInitials()}</AvatarFallback>
-            </Avatar>
-          }
-          label={user ? `${user.firstName} ${user.lastName}` : undefined}
-          active={location.pathname.startsWith('/profile')}
-          collapsed={collapsed}
-          onClick={() => navigate('/profile')}
-        />
+        {canWrite && (
+          <NavItem
+            icon={
+              <Avatar className="h-5 w-5 shrink-0">
+                <AvatarImage src={user ? getAvatarUrl(user.avatarId) : undefined} />
+                <AvatarFallback className="text-[9px]">{getInitials()}</AvatarFallback>
+              </Avatar>
+            }
+            label={user?.firstName ? `${user.firstName} ${user.lastName}` : undefined}
+            active={location.pathname.startsWith('/profile')}
+            collapsed={collapsed}
+            onClick={() => navigate('/profile')}
+          />
+        )}
         <NavItem
           icon={<LogOut className="h-4 w-4 shrink-0" />}
           label={t('common.logout')}

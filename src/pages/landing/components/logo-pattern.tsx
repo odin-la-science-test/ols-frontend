@@ -12,7 +12,7 @@ export function LogoPattern() {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
       <div
-        className="absolute -inset-[50%] opacity-[0.025] rotate-[15deg]"
+        className="absolute -inset-[50%] opacity-[0.025] rotate-[15deg] blur-[2px]"
         style={{
           backgroundImage: `url(${logoSrc})`,
           backgroundSize: '100px 100px',

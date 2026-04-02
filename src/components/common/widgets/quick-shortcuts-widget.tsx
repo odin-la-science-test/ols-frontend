@@ -10,6 +10,7 @@ import { DynamicIcon } from '@/components/ui/dynamic-icon';
 import { cn } from '@/lib/utils';
 import { registry, filterAccessibleModules } from '@/lib/module-registry/registry';
 import { useModuleAccessStore } from '@/stores/module-access-store';
+import { useAuthStore } from '@/stores/auth-store';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui';
 import type { WidgetSettingDef } from '@/lib/module-registry/types';
 
@@ -54,10 +55,19 @@ export function QuickShortcutsWidget() {
   const settings = useWidgetSettings(WIDGET_ID, SETTINGS_DEFS);
   const iconOnly = settings.iconOnly as boolean;
   const canAccess = useModuleAccessStore((s) => s.canAccess);
+  const isGuest = useAuthStore((s) => s.user?.role === 'GUEST');
 
   const shortcuts = customShortcuts;
 
-  const availableShortcuts = useMemo(() => getAvailableShortcuts(canAccess), [canAccess]);
+  const availableShortcuts = useMemo(() => {
+    const all = getAvailableShortcuts(canAccess);
+    if (!isGuest) return all;
+    // Guests: only show modules with guestAccess: 'read' + system pages (except profile)
+    const guestModuleKeys = new Set(
+      registry.getAll().filter((m) => m.guestAccess === 'read').map((m) => `/${m.route.path}`),
+    );
+    return all.filter((s) => guestModuleKeys.has(s.path) || (SYSTEM_SHORTCUTS.some((sys) => sys.path === s.path) && s.path !== '/profile'));
+  }, [canAccess, isGuest]);
   const addableShortcuts = availableShortcuts.filter(
     (s) => !shortcuts.some((c) => c.path === s.path)
   );

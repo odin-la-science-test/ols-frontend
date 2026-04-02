@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import { type ActivityBarPosition } from '@/stores/activity-bar-store';
 import { useThemeStore, useLanguageStore, useAuthStore, LANGUAGES, useProfilesStore, applySnapshot } from '@/stores';
 import { getAvatarUrl } from '@/stores/auth-store';
-import { useLogout, toast } from '@/hooks';
+import { useLogout, toast, useGuestGuard } from '@/hooks';
 import { DynamicIcon } from '@/components/ui/dynamic-icon';
 import {
   DropdownMenu,
@@ -33,6 +33,7 @@ export function ActivityBarUserAvatar({ barPosition = 'left' }: { barPosition?: 
   const { language, changeLanguage } = useLanguageStore();
   const user = useAuthStore((s) => s.user);
   const { logout } = useLogout();
+  const { canWrite } = useGuestGuard();
   const { btnSize, avatarSize } = useActivityBarDensity();
   const { profiles, activeProfileId, setActiveProfileId } = useProfilesStore();
 
@@ -83,7 +84,7 @@ export function ActivityBarUserAvatar({ barPosition = 'left' }: { barPosition?: 
               {getInitials()}
             </AvatarFallback>
           </Avatar>
-          <ItemTooltip label={user ? `${user.firstName} ${user.lastName}` : t('settings.profile')} position={barPosition} />
+          <ItemTooltip label={user ? (user.firstName ? `${user.firstName} ${user.lastName}` : getRoleLabel()) : t('settings.profile')} position={barPosition} />
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
@@ -96,56 +97,62 @@ export function ActivityBarUserAvatar({ barPosition = 'left' }: { barPosition?: 
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
             <p className="text-sm font-medium leading-none">
-              {user?.firstName} {user?.lastName}
+              {user?.firstName ? `${user.firstName} ${user.lastName}` : getRoleLabel()}
             </p>
-            <p className="text-xs text-muted-foreground">{user?.email}</p>
-            <p className="text-xs text-primary font-medium">{getRoleLabel()}</p>
+            {user?.email && <p className="text-xs text-muted-foreground">{user.email}</p>}
+            {user?.firstName && <p className="text-xs text-primary font-medium">{getRoleLabel()}</p>}
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator className="bg-border/50" />
 
-        {/* Profile */}
-        <DropdownMenuItem onClick={() => navigate('/profile')} className="cursor-pointer">
-          <User className="mr-2 h-4 w-4 text-muted-foreground" />
-          {t('settings.profile')}
-        </DropdownMenuItem>
+        {/* Profile (hidden for guests) */}
+        {canWrite && (
+          <DropdownMenuItem onClick={() => navigate('/profile')} className="cursor-pointer">
+            <User className="mr-2 h-4 w-4 text-muted-foreground" />
+            {t('settings.profile')}
+          </DropdownMenuItem>
+        )}
 
-        {/* ── Workspace Profiles ── */}
-        <DropdownMenuSeparator className="bg-border/50" />
-        <DropdownMenuLabel className="flex items-center justify-between text-xs text-muted-foreground font-normal py-1.5">
-          <span className="flex items-center gap-1.5">
-            <UserCircle className="h-3 w-3" />
-            {t('profiles.title')}
-          </span>
-          {activeProfileName && (
-            <span className="text-[10px] text-primary font-medium truncate max-w-[80px]">
-              {activeProfileName}
-            </span>
-          )}
-        </DropdownMenuLabel>
-        {profiles.map((profile) => {
-          const isActive = activeProfileId === profile.id;
-          const displayName = profile.isDefault ? t(profile.name) : profile.name;
-          return (
-            <DropdownMenuItem
-              key={profile.id}
-              onClick={() => handleSwitchProfile(profile.id)}
-              className="cursor-pointer gap-2"
-            >
-              <span className="text-muted-foreground shrink-0">
-                <DynamicIcon name={profile.icon} className="h-3.5 w-3.5" />
+        {/* ── Workspace Profiles (hidden for guests) ── */}
+        {canWrite && (
+          <>
+            <DropdownMenuSeparator className="bg-border/50" />
+            <DropdownMenuLabel className="flex items-center justify-between text-xs text-muted-foreground font-normal py-1.5">
+              <span className="flex items-center gap-1.5">
+                <UserCircle className="h-3 w-3" />
+                {t('profiles.title')}
               </span>
-              <span className="flex-1 truncate">{displayName}</span>
-              {isActive && <Check className="h-3.5 w-3.5 text-primary shrink-0" />}
+              {activeProfileName && (
+                <span className="text-[10px] text-primary font-medium truncate max-w-[80px]">
+                  {activeProfileName}
+                </span>
+              )}
+            </DropdownMenuLabel>
+            {profiles.map((profile) => {
+              const isActive = activeProfileId === profile.id;
+              const displayName = profile.isDefault ? t(profile.name) : profile.name;
+              return (
+                <DropdownMenuItem
+                  key={profile.id}
+                  onClick={() => handleSwitchProfile(profile.id)}
+                  className="cursor-pointer gap-2"
+                >
+                  <span className="text-muted-foreground shrink-0">
+                    <DynamicIcon name={profile.icon} className="h-3.5 w-3.5" />
+                  </span>
+                  <span className="flex-1 truncate">{displayName}</span>
+                  {isActive && <Check className="h-3.5 w-3.5 text-primary shrink-0" />}
+                </DropdownMenuItem>
+              );
+            })}
+            <DropdownMenuItem
+              onClick={() => navigate('/settings')}
+              className="cursor-pointer text-muted-foreground"
+            >
+              <span className="ml-5 text-xs">{t('profiles.create')} →</span>
             </DropdownMenuItem>
-          );
-        })}
-        <DropdownMenuItem
-          onClick={() => navigate('/settings')}
-          className="cursor-pointer text-muted-foreground"
-        >
-          <span className="ml-5 text-xs">{t('profiles.create')} →</span>
-        </DropdownMenuItem>
+          </>
+        )}
 
         {/* Theme Toggle */}
         <DropdownMenuSeparator className="bg-border/50" />

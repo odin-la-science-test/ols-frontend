@@ -449,6 +449,18 @@
     "switchToIde": "Switch to IDE mode",
     "toggleSelection": "Toggle selection mode"
   },
+  "guest": {
+    "banner": {
+      "message": "You are exploring OLS as a guest",
+      "cta": "Create a free account",
+      "dismiss": "Dismiss"
+    },
+    "readOnly": "Read-only mode",
+    "settingsHint": "Create an account to customize your settings",
+    "moduleLocked": "This module is available with an account",
+    "dataLimited": "Limited preview \u2014 sign up to access all data",
+    "signUp": "Sign up"
+  },
   "common": {
     "addFavorite": "Add to favorites",
     "appName": "Odin La Science",
@@ -750,6 +762,7 @@
       "pricing": "Pricing",
       "login": "Sign in",
       "register": "Sign up",
+      "tryGuest": "Try free",
       "menuOpen": "Open menu",
       "menuClose": "Close menu"
     },
@@ -763,6 +776,7 @@
       },
       "description": "Revolutionize your scientific research with an integrated platform. Odin centralizes your data, optimizes your experiments and facilitates global collaboration.",
       "cta": "Sign up",
+      "tryGuest": "or explore freely, no sign-up needed",
       "stats": {
         "modules": "Modules",
         "modulesValue": 10,
@@ -949,7 +963,8 @@
     "cta": {
       "title": "Ready to revolutionize your research?",
       "subtitle": "Join thousands of researchers who use Odin to accelerate their discoveries.",
-      "button": "Sign up now"
+      "button": "Sign up now",
+      "tryGuest": "Or try without account"
     },
     "footer": {
       "product": {

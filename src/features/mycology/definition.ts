@@ -14,6 +14,7 @@ export const mycologyModule: ModuleDefinition = {
   icon: 'leaf',
   accentColor: MUNIN_PRIMARY,
   platform: 'atlas',
+  guestAccess: 'read',
 
   route: {
     path: 'atlas/mycology',

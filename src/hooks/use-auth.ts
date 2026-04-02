@@ -11,7 +11,7 @@ const useLoginSuccess = () => {
   const queryClient = useQueryClient();
   const setAuth = useAuthStore((state) => state.setAuth);
 
-  const from = (location.state as { from?: { pathname: string } })?.from?.pathname || '/';
+  const from = (location.state as { from?: { pathname: string } })?.from?.pathname || '/home';
 
   return async (response: AxiosResponse<AuthResponse>) => {
     const { user } = response.data;
@@ -37,16 +37,14 @@ export const useGuestLogin = () => {
   const location = useLocation();
   const queryClient = useQueryClient();
   const setAuth = useAuthStore((state) => state.setAuth);
-  const from = (location.state as { from?: { pathname: string } })?.from?.pathname || '/';
+  const from = (location.state as { from?: { pathname: string } })?.from?.pathname || '/home';
 
   return useMutation({
     mutationFn: authApi.guest,
-    onSuccess: async (response) => {
+    onSuccess: (response) => {
       const { user } = response.data;
       setAuth(user);
       queryClient.invalidateQueries({ queryKey: ['modules'] });
-      await syncOnLogin();
-      initPreferencesSync();
       navigate(from, { replace: true });
     },
   });

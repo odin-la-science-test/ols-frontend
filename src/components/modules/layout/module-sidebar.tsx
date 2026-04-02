@@ -55,7 +55,7 @@ export function ModuleSidebar({
             transition={{ duration: 0.2, ease: 'easeInOut' }}
             className={cn(
               'hidden lg:flex flex-col flex-shrink-0',
-              'glass-surface',
+              'surface-high',
               'border-r border-border/50',
               'overflow-hidden',
               className

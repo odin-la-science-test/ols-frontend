@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Laptop, Smartphone, Tablet, LogOut, Loader2, AlertTriangle, X } from 'lucide-react';
+import { Laptop, Smartphone, Tablet, LogOut, Loader2, AlertTriangle, X, ShieldAlert } from 'lucide-react';
 import { Button, Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { authApi, type SessionDTO, type SessionLimitResponse } from '@/api/endpoints/auth';
 
@@ -25,9 +25,11 @@ interface SessionLimitDialogProps {
 export function SessionLimitDialog({ data, credentials, onRevoked, onClose }: SessionLimitDialogProps) {
   const { t } = useTranslation();
   const [revokingId, setRevokingId] = useState<string | null>(null);
+  const [revokeError, setRevokeError] = useState<string | null>(null);
 
   const handleRevoke = async (sessionId: string) => {
     setRevokingId(sessionId);
+    setRevokeError(null);
     try {
       await authApi.revokeSessionPublic({
         email: credentials.email,
@@ -37,6 +39,7 @@ export function SessionLimitDialog({ data, credentials, onRevoked, onClose }: Se
       onRevoked();
     } catch {
       setRevokingId(null);
+      setRevokeError(t('auth.revokeSessionError', 'Impossible de révoquer la session. Réessayez dans quelques instants.'));
     }
   };
 
@@ -73,6 +76,12 @@ export function SessionLimitDialog({ data, credentials, onRevoked, onClose }: Se
               </p>
             </CardHeader>
             <CardContent className="space-y-2">
+              {revokeError && (
+                <div className="flex items-center gap-2 p-2.5 rounded-lg border border-destructive/30 bg-destructive/5 text-destructive text-xs">
+                  <ShieldAlert className="w-4 h-4 flex-shrink-0" strokeWidth={1.5} />
+                  {revokeError}
+                </div>
+              )}
               {data.activeSessions.map((session: SessionDTO) => (
                   <div
                     key={session.id}

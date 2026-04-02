@@ -8,6 +8,7 @@ import { useModuleDetailStore } from '@/stores/module-detail-store';
 import { useActivityBarStore } from '@/stores/activity-bar-store';
 import { SidebarPortalZone } from '@/components/common/sidebar-portal-zone';
 import { registry } from '@/lib/module-registry';
+import { useAuthStore } from '@/stores';
 
 // ═══════════════════════════════════════════════════════════════════════════
 // APP PANEL BRIDGE — Registers app-level panels and module-contributed
@@ -71,7 +72,10 @@ export function useRegisterAppPanels() {
     });
 
     // Register module-contributed activity panels from the registry
-    const activityPanels = registry.getActivityPanels();
+    // Guests only see panels from modules with guestAccess: 'read'
+    const isGuest = useAuthStore.getState().user?.role === 'GUEST';
+    const activityPanels = registry.getActivityPanels()
+      .filter(({ module }) => !isGuest || module.guestAccess === 'read');
     const moduleBarItems = activityPanels.map(({ module, panel }) => {
       const panelId = panel.id ?? module.id;
       registerPanel({

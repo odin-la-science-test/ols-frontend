@@ -25,6 +25,8 @@ interface ThemeState {
   density: Density;
   fontSize: number; // 12–18
   intensity: 'vivid' | 'subtle' | 'neutral';
+  isDesignEnabled: boolean;
+  isParticlesEnabled: boolean;
   _lastDarkMode: ThemeMode;
   _lastModified: number;
 
@@ -35,6 +37,8 @@ interface ThemeState {
   setDensity: (density: Density) => void;
   setFontSize: (size: number) => void;
   setIntensity: (intensity: 'vivid' | 'subtle' | 'neutral') => void;
+  setDesignEnabled: (enabled: boolean) => void;
+  setParticlesEnabled: (enabled: boolean) => void;
   initTheme: () => void;
 }
 
@@ -99,6 +103,8 @@ export const useThemeStore = create<ThemeState>()(
       density: 'normal',
       fontSize: 14,
       intensity: 'subtle',
+      isDesignEnabled: true,
+      isParticlesEnabled: true,
       _lastDarkMode: systemDefaults.theme === 'light' ? 'dim' : systemDefaults.theme,
       _lastModified: 0,
 
@@ -159,6 +165,14 @@ export const useThemeStore = create<ThemeState>()(
         } else {
           root.setAttribute('data-intensity', intensity);
         }
+      },
+      
+      setDesignEnabled: (enabled: boolean) => {
+        set({ isDesignEnabled: enabled, _lastModified: Date.now() });
+      },
+      
+      setParticlesEnabled: (enabled: boolean) => {
+        set({ isParticlesEnabled: enabled, _lastModified: Date.now() });
       },
 
       initTheme: () => {

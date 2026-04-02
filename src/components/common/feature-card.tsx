@@ -66,7 +66,7 @@ export function FeatureCard({
     >
       <motion.div 
         className={cn(
-          "relative h-full rounded-2xl overflow-hidden glass-card border border-border/70 transition-all duration-300 ease-out",
+          "relative h-full rounded-2xl overflow-hidden bg-card border border-border/70 transition-all duration-300 ease-out",
           isLocked 
             ? "grayscale-[30%]" 
             : !showColoredBg && "group-hover:border-border group-hover:bg-card"

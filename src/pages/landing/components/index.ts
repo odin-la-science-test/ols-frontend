@@ -4,4 +4,8 @@ export { LandingNav } from './landing-nav';
 export { LandingFooter } from './landing-footer';
 export { AnimatedCounter } from './counter';
 export { AppMockup } from './app-mockup';
+export { DeviceShowcase } from './device-showcase';
 export { LogoPattern } from './logo-pattern';
+export { DnaIllustration } from './dna-illustration';
+export { Sparkles } from '@/components/ui/sparkles';
+export { InteractiveParticles } from './interactive-particles';

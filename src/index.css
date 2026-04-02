@@ -2118,7 +2118,7 @@ html {
 /* Gradient background for colorful themes (Arc-style multi-hue shift).
    When --color-gradient-from/to are defined (Blossom, Lavender), body gets a gradient.
    When they're not defined (all other themes), var() falls back to --color-background → solid.
-   Glass utilities (glass-surface, glass-chrome, etc.) blend naturally via backdrop-filter. */
+   Glass utilities blend naturally via backdrop-filter. */
 body {
   background: linear-gradient(
     135deg,
@@ -2210,24 +2210,6 @@ body {
 @utility surface-high {
   background: linear-gradient(135deg, var(--color-surface-high-from), var(--color-surface-high-to));
   background-attachment: fixed;
-}
-
-/* Legacy overlay fallbacks — kept for overlay use only */
-@utility glass-surface {
-  background-color: var(--color-surface);
-  backdrop-filter: blur(12px) saturate(1.2);
-}
-
-/* Legacy overlay fallback — kept for overlay use only */
-@utility glass-chrome {
-  background-color: var(--color-chrome);
-  backdrop-filter: blur(12px) saturate(1.2);
-}
-
-/* Very light backgrounds (content areas) */
-@utility glass-subtle {
-  background-color: hsl(var(--card) / 0.3);
-  backdrop-filter: blur(8px);
 }
 
 /* Opaque popovers (context menus, menu primitives) — uses --popover token */
